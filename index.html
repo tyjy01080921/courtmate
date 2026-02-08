@@ -1,14 +1,890 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Court Mate MVP (Firebase)</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js"></script>
+
+    <!-- Firebase SDK (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- [Core] CSS Variables & Reset --- */
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --white: #ffffff;
+
+            /* Status Colors */
+            --color-mandatory: #7e22ce;
+            --color-main: #10b981;
+            --color-qual: #eab308;
+            --color-promo: #f59e0b;
+            --color-reserve: #9ca3af;
+
+            /* Transitions */
+            --pastel-green: #6ee7b7;
+            --pastel-blue: #93c5fd;
+            --pastel-indigo: #a5b4fc;
+            --pastel-purple: #d8b4fe;
+            --pastel-teal: #5eead4;
+
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--gray-100);
+            font-family: 'Inter', 'Noto Sans KR', 'Noto Sans SC', 'Noto Sans JP', sans-serif;
+            color: var(--slate-900);
+            font-size: 14px;
+        }
+
+        [v-cloak] {
+            display: none !important;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            outline: none;
+        }
+
+        /* --- [Layout] App Container --- */
+        .app-container {
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: var(--white);
+            min-height: 100vh;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .p-5 {
+            padding: 1.25rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        /* --- [Components] UI Elements --- */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: transform 0.1s, opacity 0.2s;
+            border: none;
+            width: 100%;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: var(--slate-800);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-emerald {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-ghost {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            color: var(--slate-700);
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            border: 1px solid var(--gray-100);
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+        }
+
+        .label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gray-500);
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--gray-200);
+            background: var(--gray-50);
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 2px var(--pastel-green);
+        }
+
+        /* --- [Feature] Branding (Court Mate) --- */
+        .brand-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.75rem;
+            line-height: 1;
+            color: var(--primary);
+            transition: color 0.5s ease;
+        }
+
+        .text-pastel-green {
+            color: var(--pastel-green);
+        }
+
+        /* --- [Feature] Header --- */
+        .inline-header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- [Feature] Global Footer (3-Column) --- */
+        .global-footer-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 480px;
+            height: 3rem;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            z-index: 110;
+        }
+
+        .footer-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--slate-700);
+            cursor: pointer;
+        }
+
+        .footer-brand {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.1rem;
+            color: #1974D2;
+            cursor: default;
+        }
+
+        /* Bright Navy Blue */
+        .footer-col:not(.footer-brand):active {
+            background: var(--gray-50);
+        }
+
+        /* --- [Feature] Simulator --- */
+        .sim-toggle {
+            display: flex;
+            background: var(--gray-100);
+            padding: 4px;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sim-toggle-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+            cursor: pointer;
+            color: var(--gray-400);
+            background: transparent;
+        }
+
+        .sim-toggle-btn.active {
+            background: white;
+            color: var(--slate-900);
+            box-shadow: var(--shadow);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--slate-700);
+            cursor: pointer;
+        }
+
+        .radio-item input {
+            width: auto;
+            margin: 0;
+            accent-color: var(--primary);
+        }
+
+        .res-card {
+            padding: 0.75rem;
+            border-left: 4px solid var(--gray-400);
+            border-radius: 0.5rem;
+            background: white;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .res-grade {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: var(--slate-700);
+            color: white;
+            margin-bottom: 4px;
+            margin-right: 4px;
+        }
+
+        .action-btn {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            padding: 6px;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        /* --- Animations --- */
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Modals --- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* --- Share Button --- */
+        .share-sticky-btn {
+            position: fixed;
+            bottom: 4rem;
+            right: 1.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background: var(--slate-800);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 90;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .share-sticky-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* --- Compact Search Bar (Retained for Look) --- */
+        .search-simple {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 0 4px;
+            transition: border-color 0.2s;
+            width: 120px;
+        }
+
+        .search-simple:focus-within {
+            border-color: var(--primary);
+        }
+
+        .search-simple input {
+            border: none;
+            background: transparent;
+            font-size: 0.75rem;
+            padding: 4px;
+            width: 100%;
+            outline: none;
+            text-align: right;
+        }
+
+        .search-simple i {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-left: 4px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+    <div id="app" class="app-container" v-cloak>
+
+        <footer class="global-footer-bar">
+            <div class="footer-col"
+                @click="window.open('https://corporate.bwfbadminton.com/events/calendar/', '_blank')">
+                <i class="fa-regular fa-calendar-check" style="margin-right:4px;"></i> BWF Calendar
+            </div>
+            <!-- Bright Navy Blue Color -->
+            <div class="footer-col footer-brand">
+                Court Mate
+            </div>
+            <div class="footer-col" @click="showConsultModal = true">
+                <i class="fa-solid fa-headset" style="margin-right:4px;"></i> Consult
+            </div>
+        </footer>
+
+        <div class="flex-1" style="overflow-y:auto; padding-bottom:5rem;">
+            <div class="p-6">
+                <div class="inline-header-container">
+                    <span
+                        style="background:rgba(255,255,255,0.8); border:1px solid var(--gray-200); padding:4px 12px; border-radius:99px; font-size:10px; font-weight:700; color:var(--gray-500); width: 80px; text-align: center;">Visitor:
+                        {{ visitorCount.toLocaleString() }}</span>
+                    <h1 class="brand-text text-pastel-green">Court Mate</h1>
+                    <select v-model="currentLang"
+                        style="width: 80px; padding:4px; border-radius:99px; font-size:11px; font-weight:700;">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="ko">🇰🇷 한국어</option>
+                        <option value="zh">🇨🇳 中文</option>
+                        <option value="ja">🇯🇵 日本語</option>
+                    </select>
+                </div>
+
+                <div class="card animate-fade-in">
+                    <div class="flex-between mb-4">
+                        <h3 style="font-weight:700; color:var(--slate-800); font-size:0.875rem;"><i
+                                class="fa-solid fa-plane-departure" style="color:#3B82F6; margin-right:6px;"></i> {{
+                            t('simTitle') }}</h3>
+                    </div>
+
+                    <div class="sim-toggle">
+                        <button @click="sim.type = 'singles'" class="sim-toggle-btn"
+                            :class="{active: sim.type === 'singles'}">{{ t('simSingles') }}</button>
+                        <button @click="sim.type = 'doubles'" class="sim-toggle-btn"
+                            :class="{active: sim.type === 'doubles'}">{{ t('simDoubles') }}</button>
+                    </div>
+
+                    <div
+                        style="background:#eff6ff; padding:1rem; border-radius:0.75rem; border:1px solid #dbeafe; margin-bottom:1rem;">
+                        <p style="font-size:10px; font-weight:700; color:#3b82f6; margin-bottom:0.5rem;"><i
+                                class="fa-solid fa-circle-info mr-1"></i> Player Info</p>
+                        <div class="radio-group">
+                            <template v-if="sim.type === 'singles'">
+                                <label class="radio-item"><input type="radio" v-model="sim.guestEvent" value="MS">
+                                    MS</label>
+                                <label class="radio-item"><input type="radio" v-model="sim.guestEvent" value="WS">
+                                    WS</label>
+                            </template>
+                            <template v-else>
+                                <label class="radio-item"><input type="radio" v-model="sim.guestEvent" value="MD">
+                                    MD</label>
+                                <label class="radio-item"><input type="radio" v-model="sim.guestEvent" value="WD">
+                                    WD</label>
+                                <label class="radio-item"><input type="radio" v-model="sim.guestEvent" value="XD">
+                                    XD</label>
+                            </template>
+                        </div>
+                        <div class="grid-2">
+                            <input v-model.number="sim.guestPoints" type="number"
+                                placeholder="Rank Points (e.g. 25000)">
+                            <input v-model.number="sim.currentRank" type="number" placeholder="Current Rank (e.g. 8)">
+                        </div>
+                    </div>
+
+                    <div v-if="sim.type === 'doubles'"
+                        style="background:var(--gray-50); padding:1rem; border-radius:0.75rem; border:1px solid var(--gray-200); margin-bottom:1rem;">
+                        <p style="font-size:10px; font-weight:700; color:var(--gray-500); margin-bottom:0.5rem;"><i
+                                class="fa-solid fa-user-group mr-1"></i> Partner Points</p>
+                        <input v-model.number="sim.partnerPoints" type="number" placeholder="Partner Points"
+                            class="mb-4">
+
+                        <div style="border-top:1px solid var(--gray-200); padding-top:0.75rem;">
+                            <label class="label">{{ t('simCalcMethod') }}</label>
+                            <div @click="sim.calcMethod = 'normal'"
+                                style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; margin-bottom:0.5rem; cursor:pointer;"
+                                :style="sim.calcMethod === 'normal' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
+                                <div class="flex-between mb-1"><span
+                                        style="font-size:0.75rem; font-weight:700;">Normal</span>
+                                    <div style="width:12px; height:12px; border-radius:50%; border:1px solid var(--gray-300);"
+                                        :style="sim.calcMethod === 'normal' ? 'background:#3b82f6; border-color:#3b82f6;' : ''">
+                                    </div>
+                                </div>
+                                <p style="font-size:0.65rem; color:var(--gray-400);">My Points + Partner Points</p>
+                            </div>
+                            <div @click="sim.calcMethod = 'notional'"
+                                style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; margin-bottom:0.5rem; cursor:pointer;"
+                                :style="sim.calcMethod === 'notional' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
+                                <div class="flex-between mb-1"><span style="font-size:0.75rem; font-weight:700;">{{
+                                        t('simNotionalTitle') }}</span>
+                                    <div style="width:12px; height:12px; border-radius:50%; border:1px solid var(--gray-300);"
+                                        :style="sim.calcMethod === 'notional' ? 'background:#3b82f6; border-color:#3b82f6;' : ''">
+                                    </div>
+                                </div>
+                                <p style="font-size:0.65rem; color:var(--gray-400);">{{ t('simNotionalDetail') }}</p>
+                            </div>
+                            <div @click="sim.calcMethod = 'adjusted'"
+                                style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; cursor:pointer;"
+                                :style="sim.calcMethod === 'adjusted' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
+                                <div class="flex-between mb-1"><span style="font-size:0.75rem; font-weight:700;">{{
+                                        t('simAdjustedTitle') }}</span>
+                                    <div style="width:12px; height:12px; border-radius:50%; border:1px solid var(--gray-300);"
+                                        :style="sim.calcMethod === 'adjusted' ? 'background:#3b82f6; border-color:#3b82f6;' : ''">
+                                    </div>
+                                </div>
+                                <select v-if="sim.calcMethod === 'adjusted'" v-model="sim.playedCount" @click.stop
+                                    style="font-size:0.65rem; padding:4px; margin-top:4px;">
+                                    <option value="5">{{ t('simOpt5') }}</option>
+                                    <option value="6">{{ t('simOpt6') }}</option>
+                                    <option value="7">{{ t('simOpt7') }}</option>
+                                    <option value="8">{{ t('simOpt8') }}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button @click="runSimulation" class="btn btn-primary" :disabled="sim.loading">
+                        <span v-if="sim.loading"><i class="fa-solid fa-circle-notch fa-spin"></i> {{ t('simAnalyzing')
+                            }}</span>
+                        <span v-else>{{ t('simBtnRun') }}</span>
+                    </button>
+
+                    <div v-if="sim.results"
+                        style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--gray-100);"
+                        class="animate-fade-in">
+                        <p class="flex-between mb-2"><span
+                                style="font-size:0.75rem; font-weight:700; color:var(--gray-500);">{{
+                                t('simResultTitle') }}</span><span
+                                style="font-size:0.65rem; font-weight:700; color:var(--primary);">Target</span></p>
+                        <div v-for="(res, idx) in filteredResults" :key="idx" class="res-card"
+                            :style="{'border-color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'qual' ? '#eab308' : '#9ca3af'))}">
+                            <div class="flex-between mb-2">
+                                <div>
+                                    <h4 style="font-size:0.875rem; font-weight:700;"><span class="res-grade">{{
+                                            res.shortGrade }}</span> {{ res.name }}</h4>
+                                    <span style="font-size:0.65rem; color:var(--gray-500);">{{ res.city }} | {{ res.date
+                                        }}</span>
+                                </div>
+                                <div style="text-align:right;">
+                                    <span style="font-size:0.75rem; font-weight:700; display:block;"
+                                        :style="{'color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : '#6b7280')}">{{
+                                        res.prediction }}</span>
+                                    <div style="font-size:0.5rem; color:var(--gray-400); margin-top:2px;"><span>Entry:
+                                            {{ res.entryDeadline }}</span><br><span>W/D: {{ res.wdDeadline }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <a :href="getSearchUrl('flight', res.city, res.startIso, res.endIso)" target="_blank"
+                                    class="action-btn"><i class="fa-solid fa-plane"></i> Flight</a>
+                                <a :href="getSearchUrl('hotel', res.city, res.startIso, res.endIso)" target="_blank"
+                                    class="action-btn"><i class="fa-solid fa-bed"></i> Hotel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p
+                        style="font-size:0.55rem; color:var(--gray-400); margin-top:1rem; text-align:center; line-height:1.4;">
+                        * Disclaimer: Simulation results are for reference only.</p>
+                </div>
+
+                <footer class="p-6 text-center"
+                    style="background:var(--gray-50); border-top:1px solid var(--gray-200); margin-top:2rem;">
+                    <h4 style="font-weight:700; font-size:0.875rem; color:var(--slate-700); margin-bottom:0.5rem;">ROUM
+                        S & E Co., Ltd.</h4>
+                    <p style="font-size:0.65rem; color:var(--gray-500); line-height:1.6;">#117, 201 Hyangdong-ro,
+                        Deogyang-gu, Goyang-si, Gyeonggi-do, Korea<br>Copyright © 2026 ROUM S & E. All rights reserved.
+                    </p>
+                </footer>
+            </div>
+        </div>
+
+        <button v-if="sim.results" @click="shareResults" class="share-sticky-btn">
+            <i class="fa-solid fa-share-nodes"></i>
+        </button>
+
+        <div v-if="showConsultModal" class="modal-overlay" @click.self="showConsultModal=false">
+            <div class="card animate-fade-in" style="width:100%; max-width:300px; text-align:center;">
+                <h3 style="margin-bottom:1rem; font-weight:800;">Consultation Chat</h3>
+                <div class="social-grid">
+                    <button class="social-btn" style="background:#07C160;" @click="alert('Open WeChat')"><i
+                            class="fa-brands fa-weixin"></i> WeChat</button>
+                    <button class="social-btn" style="background:#FEE500; color:#3c1e1e;"
+                        @click="alert('Open KakaoTalk')"><i class="fa-solid fa-comment"></i> Kakao</button>
+                    <button class="social-btn" style="background:#06C755;" @click="alert('Open LINE')"><i
+                            class="fa-brands fa-line"></i> LINE</button>
+                </div>
+                <button class="btn btn-ghost mt-4" @click="showConsultModal=false">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const { createApp, ref, reactive, computed, watch, onMounted } = Vue;
+
+        const i18nData = {
+            en: {
+                simPartnerGender: 'Partner Gender', simPartnerInfo: 'Partner Info', simPartnerName: 'Partner Name', simPartnerPoints: 'Points', simCalcMethod: 'Calculation Method', simNotionalTitle: 'Notional Point', simNotionalDetail: '80% of Avg Max Points', simAdjustedTitle: 'Adjusted Point', simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)', simAnalyzing: 'Analyzing...', simBtnRun: 'Analyze Entry', simResultTitle: 'Forecast List',
+                simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles'
+            },
+            ko: {
+                simPartnerGender: '파트너 성별', simPartnerInfo: '파트너 정보 입력', simPartnerName: '파트너 이름', simPartnerPoints: '포인트', simCalcMethod: '포인트 산정 방식 (GCR 11.7)', simNotionalTitle: '가상 포인트 (Notional Point)', simNotionalDetail: '두 선수 최고점 평균의 80% 적용', simAdjustedTitle: '보정 포인트 (Adjusted Point)', simOpt5: '1~5개 대회 참가 (x 2.0)', simOpt6: '6개 대회 참가 (x 1.66)', simOpt7: '7개 대회 참가 (x 1.42)', simOpt8: '8개 대회 참가 (x 1.25)', simAnalyzing: '3년치 데이터 분석 중...', simBtnRun: '참가 가능 대회 분석 시작', simResultTitle: '2026 참가 예상 리스트',
+                simTitle: '대회 참가 시뮬레이터', simSingles: '단식 (Singles)', simDoubles: '복식 (Doubles)'
+            },
+            zh: {
+                simPartnerGender: 'Partner Gender', simPartnerInfo: 'Partner Info', simPartnerName: 'Partner Name', simPartnerPoints: 'Points', simCalcMethod: 'Calculation Method', simNotionalTitle: 'Notional Point', simNotionalDetail: '80% of Avg Max Points', simAdjustedTitle: 'Adjusted Point', simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)', simAnalyzing: 'Analyzing...', simBtnRun: 'Analyze Entry', simResultTitle: 'Forecast List',
+                simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles'
+            },
+            ja: {
+                simPartnerGender: 'Partner Gender', simPartnerInfo: 'Partner Info', simPartnerName: 'Partner Name', simPartnerPoints: 'Points', simCalcMethod: 'Calculation Method', simNotionalTitle: 'Notional Point', simNotionalDetail: '80% of Avg Max Points', simAdjustedTitle: 'Adjusted Point', simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)', simAnalyzing: 'Analyzing...', simBtnRun: 'Analyze Entry', simResultTitle: 'Forecast List',
+                simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles'
+            }
+        };
+
+        createApp({
+            setup() {
+                const currentLang = ref('en');
+                const showConsultModal = ref(false);
+
+                // --- Firebase Visitor Counting ---
+                const visitorCount = ref(0);
+
+                const initFirebase = () => {
+                    // TODO: Replace with your actual Firebase project configuration
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyCuowl4gdyoPPAN5FrJlghhnZhY8IbOL08",
+                        authDomain: "courtmate-883b5.firebaseapp.com",
+                        projectId: "courtmate-883b5",
+                        storageBucket: "courtmate-883b5.firebasestorage.app",
+                        messagingSenderId: "354881236352",
+                        appId: "1:354881236352:web:3bd5f235399040b275e565",
+                        measurementId: "G-H8RVXM4S19"
+                    };
+
+                    // Initialize only if not already initialized
+                    if (typeof firebase !== 'undefined' && !firebase.apps.length) {
+                        try {
+                            firebase.initializeApp(firebaseConfig);
+                            const db = firebase.firestore();
+                            // Initialize Analytics if supported
+                            if (firebase.analytics) {
+                                firebase.analytics();
+                            }
+
+                            const visitorRef = db.collection('metadata').doc('visitors');
+
+                            // Real-time listener
+                            visitorRef.onSnapshot((doc) => {
+                                if (doc.exists) {
+                                    visitorCount.value = doc.data().count || 0;
+                                } else {
+                                    // Create document if it doesn't exist
+                                    visitorRef.set({ count: 1 });
+                                    visitorCount.value = 1;
+                                }
+                            }, (error) => {
+                                console.warn("Visitor counter offline or config missing", error);
+                                visitorCount.value = 1450; // Fallback
+                            });
+
+                            // Increment counter only once per session
+                            const sessionKey = 'hasVisited_' + new Date().toDateString();
+                            if (!sessionStorage.getItem(sessionKey)) {
+                                // Update only if config is valid (simple check)
+                                if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
+                                    visitorRef.update({
+                                        count: firebase.firestore.FieldValue.increment(1)
+                                    }).catch(err => {
+                                        console.log("Increment skipped or new doc needed");
+                                    });
+                                    sessionStorage.setItem(sessionKey, 'true');
+                                    // Log event to Analytics
+                                    if (firebase.analytics) {
+                                        firebase.analytics().logEvent('page_view', { page_title: 'MVP Simulator' });
+                                    }
+                                }
+                            }
+                        } catch (e) {
+                            console.error("Firebase init error:", e);
+                            return;
+                        }
+                    } else {
+                        // Fallback if SDK not loaded
+                        visitorCount.value = 1450;
+                    }
+                };
+
+                const sim = reactive({ type: 'singles', calcMethod: 'normal', playedCount: '5', partnerPoints: null, guestEvent: 'MS', guestPoints: null, currentRank: null, finalPoints: 0, results: null, loading: false });
+
+                const getSearchUrl = (type, city, startIso, endIso) => { if (!startIso || !endIso) return '#'; const startDate = new Date(startIso); startDate.setDate(startDate.getDate() - 2); const arriveDate = startDate.toISOString().split('T')[0]; const departDate = endIso; if (type === 'flight') return `https://www.google.com/search?q=flight+to+${city}+from+${arriveDate}+to+${departDate}`; else return `https://www.google.com/search?q=hotel+in+${city}+from+${arriveDate}+to+${departDate}`; };
+
+                const runSimulation = () => {
+                    if (!sim.guestPoints) { alert("Please enter points."); return; }
+                    sim.loading = true; sim.results = null;
+                    let entryPoints = 0;
+
+                    // Pure MVP Logic (No Auth)
+                    entryPoints = sim.guestPoints;
+                    if (sim.type === 'doubles') {
+                        let pPoints = sim.partnerPoints || 0;
+                        let pairTotal = (entryPoints + pPoints);
+                        if (sim.calcMethod === 'normal') entryPoints = pairTotal;
+                        else if (sim.calcMethod === 'notional') entryPoints = (pairTotal / 2) * 10 * 0.8;
+                        else {
+                            const factors = { '5': 2.0, '6': 1.66, '7': 1.42, '8': 1.25 };
+                            entryPoints = pairTotal * (factors[sim.playedCount] || 1);
+                        }
+                    }
+
+                    sim.finalPoints = Math.floor(entryPoints);
+
+                    // Log event to Analytics
+                    if (typeof firebase !== 'undefined' && firebase.analytics) {
+                        firebase.analytics().logEvent('simulation_run', {
+                            type: sim.type,
+                            event: sim.guestEvent,
+                            points: sim.finalPoints
+                        });
+                    }
+
+                    setTimeout(() => {
+                        const mockTournaments = [
+                            { name: 'All England Open', shortGrade: 'S1000', city: 'Birmingham', date: 'Mar 11-16', cutOff: 72000, entryDeadline: 'Jan 28', wdDeadline: 'Feb 17', startIso: '2026-03-11', endIso: '2026-03-16' },
+                            { name: 'Korea Open', shortGrade: 'S500', city: 'Seoul', date: 'Aug 27-Sep 1', cutOff: 38000, entryDeadline: 'Jul 16', wdDeadline: 'Aug 05', startIso: '2026-08-27', endIso: '2026-09-01' },
+                            { name: 'French Open', shortGrade: 'S750', city: 'Paris', date: 'Mar 05-10', cutOff: 58000, entryDeadline: 'Jan 21', wdDeadline: 'Feb 11', startIso: '2026-03-05', endIso: '2026-03-10' },
+                            { name: 'Thailand Masters', shortGrade: 'S300', city: 'Bangkok', date: 'Feb 04-09', cutOff: 25000, entryDeadline: 'Dec 24', wdDeadline: 'Jan 13', startIso: '2026-02-04', endIso: '2026-02-09' },
+                            { name: 'German Open', shortGrade: 'S300', city: 'Mulheim', date: 'Feb 25-Mar 02', cutOff: 30000, entryDeadline: 'Jan 14', wdDeadline: 'Feb 03', startIso: '2026-02-25', endIso: '2026-03-02' }
+                        ];
+                        sim.results = mockTournaments.map(t => {
+                            let status = '', prediction = '', diff = sim.finalPoints - t.cutOff, statusKey = ''; const isKorean = currentLang.value === 'ko';
+                            if (sim.currentRank && sim.currentRank <= 10 && (t.shortGrade.includes('S1000') || t.shortGrade.includes('S750'))) { statusKey = 'mandatory'; prediction = isKorean ? '의무 참가 (Top 10)' : 'Mandatory'; }
+                            else if (diff >= 2000) { statusKey = 'main'; prediction = isKorean ? '본선 안정권' : 'Main Draw (Safe)'; }
+                            else if (diff >= 0) { statusKey = 'qual'; prediction = isKorean ? '예선 안정권 / 본선 가능' : 'Qualifying / Main Draw'; }
+                            else if (diff >= -3000) { statusKey = 'promo'; prediction = isKorean ? '프로모션 유력 (대기 1~5)' : 'Promotion Probable'; }
+                            else { statusKey = 'reserve'; prediction = isKorean ? `대기 (부족: ${Math.abs(diff).toLocaleString()})` : `Reserve (-${Math.abs(diff).toLocaleString()})`; }
+                            return { ...t, prediction, diff, statusKey };
+                        }).sort((a, b) => a.date.localeCompare(b.date));
+                        sim.loading = false;
+                    }, 800);
+                };
+
+                const filteredResults = computed(() => sim.results || []);
+
+                const t = (key) => (i18nData[currentLang.value] || i18nData.en)[key] || key;
+
+                // --- URL Sharing Logic ---
+                const shareResults = () => {
+                    const params = new URLSearchParams();
+                    params.set('type', sim.type);
+                    params.set('event', sim.guestEvent);
+                    if (sim.guestPoints) params.set('pts', sim.guestPoints);
+                    if (sim.currentRank) params.set('rank', sim.currentRank);
+
+                    if (sim.type === 'doubles') {
+                        if (sim.partnerPoints) params.set('ppts', sim.partnerPoints);
+                        params.set('method', sim.calcMethod);
+                        if (sim.calcMethod === 'adjusted') params.set('cnt', sim.playedCount);
+                    }
+
+                    const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+
+                    // Log share event
+                    if (typeof firebase !== 'undefined' && firebase.analytics) {
+                        firebase.analytics().logEvent('share_click', { method: 'url' });
+                    }
+
+                    if (navigator.share) {
+                        navigator.share({ title: 'Court Mate Prediction', text: 'Check out my tournament entry forecast!', url: url }).catch(console.error);
+                    } else {
+                        navigator.clipboard.writeText(url).then(() => alert('Link copied to clipboard!')).catch(() => prompt("Copy link:", url));
+                    }
+                };
+
+                const checkUrlParams = () => {
+                    const params = new URLSearchParams(window.location.search);
+                    if (params.has('event')) {
+                        sim.type = params.get('type') || 'singles';
+                        sim.guestEvent = params.get('event');
+                        if (params.has('pts')) sim.guestPoints = Number(params.get('pts'));
+                        if (params.has('rank')) sim.currentRank = Number(params.get('rank'));
+
+                        if (sim.type === 'doubles') {
+                            if (params.has('ppts')) sim.partnerPoints = Number(params.get('ppts'));
+                            if (params.has('method')) sim.calcMethod = params.get('method');
+                            if (params.has('cnt')) sim.playedCount = params.get('cnt');
+                        }
+
+                        if (sim.guestPoints) runSimulation();
+                    }
+                };
+
+                watch(currentLang, (newVal) => { document.documentElement.lang = newVal; });
+                onMounted(() => {
+                    document.documentElement.lang = currentLang.value;
+                    initFirebase();
+                    checkUrlParams();
+                });
+
+                return { currentLang, t, showConsultModal, sim, runSimulation, filteredResults, visitorCount, getSearchUrl, shareResults };
+            }
+        }).mount('#app');
+    </script>
 </body>
+
 </html>
