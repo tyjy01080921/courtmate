@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Court Mate MVP (Firebase)</title>
+    <title>Court Mate MVP</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js"></script>
 
-    <!-- Firebase SDK (Compat) -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+    <!-- ✅ Data Source: Top 200 Players (Manually Fetched) -->
+    <script src="rankings_data.js"></script>
+
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -167,6 +166,11 @@
             transform: scale(0.98);
         }
 
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
         .btn-primary {
             background: var(--slate-800);
             color: white;
@@ -219,10 +223,25 @@
             border-color: var(--primary);
             background: white;
             box-shadow: 0 0 0 2px var(--pastel-green);
+            outline: none;
         }
 
-        /* --- [Feature] Branding (Court Mate) --- */
+        input.error {
+            border-color: #ef4444;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.65rem;
+            margin-top: 0.25rem;
+        }
+
+        /* --- [Feature] Branding --- */
         .brand-text {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
             font-family: 'Pacifico', cursive;
             font-size: 1.75rem;
             line-height: 1;
@@ -234,15 +253,15 @@
             color: var(--pastel-green);
         }
 
-        /* --- [Feature] Header --- */
         .inline-header-container {
+            position: relative;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             margin-bottom: 1.5rem;
         }
 
-        /* --- [Feature] Global Footer (3-Column) --- */
+        /* --- [Feature] Global Footer --- */
         .global-footer-bar {
             position: fixed;
             bottom: 0;
@@ -275,7 +294,6 @@
             cursor: default;
         }
 
-        /* Bright Navy Blue */
         .footer-col:not(.footer-brand):active {
             background: var(--gray-50);
         }
@@ -382,7 +400,7 @@
             }
         }
 
-        /* --- Modals --- */
+        /* --- Modals & Share --- */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -415,7 +433,6 @@
             color: white;
         }
 
-        /* --- Share Button --- */
         .share-sticky-btn {
             position: fixed;
             bottom: 4rem;
@@ -440,63 +457,43 @@
             transform: scale(0.9);
         }
 
-        /* --- Compact Search Bar (Retained for Look) --- */
-        .search-simple {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--gray-200);
-            padding: 0 4px;
-            transition: border-color 0.2s;
-            width: 120px;
-        }
-
-        .search-simple:focus-within {
-            border-color: var(--primary);
-        }
-
-        .search-simple input {
-            border: none;
-            background: transparent;
-            font-size: 0.75rem;
-            padding: 4px;
-            width: 100%;
-            outline: none;
-            text-align: right;
-        }
-
-        .search-simple i {
-            font-size: 0.75rem;
-            color: var(--gray-400);
-            margin-left: 4px;
+        .search-item {
             cursor: pointer;
+            transition: background-color 0.15s;
+        }
+
+        .search-item:hover {
+            background-color: var(--gray-50);
+        }
+
+        .data-error {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.75rem;
         }
     </style>
 </head>
 
 <body>
-
     <div id="app" class="app-container" v-cloak>
-
         <footer class="global-footer-bar">
             <div class="footer-col"
                 @click="window.open('https://corporate.bwfbadminton.com/events/calendar/', '_blank')">
-                <i class="fa-regular fa-calendar-check" style="margin-right:4px;"></i> BWF Calendar
+                <i class="fa-regular fa-calendar-check" style="margin-right:4px;"></i> {{ t('footerCalendar') }}
             </div>
-            <!-- Bright Navy Blue Color -->
-            <div class="footer-col footer-brand">
-                Court Mate
-            </div>
+            <div class="footer-col footer-brand">Court Mate</div>
             <div class="footer-col" @click="showConsultModal = true">
-                <i class="fa-solid fa-headset" style="margin-right:4px;"></i> Consult
+                <i class="fa-solid fa-headset" style="margin-right:4px;"></i> {{ t('footerConsult') }}
             </div>
         </footer>
 
         <div class="flex-1" style="overflow-y:auto; padding-bottom:5rem;">
             <div class="p-6">
                 <div class="inline-header-container">
-                    <span
-                        style="background:rgba(255,255,255,0.8); border:1px solid var(--gray-200); padding:4px 12px; border-radius:99px; font-size:10px; font-weight:700; color:var(--gray-500); width: 80px; text-align: center;">Visitor:
-                        {{ visitorCount.toLocaleString() }}</span>
                     <h1 class="brand-text text-pastel-green">Court Mate</h1>
                     <select v-model="currentLang"
                         style="width: 80px; padding:4px; border-radius:99px; font-size:11px; font-weight:700;">
@@ -508,6 +505,42 @@
                 </div>
 
                 <div class="card animate-fade-in">
+                    <div class="mb-4 relative"
+                        style="border-bottom:1px solid var(--gray-100); padding-bottom:1rem; margin-bottom:1rem;">
+                        <div class="flex-between mb-2">
+                            <label class="label" style="margin-bottom:0;">{{ t('searchTitle') }}</label>
+                            <span style="font-size:0.65rem; color:var(--primary); cursor:pointer;" @click="clearSearch"
+                                v-if="searchQuery">{{ t('searchClear') }}</span>
+                        </div>
+                        <div style="position:relative;">
+                            <input type="text" v-model="searchQuery" @focus="showSearchResults = true"
+                                @input="showSearchResults = true" :placeholder="t('searchPlaceholderHotfix')"
+                                style="padding-left: 2.25rem;" aria-label="Search players">
+                            <i class="fa-solid fa-magnifying-glass"
+                                style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--gray-400);"></i>
+                        </div>
+
+                        <div v-if="searchQuery && showSearchResults && searchResults.length > 0"
+                            style="background:white; border:1px solid var(--gray-200); border-radius:0.5rem; margin-top:4px; margin-bottom:1rem; box-shadow:var(--shadow); width:100%; max-height: 300px; overflow-y: auto;">
+                            <div v-for="p in searchResults" :key="p.id + p.category" @click="selectPlayer(p)"
+                                class="search-item"
+                                style="padding:0.75rem; border-bottom:1px solid var(--gray-100); cursor:pointer; display:flex; justify-content:space-between; align-items:center;"
+                                role="button" tabindex="0" @keydown.enter="selectPlayer(p)">
+                                <div>
+                                    <div style="font-weight:700; font-size:0.8rem;">{{ p.name }}</div>
+                                    <div style="font-size:0.65rem; color:var(--gray-500);">{{ p.country }} • {{
+                                        p.category }} #{{ p.rank }}</div>
+                                </div>
+                                <div style="font-weight:700; font-size:0.75rem; color:var(--primary);">{{
+                                    formatPoints(p.points) }} pts</div>
+                            </div>
+                        </div>
+                        <div v-else-if="searchQuery && showSearchResults"
+                            style="background:white; border:1px solid var(--gray-200); border-radius:0.5rem; margin-top:4px; padding:0.75rem; text-align:center; color:var(--gray-500); font-size:0.75rem;">
+                            {{ t('noPlayersFound') }}
+                        </div>
+                    </div>
+
                     <div class="flex-between mb-4">
                         <h3 style="font-weight:700; color:var(--slate-800); font-size:0.875rem;"><i
                                 class="fa-solid fa-plane-departure" style="color:#3B82F6; margin-right:6px;"></i> {{
@@ -524,7 +557,7 @@
                     <div
                         style="background:#eff6ff; padding:1rem; border-radius:0.75rem; border:1px solid #dbeafe; margin-bottom:1rem;">
                         <p style="font-size:10px; font-weight:700; color:#3b82f6; margin-bottom:0.5rem;"><i
-                                class="fa-solid fa-circle-info mr-1"></i> Player Info</p>
+                                class="fa-solid fa-circle-info mr-1"></i> {{ t('playerInfo') }}</p>
                         <div class="radio-group">
                             <template v-if="sim.type === 'singles'">
                                 <label class="radio-item"><input type="radio" v-model="sim.guestEvent" value="MS">
@@ -542,32 +575,54 @@
                             </template>
                         </div>
                         <div class="grid-2">
-                            <input v-model.number="sim.guestPoints" type="number"
-                                placeholder="Rank Points (e.g. 25000)">
-                            <input v-model.number="sim.currentRank" type="number" placeholder="Current Rank (e.g. 8)">
+                            <div>
+                                <input v-model.number="sim.guestPoints" type="number" :placeholder="t('rankPoints')"
+                                    :class="{'error': validationErrors.points}" min="0" max="999999"
+                                    @input="validateInputs">
+                                <p v-if="validationErrors.points" class="error-message">{{ validationErrors.points }}
+                                </p>
+                            </div>
+                            <div>
+                                <input v-model.number="sim.currentRank" type="number" :placeholder="t('currentRank')"
+                                    :class="{'error': validationErrors.rank}" min="1" max="100000"
+                                    @input="validateInputs">
+                                <p v-if="validationErrors.rank" class="error-message">{{ validationErrors.rank }}</p>
+                            </div>
                         </div>
                     </div>
 
                     <div v-if="sim.type === 'doubles'"
                         style="background:var(--gray-50); padding:1rem; border-radius:0.75rem; border:1px solid var(--gray-200); margin-bottom:1rem;">
-                        <p style="font-size:10px; font-weight:700; color:var(--gray-500); margin-bottom:0.5rem;"><i
-                                class="fa-solid fa-user-group mr-1"></i> Partner Points</p>
-                        <input v-model.number="sim.partnerPoints" type="number" placeholder="Partner Points"
-                            class="mb-4">
-
+                        <p style="font-size:10px; font-weight:700; color:var(--gray-500); margin-bottom:0.5rem;">
+                            <i class="fa-solid fa-user-group mr-1"></i> {{ t('partnerPoints') }}
+                            <span style="color:var(--gray-400); font-weight:400;">({{ t('optional') }})</span>
+                        </p>
+                        <div>
+                            <input v-model.number="sim.partnerPoints" type="number"
+                                :placeholder="t('partnerPointsPlaceholder')" class="mb-4"
+                                :class="{'error': validationErrors.partnerPoints}" min="0" max="999999"
+                                @input="validateInputs">
+                            <p v-if="validationErrors.partnerPoints" class="error-message">{{
+                                validationErrors.partnerPoints }}</p>
+                        </div>
+                        <p style="font-size:0.6rem; color:var(--gray-400); margin-bottom:0.75rem;">
+                            <i class="fa-solid fa-lightbulb"></i> {{ t('partnerPointsHint') }}
+                        </p>
                         <div style="border-top:1px solid var(--gray-200); padding-top:0.75rem;">
                             <label class="label">{{ t('simCalcMethod') }}</label>
+
                             <div @click="sim.calcMethod = 'normal'"
                                 style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; margin-bottom:0.5rem; cursor:pointer;"
                                 :style="sim.calcMethod === 'normal' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
-                                <div class="flex-between mb-1"><span
-                                        style="font-size:0.75rem; font-weight:700;">Normal</span>
+                                <div class="flex-between mb-1"><span style="font-size:0.75rem; font-weight:700;">{{
+                                        t('normal') }}</span>
                                     <div style="width:12px; height:12px; border-radius:50%; border:1px solid var(--gray-300);"
                                         :style="sim.calcMethod === 'normal' ? 'background:#3b82f6; border-color:#3b82f6;' : ''">
                                     </div>
                                 </div>
-                                <p style="font-size:0.65rem; color:var(--gray-400);">My Points + Partner Points</p>
+                                <p style="font-size:0.65rem; color:var(--gray-400);">{{ t('normalDesc') }}</p>
                             </div>
+
                             <div @click="sim.calcMethod = 'notional'"
                                 style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; margin-bottom:0.5rem; cursor:pointer;"
                                 :style="sim.calcMethod === 'notional' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
@@ -579,6 +634,7 @@
                                 </div>
                                 <p style="font-size:0.65rem; color:var(--gray-400);">{{ t('simNotionalDetail') }}</p>
                             </div>
+
                             <div @click="sim.calcMethod = 'adjusted'"
                                 style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; cursor:pointer;"
                                 :style="sim.calcMethod === 'adjusted' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
@@ -599,11 +655,17 @@
                         </div>
                     </div>
 
-                    <button @click="runSimulation" class="btn btn-primary" :disabled="sim.loading">
+                    <button @click="runSimulation" class="btn btn-primary" :disabled="sim.loading || !isFormValid"
+                        :title="!isFormValid ? t('fillRequiredFields') : ''">
                         <span v-if="sim.loading"><i class="fa-solid fa-circle-notch fa-spin"></i> {{ t('simAnalyzing')
                             }}</span>
                         <span v-else>{{ t('simBtnRun') }}</span>
                     </button>
+
+                    <p v-if="!isFormValid && !sim.loading"
+                        style="font-size:0.65rem; color:#ef4444; margin-top:0.5rem; text-align:center;">
+                        <i class="fa-solid fa-circle-info"></i> {{ getValidationMessage() }}
+                    </p>
 
                     <div v-if="sim.results"
                         style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--gray-100);"
@@ -632,15 +694,15 @@
                             </div>
                             <div class="grid-2">
                                 <a :href="getSearchUrl('flight', res.city, res.startIso, res.endIso)" target="_blank"
-                                    class="action-btn"><i class="fa-solid fa-plane"></i> Flight</a>
+                                    class="action-btn"><i class="fa-solid fa-plane"></i> {{ t('flight') }}</a>
                                 <a :href="getSearchUrl('hotel', res.city, res.startIso, res.endIso)" target="_blank"
-                                    class="action-btn"><i class="fa-solid fa-bed"></i> Hotel</a>
+                                    class="action-btn"><i class="fa-solid fa-bed"></i> {{ t('hotel') }}</a>
                             </div>
                         </div>
                     </div>
                     <p
                         style="font-size:0.55rem; color:var(--gray-400); margin-top:1rem; text-align:center; line-height:1.4;">
-                        * Disclaimer: Simulation results are for reference only.</p>
+                        {{ t('disclaimer') }}</p>
                 </div>
 
                 <footer class="p-6 text-center"
@@ -654,25 +716,24 @@
             </div>
         </div>
 
-        <button v-if="sim.results" @click="shareResults" class="share-sticky-btn">
+        <button v-if="sim.results" @click="shareResults" class="share-sticky-btn" aria-label="Share results">
             <i class="fa-solid fa-share-nodes"></i>
         </button>
 
         <div v-if="showConsultModal" class="modal-overlay" @click.self="showConsultModal=false">
             <div class="card animate-fade-in" style="width:100%; max-width:300px; text-align:center;">
-                <h3 style="margin-bottom:1rem; font-weight:800;">Consultation Chat</h3>
+                <h3 style="margin-bottom:1rem; font-weight:800;">{{ t('consultTitle') }}</h3>
                 <div class="social-grid">
-                    <button class="social-btn" style="background:#07C160;" @click="alert('Open WeChat')"><i
+                    <button class="social-btn" style="background:#07C160;" @click="openSocial('wechat')"><i
                             class="fa-brands fa-weixin"></i> WeChat</button>
                     <button class="social-btn" style="background:#FEE500; color:#3c1e1e;"
-                        @click="alert('Open KakaoTalk')"><i class="fa-solid fa-comment"></i> Kakao</button>
-                    <button class="social-btn" style="background:#06C755;" @click="alert('Open LINE')"><i
+                        @click="openSocial('kakao')"><i class="fa-solid fa-comment"></i> Kakao</button>
+                    <button class="social-btn" style="background:#06C755;" @click="openSocial('line')"><i
                             class="fa-brands fa-line"></i> LINE</button>
                 </div>
-                <button class="btn btn-ghost mt-4" @click="showConsultModal=false">Close</button>
+                <button class="btn btn-ghost mt-4" @click="showConsultModal=false">{{ t('close') }}</button>
             </div>
         </div>
-
     </div>
 
     <script>
@@ -680,20 +741,128 @@
 
         const i18nData = {
             en: {
-                simPartnerGender: 'Partner Gender', simPartnerInfo: 'Partner Info', simPartnerName: 'Partner Name', simPartnerPoints: 'Points', simCalcMethod: 'Calculation Method', simNotionalTitle: 'Notional Point', simNotionalDetail: '80% of Avg Max Points', simAdjustedTitle: 'Adjusted Point', simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)', simAnalyzing: 'Analyzing...', simBtnRun: 'Analyze Entry', simResultTitle: 'Forecast List',
-                simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles'
+                searchTitle: 'Search Player', searchPlaceholder: 'Top 200 Players (Rank 201+ Manual)', searchPlaceholderHotfix: 'Top 200 Players (Rank 201+ Manual)', searchClear: 'Clear',
+                noPlayersFound: 'No player found in Top 200. Please enter manually.',
+                dataLoadError: 'Failed to load player data. Please check if rankings_data.js exists.',
+                simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles',
+                playerInfo: 'Player Info', rankPoints: 'Rank Points (e.g. 25000)', currentRank: 'Current Rank (e.g. 8)',
+                partnerPoints: 'Partner Points',
+                partnerPointsPlaceholder: 'Partner Points (optional)',
+                partnerPointsHint: 'If you select a doubles player, points will be auto-filled. You can also enter manually.',
+                optional: 'Optional',
+                calcMethod: 'Calculation Method',
+                normal: 'Normal', normalDesc: 'My Points + Partner Points',
+                notional: 'Notional Point', notionalDesc: '80% of Higher Points',
+                adjusted: 'Adjusted Point',
+                simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)',
+                simBtnRun: 'Analyze Entry', simAnalyzing: 'Analyzing...', simResultTitle: 'Forecast List',
+                flight: 'Flight', hotel: 'Hotel', disclaimer: '* Disclaimer: Simulation results are for reference only.',
+                footerCalendar: 'BWF Calendar', footerConsult: 'Consult',
+                consultTitle: 'Consultation Chat', close: 'Close',
+                mandatory: 'Mandatory', mainSafe: 'Main Draw (Safe)', qualMain: 'Qualifying / Main Draw', promoProbable: 'Promotion Probable', reserve: 'Reserve',
+                alertEnterPoints: 'Please enter points.',
+                alertInvalidPoints: 'Please enter valid points (0-999,999).',
+                alertInvalidRank: 'Please enter valid rank (1-100,000).',
+                alertPartnerPoints: 'Please enter partner points for doubles.',
+                fillRequiredFields: 'Please fill in all required fields',
+                msgEnterPoints: 'Please enter ranking points',
+                msgEnterPartnerPoints: 'Please enter partner points for doubles',
+                simNotionalTitle: 'Notional Point',
+                simNotionalDetail: '80% of the higher player\'s points',
+                simAdjustedTitle: 'Adjusted Point'
             },
             ko: {
-                simPartnerGender: '파트너 성별', simPartnerInfo: '파트너 정보 입력', simPartnerName: '파트너 이름', simPartnerPoints: '포인트', simCalcMethod: '포인트 산정 방식 (GCR 11.7)', simNotionalTitle: '가상 포인트 (Notional Point)', simNotionalDetail: '두 선수 최고점 평균의 80% 적용', simAdjustedTitle: '보정 포인트 (Adjusted Point)', simOpt5: '1~5개 대회 참가 (x 2.0)', simOpt6: '6개 대회 참가 (x 1.66)', simOpt7: '7개 대회 참가 (x 1.42)', simOpt8: '8개 대회 참가 (x 1.25)', simAnalyzing: '3년치 데이터 분석 중...', simBtnRun: '참가 가능 대회 분석 시작', simResultTitle: '2026 참가 예상 리스트',
-                simTitle: '대회 참가 시뮬레이터', simSingles: '단식 (Singles)', simDoubles: '복식 (Doubles)'
+                searchTitle: '선수 검색', searchPlaceholder: 'Top 200 선수 검색 (201위부터 직접 입력)', searchPlaceholderHotfix: 'Top 200 선수 검색 (201위부터 직접 입력)', searchClear: '지우기',
+                noPlayersFound: 'Top 200 내 선수가 없습니다. 직접 입력해주세요.',
+                dataLoadError: '선수 데이터를 불러오지 못했습니다. rankings_data.js 파일을 확인해주세요.',
+                simTitle: '대회 참가 시뮬레이터', simSingles: '단식 (Singles)', simDoubles: '복식 (Doubles)',
+                playerInfo: '선수 정보 (Player Info)', rankPoints: '랭킹 포인트 (예: 25000)', currentRank: '현재 랭킹 (예: 8)',
+                partnerPoints: '파트너 포인트',
+                partnerPointsPlaceholder: '파트너 포인트 (선택사항)',
+                partnerPointsHint: '복식 선수를 선택하면 자동으로 입력됩니다. 직접 입력도 가능합니다.',
+                optional: '선택사항',
+                calcMethod: '포인트 산정 방식 (GCR 11.7)',
+                normal: '일반 (Normal)', normalDesc: '내 포인트 + 파트너 포인트',
+                notional: '가상 포인트 (Notional Point)', notionalDesc: '높은 쪽 포인트의 80%',
+                adjusted: '보정 포인트 (Adjusted Point)',
+                simOpt5: '1~5개 대회 참가 (x 2.0)', simOpt6: '6개 대회 참가 (x 1.66)', simOpt7: '7개 대회 참가 (x 1.42)', simOpt8: '8개 대회 참가 (x 1.25)',
+                simBtnRun: '참가 가능 대회 분석 시작', simAnalyzing: '3년치 데이터 분석 중...', simResultTitle: '2026 참가 예상 리스트',
+                flight: '항공권', hotel: '호텔', disclaimer: '* 면책 조항: 시뮬레이션 결과는 참고용입니다.',
+                footerCalendar: 'BWF 캘린더', footerConsult: '상담하기',
+                consultTitle: '상담 채널', close: '닫기',
+                mandatory: '의무 참가 (Top 10)', mainSafe: '본선 안정권', qualMain: '예선 안정권 / 본선 가능', promoProbable: '프로모션 유력 (대기 1~5)', reserve: '대기',
+                alertEnterPoints: '포인트를 입력해주세요.',
+                alertInvalidPoints: '유효한 포인트를 입력해주세요 (0-999,999).',
+                alertInvalidRank: '유효한 랭킹을 입력해주세요 (1-100,000).',
+                alertPartnerPoints: '복식의 경우 파트너 포인트를 입력해주세요.',
+                fillRequiredFields: '필수 항목을 모두 입력해주세요',
+                msgEnterPoints: '랭킹 포인트를 입력해주세요',
+                msgEnterPartnerPoints: '복식의 경우 파트너 포인트를 입력해주세요',
+                simNotionalTitle: '가상 포인트 (Notional Point)',
+                simNotionalDetail: '두 선수 중 높은 포인트의 80% 적용',
+                simAdjustedTitle: '보정 포인트 (Adjusted Point)'
             },
             zh: {
-                simPartnerGender: 'Partner Gender', simPartnerInfo: 'Partner Info', simPartnerName: 'Partner Name', simPartnerPoints: 'Points', simCalcMethod: 'Calculation Method', simNotionalTitle: 'Notional Point', simNotionalDetail: '80% of Avg Max Points', simAdjustedTitle: 'Adjusted Point', simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)', simAnalyzing: 'Analyzing...', simBtnRun: 'Analyze Entry', simResultTitle: 'Forecast List',
-                simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles'
+                searchTitle: '搜索球员', searchPlaceholder: 'Top 200 球员搜索 (201+ 手动输入)', searchPlaceholderHotfix: 'Top 200 球员搜索 (201+ 手动输入)', searchClear: '清除',
+                noPlayersFound: 'Top 200 未找到该球员。请手动输入。',
+                dataLoadError: '无法加载球员数据。请检查 rankings_data.js 文件。',
+                simTitle: '参赛模拟器', simSingles: '单打 (Singles)', simDoubles: '双打 (Doubles)',
+                playerInfo: '球员信息 (Player Info)', rankPoints: '排名积分 (例: 25000)', currentRank: '当前排名 (例: 8)',
+                partnerPoints: '搭档积分',
+                partnerPointsPlaceholder: '搭档积分 (可选)',
+                partnerPointsHint: '选择双打球员后会自动填充。也可以手动输入。',
+                optional: '可选',
+                calcMethod: '积分计算方式 (GCR 11.7)',
+                normal: '普通 (Normal)', normalDesc: '我的积分 + 搭档积分',
+                notional: '虚拟积分 (Notional Point)', notionalDesc: '较高积分的 80%',
+                adjusted: '调整积分 (Adjusted Point)',
+                simOpt5: '参加 1~5 个比赛 (x 2.0)', simOpt6: '参加 6 个比赛 (x 1.66)', simOpt7: '参加 7 个比赛 (x 1.42)', simOpt8: '参加 8 个比赛 (x 1.25)',
+                simBtnRun: '开始分析参赛资格', simAnalyzing: '正在分析...', simResultTitle: '2026 参赛预测列表',
+                flight: '机票', hotel: '酒店', disclaimer: '* 免责声明：模拟结果仅供参考。',
+                footerCalendar: 'BWF 日历', footerConsult: '咨询',
+                consultTitle: '咨询聊天', close: '关闭',
+                mandatory: '强制参赛 (Top 10)', mainSafe: '正赛圈 (安全)', qualMain: '资格赛 / 正赛可能', promoProbable: '很有可能晋级 (候补 1~5)', reserve: '候补',
+                alertEnterPoints: '请输入积分。',
+                alertInvalidPoints: '请输入有效积分 (0-999,999)。',
+                alertInvalidRank: '请输入有效排名 (1-100,000)。',
+                alertPartnerPoints: '双打请输入搭档积分。',
+                fillRequiredFields: '请填写所有必填项',
+                msgEnterPoints: '请输入排名积分',
+                msgEnterPartnerPoints: '双打请输入搭档积分',
+                simNotionalTitle: '虚拟积分 (Notional Point)',
+                simNotionalDetail: '较高球员积分的 80%',
+                simAdjustedTitle: '调整积分 (Adjusted Point)'
             },
             ja: {
-                simPartnerGender: 'Partner Gender', simPartnerInfo: 'Partner Info', simPartnerName: 'Partner Name', simPartnerPoints: 'Points', simCalcMethod: 'Calculation Method', simNotionalTitle: 'Notional Point', simNotionalDetail: '80% of Avg Max Points', simAdjustedTitle: 'Adjusted Point', simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)', simAnalyzing: 'Analyzing...', simBtnRun: 'Analyze Entry', simResultTitle: 'Forecast List',
-                simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles'
+                searchTitle: '選手検索', searchPlaceholder: 'Top 200 選手検索 (201位〜 手動入力)', searchPlaceholderHotfix: 'Top 200 選手検索 (201位〜 手動入力)', searchClear: 'クリア',
+                noPlayersFound: 'Top 200 に選手が見つかりません。手動入力してください。',
+                dataLoadError: '選手データの読み込みに失敗しました。rankings_data.js ファイルを確認してください。',
+                simTitle: '大会参加シミュレーター', simSingles: 'シングルス (Singles)', simDoubles: 'ダブルス (Doubles)',
+                playerInfo: '選手情報 (Player Info)', rankPoints: 'ランキングポイント (例: 25000)', currentRank: '現在の順位 (例: 8)',
+                partnerPoints: 'パートナーポイント',
+                partnerPointsPlaceholder: 'パートナーポイント (オプション)',
+                partnerPointsHint: 'ダブルス選手を選択すると自動入力されます。手動入力も可能です。',
+                optional: 'オプション',
+                calcMethod: 'ポイント計算方法 (GCR 11.7)',
+                normal: '通常 (Normal)', normalDesc: '自分のポイント + パートナーポイント',
+                notional: 'みなしポイント (Notional Point)', notionalDesc: '高い方のポイントの80%',
+                adjusted: '調整ポイント (Adjusted Point)',
+                simOpt5: '1~5大会参加 (x 2.0)', simOpt6: '6大会参加 (x 1.66)', simOpt7: '7大会参加 (x 1.42)', simOpt8: '8大会参加 (x 1.25)',
+                simBtnRun: '参加可能性を分析', simAnalyzing: '分析中...', simResultTitle: '2026 参加予想リスト',
+                flight: '航空券', hotel: 'ホテル', disclaimer: '* 免責事項：シミュレーション結果は参考用です。',
+                footerCalendar: 'BWFカレンダー', footerConsult: '相談する',
+                consultTitle: '相談チャット', close: '閉じる',
+                mandatory: '義務参加 (Top 10)', mainSafe: '本戦圏内', qualMain: '予選圏内 / 本戦可能', promoProbable: '昇格有力 (補欠 1~5)', reserve: '補欠',
+                alertEnterPoints: 'ポイントを入力してください。',
+                alertInvalidPoints: '有効なポイントを入力してください (0-999,999)。',
+                alertInvalidRank: '有効な順位を入力してください (1-100,000)。',
+                alertPartnerPoints: 'ダブルスの場合はパートナーポイントを入力してください。',
+                fillRequiredFields: '必須項目をすべて入力してください',
+                msgEnterPoints: 'ランキングポイントを入力してください',
+                msgEnterPartnerPoints: 'ダブルスの場合はパートナーポイントを入力してください',
+                simNotionalTitle: 'みなしポイント (Notional Point)',
+                simNotionalDetail: '高い方の選手のポイントの80%',
+                simAdjustedTitle: '調整ポイント (Adjusted Point)'
             }
         };
 
@@ -701,91 +870,180 @@
             setup() {
                 const currentLang = ref('en');
                 const showConsultModal = ref(false);
+                const searchQuery = ref('');
+                const showSearchResults = ref(false);
+                const dataLoadError = ref(false);
+                const validationErrors = reactive({
+                    points: '',
+                    rank: '',
+                    partnerPoints: ''
+                });
 
-                // --- Firebase Visitor Counting ---
-                const visitorCount = ref(0);
+                // ✅ 핫픽스: 하드코딩된 데이터 사용
+                const rankingsDataRaw = window.RANKINGS_2026_RAW || {};
 
-                const initFirebase = () => {
-                    // TODO: Replace with your actual Firebase project configuration
-                    const firebaseConfig = {
-                        apiKey: "AIzaSyCuowl4gdyoPPAN5FrJlghhnZhY8IbOL08",
-                        authDomain: "courtmate-883b5.firebaseapp.com",
-                        projectId: "courtmate-883b5",
-                        storageBucket: "courtmate-883b5.firebasestorage.app",
-                        messagingSenderId: "354881236352",
-                        appId: "1:354881236352:web:3bd5f235399040b275e565",
-                        measurementId: "G-H8RVXM4S19"
-                    };
+                // ✅ 확인: 데이터 로드
+                if (!window.RANKINGS_2026_RAW || Object.keys(window.RANKINGS_2026_RAW).length === 0) {
+                    dataLoadError.value = true;
+                    console.error('⚠️ RANKINGS_2026_RAW data not found. Please ensure rankings_data.js is loaded.');
+                }
 
-                    // Initialize only if not already initialized
-                    if (typeof firebase !== 'undefined' && !firebase.apps.length) {
-                        try {
-                            firebase.initializeApp(firebaseConfig);
-                            const db = firebase.firestore();
-                            // Initialize Analytics if supported
-                            if (firebase.analytics) {
-                                firebase.analytics();
-                            }
+                const allPlayers = computed(() => {
+                    let players = [];
+                    for (const [cat, list] of Object.entries(rankingsDataRaw)) {
+                        if (Array.isArray(list)) {
+                            list.forEach(p => {
+                                // Rule: Only allow Top 200
+                                if (parseInt(p.rank) > 200) return;
 
-                            const visitorRef = db.collection('metadata').doc('visitors');
-
-                            // Real-time listener
-                            visitorRef.onSnapshot((doc) => {
-                                if (doc.exists) {
-                                    visitorCount.value = doc.data().count || 0;
-                                } else {
-                                    // Create document if it doesn't exist
-                                    visitorRef.set({ count: 1 });
-                                    visitorCount.value = 1;
-                                }
-                            }, (error) => {
-                                console.warn("Visitor counter offline or config missing", error);
-                                visitorCount.value = 1450; // Fallback
+                                players.push({
+                                    ...p,
+                                    category: cat,
+                                    numericPoints: parseInt(p.points.replace(/,/g, '')) || 0
+                                });
                             });
+                        }
+                    }
+                    return players;
+                });
 
-                            // Increment counter only once per session
-                            const sessionKey = 'hasVisited_' + new Date().toDateString();
-                            if (!sessionStorage.getItem(sessionKey)) {
-                                // Update only if config is valid (simple check)
-                                if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
-                                    visitorRef.update({
-                                        count: firebase.firestore.FieldValue.increment(1)
-                                    }).catch(err => {
-                                        console.log("Increment skipped or new doc needed");
-                                    });
-                                    sessionStorage.setItem(sessionKey, 'true');
-                                    // Log event to Analytics
-                                    if (firebase.analytics) {
-                                        firebase.analytics().logEvent('page_view', { page_title: 'MVP Simulator' });
-                                    }
-                                }
+                const searchResults = computed(() => {
+                    if (!searchQuery.value) return [];
+                    const q = searchQuery.value.toLowerCase().trim();
+
+                    return allPlayers.value.filter(p => {
+                        const nameMatch = p.name && p.name.toLowerCase().includes(q);
+                        const countryMatch = p.country && p.country.toLowerCase().includes(q);
+                        const categoryMatch = p.category && p.category.toLowerCase().includes(q);
+                        const idMatch = p.id && p.id.toString().includes(q);
+                        const rankMatch = p.rank && p.rank.toString() === q;
+
+                        return nameMatch || countryMatch || categoryMatch || idMatch || rankMatch;
+                    })
+                        .sort((a, b) => {
+                            return parseInt(a.rank) - parseInt(b.rank);
+                        })
+                        .slice(0, 20);
+                });
+
+                const formatPoints = (points) => {
+                    if (typeof points === 'string') {
+                        points = parseInt(points.replace(/,/g, ''));
+                    }
+                    if (isNaN(points)) return 0;
+                    return points.toLocaleString();
+                };
+
+                const selectPlayer = (p) => {
+                    const totalPoints = parseInt(p.points.replace(/,/g, ''));
+                    sim.currentRank = parseInt(p.rank);
+                    sim.guestEvent = p.category;
+                    sim.type = (p.category === 'MD' || p.category === 'WD' || p.category === 'XD') ? 'doubles' : 'singles';
+
+                    if (sim.type === 'doubles') {
+                        const names = p.name.split(' / ');
+                        const ids = p.id.split(' / ');
+                        let player1Points = 0;
+                        let player2Points = 0;
+                        const singlesCat = p.category === 'XD' ? null : (p.category === 'MD' ? 'MS' : 'WS');
+                        if (singlesCat && rankingsDataRaw[singlesCat]) {
+                            const player1 = rankingsDataRaw[singlesCat].find(pl => pl.id && ids[0] && pl.id.trim() === ids[0].trim());
+                            if (player1) player1Points = parseInt(player1.points.replace(/,/g, ''));
+
+                            const player2 = rankingsDataRaw[singlesCat].find(pl => pl.id && ids[1] && pl.id.trim() === ids[1].trim());
+                            if (player2) player2Points = parseInt(player2.points.replace(/,/g, ''));
+                        }
+                        if (p.category === 'XD') {
+                            if (rankingsDataRaw['MS']) {
+                                const player1 = rankingsDataRaw['MS'].find(pl => pl.id && ids[0] && pl.id.trim() === ids[0].trim());
+                                if (player1) player1Points = parseInt(player1.points.replace(/,/g, ''));
                             }
-                        } catch (e) {
-                            console.error("Firebase init error:", e);
-                            return;
+                            if (rankingsDataRaw['WS']) {
+                                const player2 = rankingsDataRaw['WS'].find(pl => pl.id && ids[1] && pl.id.trim() === ids[1].trim());
+                                if (player2) player2Points = parseInt(player2.points.replace(/,/g, ''));
+                            }
+                        }
+
+                        if (player1Points > 0 || player2Points > 0) {
+                            sim.guestPoints = player1Points || Math.floor(totalPoints / 2);
+                            sim.partnerPoints = player2Points || Math.floor(totalPoints / 2);
+                        } else {
+                            sim.guestPoints = Math.floor(totalPoints / 2);
+                            sim.partnerPoints = Math.floor(totalPoints / 2);
                         }
                     } else {
-                        // Fallback if SDK not loaded
-                        visitorCount.value = 1450;
+                        sim.guestPoints = totalPoints;
+                        sim.partnerPoints = null;
                     }
+
+                    clearSearch();
+                    validateInputs();
+                };
+
+                const clearSearch = () => {
+                    searchQuery.value = '';
+                    showSearchResults.value = false;
                 };
 
                 const sim = reactive({ type: 'singles', calcMethod: 'normal', playedCount: '5', partnerPoints: null, guestEvent: 'MS', guestPoints: null, currentRank: null, finalPoints: 0, results: null, loading: false });
 
-                const getSearchUrl = (type, city, startIso, endIso) => { if (!startIso || !endIso) return '#'; const startDate = new Date(startIso); startDate.setDate(startDate.getDate() - 2); const arriveDate = startDate.toISOString().split('T')[0]; const departDate = endIso; if (type === 'flight') return `https://www.google.com/search?q=flight+to+${city}+from+${arriveDate}+to+${departDate}`; else return `https://www.google.com/search?q=hotel+in+${city}+from+${arriveDate}+to+${departDate}`; };
+                const validateInputs = () => {
+                    validationErrors.points = '';
+                    validationErrors.rank = '';
+                    validationErrors.partnerPoints = '';
+
+                    if (sim.guestPoints !== null && (sim.guestPoints < 0 || sim.guestPoints > 999999)) {
+                        validationErrors.points = t('alertInvalidPoints');
+                    }
+                    if (sim.currentRank !== null && (sim.currentRank < 1 || sim.currentRank > 100000)) {
+                        validationErrors.rank = t('alertInvalidRank');
+                    }
+                    if (sim.type === 'doubles' && sim.partnerPoints !== null && (sim.partnerPoints < 0 || sim.partnerPoints > 999999)) {
+                        validationErrors.partnerPoints = t('alertInvalidPoints');
+                    }
+                };
+
+                const isFormValid = computed(() => {
+                    if (!sim.guestPoints || sim.guestPoints < 0 || sim.guestPoints > 999999) return false;
+                    if (sim.currentRank && (sim.currentRank < 1 || sim.currentRank > 100000)) return false;
+                    if (sim.type === 'doubles' && sim.partnerPoints) {
+                        if (sim.partnerPoints < 0 || sim.partnerPoints > 999999) return false;
+                    }
+                    return true;
+                });
+
+                const getSearchUrl = (type, city, startIso, endIso) => {
+                    if (!startIso || !endIso) return '#';
+                    const startDate = new Date(startIso);
+                    startDate.setDate(startDate.getDate() - 2);
+                    const arriveDate = startDate.toISOString().split('T')[0];
+                    const departDate = endIso;
+                    if (type === 'flight') return `https://www.google.com/search?q=flight+to+${city}+from+${arriveDate}+to+${departDate}`;
+                    else return `https://www.google.com/search?q=hotel+in+${city}+from+${arriveDate}+to+${departDate}`;
+                };
+
+                const t = (key) => (i18nData[currentLang.value] || i18nData.en)[key] || key;
+
+                const getValidationMessage = () => {
+                    if (!sim.guestPoints) return t('msgEnterPoints');
+                    return t('fillRequiredFields');
+                };
 
                 const runSimulation = () => {
-                    if (!sim.guestPoints) { alert("Please enter points."); return; }
-                    sim.loading = true; sim.results = null;
+                    if (!sim.guestPoints) { alert(t('alertEnterPoints')); return; }
+                    if (!isFormValid.value) { alert(t('alertInvalidPoints')); return; }
+
+                    sim.loading = true;
+                    sim.results = null;
                     let entryPoints = 0;
 
-                    // Pure MVP Logic (No Auth)
                     entryPoints = sim.guestPoints;
                     if (sim.type === 'doubles') {
                         let pPoints = sim.partnerPoints || 0;
                         let pairTotal = (entryPoints + pPoints);
+
                         if (sim.calcMethod === 'normal') entryPoints = pairTotal;
-                        else if (sim.calcMethod === 'notional') entryPoints = (pairTotal / 2) * 10 * 0.8;
+                        else if (sim.calcMethod === 'notional') entryPoints = Math.max(sim.guestPoints, pPoints) * 0.8;
                         else {
                             const factors = { '5': 2.0, '6': 1.66, '7': 1.42, '8': 1.25 };
                             entryPoints = pairTotal * (factors[sim.playedCount] || 1);
@@ -793,15 +1051,6 @@
                     }
 
                     sim.finalPoints = Math.floor(entryPoints);
-
-                    // Log event to Analytics
-                    if (typeof firebase !== 'undefined' && firebase.analytics) {
-                        firebase.analytics().logEvent('simulation_run', {
-                            type: sim.type,
-                            event: sim.guestEvent,
-                            points: sim.finalPoints
-                        });
-                    }
 
                     setTimeout(() => {
                         const mockTournaments = [
@@ -811,77 +1060,44 @@
                             { name: 'Thailand Masters', shortGrade: 'S300', city: 'Bangkok', date: 'Feb 04-09', cutOff: 25000, entryDeadline: 'Dec 24', wdDeadline: 'Jan 13', startIso: '2026-02-04', endIso: '2026-02-09' },
                             { name: 'German Open', shortGrade: 'S300', city: 'Mulheim', date: 'Feb 25-Mar 02', cutOff: 30000, entryDeadline: 'Jan 14', wdDeadline: 'Feb 03', startIso: '2026-02-25', endIso: '2026-03-02' }
                         ];
+
                         sim.results = mockTournaments.map(t => {
-                            let status = '', prediction = '', diff = sim.finalPoints - t.cutOff, statusKey = ''; const isKorean = currentLang.value === 'ko';
-                            if (sim.currentRank && sim.currentRank <= 10 && (t.shortGrade.includes('S1000') || t.shortGrade.includes('S750'))) { statusKey = 'mandatory'; prediction = isKorean ? '의무 참가 (Top 10)' : 'Mandatory'; }
-                            else if (diff >= 2000) { statusKey = 'main'; prediction = isKorean ? '본선 안정권' : 'Main Draw (Safe)'; }
-                            else if (diff >= 0) { statusKey = 'qual'; prediction = isKorean ? '예선 안정권 / 본선 가능' : 'Qualifying / Main Draw'; }
-                            else if (diff >= -3000) { statusKey = 'promo'; prediction = isKorean ? '프로모션 유력 (대기 1~5)' : 'Promotion Probable'; }
-                            else { statusKey = 'reserve'; prediction = isKorean ? `대기 (부족: ${Math.abs(diff).toLocaleString()})` : `Reserve (-${Math.abs(diff).toLocaleString()})`; }
+                            let prediction = '', diff = sim.finalPoints - t.cutOff, statusKey = '';
+
+                            if (sim.currentRank && sim.currentRank <= 10 && (t.shortGrade.includes('S1000') || t.shortGrade.includes('S750'))) { statusKey = 'mandatory'; prediction = t('mandatory'); }
+                            else if (diff >= 2000) { statusKey = 'main'; prediction = t('mainSafe'); }
+                            else if (diff >= 0) { statusKey = 'qual'; prediction = t('qualMain'); }
+                            else if (diff >= -3000) { statusKey = 'promo'; prediction = t('promoProbable'); }
+                            else { statusKey = 'reserve'; prediction = `${t('reserve')} (-${Math.abs(diff).toLocaleString()})`; }
+
                             return { ...t, prediction, diff, statusKey };
                         }).sort((a, b) => a.date.localeCompare(b.date));
+
                         sim.loading = false;
                     }, 800);
                 };
 
                 const filteredResults = computed(() => sim.results || []);
 
-                const t = (key) => (i18nData[currentLang.value] || i18nData.en)[key] || key;
-
-                // --- URL Sharing Logic ---
                 const shareResults = () => {
                     const params = new URLSearchParams();
                     params.set('type', sim.type);
                     params.set('event', sim.guestEvent);
                     if (sim.guestPoints) params.set('pts', sim.guestPoints);
                     if (sim.currentRank) params.set('rank', sim.currentRank);
-
                     if (sim.type === 'doubles') {
                         if (sim.partnerPoints) params.set('ppts', sim.partnerPoints);
                         params.set('method', sim.calcMethod);
-                        if (sim.calcMethod === 'adjusted') params.set('cnt', sim.playedCount);
                     }
-
-                    const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
-
-                    // Log share event
-                    if (typeof firebase !== 'undefined' && firebase.analytics) {
-                        firebase.analytics().logEvent('share_click', { method: 'url' });
-                    }
-
-                    if (navigator.share) {
-                        navigator.share({ title: 'Court Mate Prediction', text: 'Check out my tournament entry forecast!', url: url }).catch(console.error);
-                    } else {
-                        navigator.clipboard.writeText(url).then(() => alert('Link copied to clipboard!')).catch(() => prompt("Copy link:", url));
-                    }
+                    const shareUrl = window.location.href + '?' + params.toString();
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(shareUrl).then(() => alert('Share URL copied!')).catch(e => alert(shareUrl));
+                    } else { prompt("Copy this URL:", shareUrl); }
                 };
 
-                const checkUrlParams = () => {
-                    const params = new URLSearchParams(window.location.search);
-                    if (params.has('event')) {
-                        sim.type = params.get('type') || 'singles';
-                        sim.guestEvent = params.get('event');
-                        if (params.has('pts')) sim.guestPoints = Number(params.get('pts'));
-                        if (params.has('rank')) sim.currentRank = Number(params.get('rank'));
+                const openSocial = (platform) => { alert('Opening ' + platform + ' chat...'); };
 
-                        if (sim.type === 'doubles') {
-                            if (params.has('ppts')) sim.partnerPoints = Number(params.get('ppts'));
-                            if (params.has('method')) sim.calcMethod = params.get('method');
-                            if (params.has('cnt')) sim.playedCount = params.get('cnt');
-                        }
-
-                        if (sim.guestPoints) runSimulation();
-                    }
-                };
-
-                watch(currentLang, (newVal) => { document.documentElement.lang = newVal; });
-                onMounted(() => {
-                    document.documentElement.lang = currentLang.value;
-                    initFirebase();
-                    checkUrlParams();
-                });
-
-                return { currentLang, t, showConsultModal, sim, runSimulation, filteredResults, visitorCount, getSearchUrl, shareResults };
+                return { currentLang, showConsultModal, searchQuery, showSearchResults, dataLoadError, validationErrors, searchResults, formatPoints, selectPlayer, clearSearch, sim, validateInputs, isFormValid, getSearchUrl, runSimulation, filteredResults, shareResults, openSocial, t, getValidationMessage };
             }
         }).mount('#app');
     </script>
