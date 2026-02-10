@@ -9,9 +9,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js"></script>
 
-    <!-- ✅ Data Source: Top 200 Players (Manually Fetched) -->
-    <script src="rankings_data.js"></script>
+    <!-- Tournament Data -->
+    <script src="data/tournaments.js"></script>
 
+    <!-- ✅ 수정: 에러 처리 추가 -->
+    <script src="rankings_data.js" onerror="console.error('Failed to load rankings_data.js')"></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -226,6 +228,7 @@
             outline: none;
         }
 
+        /* ✅ 추가: 입력 에러 스타일 */
         input.error {
             border-color: #ef4444;
         }
@@ -238,10 +241,6 @@
 
         /* --- [Feature] Branding --- */
         .brand-text {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
             font-family: 'Pacifico', cursive;
             font-size: 1.75rem;
             line-height: 1;
@@ -254,9 +253,8 @@
         }
 
         .inline-header-container {
-            position: relative;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
         }
@@ -466,6 +464,7 @@
             background-color: var(--gray-50);
         }
 
+        /* ✅ 추가: 데이터 로드 에러 알림 */
         .data-error {
             background: #fee2e2;
             border: 1px solid #ef4444;
@@ -504,6 +503,11 @@
                     </select>
                 </div>
 
+                <!-- ✅ 추가: 데이터 로드 실패 경고 -->
+                <div v-if="dataLoadError" class="data-error">
+                    <i class="fa-solid fa-triangle-exclamation"></i> {{ t('dataLoadError') }}
+                </div>
+
                 <div class="card animate-fade-in">
                     <div class="mb-4 relative"
                         style="border-bottom:1px solid var(--gray-100); padding-bottom:1rem; margin-bottom:1rem;">
@@ -514,12 +518,13 @@
                         </div>
                         <div style="position:relative;">
                             <input type="text" v-model="searchQuery" @focus="showSearchResults = true"
-                                @input="showSearchResults = true" :placeholder="t('searchPlaceholderHotfix')"
+                                @input="showSearchResults = true" :placeholder="t('searchPlaceholder')"
                                 style="padding-left: 2.25rem;" aria-label="Search players">
                             <i class="fa-solid fa-magnifying-glass"
                                 style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--gray-400);"></i>
                         </div>
 
+                        <!-- ✅ 수정: 검색 결과 표시 개선 -->
                         <div v-if="searchQuery && showSearchResults && searchResults.length > 0"
                             style="background:white; border:1px solid var(--gray-200); border-radius:0.5rem; margin-top:4px; margin-bottom:1rem; box-shadow:var(--shadow); width:100%; max-height: 300px; overflow-y: auto;">
                             <div v-for="p in searchResults" :key="p.id + p.category" @click="selectPlayer(p)"
@@ -662,6 +667,7 @@
                         <span v-else>{{ t('simBtnRun') }}</span>
                     </button>
 
+                    <!-- ✅ 추가: 버튼이 비활성화된 이유 표시 -->
                     <p v-if="!isFormValid && !sim.loading"
                         style="font-size:0.65rem; color:#ef4444; margin-top:0.5rem; text-align:center;">
                         <i class="fa-solid fa-circle-info"></i> {{ getValidationMessage() }}
@@ -739,10 +745,11 @@
     <script>
         const { createApp, ref, reactive, computed, watch, onMounted } = Vue;
 
+        // ✅ 수정: 다국어 메시지 추가
         const i18nData = {
             en: {
-                searchTitle: 'Search Player', searchPlaceholder: 'Top 200 Players (Rank 201+ Manual)', searchPlaceholderHotfix: 'Top 200 Players (Rank 201+ Manual)', searchClear: 'Clear',
-                noPlayersFound: 'No player found in Top 200. Please enter manually.',
+                searchTitle: 'Search Player', searchPlaceholder: 'Search by Name or BWF ID', searchClear: 'Clear',
+                noPlayersFound: 'No players found',
                 dataLoadError: 'Failed to load player data. Please check if rankings_data.js exists.',
                 simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles',
                 playerInfo: 'Player Info', rankPoints: 'Rank Points (e.g. 25000)', currentRank: 'Current Rank (e.g. 8)',
@@ -772,8 +779,8 @@
                 simAdjustedTitle: 'Adjusted Point'
             },
             ko: {
-                searchTitle: '선수 검색', searchPlaceholder: 'Top 200 선수 검색 (201위부터 직접 입력)', searchPlaceholderHotfix: 'Top 200 선수 검색 (201위부터 직접 입력)', searchClear: '지우기',
-                noPlayersFound: 'Top 200 내 선수가 없습니다. 직접 입력해주세요.',
+                searchTitle: '선수 검색', searchPlaceholder: '이름 또는 BWF ID로 검색', searchClear: '지우기',
+                noPlayersFound: '선수를 찾을 수 없습니다',
                 dataLoadError: '선수 데이터를 불러오지 못했습니다. rankings_data.js 파일을 확인해주세요.',
                 simTitle: '대회 참가 시뮬레이터', simSingles: '단식 (Singles)', simDoubles: '복식 (Doubles)',
                 playerInfo: '선수 정보 (Player Info)', rankPoints: '랭킹 포인트 (예: 25000)', currentRank: '현재 랭킹 (예: 8)',
@@ -803,8 +810,8 @@
                 simAdjustedTitle: '보정 포인트 (Adjusted Point)'
             },
             zh: {
-                searchTitle: '搜索球员', searchPlaceholder: 'Top 200 球员搜索 (201+ 手动输入)', searchPlaceholderHotfix: 'Top 200 球员搜索 (201+ 手动输入)', searchClear: '清除',
-                noPlayersFound: 'Top 200 未找到该球员。请手动输入。',
+                searchTitle: '搜索球员', searchPlaceholder: '按姓名或 BWF ID 搜索', searchClear: '清除',
+                noPlayersFound: '未找到球员',
                 dataLoadError: '无法加载球员数据。请检查 rankings_data.js 文件。',
                 simTitle: '参赛模拟器', simSingles: '单打 (Singles)', simDoubles: '双打 (Doubles)',
                 playerInfo: '球员信息 (Player Info)', rankPoints: '排名积分 (例: 25000)', currentRank: '当前排名 (例: 8)',
@@ -834,8 +841,8 @@
                 simAdjustedTitle: '调整积分 (Adjusted Point)'
             },
             ja: {
-                searchTitle: '選手検索', searchPlaceholder: 'Top 200 選手検索 (201位〜 手動入力)', searchPlaceholderHotfix: 'Top 200 選手検索 (201位〜 手動入力)', searchClear: 'クリア',
-                noPlayersFound: 'Top 200 に選手が見つかりません。手動入力してください。',
+                searchTitle: '選手検索', searchPlaceholder: '名前またはBWF IDで検索', searchClear: 'クリア',
+                noPlayersFound: '選手が見つかりません',
                 dataLoadError: '選手データの読み込みに失敗しました。rankings_data.js ファイルを確認してください。',
                 simTitle: '大会参加シミュレーター', simSingles: 'シングルス (Singles)', simDoubles: 'ダブルス (Doubles)',
                 playerInfo: '選手情報 (Player Info)', rankPoints: 'ランキングポイント (例: 25000)', currentRank: '現在の順位 (例: 8)',
@@ -879,26 +886,25 @@
                     partnerPoints: ''
                 });
 
-                // ✅ 핫픽스: 하드코딩된 데이터 사용
+                // ✅ 수정: rankings_data.js 데이터 로드 확인
                 const rankingsDataRaw = window.RANKINGS_2026_RAW || {};
 
-                // ✅ 확인: 데이터 로드
+                // ✅ 추가: 데이터 로드 확인
                 if (!window.RANKINGS_2026_RAW || Object.keys(window.RANKINGS_2026_RAW).length === 0) {
                     dataLoadError.value = true;
                     console.error('⚠️ RANKINGS_2026_RAW data not found. Please ensure rankings_data.js is loaded.');
                 }
 
+                // ✅ 수정: 선수 데이터 처리 개선
                 const allPlayers = computed(() => {
                     let players = [];
                     for (const [cat, list] of Object.entries(rankingsDataRaw)) {
                         if (Array.isArray(list)) {
                             list.forEach(p => {
-                                // Rule: Only allow Top 200
-                                if (parseInt(p.rank) > 200) return;
-
                                 players.push({
                                     ...p,
                                     category: cat,
+                                    // points를 숫자로 변환 (쉼표 제거)
                                     numericPoints: parseInt(p.points.replace(/,/g, '')) || 0
                                 });
                             });
@@ -907,6 +913,7 @@
                     return players;
                 });
 
+                // ✅ 수정: 검색 알고리즘 개선
                 const searchResults = computed(() => {
                     if (!searchQuery.value) return [];
                     const q = searchQuery.value.toLowerCase().trim();
@@ -921,53 +928,84 @@
                         return nameMatch || countryMatch || categoryMatch || idMatch || rankMatch;
                     })
                         .sort((a, b) => {
+                            // 랭킹 순으로 정렬
                             return parseInt(a.rank) - parseInt(b.rank);
                         })
                         .slice(0, 20);
                 });
 
+                // ✅ 추가: 포인트 포맷팅 함수
                 const formatPoints = (points) => {
                     if (typeof points === 'string') {
                         points = parseInt(points.replace(/,/g, ''));
                     }
-                    if (isNaN(points)) return 0;
                     return points.toLocaleString();
                 };
 
+                // ✅ 수정: 선수 선택 함수 개선
                 const selectPlayer = (p) => {
                     const totalPoints = parseInt(p.points.replace(/,/g, ''));
                     sim.currentRank = parseInt(p.rank);
                     sim.guestEvent = p.category;
                     sim.type = (p.category === 'MD' || p.category === 'WD' || p.category === 'XD') ? 'doubles' : 'singles';
 
+                    // ✅ 추가: 복식일 경우 각 선수의 개별 포인트를 찾아서 설정
                     if (sim.type === 'doubles') {
+                        // 복식 선수 이름과 ID에서 개별 선수 정보 추출
                         const names = p.name.split(' / ');
                         const ids = p.id.split(' / ');
+
+                        // 각 선수의 단식 포인트를 찾기
                         let player1Points = 0;
                         let player2Points = 0;
+
+                        // 선수1의 포인트 찾기 (MS 또는 WS에서)
                         const singlesCat = p.category === 'XD' ? null : (p.category === 'MD' ? 'MS' : 'WS');
+
                         if (singlesCat && rankingsDataRaw[singlesCat]) {
-                            const player1 = rankingsDataRaw[singlesCat].find(pl => pl.id && ids[0] && pl.id.trim() === ids[0].trim());
-                            if (player1) player1Points = parseInt(player1.points.replace(/,/g, ''));
+                            const player1 = rankingsDataRaw[singlesCat].find(pl =>
+                                pl.id && ids[0] && pl.id.trim() === ids[0].trim()
+                            );
+                            if (player1) {
+                                player1Points = parseInt(player1.points.replace(/,/g, ''));
+                            }
 
-                            const player2 = rankingsDataRaw[singlesCat].find(pl => pl.id && ids[1] && pl.id.trim() === ids[1].trim());
-                            if (player2) player2Points = parseInt(player2.points.replace(/,/g, ''));
+                            const player2 = rankingsDataRaw[singlesCat].find(pl =>
+                                pl.id && ids[1] && pl.id.trim() === ids[1].trim()
+                            );
+                            if (player2) {
+                                player2Points = parseInt(player2.points.replace(/,/g, ''));
+                            }
                         }
+
+                        // XD의 경우 MS와 WS 모두 확인
                         if (p.category === 'XD') {
+                            // 첫 번째 선수 (남자)
                             if (rankingsDataRaw['MS']) {
-                                const player1 = rankingsDataRaw['MS'].find(pl => pl.id && ids[0] && pl.id.trim() === ids[0].trim());
-                                if (player1) player1Points = parseInt(player1.points.replace(/,/g, ''));
+                                const player1 = rankingsDataRaw['MS'].find(pl =>
+                                    pl.id && ids[0] && pl.id.trim() === ids[0].trim()
+                                );
+                                if (player1) {
+                                    player1Points = parseInt(player1.points.replace(/,/g, ''));
+                                }
                             }
+                            // 두 번째 선수 (여자)
                             if (rankingsDataRaw['WS']) {
-                                const player2 = rankingsDataRaw['WS'].find(pl => pl.id && ids[1] && pl.id.trim() === ids[1].trim());
-                                if (player2) player2Points = parseInt(player2.points.replace(/,/g, ''));
+                                const player2 = rankingsDataRaw['WS'].find(pl =>
+                                    pl.id && ids[1] && pl.id.trim() === ids[1].trim()
+                                );
+                                if (player2) {
+                                    player2Points = parseInt(player2.points.replace(/,/g, ''));
+                                }
                             }
                         }
 
+                        // 개별 포인트를 찾았으면 사용, 못 찾았으면 복식 포인트를 반으로 나눔
                         if (player1Points > 0 || player2Points > 0) {
                             sim.guestPoints = player1Points || Math.floor(totalPoints / 2);
                             sim.partnerPoints = player2Points || Math.floor(totalPoints / 2);
                         } else {
+                            // 개별 포인트를 찾지 못한 경우 복식 포인트를 반으로 나눔
                             sim.guestPoints = Math.floor(totalPoints / 2);
                             sim.partnerPoints = Math.floor(totalPoints / 2);
                         }
@@ -980,13 +1018,26 @@
                     validateInputs();
                 };
 
+                // ✅ 추가: 검색 초기화 함수
                 const clearSearch = () => {
                     searchQuery.value = '';
                     showSearchResults.value = false;
                 };
 
-                const sim = reactive({ type: 'singles', calcMethod: 'normal', playedCount: '5', partnerPoints: null, guestEvent: 'MS', guestPoints: null, currentRank: null, finalPoints: 0, results: null, loading: false });
+                const sim = reactive({
+                    type: 'singles',
+                    calcMethod: 'normal',
+                    playedCount: '5',
+                    partnerPoints: null,
+                    guestEvent: 'MS',
+                    guestPoints: null,
+                    currentRank: null,
+                    finalPoints: 0,
+                    results: null,
+                    loading: false
+                });
 
+                // ✅ 추가: 입력 유효성 검증
                 const validateInputs = () => {
                     validationErrors.points = '';
                     validationErrors.rank = '';
@@ -995,20 +1046,36 @@
                     if (sim.guestPoints !== null && (sim.guestPoints < 0 || sim.guestPoints > 999999)) {
                         validationErrors.points = t('alertInvalidPoints');
                     }
+
                     if (sim.currentRank !== null && (sim.currentRank < 1 || sim.currentRank > 100000)) {
                         validationErrors.rank = t('alertInvalidRank');
                     }
+
                     if (sim.type === 'doubles' && sim.partnerPoints !== null && (sim.partnerPoints < 0 || sim.partnerPoints > 999999)) {
                         validationErrors.partnerPoints = t('alertInvalidPoints');
                     }
                 };
 
+                // ✅ 추가: 폼 유효성 체크
                 const isFormValid = computed(() => {
-                    if (!sim.guestPoints || sim.guestPoints < 0 || sim.guestPoints > 999999) return false;
-                    if (sim.currentRank && (sim.currentRank < 1 || sim.currentRank > 100000)) return false;
-                    if (sim.type === 'doubles' && sim.partnerPoints) {
-                        if (sim.partnerPoints < 0 || sim.partnerPoints > 999999) return false;
+                    // 기본 포인트 체크
+                    if (!sim.guestPoints || sim.guestPoints < 0 || sim.guestPoints > 999999) {
+                        return false;
                     }
+
+                    // 랭킹 체크 (선택사항이므로 입력했을 때만 검증)
+                    if (sim.currentRank && (sim.currentRank < 1 || sim.currentRank > 100000)) {
+                        return false;
+                    }
+
+                    // ✅ 수정: 복식일 때 파트너 포인트는 선택사항 (없으면 내 포인트만 사용)
+                    // 입력했을 경우에만 유효성 검사
+                    if (sim.type === 'doubles' && sim.partnerPoints) {
+                        if (sim.partnerPoints < 0 || sim.partnerPoints > 999999) {
+                            return false;
+                        }
+                    }
+
                     return true;
                 });
 
@@ -1022,16 +1089,32 @@
                     else return `https://www.google.com/search?q=hotel+in+${city}+from+${arriveDate}+to+${departDate}`;
                 };
 
+                // ✅ 추가: t 함수를 먼저 정의 (runSimulation에서 사용하기 때문)
                 const t = (key) => (i18nData[currentLang.value] || i18nData.en)[key] || key;
 
+                // ✅ 추가: 검증 메시지 함수
                 const getValidationMessage = () => {
-                    if (!sim.guestPoints) return t('msgEnterPoints');
+                    if (!sim.guestPoints) {
+                        return t('msgEnterPoints');
+                    }
+                    // ✅ 수정: 파트너 포인트는 선택사항으로 변경
+                    // if (sim.type === 'doubles' && !sim.partnerPoints) {
+                    //     return t('msgEnterPartnerPoints');
+                    // }
                     return t('fillRequiredFields');
                 };
 
+                // ✅ 수정: 복식 포인트 계산 로직 개선 (BWF 규정에 맞게)
                 const runSimulation = () => {
-                    if (!sim.guestPoints) { alert(t('alertEnterPoints')); return; }
-                    if (!isFormValid.value) { alert(t('alertInvalidPoints')); return; }
+                    if (!sim.guestPoints) {
+                        alert(t('alertEnterPoints'));
+                        return;
+                    }
+
+                    if (!isFormValid.value) {
+                        alert(t('alertInvalidPoints'));
+                        return;
+                    }
 
                     sim.loading = true;
                     sim.results = null;
@@ -1039,11 +1122,17 @@
 
                     entryPoints = sim.guestPoints;
                     if (sim.type === 'doubles') {
+                        // ✅ 수정: 파트너 포인트가 없으면 내 포인트만 사용
                         let pPoints = sim.partnerPoints || 0;
                         let pairTotal = (entryPoints + pPoints);
 
-                        if (sim.calcMethod === 'normal') entryPoints = pairTotal;
-                        else if (sim.calcMethod === 'notional') entryPoints = Math.max(sim.guestPoints, pPoints) * 0.8;
+                        if (sim.calcMethod === 'normal') {
+                            entryPoints = pairTotal;
+                        }
+                        else if (sim.calcMethod === 'notional') {
+                            // ✅ 수정: BWF 규정에 맞게 수정 - 높은 쪽 포인트의 80%
+                            entryPoints = Math.max(sim.guestPoints, pPoints) * 0.8;
+                        }
                         else {
                             const factors = { '5': 2.0, '6': 1.66, '7': 1.42, '8': 1.25 };
                             entryPoints = pairTotal * (factors[sim.playedCount] || 1);
@@ -1053,25 +1142,87 @@
                     sim.finalPoints = Math.floor(entryPoints);
 
                     setTimeout(() => {
-                        const mockTournaments = [
-                            { name: 'All England Open', shortGrade: 'S1000', city: 'Birmingham', date: 'Mar 11-16', cutOff: 72000, entryDeadline: 'Jan 28', wdDeadline: 'Feb 17', startIso: '2026-03-11', endIso: '2026-03-16' },
-                            { name: 'Korea Open', shortGrade: 'S500', city: 'Seoul', date: 'Aug 27-Sep 1', cutOff: 38000, entryDeadline: 'Jul 16', wdDeadline: 'Aug 05', startIso: '2026-08-27', endIso: '2026-09-01' },
-                            { name: 'French Open', shortGrade: 'S750', city: 'Paris', date: 'Mar 05-10', cutOff: 58000, entryDeadline: 'Jan 21', wdDeadline: 'Feb 11', startIso: '2026-03-05', endIso: '2026-03-10' },
-                            { name: 'Thailand Masters', shortGrade: 'S300', city: 'Bangkok', date: 'Feb 04-09', cutOff: 25000, entryDeadline: 'Dec 24', wdDeadline: 'Jan 13', startIso: '2026-02-04', endIso: '2026-02-09' },
-                            { name: 'German Open', shortGrade: 'S300', city: 'Mulheim', date: 'Feb 25-Mar 02', cutOff: 30000, entryDeadline: 'Jan 14', wdDeadline: 'Feb 03', startIso: '2026-02-25', endIso: '2026-03-02' }
-                        ];
+                        // Load tournaments from external tournaments.js file
+                        const tournamentsRaw = window.tournamentData || [];
+                        const today = new Date().toISOString().split('T')[0];
 
-                        sim.results = mockTournaments.map(t => {
-                            let prediction = '', diff = sim.finalPoints - t.cutOff, statusKey = '';
+                        // Filter: Only OPEN tournaments with future entry deadlines
+                        const availableTournaments = tournamentsRaw.filter(t => {
+                            // Handle special deadlines (Selection, Qualification, etc.)
+                            if (typeof t.entryDeadline === 'string' &&
+                                (t.entryDeadline.includes('Selection') ||
+                                    t.entryDeadline.includes('Qualification') ||
+                                    t.entryDeadline.includes('Ranking'))) {
+                                return t.status === 'OPEN';
+                            }
+                            return t.entryDeadline >= today && t.status === 'OPEN';
+                        });
 
-                            if (sim.currentRank && sim.currentRank <= 10 && (t.shortGrade.includes('S1000') || t.shortGrade.includes('S750'))) { statusKey = 'mandatory'; prediction = t('mandatory'); }
-                            else if (diff >= 2000) { statusKey = 'main'; prediction = t('mainSafe'); }
-                            else if (diff >= 0) { statusKey = 'qual'; prediction = t('qualMain'); }
-                            else if (diff >= -3000) { statusKey = 'promo'; prediction = t('promoProbable'); }
-                            else { statusKey = 'reserve'; prediction = `${t('reserve')} (-${Math.abs(diff).toLocaleString()})`; }
+                        // Map to expected format
+                        const formattedTournaments = availableTournaments.map(t => {
+                            // Parse dates from "2026-01-06 ~ 2026-01-11" format
+                            const dateParts = t.dates.split('~');
+                            const startIso = dateParts[0].trim();
+                            const endIso = dateParts[1] ? dateParts[1].trim() : startIso;
 
-                            return { ...t, prediction, diff, statusKey };
-                        }).sort((a, b) => a.date.localeCompare(b.date));
+                            // Format date for display: "Jan 06-11"
+                            const startDate = new Date(startIso);
+                            const endDate = new Date(endIso);
+                            const monthStr = startDate.toLocaleString('en-US', { month: 'short' });
+                            const startDay = startDate.getDate();
+                            const endDay = endDate.getDate();
+                            const dateDisplay = `${monthStr} ${startDay < 10 ? '0' : ''}${startDay}-${endDay < 10 ? '0' : ''}${endDay}`;
+
+                            // Calculate WD deadline (7 days before tournament)
+                            const wdDate = new Date(startIso);
+                            wdDate.setDate(wdDate.getDate() - 7);
+                            const wdDeadline = wdDate.toISOString().split('T')[0];
+
+                            // Get cutoff points (handle both old and new formats)
+                            const cutOff = t.cutOffPoints?.main || t.cutoff || 0;
+
+                            // Short grade format (Super 1000 -> S1000)
+                            let shortGrade = t.grade.replace('Super ', 'S').replace('Grade ', 'G');
+
+                            return {
+                                name: t.name,
+                                shortGrade: shortGrade,
+                                city: t.city,
+                                date: dateDisplay,
+                                cutOff: typeof cutOff === 'number' ? cutOff : 0,
+                                entryDeadline: t.entryDeadline,
+                                wdDeadline: wdDeadline,
+                                startIso: startIso,
+                                endIso: endIso
+                            };
+                        });
+
+                        sim.results = formattedTournaments.map(tournament => {
+                            let prediction = '', diff = sim.finalPoints - tournament.cutOff, statusKey = '';
+
+                            if (sim.currentRank && sim.currentRank <= 10 && (tournament.shortGrade.includes('S1000') || tournament.shortGrade.includes('S750'))) {
+                                statusKey = 'mandatory';
+                                prediction = t('mandatory');
+                            }
+                            else if (diff >= 2000) {
+                                statusKey = 'main';
+                                prediction = t('mainSafe');
+                            }
+                            else if (diff >= 0) {
+                                statusKey = 'qual';
+                                prediction = t('qualMain');
+                            }
+                            else if (diff >= -3000) {
+                                statusKey = 'promo';
+                                prediction = t('promoProbable');
+                            }
+                            else {
+                                statusKey = 'reserve';
+                                prediction = `${t('reserve')} (-${Math.abs(diff).toLocaleString()})`;
+                            }
+
+                            return { ...tournament, prediction, diff, statusKey };
+                        }).sort((a, b) => a.startIso.localeCompare(b.startIso));
 
                         sim.loading = false;
                     }, 800);
@@ -1088,16 +1239,96 @@
                     if (sim.type === 'doubles') {
                         if (sim.partnerPoints) params.set('ppts', sim.partnerPoints);
                         params.set('method', sim.calcMethod);
+                        if (sim.calcMethod === 'adjusted') params.set('cnt', sim.playedCount);
                     }
-                    const shareUrl = window.location.href + '?' + params.toString();
-                    if (navigator.clipboard) {
-                        navigator.clipboard.writeText(shareUrl).then(() => alert('Share URL copied!')).catch(e => alert(shareUrl));
-                    } else { prompt("Copy this URL:", shareUrl); }
+                    const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'Court Mate Prediction',
+                            text: 'Check out my tournament entry forecast!',
+                            url: url
+                        }).catch(console.error);
+                    }
+                    else {
+                        navigator.clipboard.writeText(url)
+                            .then(() => alert('Link copied to clipboard!'))
+                            .catch(() => prompt("Copy link:", url));
+                    }
                 };
 
-                const openSocial = (platform) => { alert('Opening ' + platform + ' chat...'); };
+                const checkUrlParams = () => {
+                    const params = new URLSearchParams(window.location.search);
+                    if (params.has('event')) {
+                        sim.type = params.get('type') || 'singles';
+                        sim.guestEvent = params.get('event');
+                        if (params.has('pts')) sim.guestPoints = Number(params.get('pts'));
+                        if (params.has('rank')) sim.currentRank = Number(params.get('rank'));
+                        if (sim.type === 'doubles') {
+                            if (params.has('ppts')) sim.partnerPoints = Number(params.get('ppts'));
+                            if (params.has('method')) sim.calcMethod = params.get('method');
+                            if (params.has('cnt')) sim.playedCount = params.get('cnt');
+                        }
+                        if (sim.guestPoints) runSimulation();
+                    }
+                };
 
-                return { currentLang, showConsultModal, searchQuery, showSearchResults, dataLoadError, validationErrors, searchResults, formatPoints, selectPlayer, clearSearch, sim, validateInputs, isFormValid, getSearchUrl, runSimulation, filteredResults, shareResults, openSocial, t, getValidationMessage };
+                // ✅ 추가: 소셜 미디어 열기 함수
+                const openSocial = (platform) => {
+                    // 실제 서비스에서는 여기에 딥링크나 URL을 추가하세요
+                    const links = {
+                        wechat: 'weixin://',
+                        kakao: 'kakaotalk://',
+                        line: 'line://'
+                    };
+
+                    if (links[platform]) {
+                        window.location.href = links[platform];
+                    } else {
+                        alert(`Open ${platform}`);
+                    }
+                };
+
+                // ✅ 추가: 검색창 외부 클릭 처리
+                onMounted(() => {
+                    document.documentElement.lang = currentLang.value;
+                    checkUrlParams();
+
+                    // 외부 클릭 시 검색 결과 닫기
+                    document.addEventListener('click', (e) => {
+                        const searchContainer = e.target.closest('.mb-4.relative');
+                        if (!searchContainer && showSearchResults.value) {
+                            showSearchResults.value = false;
+                        }
+                    });
+                });
+
+                watch(currentLang, (newVal) => {
+                    document.documentElement.lang = newVal;
+                });
+
+                return {
+                    currentLang,
+                    t,
+                    showConsultModal,
+                    sim,
+                    runSimulation,
+                    filteredResults,
+                    getSearchUrl,
+                    shareResults,
+                    searchQuery,
+                    showSearchResults,
+                    searchResults,
+                    selectPlayer,
+                    clearSearch,
+                    formatPoints,
+                    dataLoadError,
+                    validationErrors,
+                    validateInputs,
+                    isFormValid,
+                    openSocial,
+                    getValidationMessage
+                };
             }
         }).mount('#app');
     </script>
