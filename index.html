@@ -1992,7 +1992,7 @@
                                 dates: `${t.startDate} ~ ${t.endDate}`,
                                 entryDeadline: t.startDate, // Use start date as deadline for now
                                 status: 'OPEN',
-                                cutoff: 0 // Will be predicted
+                                cutoff: sim.finalPoints // Predicted by simulator
                             }));
                         } else {
                             // Fallback removed to force 2026 data usage
