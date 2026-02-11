@@ -740,10 +740,10 @@
 <body>
     <div id="app" class="app-container" v-cloak>
         <footer class="global-footer-bar">
-            <div class="footer-col"
-                @click="window.open('https://corporate.bwfbadminton.com/events/calendar/', '_blank')">
+            <a class="footer-col" href="https://corporate.bwfbadminton.com/events/calendar/" target="_blank"
+                rel="noopener noreferrer" style="text-decoration:none;">
                 <i class="fa-regular fa-calendar-check" style="margin-right:4px;"></i> {{ t('footerCalendar') }}
-            </div>
+            </a>
             <div class="footer-col footer-brand">Court Mate</div>
             <div class="footer-col" @click="showConsultModal = true">
                 <i class="fa-solid fa-headset" style="margin-right:4px;"></i> {{ t('footerConsult') }}
