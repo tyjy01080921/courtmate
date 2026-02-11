@@ -1991,11 +1991,7 @@
                                 region: t.region,
                                 grade: t.grade,
                                 dates: `${t.startDate} ~ ${t.endDate}`,
-                                entryDeadline: (() => {
-                                    const date = new Date(t.startDate);
-                                    date.setDate(date.getDate() - 30);
-                                    return date.toISOString().split('T')[0];
-                                })(), // Calculate 30 days before start date as a reasonable entry deadline
+                                entryDeadline: t.startDate, // Use start date as deadline for now
                                 status: 'OPEN',
                                 cutoff: 0 // Will be predicted
                             }));
