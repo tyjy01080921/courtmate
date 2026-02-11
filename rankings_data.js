@@ -1,3 +1,4 @@
+console.log('✅ RANKINGS DATA LOADED: v20260211');
 // BWF World Rankings Data - Week 7 (February 10, 2026)
 // Data Source: TournamentSoftware.com
 // Last Updated: 2026-02-11
