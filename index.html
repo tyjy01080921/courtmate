@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta name="google-adsense-account" content="ca-pub-9952387808707527">
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Court Mate MVP</title>
+    <meta name="google-adsense-account" content="ca-pub-9952387808707527">
+    <title>Court Mate - Smart AI Agent</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js"></script>
 
     <!-- Tournament Data -->
+    <script src="data/2026_tournaments.js"></script>
     <script src="data/tournaments.js"></script>
 
     <!-- ✅ 수정: 에러 처리 추가 -->
@@ -20,6 +21,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9952387808707527"
+        crossorigin="anonymous"></script>
 
     <style>
         /* --- [Core] CSS Variables & Reset --- */
@@ -254,16 +259,86 @@
         }
 
         .inline-header-container {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
+            gap: 1rem;
             margin-bottom: 1.5rem;
+        }
+
+        .brand-text-center {
+            text-align: center;
+            justify-self: center;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--gray-200);
+            background: var(--white);
+            color: var(--slate-700);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--gray-50);
+            transform: scale(1.05);
+        }
+
+        .dark-mode-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .app-container {
+            background-color: #1e293b;
+        }
+
+        body.dark-mode .card {
+            background: #334155;
+            border-color: #475569;
+        }
+
+        body.dark-mode input[type="text"],
+        body.dark-mode input[type="number"],
+        body.dark-mode select {
+            background: #1e293b;
+            border-color: #475569;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .btn-primary {
+            background: #0ea5e9;
+        }
+
+        body.dark-mode .global-footer-bar {
+            background: #1e293b;
+            border-color: #475569;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: #475569;
+            border-color: #64748b;
+            color: #fbbf24;
         }
 
         /* --- [Feature] Global Footer --- */
         .global-footer-bar {
             position: fixed;
-            bottom: 0;
+            bottom: 3rem;
             width: 100%;
             max-width: 480px;
             height: 3rem;
@@ -434,7 +509,7 @@
 
         .share-sticky-btn {
             position: fixed;
-            bottom: 4rem;
+            bottom: 7.5rem;
             right: 1.5rem;
             width: 3.5rem;
             height: 3.5rem;
@@ -475,9 +550,191 @@
             margin-bottom: 1rem;
             font-size: 0.75rem;
         }
+
+        /* ✅ NEW: Tournament Filter Panel */
+        .filter-panel {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-section {
+            margin-bottom: 0.75rem;
+        }
+
+        .filter-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .filter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-chip {
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            border: 1.5px solid var(--gray-300);
+            background: white;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .filter-chip:hover {
+            border-color: var(--primary);
+            background: var(--gray-50);
+        }
+
+        .filter-chip.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ✅ NEW: Countdown Timer */
+        .timer-container {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .timer-display {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', monospace;
+        }
+
+        .timer-label {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ✅ NEW: Player Advice Message */
+        .player-advice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            margin-top: 0.75rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2);
+        }
+
+        .player-advice-text {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #92400e;
+            line-height: 1.5;
+        }
+
+        /* ✅ NEW: Tournament Selection Checkboxes */
+        .tournament-checkbox {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+
+        .selected-tournament-card {
+            box-shadow: 0 0 0 3px var(--pastel-green);
+            background: linear-gradient(to right, #f0fdf4, white);
+        }
+
+        .plan-circuit-btn {
+            position: fixed;
+            bottom: 7rem;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 440px;
+            width: calc(100% - 3rem);
+            z-index: 100;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Multi-Tournament Selection */
+        .tournament-card-wrapper {
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .tournament-card-wrapper.selected {
+            box-shadow: 0 0 0 3px var(--pastel-green);
+            border-radius: 0.5rem;
+        }
+
+        .tournament-checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Safety Warning Footer */
+        .safety-warning-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 480px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-top: 3px solid #dc2626;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            z-index: 105;
+            box-shadow: 0 -4px 6px -1px rgba(220, 38, 38, 0.3);
+        }
+
+        .safety-warning-text {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: #991b1b;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+        }
+
+        .safety-warning-icon {
+            color: #dc2626;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9952387808707527"
-     crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -493,10 +750,14 @@
             </div>
         </footer>
 
-        <div class="flex-1" style="overflow-y:auto; padding-bottom:5rem;">
+        <div class="flex-1" style="overflow-y:auto; padding-bottom:7rem;">
             <div class="p-6">
                 <div class="inline-header-container">
-                    <h1 class="brand-text text-pastel-green">Court Mate</h1>
+                    <button @click="toggleDarkMode" class="dark-mode-toggle"
+                        :title="darkMode ? 'Light Mode' : 'Dark Mode'">
+                        <i :class="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+                    </button>
+                    <h1 class="brand-text text-pastel-green brand-text-center">Court Mate</h1>
                     <select v-model="currentLang"
                         style="width: 80px; padding:4px; border-radius:99px; font-size:11px; font-weight:700;">
                         <option value="en">🇺🇸 English</option>
@@ -663,12 +924,83 @@
                         </div>
                     </div>
 
+                    <!-- ✅ NEW: Tournament Filter Panel -->
+                    <div class="filter-panel" v-if="!sim.loading">
+                        <div class="filter-section">
+                            <span class="filter-label">{{ t('filterRegion') }}</span>
+                            <div class="filter-chips">
+                                <div class="filter-chip" :class="{active: filters.selectedRegions.length === 0}"
+                                    @click="filters.selectedRegions = []">{{ t('filterAll') }}</div>
+                                <div class="filter-chip" :class="{active: filters.selectedRegions.includes('Asia')}"
+                                    @click="toggleRegionFilter('Asia')">{{ t('regionAsia') }}</div>
+                                <div class="filter-chip" :class="{active: filters.selectedRegions.includes('Europe')}"
+                                    @click="toggleRegionFilter('Europe')">{{ t('regionEurope') }}</div>
+                                <div class="filter-chip" :class="{active: filters.selectedRegions.includes('PanAm')}"
+                                    @click="toggleRegionFilter('PanAm')">{{ t('regionPanAm') }}</div>
+                                <div class="filter-chip" :class="{active: filters.selectedRegions.includes('Africa')}"
+                                    @click="toggleRegionFilter('Africa')">{{ t('regionAfrica') }}</div>
+                                <div class="filter-chip" :class="{active: filters.selectedRegions.includes('Oceania')}"
+                                    @click="toggleRegionFilter('Oceania')">{{ t('regionOceania') }}</div>
+                            </div>
+                        </div>
+                        <div class="filter-section">
+                            <span class="filter-label">{{ t('filterGrade') }}</span>
+                            <div class="filter-chips">
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.length === 0}"
+                                    @click="filters.selectedGrades = []">{{ t('filterAll') }}</div>
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.includes('S1000')}"
+                                    @click="toggleGradeFilter('S1000')">Super 1000</div>
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.includes('S750')}"
+                                    @click="toggleGradeFilter('S750')">Super 750</div>
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.includes('S500')}"
+                                    @click="toggleGradeFilter('S500')">Super 500</div>
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.includes('S300')}"
+                                    @click="toggleGradeFilter('S300')">Super 300</div>
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.includes('S100')}"
+                                    @click="toggleGradeFilter('S100')">Super 100</div>
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.includes('IC')}"
+                                    @click="toggleGradeFilter('IC')">Int. Challenge</div>
+                                <div class="filter-chip" :class="{active: filters.selectedGrades.includes('IS')}"
+                                    @click="toggleGradeFilter('IS')">Int. Series</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <button @click="runSimulation" class="btn btn-primary" :disabled="sim.loading || !isFormValid"
                         :title="!isFormValid ? t('fillRequiredFields') : ''">
-                        <span v-if="sim.loading"><i class="fa-solid fa-circle-notch fa-spin"></i> {{ t('simAnalyzing')
-                            }}</span>
-                        <span v-else>{{ t('simBtnRun') }}</span>
+                        <span v-if="!sim.loading">{{ t('simBtnRun') }}</span>
+                        <span v-else>{{ t('simAnalyzing') }}</span>
                     </button>
+
+                    <!-- ✅ NEW: Log-Based Loading Screen -->
+                    <div v-if="sim.loading"
+                        style="margin-top:1rem; background:linear-gradient(135deg, #f0fdf4, #dcfce7); border:1px solid #86efac; border-radius:0.75rem; padding:1rem;"
+                        class="animate-fade-in">
+                        <div style="margin-bottom:0.75rem; text-align:center;">
+                            <div
+                                style="font-size:0.7rem; font-weight:700; color:#059669; text-transform:uppercase; letter-spacing:0.05em;">
+                                AI Analysis in Progress</div>
+                        </div>
+                        <div v-for="(log, index) in loadingLogs" :key="index"
+                            style="display:flex; align-items:center; gap:0.5rem; padding:0.4rem 0; font-size:0.7rem;">
+                            <i :class="log.done ? 'fa-solid fa-check-circle' : 'fa-solid fa-spinner fa-spin'"
+                                :style="{color: log.done ? '#10b981' : '#6b7280'}"></i>
+                            <span
+                                :style="{color: log.done ? '#059669' : '#6b7280', fontWeight: log.done ? '600' : '400'}">{{
+                                log.message }}</span>
+                        </div>
+                        <div
+                            style="margin-top:0.75rem; background:white; border-radius:0.5rem; height:6px; overflow:hidden;">
+                            <div
+                                :style="{width: loadingProgress + '%', height:'100%', background:'linear-gradient(90deg, #10b981, #059669)', transition:'width 0.3s ease'}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ✅ NEW: Player Advice Message -->
+                    <div v-if="sim.loading" class="player-advice animate-fade-in">
+                        <p class="player-advice-text">{{ t('playerAdvice') }}</p>
+                    </div>
 
                     <!-- ✅ 추가: 버튼이 비활성화된 이유 표시 -->
                     <p v-if="!isFormValid && !sim.loading"
@@ -683,35 +1015,58 @@
                                 style="font-size:0.75rem; font-weight:700; color:var(--gray-500);">{{
                                 t('simResultTitle') }}</span><span
                                 style="font-size:0.65rem; font-weight:700; color:var(--primary);">Target</span></p>
-                        <div v-for="(res, idx) in filteredResults" :key="idx" class="res-card"
-                            :style="{'border-color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'qual' ? '#eab308' : '#9ca3af'))}">
-                            <div class="flex-between mb-2">
-                                <div>
-                                    <h4 style="font-size:0.875rem; font-weight:700;"><span class="res-grade">{{
-                                            res.shortGrade }}</span> {{ res.name }}</h4>
-                                    <span style="font-size:0.65rem; color:var(--gray-500);">{{ res.city }} | {{ res.date
-                                        }}</span>
-                                </div>
-                                <div style="text-align:right;">
-                                    <span style="font-size:0.75rem; font-weight:700; display:block;"
-                                        :style="{'color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : '#6b7280')}">{{
-                                        res.prediction }}</span>
-                                    <div style="font-size:0.5rem; color:var(--gray-400); margin-top:2px;"><span>Entry:
-                                            {{ res.entryDeadline }}</span><br><span>W/D: {{ res.wdDeadline }}</span>
+                        <div v-for="(res, idx) in filteredResults" :key="idx" class="tournament-card-wrapper"
+                            :class="{selected: selectedTournaments.includes(idx)}">
+                            <div class="res-card"
+                                :style="{'border-color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'qual' ? '#eab308' : '#9ca3af'))}">
+                                <label class="tournament-checkbox-label">
+                                    <input type="checkbox" class="tournament-checkbox"
+                                        :checked="selectedTournaments.includes(idx)"
+                                        @change="toggleTournamentSelection(idx)"
+                                        :disabled="!selectedTournaments.includes(idx) && selectedTournaments.length >= 3">
+                                    <span style="font-size:0.65rem; font-weight:600; color:var(--gray-600);">
+                                        {{ selectedTournaments.includes(idx) ? '✓ Selected' : 'Select for Circuit' }}
+                                    </span>
+                                </label>
+                                <div class="flex-between mb-2">
+                                    <div>
+                                        <h4 style="font-size:0.875rem; font-weight:700;"><span class="res-grade">{{
+                                                res.shortGrade }}</span> {{ res.name }}</h4>
+                                        <span style="font-size:0.65rem; color:var(--gray-500);">{{ res.city }} | {{
+                                            res.date
+                                            }}</span>
+                                    </div>
+                                    <div style="text-align:right;">
+                                        <span style="font-size:0.75rem; font-weight:700; display:block;"
+                                            :style="{'color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : '#6b7280')}">{{
+                                            res.prediction }}</span>
+                                        <div style="font-size:0.5rem; color:var(--gray-400); margin-top:2px;">
+                                            <span>Entry:
+                                                {{ res.entryDeadline }}</span><br><span>W/D: {{ res.wdDeadline }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid-2">
-                                <a :href="getSearchUrl('flight', res.city, res.startIso, res.endIso)" target="_blank"
-                                    class="action-btn"><i class="fa-solid fa-plane"></i> {{ t('flight') }}</a>
-                                <a :href="getSearchUrl('hotel', res.city, res.startIso, res.endIso)" target="_blank"
-                                    class="action-btn"><i class="fa-solid fa-bed"></i> {{ t('hotel') }}</a>
+                                <div class="grid-2">
+                                    <a :href="getSearchUrl('flight', res.city, res.startIso, res.endIso)"
+                                        target="_blank" class="action-btn"><i class="fa-solid fa-plane"></i> {{
+                                        t('flight') }}</a>
+                                    <a :href="getSearchUrl('hotel', res.city, res.startIso, res.endIso)" target="_blank"
+                                        class="action-btn"><i class="fa-solid fa-bed"></i> {{ t('hotel') }}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <p
                         style="font-size:0.55rem; color:var(--gray-400); margin-top:1rem; text-align:center; line-height:1.4;">
                         {{ t('disclaimer') }}</p>
+                </div>
+
+                <!-- ✅ NEW: Safety Warning Footer -->
+                <div class="safety-warning-footer">
+                    <p class="safety-warning-text">
+                        <i class="fa-solid fa-triangle-exclamation safety-warning-icon"></i>
+                        {{ t('safetyWarning') }}
+                    </p>
                 </div>
 
                 <footer class="p-6 text-center"
@@ -724,6 +1079,13 @@
                 </footer>
             </div>
         </div>
+
+        <!-- ✅ NEW: Plan Circuit Button (shown when 2-3 tournaments selected) -->
+        <button v-if="selectedTournaments.length >= 2 && selectedTournaments.length <= 3 && sim.results"
+            @click="planCircuit" class="btn btn-emerald plan-circuit-btn" aria-label="Plan circuit">
+            <i class="fa-solid fa-route"></i> {{ t('planCircuit') }} ({{ selectedTournaments.length }} {{
+            t('tournamentSelected') }})
+        </button>
 
         <button v-if="sim.results" @click="shareResults" class="share-sticky-btn" aria-label="Share results">
             <i class="fa-solid fa-share-nodes"></i>
@@ -760,7 +1122,7 @@
                 partnerPointsPlaceholder: 'Partner Points (optional)',
                 partnerPointsHint: 'If you select a doubles player, points will be auto-filled. You can also enter manually.',
                 optional: 'Optional',
-                calcMethod: 'Calculation Method',
+                simCalcMethod: 'Calculation Method',
                 normal: 'Normal', normalDesc: 'My Points + Partner Points',
                 notional: 'Notional Point', notionalDesc: '80% of Higher Points',
                 adjusted: 'Adjusted Point',
@@ -779,7 +1141,13 @@
                 msgEnterPartnerPoints: 'Please enter partner points for doubles',
                 simNotionalTitle: 'Notional Point',
                 simNotionalDetail: '80% of the higher player\'s points',
-                simAdjustedTitle: 'Adjusted Point'
+                simAdjustedTitle: 'Adjusted Point',
+                filterRegion: 'Region', filterGrade: 'Tournament Grade', filterAll: 'All',
+                regionAsia: 'Asia', regionEurope: 'Europe', regionPanAm: 'Pan Am', regionAfrica: 'Africa', regionOceania: 'Oceania',
+                timerEstimate: 'Estimated Time', timerSeconds: 'seconds',
+                playerAdvice: '🚫 Say NO to illegal gambling & drugs. Report it!',
+                selectTournaments: 'Select 2-3 tournaments', planCircuit: 'Plan Circuit', tournamentSelected: 'selected',
+                safetyWarning: '🚫 Say NO to illegal gambling & drugs. Report it!'
             },
             ko: {
                 searchTitle: '선수 검색', searchPlaceholder: '이름 또는 BWF ID로 검색', searchClear: '지우기',
@@ -791,7 +1159,7 @@
                 partnerPointsPlaceholder: '파트너 포인트 (선택사항)',
                 partnerPointsHint: '복식 선수를 선택하면 자동으로 입력됩니다. 직접 입력도 가능합니다.',
                 optional: '선택사항',
-                calcMethod: '포인트 산정 방식 (GCR 11.7)',
+                simCalcMethod: '포인트 산정 방식 (GCR 11.7)',
                 normal: '일반 (Normal)', normalDesc: '내 포인트 + 파트너 포인트',
                 notional: '가상 포인트 (Notional Point)', notionalDesc: '높은 쪽 포인트의 80%',
                 adjusted: '보정 포인트 (Adjusted Point)',
@@ -810,7 +1178,13 @@
                 msgEnterPartnerPoints: '복식의 경우 파트너 포인트를 입력해주세요',
                 simNotionalTitle: '가상 포인트 (Notional Point)',
                 simNotionalDetail: '두 선수 중 높은 포인트의 80% 적용',
-                simAdjustedTitle: '보정 포인트 (Adjusted Point)'
+                simAdjustedTitle: '보정 포인트 (Adjusted Point)',
+                filterRegion: '지역', filterGrade: '대회 등급', filterAll: '전체',
+                regionAsia: '아시아', regionEurope: '유럽', regionPanAm: '팬암', regionAfrica: '아프리카', regionOceania: '오세아니아',
+                timerEstimate: '예상 소요 시간', timerSeconds: '초',
+                playerAdvice: '🚫 불법 도박·약물 제안 즉시 신고!',
+                selectTournaments: '2-3개 대회 선택', planCircuit: '투어 계획하기', tournamentSelected: '개 선택됨',
+                safetyWarning: '🚫 불법 도박·약물 제안 즉시 신고!'
             },
             zh: {
                 searchTitle: '搜索球员', searchPlaceholder: '按姓名或 BWF ID 搜索', searchClear: '清除',
@@ -822,7 +1196,7 @@
                 partnerPointsPlaceholder: '搭档积分 (可选)',
                 partnerPointsHint: '选择双打球员后会自动填充。也可以手动输入。',
                 optional: '可选',
-                calcMethod: '积分计算方式 (GCR 11.7)',
+                simCalcMethod: '积分计算方式 (GCR 11.7)',
                 normal: '普通 (Normal)', normalDesc: '我的积分 + 搭档积分',
                 notional: '虚拟积分 (Notional Point)', notionalDesc: '较高积分的 80%',
                 adjusted: '调整积分 (Adjusted Point)',
@@ -841,7 +1215,13 @@
                 msgEnterPartnerPoints: '双打请输入搭档积分',
                 simNotionalTitle: '虚拟积分 (Notional Point)',
                 simNotionalDetail: '较高球员积分的 80%',
-                simAdjustedTitle: '调整积分 (Adjusted Point)'
+                simAdjustedTitle: '调整积分 (Adjusted Point)',
+                filterRegion: '地区', filterGrade: '比赛等级', filterAll: '全部',
+                regionAsia: '亚洲', regionEurope: '欧洲', regionPanAm: '泛美', regionAfrica: '非洲', regionOceania: '大洋洲',
+                timerEstimate: '预计时间', timerSeconds: '秒',
+                playerAdvice: '🚫 拒绝赌博和毒品·立即举报！',
+                selectTournaments: '选择 2-3 个比赛', planCircuit: '规划巡回赛', tournamentSelected: '已选择',
+                safetyWarning: '🚫 拒绝赌博和毒品·立即举报！'
             },
             ja: {
                 searchTitle: '選手検索', searchPlaceholder: '名前またはBWF IDで検索', searchClear: 'クリア',
@@ -853,7 +1233,7 @@
                 partnerPointsPlaceholder: 'パートナーポイント (オプション)',
                 partnerPointsHint: 'ダブルス選手を選択すると自動入力されます。手動入力も可能です。',
                 optional: 'オプション',
-                calcMethod: 'ポイント計算方法 (GCR 11.7)',
+                simCalcMethod: 'ポイント計算方法 (GCR 11.7)',
                 normal: '通常 (Normal)', normalDesc: '自分のポイント + パートナーポイント',
                 notional: 'みなしポイント (Notional Point)', notionalDesc: '高い方のポイントの80%',
                 adjusted: '調整ポイント (Adjusted Point)',
@@ -872,7 +1252,13 @@
                 msgEnterPartnerPoints: 'ダブルスの場合はパートナーポイントを入力してください',
                 simNotionalTitle: 'みなしポイント (Notional Point)',
                 simNotionalDetail: '高い方の選手のポイントの80%',
-                simAdjustedTitle: '調整ポイント (Adjusted Point)'
+                simAdjustedTitle: '調整ポイント (Adjusted Point)',
+                filterRegion: '地域', filterGrade: '大会グレード', filterAll: 'すべて',
+                regionAsia: 'アジア', regionEurope: 'ヨーロッパ', regionPanAm: 'パンアメリカ', regionAfrica: 'アフリカ', regionOceania: 'オセアニア',
+                timerEstimate: '予想時間', timerSeconds: '秒',
+                playerAdvice: '🚫 賭博・薬物は拒否！即通報！',
+                selectTournaments: '2-3大会選択', planCircuit: 'ツアー計画', tournamentSelected: '選択済み',
+                safetyWarning: '🚫 賭博・薬物は拒否！即通報！'
             }
         };
 
@@ -883,11 +1269,38 @@
                 const searchQuery = ref('');
                 const showSearchResults = ref(false);
                 const dataLoadError = ref(false);
+                const darkMode = ref(false);
                 const validationErrors = reactive({
                     points: '',
                     rank: '',
                     partnerPoints: ''
                 });
+
+                // ✅ NEW: Tournament Filters
+                const filters = reactive({
+                    selectedRegions: [],
+                    selectedGrades: []
+                });
+
+                // ✅ NEW: Timer State
+                const timerState = reactive({
+                    countdown: 0,
+                    intervalId: null
+                });
+
+                // ✅ NEW: Loading Logs State
+                const loadingLogs = ref([
+                    { message: 'DB Searching...', done: false },
+                    { message: 'Parsing Week 7 Rankings...', done: false },
+                    { message: 'Loading 2026 Calendar...', done: false },
+                    { message: 'Analyzing Tournament Data...', done: false },
+                    { message: 'Preparing Smart Recommendations...', done: false }
+                ]);
+                const loadingProgress = ref(0);
+
+                // ✅ NEW: Multi-Tournament Selection
+                const selectedTournaments = ref([]);
+                const playerNationality = ref('');  // Based on player country
 
                 // ✅ 수정: rankings_data.js 데이터 로드 확인
                 const rankingsDataRaw = window.RANKINGS_2026_RAW || {};
@@ -907,8 +1320,13 @@
                                 players.push({
                                     ...p,
                                     category: cat,
+                                    // player 필드를 name으로도 사용 가능하도록
+                                    name: p.name || p.player,
+                                    id: p.id || p.member_id,
                                     // points를 숫자로 변환 (쉼표 제거)
-                                    numericPoints: parseInt(p.points.replace(/,/g, '')) || 0
+                                    numericPoints: typeof p.points === 'string' ?
+                                        (parseInt(p.points.replace(/,/g, '')) || 0) :
+                                        (p.points || 0)
                                 });
                             });
                         }
@@ -947,7 +1365,11 @@
 
                 // ✅ 수정: 선수 선택 함수 개선
                 const selectPlayer = (p) => {
-                    const totalPoints = parseInt(p.points.replace(/,/g, ''));
+                    // points 값 정규화 (문자열 또는 숫자 모두 처리)
+                    const totalPoints = typeof p.points === 'string' ?
+                        parseInt(p.points.replace(/,/g, '')) :
+                        parseInt(p.points);
+
                     sim.currentRank = parseInt(p.rank);
                     sim.guestEvent = p.category;
                     sim.type = (p.category === 'MD' || p.category === 'WD' || p.category === 'XD') ? 'doubles' : 'singles';
@@ -955,8 +1377,10 @@
                     // ✅ 추가: 복식일 경우 각 선수의 개별 포인트를 찾아서 설정
                     if (sim.type === 'doubles') {
                         // 복식 선수 이름과 ID에서 개별 선수 정보 추출
-                        const names = p.name.split(' / ');
-                        const ids = p.id.split(' / ');
+                        const playerName = p.name || p.player;
+                        const playerId = p.id || p.member_id;
+                        const names = playerName.split(' / ');
+                        const ids = playerId.split(' / ');
 
                         // 각 선수의 단식 포인트를 찾기
                         let player1Points = 0;
@@ -966,18 +1390,24 @@
                         const singlesCat = p.category === 'XD' ? null : (p.category === 'MD' ? 'MS' : 'WS');
 
                         if (singlesCat && rankingsDataRaw[singlesCat]) {
-                            const player1 = rankingsDataRaw[singlesCat].find(pl =>
-                                pl.id && ids[0] && pl.id.trim() === ids[0].trim()
-                            );
+                            const player1 = rankingsDataRaw[singlesCat].find(pl => {
+                                const plId = pl.id || pl.member_id;
+                                return plId && ids[0] && plId.trim() === ids[0].trim();
+                            });
                             if (player1) {
-                                player1Points = parseInt(player1.points.replace(/,/g, ''));
+                                player1Points = typeof player1.points === 'string' ?
+                                    parseInt(player1.points.replace(/,/g, '')) :
+                                    parseInt(player1.points);
                             }
 
-                            const player2 = rankingsDataRaw[singlesCat].find(pl =>
-                                pl.id && ids[1] && pl.id.trim() === ids[1].trim()
-                            );
+                            const player2 = rankingsDataRaw[singlesCat].find(pl => {
+                                const plId = pl.id || pl.member_id;
+                                return plId && ids[1] && plId.trim() === ids[1].trim();
+                            });
                             if (player2) {
-                                player2Points = parseInt(player2.points.replace(/,/g, ''));
+                                player2Points = typeof player2.points === 'string' ?
+                                    parseInt(player2.points.replace(/,/g, '')) :
+                                    parseInt(player2.points);
                             }
                         }
 
@@ -985,20 +1415,26 @@
                         if (p.category === 'XD') {
                             // 첫 번째 선수 (남자)
                             if (rankingsDataRaw['MS']) {
-                                const player1 = rankingsDataRaw['MS'].find(pl =>
-                                    pl.id && ids[0] && pl.id.trim() === ids[0].trim()
-                                );
+                                const player1 = rankingsDataRaw['MS'].find(pl => {
+                                    const plId = pl.id || pl.member_id;
+                                    return plId && ids[0] && plId.trim() === ids[0].trim();
+                                });
                                 if (player1) {
-                                    player1Points = parseInt(player1.points.replace(/,/g, ''));
+                                    player1Points = typeof player1.points === 'string' ?
+                                        parseInt(player1.points.replace(/,/g, '')) :
+                                        parseInt(player1.points);
                                 }
                             }
                             // 두 번째 선수 (여자)
                             if (rankingsDataRaw['WS']) {
-                                const player2 = rankingsDataRaw['WS'].find(pl =>
-                                    pl.id && ids[1] && pl.id.trim() === ids[1].trim()
-                                );
+                                const player2 = rankingsDataRaw['WS'].find(pl => {
+                                    const plId = pl.id || pl.member_id;
+                                    return plId && ids[1] && plId.trim() === ids[1].trim();
+                                });
                                 if (player2) {
-                                    player2Points = parseInt(player2.points.replace(/,/g, ''));
+                                    player2Points = typeof player2.points === 'string' ?
+                                        parseInt(player2.points.replace(/,/g, '')) :
+                                        parseInt(player2.points);
                                 }
                             }
                         }
@@ -1121,6 +1557,24 @@
 
                     sim.loading = true;
                     sim.results = null;
+                    selectedTournaments.value = [];  // Reset selection
+
+                    // ✅ NEW: Reset and Start Log-Based Loading Animation
+                    loadingLogs.value.forEach(log => log.done = false);
+                    loadingProgress.value = 0;
+
+                    // Clear old timer if exists
+                    if (timerState.intervalId) clearInterval(timerState.intervalId);
+
+                    // Simulate progressive loading with logs
+                    const logTimings = [0, 150, 300, 450, 600]; // Milliseconds for each step
+                    logTimings.forEach((delay, index) => {
+                        setTimeout(() => {
+                            loadingLogs.value[index].done = true;
+                            loadingProgress.value = ((index + 1) / loadingLogs.value.length) * 100;
+                        }, delay);
+                    });
+
                     let entryPoints = 0;
 
                     entryPoints = sim.guestPoints;
@@ -1145,12 +1599,40 @@
                     sim.finalPoints = Math.floor(entryPoints);
 
                     setTimeout(() => {
-                        // Load tournaments from external tournaments.js file
-                        const tournamentsRaw = window.tournamentData || [];
+                        // Clear timer
+                        if (timerState.intervalId) {
+                            clearInterval(timerState.intervalId);
+                            timerState.intervalId = null;
+                        }
+
+                        // ✅ NEW: Load tournaments from 2026_tournaments.js first, fallback to tournaments.js
+                        const real2026Tournaments = window.tournaments2026 || [];
+                        const legacyTournaments = window.tournamentData || [];
+
+                        let tournamentsToUse = [];
+
+                        if (real2026Tournaments.length > 0) {
+                            // Use real 2026 tournament data - format it for the app
+                            tournamentsToUse = real2026Tournaments.map(t => ({
+                                name: t.name,
+                                city: t.city,
+                                country: t.country,
+                                region: t.region,
+                                grade: t.grade,
+                                dates: `${t.startDate} ~ ${t.endDate}`,
+                                entryDeadline: t.startDate, // Use start date as deadline for now
+                                status: 'OPEN',
+                                cutoff: 0 // Will be predicted
+                            }));
+                        } else {
+                            // Fallback to legacy tournament data
+                            tournamentsToUse = legacyTournaments;
+                        }
+
                         const today = new Date().toISOString().split('T')[0];
 
                         // Filter: Only OPEN tournaments with future entry deadlines
-                        const availableTournaments = tournamentsRaw.filter(t => {
+                        const availableTournaments = tournamentsToUse.filter(t => {
                             // Handle special deadlines (Selection, Qualification, etc.)
                             if (typeof t.entryDeadline === 'string' &&
                                 (t.entryDeadline.includes('Selection') ||
@@ -1191,6 +1673,7 @@
                                 name: t.name,
                                 shortGrade: shortGrade,
                                 city: t.city,
+                                country: t.country,
                                 date: dateDisplay,
                                 cutOff: typeof cutOff === 'number' ? cutOff : 0,
                                 entryDeadline: t.entryDeadline,
@@ -1231,7 +1714,62 @@
                     }, 800);
                 };
 
-                const filteredResults = computed(() => sim.results || []);
+                // Toggle grade filter
+                const toggleGradeFilter = (grade) => {
+                    const index = filters.selectedGrades.indexOf(grade);
+                    if (index > -1) {
+                        filters.selectedGrades.splice(index, 1);
+                    } else {
+                        filters.selectedGrades.push(grade);
+                    }
+                };
+
+                // Toggle region filter
+                const toggleRegionFilter = (region) => {
+                    const index = filters.selectedRegions.indexOf(region);
+                    if (index > -1) {
+                        filters.selectedRegions.splice(index, 1);
+                    } else {
+                        filters.selectedRegions.push(region);
+                    }
+                };
+
+                // Map tournament region based on country
+                const getTournamentRegion = (country) => {
+                    const regionMap = {
+                        'Asia': ['CHN', 'JPN', 'KOR', 'INA', 'MAS', 'THA', 'IND', 'SGP', 'TPE', 'HKG', 'VIE', 'PAK', 'BAN', 'SRI', 'PHI'],
+                        'Europe': ['DEN', 'ENG', 'FRA', 'GER', 'ESP', 'SUI', 'NED', 'SWE', 'ITA', 'RUS', 'POL', 'CZE', 'UKR', 'BEL', 'AUT', 'IRL', 'SCO', 'WAL', 'FIN', 'NOR', 'POR', 'GRE', 'BUL', 'EST'],
+                        'PanAm': ['USA', 'CAN', 'MEX', 'BRA', 'ARG', 'CHI', 'PER', 'COL', 'GUA', 'ESA', 'CUB', 'JAM'],
+                        'Africa': ['EGY', 'RSA', 'ALG', 'NGR', 'MRI', 'ZIM', 'UGA'],
+                        'Oceania': ['AUS', 'NZL']
+                    };
+                    for (const [region, countries] of Object.entries(regionMap)) {
+                        if (countries.includes(country)) return region;
+                    }
+                    return 'Asia'; // Default
+                };
+
+                const filteredResults = computed(() => {
+                    if (!sim.results) return [];
+
+                    return sim.results.filter(tournament => {
+                        // Region filter
+                        if (filters.selectedRegions.length > 0) {
+                            const tournamentRegion = getTournamentRegion(tournament.country || '');
+                            if (!filters.selectedRegions.includes(tournamentRegion)) return false;
+                        }
+
+                        // Grade filter
+                        if (filters.selectedGrades.length > 0) {
+                            const hasMatchingGrade = filters.selectedGrades.some(grade =>
+                                tournament.shortGrade.includes(grade)
+                            );
+                            if (!hasMatchingGrade) return false;
+                        }
+
+                        return true;
+                    });
+                });
 
                 const shareResults = () => {
                     const params = new URLSearchParams();
@@ -1292,8 +1830,27 @@
                     }
                 };
 
+                // Toggle Dark Mode
+                const toggleDarkMode = () => {
+                    darkMode.value = !darkMode.value;
+                    if (darkMode.value) {
+                        document.body.classList.add('dark-mode');
+                        localStorage.setItem('darkMode', 'true');
+                    } else {
+                        document.body.classList.remove('dark-mode');
+                        localStorage.setItem('darkMode', 'false');
+                    }
+                };
+
                 // ✅ 추가: 검색창 외부 클릭 처리
                 onMounted(() => {
+                    // Load dark mode preference
+                    const savedDarkMode = localStorage.getItem('darkMode');
+                    if (savedDarkMode === 'true') {
+                        darkMode.value = true;
+                        document.body.classList.add('dark-mode');
+                    }
+
                     document.documentElement.lang = currentLang.value;
                     checkUrlParams();
 
@@ -1305,6 +1862,54 @@
                         }
                     });
                 });
+
+                // Toggle tournament selection
+                const toggleTournamentSelection = (idx) => {
+                    const index = selectedTournaments.value.indexOf(idx);
+                    if (index > -1) {
+                        selectedTournaments.value.splice(index, 1);
+                    } else {
+                        if (selectedTournaments.value.length < 3) {
+                            selectedTournaments.value.push(idx);
+                        }
+                    }
+                };
+
+                // Plan circuit with selected tournaments
+                const planCircuit = () => {
+                    if (selectedTournaments.value.length < 2 || selectedTournaments.value.length > 3) {
+                        alert('Please select 2-3 tournaments');
+                        return;
+                    }
+
+                    const selected = selectedTournaments.value
+                        .map(idx => filteredResults.value[idx])
+                        .filter(t => t) // Filter out any undefined
+                        .sort((a, b) => a.startIso.localeCompare(b.startIso));
+
+                    if (selected.length < 2) {
+                        alert('Please select 2-3 tournaments');
+                        return;
+                    }
+
+                    const firstTournament = selected[0];
+                    const lastTournament = selected[selected.length - 1];
+
+                    // Arrive 2 days before first tournament
+                    const startDate = new Date(firstTournament.startIso);
+                    startDate.setDate(startDate.getDate() - 2);
+                    const arriveDate = startDate.toISOString().split('T')[0];
+
+                    // Depart on last tournament end date
+                    const departDate = lastTournament.endIso;
+
+                    // Create list of cities
+                    const cities = selected.map(t => t.city).join(', ');
+
+                    // Open Google search for multi-city circuit
+                    const searchQuery = `flight hotels ${cities} from ${arriveDate} to ${departDate}`;
+                    window.open(`https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`, '_blank');
+                };
 
                 watch(currentLang, (newVal) => {
                     document.documentElement.lang = newVal;
@@ -1330,7 +1935,20 @@
                     validateInputs,
                     isFormValid,
                     openSocial,
-                    getValidationMessage
+                    getValidationMessage,
+                    // ✅ NEW: Export new state variables
+                    filters,
+                    timerState,
+                    selectedTournaments,
+                    playerNationality,
+                    loadingLogs,
+                    loadingProgress,
+                    darkMode,
+                    toggleDarkMode,
+                    toggleGradeFilter,
+                    toggleRegionFilter,
+                    toggleTournamentSelection,
+                    planCircuit
                 };
             }
         }).mount('#app');
