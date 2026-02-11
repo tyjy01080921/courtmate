@@ -15,7 +15,7 @@
     <!-- tournaments.js removed to prevent data conflict -->
 
     <!-- ✅ 수정: 에러 처리 추가 -->
-    <script src="rankings_data.js" onerror="console.error('Failed to load rankings_data.js')"></script>
+    <script src="rankings_data.js?v=20260211" onerror="console.error('Failed to load rankings_data.js')"></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -1992,7 +1992,7 @@
                                 dates: `${t.startDate} ~ ${t.endDate}`,
                                 entryDeadline: t.startDate, // Use start date as deadline for now
                                 status: 'OPEN',
-                                cutoff: sim.finalPoints // Predicted by simulator
+                                cutoff: 0 // Will be predicted
                             }));
                         } else {
                             // Fallback removed to force 2026 data usage
