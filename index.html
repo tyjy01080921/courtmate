@@ -165,6 +165,29 @@
             gap: 0.75rem;
         }
 
+        /* ✅ NEW: 4-Column Grid for Compact Buttons */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.25rem;
+        }
+
+        .grid-4 .action-btn {
+            flex-direction: column;
+            padding: 6px 2px;
+            font-size: 0.55rem;
+            gap: 3px;
+            text-align: center;
+            height: 100%;
+            justify-content: center;
+            line-height: 1.1;
+        }
+
+        .grid-4 .action-btn i {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
         /* --- [Components] UI Elements --- */
         .btn {
             display: flex;
@@ -349,7 +372,7 @@
         /* --- [Feature] Global Footer --- */
         .global-footer-bar {
             position: fixed;
-            bottom: 3rem;
+            bottom: 5rem;
             width: 100%;
             max-width: 480px;
             height: 3rem;
@@ -672,15 +695,58 @@
             background: linear-gradient(to right, #f0fdf4, white);
         }
 
-        .plan-circuit-btn {
+        .plan-circuit-container {
             position: fixed;
-            bottom: 7rem;
+            bottom: 10rem;
             left: 50%;
             transform: translateX(-50%);
             max-width: 440px;
             width: calc(100% - 3rem);
             z-index: 100;
             animation: slideUp 0.3s ease-out;
+            background: white;
+            padding: 0.4rem;
+            border-radius: 999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            gap: 0.5rem;
+            border: 1px solid #10b981;
+        }
+
+        .plan-circuit-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 999px;
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+
+        .plan-circuit-input::placeholder {
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        .plan-circuit-action-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plan-circuit-action-btn:active {
+            transform: scale(0.95);
         }
 
         @keyframes slideUp {
@@ -725,9 +791,9 @@
             margin: 0 auto;
             background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
             border-top: 3px solid #dc2626;
-            padding: 0.2rem 1rem calc(0.2rem + env(safe-area-inset-bottom));
+            padding: 0.5rem 1rem calc(2.0rem + env(safe-area-inset-bottom));
             text-align: center;
-            z-index: 105;
+            z-index: 200;
             box-shadow: 0 -4px 6px -1px rgba(220, 38, 38, 0.3);
         }
 
@@ -751,107 +817,7 @@
 <body>
     <div id="app" class="app-container" v-cloak>
         <!--  NEW: Circuit Planner Modal -->
-        <div v-if="showCircuitModal"
-            class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
-            style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 1rem;">
-            <div class="bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-gray-700"
-                style="background-color: #1f2937; border-radius: 1rem; width: 100%; max-width: 28rem; border: 1px solid #374151; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
-                <div class="p-6" style="padding: 1.5rem;">
-                    <div class="flex justify-between items-center mb-6"
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                        <h3 class="text-xl font-bold text-white flex items-center gap-2"
-                            style="font-size: 1.25rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
-                            <i class="fas fa-plane-departure text-blue-400" style="color: #60a5fa;"></i>
-                            Circuit Planner
-                        </h3>
-                        <button @click="showCircuitModal = false"
-                            class="text-gray-400 hover:text-white transition-colors"
-                            style="background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 1.25rem;">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
 
-                    <p class="text-gray-400 text-sm mb-6"
-                        style="color: #9ca3af; font-size: 0.875rem; margin-bottom: 1.5rem;">
-                        Enter your departure city to find the best flight combinations for your selected tournaments.
-                    </p>
-
-                    <!-- Departure City Input -->
-                    <div class="mb-6 relative" style="margin-bottom: 1.5rem; position: relative;">
-                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
-                            style="display: block; font-size: 0.75rem; font-weight: 600; color: #9ca3af; text-transform: uppercase; margin-bottom: 0.5rem;">
-                            Departure City
-                        </label>
-                        <div class="relative" style="position: relative;">
-                            <i class="fas fa-search absolute left-4 top-3.5 text-gray-500"
-                                style="position: absolute; left: 1rem; top: 0.875rem; color: #6b7280;"></i>
-                            <input type="text" v-model="circuitHomeCityQuery" @input="fetchCitySuggestions"
-                                placeholder="e.g. Seoul, London, Paris"
-                                class="w-full bg-gray-700 border border-gray-600 rounded-xl py-3 pl-11 pr-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium"
-                                style="width: 100%; background-color: #374151; border: 1px solid #4b5563; border-radius: 0.75rem; padding: 0.75rem 1rem 0.75rem 2.75rem; color: white; display: block;">
-                            <!-- Autocomplete Dropdown -->
-                            <ul v-if="citySuggestions.length > 0"
-                                class="absolute z-10 w-full bg-gray-700 border border-gray-600 rounded-xl mt-2 shadow-xl max-h-60 overflow-y-auto custom-scrollbar"
-                                style="position: absolute; z-index: 100; width: 100%; background-color: #374151; border: 1px solid #4b5563; border-radius: 0.75rem; margin-top: 0.5rem; max-height: 15rem; overflow-y: auto; list-style: none; padding: 0;">
-                                <li v-for="city in citySuggestions" :key="city.code" @click="selectHomeCity(city)"
-                                    class="px-4 py-3 hover:bg-gray-600 cursor-pointer flex justify-between items-center border-b border-gray-600 last:border-0 transition-colors"
-                                    style="padding: 0.75rem 1rem; border-bottom: 1px solid #4b5563; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                                    <div>
-                                        <span class="text-white font-medium block"
-                                            style="color: white; font-weight: 500; display: block;">{{ city.name
-                                            }}</span>
-                                        <span class="text-xs text-gray-400"
-                                            style="font-size: 0.75rem; color: #9ca3af;">{{ city.country_name }}</span>
-                                    </div>
-                                    <span class="text-blue-400 font-bold bg-blue-900/30 px-2 py-1 rounded text-xs"
-                                        style="color: #60a5fa; font-weight: 700; background-color: rgba(30, 58, 138, 0.3); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">{{
-                                        city.code }}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Selected Route Preview -->
-                    <div v-if="selectedTournaments.length > 0 && circuitHomeCode"
-                        class="bg-gray-900/50 rounded-xl p-4 mb-6 border border-gray-700/50"
-                        style="background-color: rgba(17, 24, 39, 0.5); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.5rem; border: 1px solid rgba(55, 65, 81, 0.5);">
-                        <div class="flex items-center gap-2 text-sm text-gray-300 mb-2"
-                            style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #d1d5db; margin-bottom: 0.5rem;">
-                            <i class="fas fa-route text-blue-400" style="color: #60a5fa;"></i>
-                            <span class="font-semibold" style="font-weight: 600;">Your Route:</span>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-2 text-xs text-gray-400"
-                            style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: #9ca3af;">
-                            <span class="text-white bg-blue-600 px-2 py-0.5 rounded"
-                                style="color: white; background-color: #2563eb; padding: 0.125rem 0.5rem; border-radius: 0.25rem;">{{
-                                circuitHomeCode }}</span>
-                            <i class="fas fa-arrow-right text-gray-600" style="color: #4b5563;"></i>
-                            <template v-for="(tId, idx) in selectedTournaments" :key="tId">
-                                <span class="text-white" style="color: white;">{{ getCityCode(tId) }}</span>
-                                <i class="fas fa-arrow-right text-gray-600" style="color: #4b5563;"></i>
-                            </template>
-                            <span class="text-white bg-blue-600 px-2 py-0.5 rounded"
-                                style="color: white; background-color: #2563eb; padding: 0.125rem 0.5rem; border-radius: 0.25rem;">{{
-                                circuitHomeCode }}</span>
-                        </div>
-                    </div>
-
-                    <!-- Action Button -->
-                    <button @click="generateComparisonLink" :disabled="!circuitHomeCode"
-                        class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg transform transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                        style="width: 100%; background: linear-gradient(to right, #2563eb, #4f46e5); color: white; font-weight: 700; padding: 1rem; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); display: flex; justify-content: center; align-items: center; gap: 0.5rem; border: none; cursor: pointer; transition: all 0.2s;">
-                        <span>Find Lowest Prices</span>
-                        <i class="fas fa-external-link-alt"></i>
-                    </button>
-
-                    <p class="text-center text-xs text-gray-500 mt-4"
-                        style="text-align: center; font-size: 0.75rem; color: #6b7280; margin-top: 1rem;">
-                        Powered by <span class="text-blue-400 font-semibold"
-                            style="color: #60a5fa; font-weight: 600;">Aviasales</span> Price Comparison
-                    </p>
-                </div>
-            </div>
-        </div>
 
         <footer class="global-footer-bar">
             <a class="footer-col" href="https://corporate.bwfbadminton.com/events/calendar/" target="_blank"
@@ -1141,24 +1107,18 @@
                                 style="font-size:0.75rem; font-weight:700; color:var(--gray-500);">{{
                                 t('simResultTitle') }}</span><span
                                 style="font-size:0.65rem; font-weight:700; color:var(--primary);">Target</span></p>
-                        <p style="font-size:0.6rem; color:var(--gray-400); margin-bottom:1rem; line-height:1.4;">
-                            <i class="fa-solid fa-info-circle" style="margin-right:4px;"></i>{{
-                            t('checkboxInstructions') }}
-                        </p>
-                        <div v-for="(res, idx) in filteredResults" :key="res.id" class="tournament-card-wrapper"
-                            :class="{selected: selectedTournaments.includes(res.id)}">
+
+                        <div v-if="filteredResults.length === 0"
+                            style="text-align:center; padding:2rem; color:var(--gray-500); font-size: 0.875rem;">
+                            <i class="fa-solid fa-calendar-xmark"
+                                style="font-size: 1.5rem; margin-bottom: 0.5rem; display:block;"></i>
+                            {{ t('noTournamentsFound') || 'No tournaments found matching criteria.' }}
+                        </div>
+
+                        <div v-for="(res, idx) in filteredResults" :key="res.id" class="tournament-card-wrapper">
                             <div class="res-card"
                                 :style="{'border-color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'qual' ? '#eab308' : '#9ca3af'))}">
-                                <label class="tournament-checkbox-label">
-                                    <input type="checkbox" class="tournament-checkbox"
-                                        :checked="selectedTournaments.includes(res.id)"
-                                        @change="toggleTournamentSelection(res.id)"
-                                        :disabled="!selectedTournaments.includes(res.id) && selectedTournaments.length >= 3">
-                                    <span style="font-size:0.65rem; font-weight:600; color:var(--gray-600);">
-                                        {{ selectedTournaments.includes(res.id) ? t('tournamentSelectedCheck') :
-                                        t('selectForCircuit') }}
-                                    </span>
-                                </label>
+
                                 <div class="flex-between mb-2">
                                     <div>
                                         <h4 style="font-size:0.875rem; font-weight:700;"><span class="res-grade">{{
@@ -1169,7 +1129,7 @@
                                     </div>
                                     <div style="text-align:right;">
                                         <span style="font-size:0.75rem; font-weight:700; display:block;"
-                                            :style="{'color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : '#6b7280')}">{{
+                                            :style="{'color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'promo' ? '#3b82f6' : '#6b7280'))}">{{
                                             res.prediction }}</span>
                                         <div style="font-size:0.5rem; color:var(--gray-400); margin-top:2px;">
                                             <span>Entry:
@@ -1177,12 +1137,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-2">
-                                    <a :href="getSearchUrl('flight', res.city, res.startIso, res.endIso)"
-                                        target="_blank" class="action-btn"><i class="fa-solid fa-plane"></i> {{
-                                        t('flight') }}</a>
-                                    <a :href="getSearchUrl('hotel', res.city, res.startIso, res.endIso)" target="_blank"
-                                        class="action-btn"><i class="fa-solid fa-bed"></i> {{ t('hotel') }}</a>
+                                <div class="grid-4">
+                                    <a href="https://www.trip.com/t/WkompgAdTT2" target="_blank" class="action-btn">
+                                        <i class="fa-solid fa-plane"></i> {{ t('flight') }}
+                                    </a>
+                                    <a href="https://www.trip.com/t/yjgR4WkfTT2" target="_blank" class="action-btn">
+                                        <i class="fa-solid fa-bed"></i> {{ t('hotel') }}
+                                    </a>
+                                    <a href="https://www.trip.com/t/bUf6Wh3gTT2" target="_blank" class="action-btn">
+                                        <i class="fa-solid fa-plane-arrival"></i> {{ t('flightHotel') }}
+                                    </a>
+                                    <a href="https://www.trip.com/t/jjSoE16gTT2" target="_blank" class="action-btn">
+                                        <i class="fa-solid fa-taxi"></i> {{ t('airportPickup') }}
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1219,11 +1186,8 @@
         </div>
 
         <!-- ✅ NEW: Plan Circuit Button (shown when 2-3 tournaments selected) -->
-        <button v-if="selectedTournaments.length >= 2 && selectedTournaments.length <= 3 && sim.results"
-            @click="planCircuit" class="btn btn-emerald plan-circuit-btn" aria-label="Plan circuit">
-            <i class="fa-solid fa-route"></i> {{ t('planCircuit') }} ({{ selectedTournaments.length }} {{
-            t('tournamentSelected') }})
-        </button>
+        <!-- ✅ NEW: Plan Circuit Floating Bar -->
+
 
         <button v-if="sim.results" @click="shareResults" class="share-sticky-btn" aria-label="Share results">
             <i class="fa-solid fa-share-nodes"></i>
@@ -1251,6 +1215,8 @@
                 <button class="btn btn-ghost mt-6" @click="showConsultModal=false">{{ t('close') }}</button>
             </div>
         </div>
+
+
     </div>
 
     <script>
@@ -1292,13 +1258,10 @@
                 regionAsia: 'Asia', regionEurope: 'Europe', regionPanAm: 'Pan Am', regionAfrica: 'Africa', regionOceania: 'Oceania',
                 timerEstimate: 'Estimated Time', timerSeconds: 'seconds',
                 playerAdvice: '🚫 Say NO to illegal gambling & drugs. Report it!',
-                selectTournaments: 'Select 2-3 tournaments', planCircuit: 'Plan Circuit', tournamentSelected: 'selected',
-                selectForCircuit: 'Select for Circuit', tournamentSelectedCheck: '✓ Selected',
-                checkboxInstructions: 'Check the box and search full journey.',
-                selectForCircuit: 'Select for Circuit', tournamentSelectedCheck: '✓ Selected',
-                checkboxInstructions: 'Check the box and search full journey.',
                 safetyWarning: '🚫 Say NO to illegal gambling & drugs. Report it!',
-                searchRememberMe: 'Remember Me'
+                searchRememberMe: 'Remember Me',
+                noTournamentsFound: 'No tournaments found matching your criteria.',
+                flightHotel: 'Flight+Hotel', airportPickup: 'Airport Pickup'
             },
             ko: {
                 searchTitle: '선수 검색', searchPlaceholder: '이름 또는 BWF ID로 검색', searchClear: '지우기',
@@ -1334,13 +1297,10 @@
                 regionAsia: '아시아', regionEurope: '유럽', regionPanAm: '팬암', regionAfrica: '아프리카', regionOceania: '오세아니아',
                 timerEstimate: '예상 소요 시간', timerSeconds: '초',
                 playerAdvice: '🚫 불법 도박·약물 제안 즉시 신고!',
-                selectTournaments: '2-3개 대회 선택', planCircuit: '투어 계획하기', tournamentSelected: '개 선택됨',
-                selectForCircuit: '서킷 선택', tournamentSelectedCheck: '✓ 선택됨',
-                checkboxInstructions: '체크박스를 선택하고 전체 여정을 검색하세요.',
-                selectForCircuit: '서킷 선택', tournamentSelectedCheck: '✓ 선택됨',
-                checkboxInstructions: '체크박스를 선택하고 전체 여정을 검색하세요.',
                 safetyWarning: '🚫 불법 도박·약물 제안 즉시 신고!',
-                searchRememberMe: '선수 기억하기'
+                searchRememberMe: '선수 기억하기',
+                noTournamentsFound: '조건에 맞는 대회가 없습니다.',
+                flightHotel: '항공+호텔', airportPickup: '공항픽업'
             },
             zh: {
                 searchTitle: '搜索球员', searchPlaceholder: '按姓名或 BWF ID 搜索', searchClear: '清除',
@@ -1376,13 +1336,10 @@
                 regionAsia: '亚洲', regionEurope: '欧洲', regionPanAm: '泛美', regionAfrica: '非洲', regionOceania: '大洋洲',
                 timerEstimate: '预计时间', timerSeconds: '秒',
                 playerAdvice: '🚫 拒绝赌博和毒品·立即举报！',
-                selectTournaments: '选择 2-3 个比赛', planCircuit: '规划巡回赛', tournamentSelected: '已选择',
-                selectForCircuit: '选择巡回赛', tournamentSelectedCheck: '✓ 已选择',
-                checkboxInstructions: '选中复选框并搜索完整行程。',
-                selectForCircuit: '选择巡回赛', tournamentSelectedCheck: '✓ 已选择',
-                checkboxInstructions: '选中复选框并搜索完整行程。',
                 safetyWarning: '🚫 拒绝赌博和毒品·立即举报！',
-                searchRememberMe: '记住我'
+                searchRememberMe: '记住我',
+                noTournamentsFound: '未找到符合条件的比赛。',
+                flightHotel: '机酒套餐', airportPickup: '接送机'
             },
             ja: {
                 searchTitle: '選手検索', searchPlaceholder: '名前またはBWF IDで検索', searchClear: 'クリア',
@@ -1418,13 +1375,10 @@
                 regionAsia: 'アジア', regionEurope: 'ヨーロッパ', regionPanAm: 'パンアメリカ', regionAfrica: 'アフリカ', regionOceania: 'オセアニア',
                 timerEstimate: '予想時間', timerSeconds: '秒',
                 playerAdvice: '🚫 賭博・薬物は拒否！即通報！',
-                selectTournaments: '2-3大会選択', planCircuit: 'ツアー計画', tournamentSelected: '選択済み',
-                selectForCircuit: 'サーキット選択', tournamentSelectedCheck: '✓ 選択済み',
-                checkboxInstructions: 'チェックボックスを選択して、完全な旅程を検索してください。',
-                selectForCircuit: 'サーキット選択', tournamentSelectedCheck: '✓ 選択済み',
-                checkboxInstructions: 'チェックボックスを選択して、完全な旅程を検索してください。',
                 safetyWarning: '🚫 賭博・薬物は拒否！即通報！',
-                searchRememberMe: '検索した選手を記憶する'
+                searchRememberMe: '検索した選手を記憶する',
+                noTournamentsFound: '条件に一致する大会が見つかりません。',
+                flightHotel: '航空券+ホテル', airportPickup: '空港送迎'
             }
         };
 
@@ -1468,8 +1422,69 @@
                 ]);
                 const loadingProgress = ref(0);
 
-                // ✅ NEW: Multi-Tournament Selection
-                const selectedTournaments = ref([]);
+
+
+                // ✅ NEW: City to Airport Code Mapping (Expanded for BWF 2026)
+                const cityMap = {
+                    // Major Asian Hubs
+                    '서울': 'ICN', '인천': 'ICN', 'seoul': 'ICN', 'incheon': 'ICN', 'gimpo': 'GMP', 'kimpo': 'GMP',
+                    '부산': 'PUS', 'busan': 'PUS', 'gimhae': 'PUS',
+                    '대구': 'TAE', 'daegu': 'TAE', '청주': 'CJJ', 'cheongju': 'CJJ', '제주': 'CJU', 'jeju': 'CJU',
+                    '도쿄': 'NRT', 'tokyo': 'NRT', '나리타': 'NRT', 'narita': 'NRT', 'haneda': 'HND',
+                    '오사카': 'KIX', 'osaka': 'KIX', 'kansai': 'KIX',
+                    '후쿠오카': 'FUK', 'fukuoka': 'FUK',
+                    '나고야': 'NGO', 'nagoya': 'NGO', 'kumamoto': 'KMJ', 'aichi': 'NGO',
+                    '베이징': 'PEK', 'beijing': 'PEK', '상하이': 'PVG', 'shanghai': 'PVG',
+                    '항저우': 'HGH', 'hangzhou': 'HGH', 'shenzhen': 'SZX', 'lingshui': 'SYX', // Lingshui -> Sanya (closest)
+                    '청두': 'CTU', 'chengdu': 'CTU',
+                    '방콕': 'BKK', 'bangkok': 'BKK', 'chiang mai': 'CNX',
+                    '쿠알라룸푸르': 'KUL', 'kuala lumpur': 'KUL', 'kuching': 'KCH',
+                    '자카르타': 'CGK', 'jakarta': 'CGK', 'surabaya': 'SUB',
+                    '싱가포르': 'SIN', 'singapore': 'SIN',
+                    '타이베이': 'TPE', 'taipei': 'TPE', 'kaohsiung': 'KHH',
+                    '홍콩': 'HKG', 'hong kong': 'HKG',
+                    '하노이': 'HAN', 'hanoi': 'HAN', '호치민': 'SGN', 'ho chi minh': 'SGN',
+                    '마닐라': 'MNL', 'manila': 'MNL',
+                    '뉴델리': 'DEL', 'new delhi': 'DEL', 'hyderabad': 'HYD', 'guwahati': 'GAU',
+
+                    // Europe
+                    '파리': 'CDG', 'paris': 'CDG', 'lyon': 'LYS', 'orleans': 'ORY',
+                    '런던': 'LHR', 'london': 'LHR', 'birmingham': 'BHX',
+                    '프랑크푸르트': 'FRA', 'frankfurt': 'FRA', 'mulheim': 'DUS', 'saarbrucken': 'SCN',
+                    '코펜하겐': 'CPH', 'copenhagen': 'CPH', 'odense': 'BLL', // Odense -> Billund (closest major)
+                    '바젤': 'BSL', 'basel': 'BSL',
+                    '마드리드': 'MAD', 'madrid': 'MAD', 'barcelona': 'BCN',
+
+                    // Americas & Oceania
+                    '로스앤젤레스': 'LAX', 'los angeles': 'LAX', 'new orleans': 'MSY',
+                    '캘거리': 'YYC', 'calgary': 'YYC',
+                    '시드니': 'SYD', 'sydney': 'SYD', 'melbourne': 'MEL'
+                };
+
+                // ✅ NEW: Helper to get Airport Code
+                const getAirportCode = (input) => {
+                    if (!input) return 'ICN';
+
+                    // Handle "City, Country" format (e.g. "Kuala Lumpur, MAS")
+                    let key = input.split(',')[0].trim().toLowerCase();
+
+                    // Check direct map
+                    if (cityMap[key]) return cityMap[key];
+
+                    // Try removing spaces (e.g. "new delhi" -> "newdelhi") if needed, 
+                    // but our map currently has keys with spaces.
+
+                    // Fallback to strict input if not found? 
+                    // Trip.com might fail with "Kuala Lumpur, MAS". 
+                    // Better to return the city name part at least if no code found.
+                    return key.charAt(0).toUpperCase() + key.slice(1);
+                };
+
+
+
+
+
+
                 const playerNationality = ref('');  // Based on player country
 
                 // ✅ 수정: rankings_data.js 데이터 로드 확인
@@ -1707,197 +1722,7 @@
                     return true;
                 });
 
-                // ✅ NEW: Affiliate Marker ID
-                const MARKER_ID = '497432'; // Derived from the provided script ID
 
-                // ✅ NEW: City Data for Deep Linking (Coordinates & Airport Codes)
-                // ✅ NEW: City Data for Deep Linking (Coordinates & Airport Codes)
-                const CITY_DATA = {
-                    // Super 1000
-                    "Kuala Lumpur": { code: "KUL", lat: 3.0538, lng: 101.5369 },
-                    "Birmingham": { code: "BHX", lat: 52.4796, lng: -1.9148 },
-                    "Jakarta": { code: "CGK", lat: -6.2215, lng: 106.8016 },
-                    "Changzhou": { code: "CZX", lat: 31.8659, lng: 119.9922 }, // Using CZX or NKG/PVG fallback?
-                    "China": { code: "BJS", lat: 39.9042, lng: 116.4074 }, // Default for "China" if city not found
-                    // Super 750
-                    "New Delhi": { code: "DEL", lat: 28.5583, lng: 77.2435 },
-                    "Singapore": { code: "SIN", lat: 1.2996, lng: 103.8745 },
-                    "Tokyo": { code: "TYO", lat: 35.6644, lng: 139.7027 },
-                    "Paris": { code: "PAR", lat: 48.8997, lng: 2.3615 },
-                    "Odense": { code: "ODE", lat: 55.3917, lng: 10.3475 },
-                    "Shenzhen": { code: "SZX", lat: 22.5607, lng: 113.8827 },
-                    // Super 500
-                    "Bangkok": { code: "BKK", lat: 13.7431, lng: 100.5284 },
-                    "Sydney": { code: "SYD", lat: -33.8471, lng: 151.0634 },
-                    "Calgary": { code: "YYC", lat: 51.0426, lng: -114.0620 },
-                    "Seoul": { code: "SEL", lat: 37.5160, lng: 127.1246 },
-                    "Hong Kong": { code: "HKG", lat: 22.3364, lng: 114.1824 },
-                    "Vantaa": { code: "HEL", lat: 60.2934, lng: 24.8540 },
-                    "Kumamoto": { code: "KMJ", lat: 32.7937, lng: 130.6976 },
-                    // Super 300 & Others
-                    "Mülheim an der Ruhr": { code: "DUS", lat: 51.4228, lng: 6.8920 },
-                    "Mulheim": { code: "DUS", lat: 51.4228, lng: 6.8920 },
-                    "Basel": { code: "BSL", lat: 47.5398, lng: 7.6167 },
-                    "Madrid": { code: "MAD", lat: 40.4079, lng: -3.7153 },
-                    "Orléans": { code: "ORY", lat: 47.8864, lng: 1.9090 },
-                    "Orleans": { code: "ORY", lat: 47.8864, lng: 1.9090 },
-                    "Auckland": { code: "AKL", lat: -36.8049, lng: 174.7735 },
-                    "Fort Worth": { code: "DFW", lat: 32.7473, lng: -97.3307 },
-                    "Taipei": { code: "TPE", lat: 25.0504, lng: 121.5516 },
-                    "Macau": { code: "MFM", lat: 22.1557, lng: 113.5606 },
-                    "Saarbrücken": { code: "SCN", lat: 49.2393, lng: 6.9777 },
-                    "Iksan City": { code: "ICN", lat: 35.9458, lng: 126.9602 },
-                    "Lucknow": { code: "LKO", lat: 26.8407, lng: 80.9388 },
-                    "Urmia": { code: "OMH", lat: 37.5529, lng: 45.0761 },
-                    "Baku": { code: "GYD", lat: 40.3755, lng: 49.8327 },
-                    "Kampala": { code: "EBB", lat: 0.3476, lng: 32.5825 },
-                    "Yogyakarta": { code: "JOG", lat: -7.7956, lng: 110.3695 },
-                    "Kaohsiung": { code: "KHH", lat: 22.6273, lng: 120.3014 },
-                    "Ho Chi Minh City": { code: "SGN", lat: 10.8231, lng: 106.6297 },
-                    "Bendigo": { code: "MEL", lat: -36.7570, lng: 144.2794 }, // Bendigo is near MEL
-                    "North Harbour": { code: "AKL", lat: -36.8049, lng: 174.7735 }, // Auckland
-                    "Glasgow": { code: "GLA", lat: 55.8642, lng: -4.2518 },
-                    "Cardiff": { code: "CWL", lat: 51.4816, lng: -3.1791 },
-                    "Dublin": { code: "DUB", lat: 53.3498, lng: -6.2603 },
-                    "Lisbon": { code: "LIS", lat: 38.7223, lng: -9.1393 },
-                    "Caldas da Rainha": { code: "LIS", lat: 39.4072, lng: -9.1345 }, // Near Lisbon
-                    "Graz": { code: "GRZ", lat: 47.0707, lng: 15.4395 },
-                    "Vienna": { code: "VIE", lat: 48.2082, lng: 16.3738 },
-                    "Milan": { code: "MIL", lat: 45.4642, lng: 9.1900 },
-                    "Brno": { code: "BRQ", lat: 49.1951, lng: 16.6068 },
-                    "Tallinn": { code: "TLL", lat: 59.4370, lng: 24.7536 },
-                    "Uppsala": { code: "ARN", lat: 59.8586, lng: 17.6389 }, // Near Arlanda
-                    "Almere": { code: "AMS", lat: 52.3680, lng: 5.2243 }, // Near Amsterdam
-                    "Gwangju": { code: "KWJ", lat: 35.1595, lng: 126.8526 },
-                    "Ruichang": { code: "KHN", lat: 29.6766, lng: 115.6558 }, // Near Nanchang
-                    "Baoji": { code: "XIY", lat: 34.3644, lng: 107.2370 }, // Near Xi'an
-                    "Nanchang": { code: "KHN", lat: 28.6830, lng: 115.8575 },
-                    "Haiko": { code: "HAK", lat: 20.0174, lng: 110.3492 },
-                    "Nanjing": { code: "NKG", lat: 32.0603, lng: 118.7969 },
-                    "Lingshui": { code: "SYX", lat: 18.5029, lng: 110.0384 }, // Near Sanya
-                    // Generic
-                    "USA": { code: "JFK", lat: 40.7128, lng: -74.0060 }, // Default fallback
-                    "West": { code: "LAX", lat: 34.0522, lng: -118.2437 },
-                    "East": { code: "JFK", lat: 40.7128, lng: -74.0060 }
-                };
-
-                // Helper: Get City Data
-                const getCityInfo = (cityName) => {
-                    if (!cityName) return { code: 'XXX', lat: 0, lng: 0 };
-
-                    // Try exact match
-                    if (CITY_DATA[cityName]) return CITY_DATA[cityName];
-
-                    // Try exact match Case Insensitive
-                    const keys = Object.keys(CITY_DATA);
-                    const match = keys.find(k => k.toLowerCase() === cityName.toLowerCase());
-                    if (match) return CITY_DATA[match];
-
-                    // Try Cleaned match (split by comma, e.g. "Paris, France" -> "Paris")
-                    const clean = cityName.split(',')[0].trim();
-                    if (CITY_DATA[clean]) return CITY_DATA[clean];
-
-                    // Try finding partial match in keys
-                    const partial = keys.find(k => cityName.includes(k));
-                    if (partial) return CITY_DATA[partial];
-
-                    // Default fallback
-                    console.warn(`City not found in database: ${cityName}`);
-                    return { code: 'XXX', lat: 0, lng: 0 };
-                };
-
-                // ✅ NEW: generateAffiliateLinks (Deep Linking Logic)
-                const generateAffiliateLinks = (homeAirport, tournaments, markerId) => {
-                    // 1. Flight Logic (Aviasales Multi-City)
-                    // Pattern: Origin1Date1Dest1Origin2Date2Dest2... (Explicit Segments)
-
-                    let flightSegments = "";
-
-                    // Sort tournaments
-                    const sortedTournaments = [...tournaments].sort((a, b) => new Date(a.startIso) - new Date(b.startIso));
-
-                    // Use explicit Origin tracking
-                    let currentOrigin = homeAirport;
-
-                    // Loop through tournaments
-                    sortedTournaments.forEach((t, index) => {
-                        const cityInfo = getCityInfo(t.city);
-                        const destCode = cityInfo ? cityInfo.code : 'XXX';
-
-                        let travelDate;
-                        if (index === 0) {
-                            // First Leg: Home -> T1 (Arrive 2 days early)
-                            travelDate = new Date(t.startIso);
-                            travelDate.setDate(travelDate.getDate() - 2);
-                        } else {
-                            // Inter-tournament: PrevT -> T (Depart on PrevT End Date)
-                            const prevT = sortedTournaments[index - 1];
-                            travelDate = new Date(prevT.endIso);
-                        }
-
-                        const dStr = travelDate.getDate().toString().padStart(2, '0') + (travelDate.getMonth() + 1).toString().padStart(2, '0');
-
-                        // Append Segment explicitly: Origin + Date + Dest
-                        flightSegments += `${currentOrigin}${dStr}${destCode}`;
-
-                        // Update origin for next leg
-                        currentOrigin = destCode;
-                    });
-
-                    // Return Leg: LastT -> Home
-                    const lastT = sortedTournaments[sortedTournaments.length - 1];
-                    const returnDate = new Date(lastT.endIso);
-                    const rStr = returnDate.getDate().toString().padStart(2, '0') + (returnDate.getMonth() + 1).toString().padStart(2, '0');
-
-                    flightSegments += `${currentOrigin}${rStr}${homeAirport}`;
-
-                    // Add passengers/marker
-                    const flightUrl = `https://www.aviasales.com/search/${flightSegments}?marker=${markerId}`;
-
-                    // 2. Hotel Links (Hotellook Map View)
-                    const hotelLinks = [];
-                    sortedTournaments.forEach(t => {
-                        const cityInfo = getCityInfo(t.city);
-                        if (cityInfo) {
-                            const checkIn = new Date(t.startIso);
-                            checkIn.setDate(checkIn.getDate() - 2);
-                            const checkInStr = checkIn.toISOString().split('T')[0];
-                            const checkOutStr = t.endIso;
-
-                            const url = `https://search.hotellook.com/hotels?lat=${cityInfo.lat}&lng=${cityInfo.lng}&checkIn=${checkInStr}&checkOut=${checkOutStr}&adults=1&marker=${markerId}&language=ko&zoom=15`;
-                            hotelLinks.push({ name: t.name, url: url });
-                        }
-                    });
-
-                    // 3. Transport (Placeholder)
-                    const transportLinks = [];
-
-                    return { flightUrl, hotelLinks, transportLinks };
-                };
-
-                const currCityName = (full) => full.split(',')[0].trim();
-
-                // ✅ NEW: Enhanced getSearchUrl using Affiliate Logic
-                const getSearchUrl = (type, city, startIso, endIso) => {
-                    const cityInfo = getCityInfo(city);
-
-                    if (type === 'hotel' && cityInfo) {
-                        const checkIn = new Date(startIso);
-                        checkIn.setDate(checkIn.getDate() - 2);
-                        const checkInStr = checkIn.toISOString().split('T')[0];
-                        return `https://search.hotellook.com/hotels?lat=${cityInfo.lat}&lng=${cityInfo.lng}&checkIn=${checkInStr}&checkOut=${endIso}&adults=1&marker=${MARKER_ID}&language=ko&zoom=15`;
-                    }
-
-                    // Fallback to Google Logic if data missing or for single flight (which needs home airport - tricky for single button)
-                    if (!startIso || !endIso) return '#';
-                    const startDate = new Date(startIso);
-                    startDate.setDate(startDate.getDate() - 2);
-                    const arriveDate = startDate.toISOString().split('T')[0];
-                    const departDate = endIso;
-
-                    if (type === 'flight') return `https://www.google.com/search?q=flight+to+${city}+from+${arriveDate}+to+${departDate}`;
-                    else return `https://www.google.com/search?q=hotel+in+${city}+from+${arriveDate}+to+${departDate}`;
-                };
 
 
 
@@ -1930,7 +1755,7 @@
 
                     sim.loading = true;
                     sim.results = null;
-                    selectedTournaments.value = [];  // Reset selection
+
 
                     // ✅ NEW: Reset and Start Log-Based Loading Animation
                     loadingLogs.value.forEach(log => log.done = false);
@@ -1980,15 +1805,13 @@
 
                         // Validate data availability
                         const real2026Tournaments = window.tournaments2026 || [];
-                        console.log('Total 2026 tournaments loaded:', real2026Tournaments.length);
 
-                        if (real2026Tournaments.length === 0) {
-                            alert('디버그: 2026년 대회 데이터가 비어있거나 로드되지 않았습니다!');
-                        }
+                        // Debug removed: if (real2026Tournaments.length === 0) { alert(...) }
 
                         let tournamentsToUse = [];
 
                         if (real2026Tournaments.length > 0) {
+                            console.log('✅ Loaded 2026 Tournaments:', real2026Tournaments.length);
                             // Use real 2026 tournament data - format it for the app
                             tournamentsToUse = real2026Tournaments.map(t => ({
                                 name: t.name,
@@ -2006,7 +1829,7 @@
                         }
 
                         const today = new Date().toISOString().split('T')[0];
-                        console.log('Filtering against today:', today);
+                        // Debug removed: console.log('Filtering against today:', today);
 
                         // Filter: Only OPEN tournaments with future entry deadlines
                         const availableTournaments = tournamentsToUse.filter(t => {
@@ -2020,10 +1843,7 @@
                             return t.entryDeadline >= today && t.status === 'OPEN';
                         });
 
-                        console.log('Tournaments available after filter:', availableTournaments.length);
-                        if (availableTournaments.length === 0 && real2026Tournaments.length > 0) {
-                            alert(`디버그: 데이터는 로드되었으나 필터링되었습니다. 전체: ${real2026Tournaments.length}개, 유효: 0개. 기준일: ${today}`);
-                        }
+                        // Debug removed: console.log(...) & alert(...)
 
                         // Map to expected format
                         const formattedTournaments = availableTournaments.map(t => {
@@ -2165,6 +1985,7 @@
                         }).sort((a, b) => a.startIso.localeCompare(b.startIso));
 
                         sim.loading = false;
+                        console.log('✅ Simulation Complete. Results:', sim.results.length);
                     }, 800);
                 };
 
@@ -2406,101 +2227,7 @@
                     document.documentElement.lang = newLang;
                 });
 
-                // Toggle tournament selection
-                const toggleTournamentSelection = (id) => {
-                    const index = selectedTournaments.value.indexOf(id);
-                    if (index > -1) {
-                        selectedTournaments.value.splice(index, 1);
-                    } else {
-                        if (selectedTournaments.value.length < 3) {
-                            selectedTournaments.value.push(id);
-                        }
-                    }
-                };
 
-                // ✅ NEW: Circuit Planner State
-                const showCircuitModal = ref(false);
-                const circuitHomeCityQuery = ref('');
-                const circuitHomeCode = ref('');
-                const citySuggestions = ref([]);
-                const whiteLabelDomain = 'www.aviasales.com'; // Or custom white label domain
-
-                // ✅ NEW: Fetch City Suggestions (Travelpayouts API)
-                const fetchCitySuggestions = async () => {
-                    const query = circuitHomeCityQuery.value;
-                    if (query.length < 2) {
-                        citySuggestions.value = [];
-                        return;
-                    }
-
-                    try {
-                        const response = await fetch(`https://autocomplete.travelpayouts.com/places2?term=${encodeURIComponent(query)}&locale=ko&types[]=city`);
-                        const data = await response.json();
-                        citySuggestions.value = data.slice(0, 5); // Limit to top 5
-                    } catch (error) {
-                        console.error("Failed to fetch cities:", error);
-                    }
-                };
-
-                // ✅ NEW: Select Home City
-                const selectHomeCity = (city) => {
-                    circuitHomeCode.value = city.code;
-                    circuitHomeCityQuery.value = `${city.name} (${city.code})`;
-                    citySuggestions.value = []; // Clear suggestions
-                };
-
-                // Helper to get city code from tournament ID
-                const getCityCode = (tId) => {
-                    // tId format: "Name-StartIso"
-                    // We need to find the tournament object
-                    const t = sim.results.find(r => r.id === tId);
-                    if (!t) return 'XXX';
-                    const cityInfo = getCityInfo(t.city);
-                    return cityInfo ? cityInfo.code : 'XXX';
-                };
-
-                // ✅ NEW: Generate Comparison Deep Link
-                const generateComparisonLink = () => {
-                    if (!circuitHomeCode.value || selectedTournaments.value.length < 2) return;
-
-                    // Filter selected objects
-                    const tourneys = sim.results.filter(r => selectedTournaments.value.includes(r.id));
-
-                    // Use the existing logic but adapted for the direct link generation
-                    // We need to construct the URL: domain/search/{Segments}1?marker=...
-
-                    // Re-use logic or call helper? 
-                    // Let's call the helper but we need to override the home airport.
-                    const links = generateAffiliateLinks(circuitHomeCode.value, tourneys, MARKER_ID);
-
-                    // The helper returns `flightUrl`. 
-                    // verify it matches the requirement: .../search/{Origin}{Date1}{Dest}...1?marker=...
-                    // My previous implementation of `generateAffiliateLinks` already does this!
-                    // It produces: https://www.aviasales.com/search/...
-
-                    // Open the link
-                    window.open(links.flightUrl, '_blank');
-
-                    // Close modal
-                    showCircuitModal.value = false;
-                };
-
-                // ✅ NEW: Plan Circuit (Opens Modal)
-                const planCircuit = () => {
-                    if (selectedTournaments.value.length < 2) {
-                        alert(t('selectTournaments'));
-                        return;
-                    }
-                    // Reset State
-                    circuitHomeCityQuery.value = '';
-                    circuitHomeCode.value = '';
-                    citySuggestions.value = [];
-                    showCircuitModal.value = true;
-                };
-
-                watch(currentLang, (newVal) => {
-                    document.documentElement.lang = newVal;
-                });
 
                 return {
                     currentLang,
@@ -2509,7 +2236,7 @@
                     sim,
                     runSimulation,
                     filteredResults,
-                    getSearchUrl,
+
                     shareResults,
                     copyEmail,
                     copyAgentEmail,
@@ -2528,7 +2255,7 @@
                     // ✅ NEW: Export new state variables
                     filters,
                     timerState,
-                    selectedTournaments,
+
                     playerNationality,
                     loadingLogs,
                     loadingProgress,
@@ -2536,17 +2263,8 @@
                     toggleDarkMode,
                     toggleGradeFilter,
                     toggleRegionFilter,
-                    toggleTournamentSelection,
-                    planCircuit,
-                    // ✅ NEW: Circuit Planner Exports
-                    showCircuitModal,
-                    circuitHomeCityQuery,
-                    circuitHomeCode,
-                    citySuggestions,
-                    fetchCitySuggestions,
-                    selectHomeCity,
-                    generateComparisonLink,
-                    getCityCode
+
+
                 };
             }
         }).mount('#app');
