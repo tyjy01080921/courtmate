@@ -2669,31 +2669,40 @@
                         const arrivalStr = formatDate(arrivalDate);
                         const departureStr = formatDate(departureDate);
 
+                        // Base URLs (Updated by User Request)
+                        // Hotel uses 'hotels/list' to support keyword search with params
                         const links = {
-                            flight: 'https://www.trip.com/t/vcoZRUY5UT2',
-                            hotel: 'https://www.trip.com/t/d8z1woX5UT2',
-                            package: 'https://www.trip.com/t/DjdaZlb9UT2',
-                            pickup: 'https://www.trip.com/t/g6LXtQhBUT2'
+                            flight: 'https://kr.trip.com/flights/welcome/?to=home&Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12123036',
+                            hotel: 'https://kr.trip.com/hotels/list?Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12126340',
+                            package: 'https://kr.trip.com/packages/?Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12163867',
+                            pickup: 'https://kr.trip.com/airport-transfers/index/?Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12166198'
                         };
 
                         let url = links[type] || links.flight;
-                        const params = new URLSearchParams();
 
-                        if (type === 'flight' || type === 'package') {
-                            params.append('dDate', arrivalStr);
-                            params.append('rDate', departureStr);
+                        // Append parameters based on type
+                        if (type === 'hotel') {
+                            // Keyword search for hotel
+                            url += `&checkIn=${arrivalStr}&checkOut=${departureStr}&adult=1&keyword=${encodeURIComponent(tournament.city)}`;
+                        } else if (type === 'flight') {
+                            // Try to pre-fill destination using Airport Code if available, otherwise City Name
+                            // Trip.com flight params: dDate, rDate, aCity (destination), quantity, class, search=true
+                            const airportCode = getAirportCode(tournament.city);
+                            // If we don't have a valid 3-letter code, we might skip aCity or try passing name (though code is safer)
+                            // We'll pass what we have.
+                            url += `&dDate=${arrivalStr}&rDate=${departureStr}&class=Y&quantity=1&search=true`;
+                            if (airportCode && airportCode.length === 3) {
+                                url += `&aCity=${airportCode}`;
+                            }
+                        } else if (type === 'package') {
+                            // Flight + Hotel
+                            url += `&dDate=${arrivalStr}&rDate=${departureStr}&pkgType=4`;
+                        } else if (type === 'pickup') {
+                            // Airport Transfer
+                            url += `&date=${arrivalStr}`;
                         }
-                        if (type === 'hotel' || type === 'package') {
-                            params.append('checkIn', arrivalStr);
-                            params.append('checkOut', departureStr);
-                        }
-                        // Pickup often uses flight arrival date
-                        // if (type === 'pickup') {
-                        //    params.append('date', arrivalStr);
-                        // }
 
-                        const paramStr = params.toString();
-                        return paramStr ? `${url}?${paramStr}` : url;
+                        return url;
                     };
 
 
