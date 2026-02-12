@@ -469,19 +469,31 @@
             color: #94a3b8 !important;
         }
 
-        /* --- [Feature] Global Footer --- */
-        .global-footer-bar {
+        /* --- [Feature] Global Footer & Safety Warning (Unified) --- */
+        .unified-footer {
             position: fixed;
-            bottom: calc(2.2rem + env(safe-area-inset-bottom));
+            bottom: 0;
+            left: 0;
+            right: 0;
             width: 100%;
             max-width: 480px;
-            height: 3rem;
+            margin: 0 auto;
             background: var(--white);
+            z-index: 200;
             border-top: 1px solid var(--gray-200);
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .global-footer-bar {
+            /* Removed fixed positioning */
+            width: 100%;
+            height: 3rem;
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
             align-items: center;
-            z-index: 110;
+            background: var(--white);
+            /* border-top moved to container */
         }
 
         .footer-col {
@@ -504,6 +516,32 @@
 
         .footer-col:not(.footer-brand):active {
             background: var(--gray-50);
+        }
+
+        /* Safety Warning Footer (Inside Unified) */
+        .safety-warning-footer {
+            /* Removed fixed positioning */
+            width: 100%;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-top: 2px solid #dc2626;
+            /* Slightly thinner border */
+            padding: 0.5rem 1rem;
+            text-align: center;
+        }
+
+        .safety-warning-text {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: #991b1b;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+        }
+
+        .safety-warning-icon {
+            color: #dc2626;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
         }
 
         /* --- [Feature] Simulator --- */
@@ -880,37 +918,6 @@
             cursor: pointer;
             user-select: none;
         }
-
-        /* Safety Warning Footer */
-        .safety-warning-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            max-width: 480px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-            border-top: 3px solid #dc2626;
-            padding: 0.5rem 1rem calc(0.5rem + env(safe-area-inset-bottom));
-            text-align: center;
-            z-index: 200;
-            box-shadow: 0 -4px 6px -1px rgba(220, 38, 38, 0.3);
-        }
-
-        .safety-warning-text {
-            font-size: 0.7rem;
-            font-weight: 800;
-            color: #991b1b;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            line-height: 1.4;
-        }
-
-        .safety-warning-icon {
-            color: #dc2626;
-            margin-right: 0.5rem;
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 
@@ -919,18 +926,9 @@
         <!--  NEW: Circuit Planner Modal -->
 
 
-        <footer class="global-footer-bar">
-            <a class="footer-col" href="https://corporate.bwfbadminton.com/events/calendar/" target="_blank"
-                rel="noopener noreferrer" style="text-decoration:none;">
-                <i class="fa-regular fa-calendar-check" style="margin-right:4px;"></i> {{ t('footerCalendar') }}
-            </a>
-            <div class="footer-col footer-brand">Court Mate</div>
-            <div class="footer-col" @click="showConsultModal = true">
-                <i class="fa-solid fa-headset" style="margin-right:4px;"></i> {{ t('footerConsult') }}
-            </div>
-        </footer>
 
-        <div class="flex-1" style="overflow-y:auto; padding-bottom:7rem;">
+
+        <div class="flex-1" style="overflow-y:auto; padding-bottom:10.5rem;">
             <div class="p-6">
                 <div class="inline-header-container">
                     <button @click="toggleDarkMode" class="dark-mode-toggle"
@@ -1072,7 +1070,8 @@
                             <p v-if="validationErrors.partnerPoints" class="error-message">{{
                                 validationErrors.partnerPoints }}</p>
                         </div>
-                        <p style="font-size:0.6rem; color:var(--gray-400); margin-bottom:0.75rem;">
+                        <p v-if="t('partnerPointsHint')"
+                            style="font-size:0.6rem; color:var(--gray-400); margin-bottom:0.75rem;">
                             <i class="fa-solid fa-lightbulb"></i> {{ t('partnerPointsHint') }}
                         </p>
                         <div style="border-top:1px solid var(--gray-200); padding-top:0.75rem;">
@@ -1197,9 +1196,9 @@
                         </div>
                     </div>
 
-                    <!-- ✅ NEW: Player Advice Message -->
-                    <div v-if="sim.loading" class="player-advice animate-fade-in">
-                        <p class="player-advice-text">{{ t('playerAdvice') }}</p>
+                    <!-- ✅ NEW: Player Advice Message (Replaced with AMA Logo) -->
+                    <div v-if="sim.loading" class="animate-fade-in" style="margin-top: 0.75rem; text-align: center;">
+                        <img src="ama_logo_2.png" alt="AMA Logo" style="width: 100%; max-width: 150px; height: auto;">
                     </div>
 
                     <!-- ✅ 추가: 버튼이 비활성화된 이유 표시 -->
@@ -1267,16 +1266,16 @@
                                     </div>
                                 </div>
                                 <div class="grid-4">
-                                    <a href="https://www.trip.com/t/WkompgAdTT2" target="_blank" class="action-btn">
+                                    <a :href="getTripLink('flight', res)" target="_blank" class="action-btn">
                                         <i class="fa-solid fa-plane"></i> {{ t('flight') }}
                                     </a>
-                                    <a href="https://www.trip.com/t/yjgR4WkfTT2" target="_blank" class="action-btn">
+                                    <a :href="getTripLink('hotel', res)" target="_blank" class="action-btn">
                                         <i class="fa-solid fa-bed"></i> {{ t('hotel') }}
                                     </a>
-                                    <a href="https://www.trip.com/t/bUf6Wh3gTT2" target="_blank" class="action-btn">
+                                    <a :href="getTripLink('package', res)" target="_blank" class="action-btn">
                                         <i class="fa-solid fa-plane-arrival"></i> {{ t('flightHotel') }}
                                     </a>
-                                    <a href="https://www.trip.com/t/jjSoE16gTT2" target="_blank" class="action-btn">
+                                    <a :href="getTripLink('pickup', res)" target="_blank" class="action-btn">
                                         <i class="fa-solid fa-taxi"></i> {{ t('airportPickup') }}
                                     </a>
                                 </div>
@@ -1289,13 +1288,28 @@
                         {{ t('disclaimer') }}</p>
                 </div>
 
-                <!-- ✅ NEW: Safety Warning Footer -->
-                <div class="safety-warning-footer">
-                    <p class="safety-warning-text">
-                        <i class="fa-solid fa-triangle-exclamation safety-warning-icon"></i>
-                        {{ t('safetyWarning') }}
-                    </p>
+                <!-- ✅ NEW: Unified Footer (Buttons + Safety Warning) -->
+                <div class="unified-footer">
+                    <div class="global-footer-bar">
+                        <a class="footer-col" href="https://corporate.bwfbadminton.com/events/calendar/" target="_blank"
+                            rel="noopener noreferrer" style="text-decoration:none;">
+                            <i class="fa-regular fa-calendar-check" style="margin-right:4px;"></i> {{
+                            t('footerCalendar') }}
+                        </a>
+                        <div class="footer-col footer-brand">Court Mate</div>
+                        <div class="footer-col" @click="showConsultModal = true">
+                            <i class="fa-solid fa-headset" style="margin-right:4px;"></i> {{ t('footerConsult') }}
+                        </div>
+                    </div>
+                    <div class="safety-warning-footer">
+                        <p class="safety-warning-text">
+                            <i class="fa-solid fa-triangle-exclamation safety-warning-icon"></i>
+                            {{ t('safetyWarning') }}
+                        </p>
+                    </div>
                 </div>
+
+                <!-- ✅ NEW: Plan Circuit Button (shown when 2-3 tournaments selected) -->
 
                 <footer class="p-6 text-center"
                     style="background:var(--gray-50); border-top:1px solid var(--gray-200); margin-top:2rem;">
@@ -1385,7 +1399,7 @@
                 playerInfo: 'Player Info', rankPoints: 'Rank Points', currentRank: 'Current Rank (e.g. 8)',
                 partnerPoints: 'Partner (Optional)',
                 partnerPointsPlaceholder: 'Partner (Optional)',
-                partnerPointsHint: 'If you select a doubles player, points will be auto-filled. You can also enter manually.',
+                partnerPointsHint: '',
                 optional: '',
                 simCalcMethod: 'Calculation Method',
                 normal: 'Normal', normalDesc: 'My Points + Partner Points',
@@ -1427,7 +1441,7 @@
                 notice3: 'For tournament inquiries, please check "Consult" below.'
             },
             ko: {
-                searchTitle: '선수 검색', searchPlaceholder: '이름 또는 BWF ID로 검색', searchClear: '지우기',
+                searchTitle: 'BWF Name(Eng)', searchPlaceholder: '이름(영문) 또는 BWF ID로 검색', searchClear: '지우기',
                 noPlayersFound: '선수를 찾을 수 없습니다',
                 dataLoadError: '선수 데이터를 불러오지 못했습니다. rankings_data.js 파일을 확인해주세요.',
                 simTitle: '대회 참가 시뮬레이터', simSingles: '단식 (Singles)', simDoubles: '복식 (Doubles)',
@@ -2636,6 +2650,48 @@
                         return diffDays === 0 || diffDays === 1;
                     };
 
+                    // ✅ NEW: Generate Trip.com Affiliate Link with Pre-filled Dates
+                    const getTripLink = (type, tournament) => {
+                        const startDate = new Date(tournament.startIso);
+                        const endDate = new Date(tournament.endIso);
+
+                        // Arrival Date = Start Date - 2 Days
+                        const arrivalDate = new Date(startDate);
+                        arrivalDate.setDate(startDate.getDate() - 2);
+
+                        // Departure Date = End Date
+                        const departureDate = endDate;
+
+                        const formatDate = (date) => date.toISOString().split('T')[0];
+                        const arrivalStr = formatDate(arrivalDate);
+                        const departureStr = formatDate(departureDate);
+
+                        const links = {
+                            flight: 'https://www.trip.com/t/vcoZRUY5UT2',
+                            hotel: 'https://www.trip.com/t/d8z1woX5UT2',
+                            package: 'https://www.trip.com/t/DjdaZlb9UT2',
+                            pickup: 'https://www.trip.com/t/wP4ARpU5UT2'
+                        };
+
+                        let url = links[type] || links.flight;
+                        const params = new URLSearchParams();
+
+                        if (type === 'flight' || type === 'package') {
+                            params.append('dDate', arrivalStr);
+                            params.append('rDate', departureStr);
+                        }
+                        if (type === 'hotel' || type === 'package') {
+                            params.append('checkIn', arrivalStr);
+                            params.append('checkOut', departureStr);
+                        }
+                        // Pickup often uses flight arrival date
+                        if (type === 'pickup') {
+                            params.append('date', arrivalStr);
+                        }
+
+                        return `${url}?${params.toString()}`;
+                    };
+
 
 
                     return {
@@ -2676,6 +2732,7 @@
                         showPhoneNumber, // ✅ NEW: Export Phone State
                         togglePhone,     // ✅ NEW: Export Phone Toggle
                         isUrgentMq,      // ✅ NEW: Export Helper
+                        getTripLink,     // ✅ NEW: Export Link Generator
 
 
                     };
