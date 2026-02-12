@@ -2688,9 +2688,9 @@
                             params.append('checkOut', departureStr);
                         }
                         // Pickup often uses flight arrival date
-                        if (type === 'pickup') {
-                            params.append('date', arrivalStr);
-                        }
+                        // if (type === 'pickup') {
+                        //    params.append('date', arrivalStr);
+                        // }
 
                         return `${url}?${params.toString()}`;
                     };
