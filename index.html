@@ -2692,7 +2692,8 @@
                         //    params.append('date', arrivalStr);
                         // }
 
-                        return `${url}?${params.toString()}`;
+                        const paramStr = params.toString();
+                        return paramStr ? `${url}?${paramStr}` : url;
                     };
 
 
