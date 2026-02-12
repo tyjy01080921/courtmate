@@ -8,16 +8,22 @@
     <meta name="google-adsense-account" content="ca-pub-9952387808707527">
     <title>Court Mate - Smart AI Agent</title>
 
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon_192.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js"></script>
 
     <!-- Tournament Data -->
     <!-- Tournament Data (Moved to root for reliability) -->
-    <script src="2026_tournaments.js"
+    <script defer src="2026_tournaments.js"
         onerror="alert('Error: 2026_tournaments.js failed to load. Please ensure the file is in the same directory as index.html.'); console.error('Failed to load 2026_tournaments.js');"></script>
     <!-- tournaments.js removed to prevent data conflict -->
 
-    <!-- ✅ 수정: 에러 처리 추가 -->
-    <script src="rankings_data.js?v=20260211" onerror="console.error('Failed to load rankings_data.js')"></script>
+    <!-- ✅ 수정: 에러 처리 추가 & Minified Version -->
+    <script defer src="rankings_data.js?v=20260211" onerror="console.error('Failed to load rankings_data.js')"></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -128,7 +134,7 @@
         }
 
         .p-6 {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .mb-2 {
@@ -233,7 +239,7 @@
         .card {
             background: white;
             border-radius: 1rem;
-            padding: 1.25rem;
+            padding: 1rem;
             border: 1px solid var(--gray-100);
             box-shadow: var(--shadow);
             margin-bottom: 1rem;
@@ -297,7 +303,7 @@
             grid-template-columns: auto 1fr auto;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .brand-text-center {
@@ -369,10 +375,104 @@
             color: #fbbf24;
         }
 
+        /* Dark Mode: Inner Rectangles */
+        body.dark-mode .sim-toggle,
+        body.dark-mode .filter-panel,
+        body.dark-mode .res-card,
+        body.dark-mode .search-item,
+        body.dark-mode .action-btn {
+            background: #1e293b !important;
+            border-color: #475569 !important;
+            color: #e2e8f0 !important;
+        }
+
+        body.dark-mode .sim-toggle-btn.active {
+            background: #334155 !important;
+            color: #fff !important;
+            box-shadow: none !important;
+        }
+
+        body.dark-mode .sim-toggle-btn {
+            color: #94a3b8 !important;
+        }
+
+        body.dark-mode .filter-chip {
+            background: #1e293b;
+            border-color: #475569;
+            color: #cbd5e1;
+        }
+
+        body.dark-mode .filter-chip:hover {
+            background: #334155;
+            border-color: #64748b;
+        }
+
+        body.dark-mode .filter-chip.active {
+            background: var(--primary) !important;
+            color: white !important;
+            border-color: var(--primary) !important;
+        }
+
+        body.dark-mode label,
+        body.dark-mode .label,
+        body.dark-mode .filter-label,
+        body.dark-mode h3,
+        body.dark-mode h4 {
+            color: #e2e8f0 !important;
+        }
+
+        body.dark-mode .fa-circle-info,
+        body.dark-mode .fa-plane-departure,
+        body.dark-mode .fa-user-group,
+        body.dark-mode .fa-lightbulb {
+            color: #94a3b8 !important;
+        }
+
+        body.dark-mode .plan-circuit-input {
+            background: #334155 !important;
+            color: white !important;
+        }
+
+        body.dark-mode footer p {
+            color: #94a3b8 !important;
+        }
+
+        /* Dark Mode: Specific containers with inline styles override */
+        body.dark-mode div[style*="background:#eff6ff"],
+        body.dark-mode div[style*="background:var(--gray-50)"],
+        body.dark-mode div[style*="background:white"] {
+            background: #1e293b !important;
+            border-color: #475569 !important;
+            color: #e2e8f0 !important;
+        }
+
+        /* Exception for primary colored elements inside */
+        body.dark-mode div[style*="background:#eff6ff"] p,
+        body.dark-mode div[style*="background:var(--gray-50)"] p {
+            color: #e2e8f0 !important;
+        }
+
+        /* Dark Mode: Input Sections & Calc Options */
+        body.dark-mode .input-section {
+            background: #1e293b !important;
+            border-color: #475569 !important;
+            color: #e2e8f0 !important;
+        }
+
+        body.dark-mode .calc-option {
+            background: #1e293b !important;
+            border-color: #475569 !important;
+            color: #e2e8f0 !important;
+        }
+
+        body.dark-mode .calc-option p {
+            color: #94a3b8 !important;
+        }
+
         /* --- [Feature] Global Footer --- */
         .global-footer-bar {
             position: fixed;
-            bottom: 5rem;
+            bottom: calc(2.2rem + env(safe-area-inset-bottom));
             width: 100%;
             max-width: 480px;
             height: 3rem;
@@ -412,7 +512,7 @@
             background: var(--gray-100);
             padding: 4px;
             border-radius: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .sim-toggle-btn {
@@ -543,7 +643,7 @@
 
         .share-sticky-btn {
             position: fixed;
-            bottom: 7.5rem;
+            bottom: calc(5.5rem + env(safe-area-inset-bottom));
             right: 1.5rem;
             width: 3.5rem;
             height: 3.5rem;
@@ -697,7 +797,7 @@
 
         .plan-circuit-container {
             position: fixed;
-            bottom: 10rem;
+            bottom: calc(8rem + env(safe-area-inset-bottom));
             left: 50%;
             transform: translateX(-50%);
             max-width: 440px;
@@ -791,7 +891,7 @@
             margin: 0 auto;
             background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
             border-top: 3px solid #dc2626;
-            padding: 0.5rem 1rem calc(2.0rem + env(safe-area-inset-bottom));
+            padding: 0.5rem 1rem calc(0.5rem + env(safe-area-inset-bottom));
             text-align: center;
             z-index: 200;
             box-shadow: 0 -4px 6px -1px rgba(220, 38, 38, 0.3);
@@ -853,8 +953,8 @@
                 </div>
 
                 <div class="card animate-fade-in">
-                    <div class="mb-4 relative"
-                        style="border-bottom:1px solid var(--gray-100); padding-bottom:1rem; margin-bottom:1rem;">
+                    <div class="mb-2 relative"
+                        style="border-bottom:1px solid var(--gray-100); padding-bottom:0.75rem; margin-bottom:0.75rem;">
                         <div class="flex-between mb-2">
                             <label class="label" style="margin-bottom:0;">{{ t('searchTitle') }}</label>
                             <div style="display:flex; align-items:center; gap:0.5rem;">
@@ -878,6 +978,13 @@
                                 style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--gray-400);"></i>
                         </div>
 
+
+                        <!-- ✅ NEW: Search Hint (Attached to Input) -->
+                        <p
+                            style="font-size:0.65rem; color:var(--gray-500); margin-top:4px; margin-left:4px; margin-bottom:0.5rem; line-height:1.2;">
+                            <i class="fa-solid fa-circle-info" style="margin-right:2px;"></i> {{ t('searchHint') }}
+                        </p>
+
                         <!-- ✅ 수정: 검색 결과 표시 개선 -->
                         <div v-if="searchQuery && showSearchResults && searchResults.length > 0"
                             style="background:white; border:1px solid var(--gray-200); border-radius:0.5rem; margin-top:4px; margin-bottom:1rem; box-shadow:var(--shadow); width:100%; max-height: 300px; overflow-y: auto;">
@@ -900,7 +1007,8 @@
                         </div>
                     </div>
 
-                    <div class="flex-between mb-4">
+
+                    <div class="flex-between mb-2">
                         <h3 style="font-weight:700; color:var(--slate-800); font-size:0.875rem;"><i
                                 class="fa-solid fa-plane-departure" style="color:#3B82F6; margin-right:6px;"></i> {{
                             t('simTitle') }}</h3>
@@ -913,8 +1021,8 @@
                             :class="{active: sim.type === 'doubles'}">{{ t('simDoubles') }}</button>
                     </div>
 
-                    <div
-                        style="background:#eff6ff; padding:1rem; border-radius:0.75rem; border:1px solid #dbeafe; margin-bottom:1rem;">
+                    <div class="input-section"
+                        style="background:#eff6ff; padding:0.75rem; border-radius:0.75rem; border:1px solid #dbeafe; margin-bottom:0.75rem;">
                         <p style="font-size:10px; font-weight:700; color:#3b82f6; margin-bottom:0.5rem;"><i
                                 class="fa-solid fa-circle-info mr-1"></i> {{ t('playerInfo') }}</p>
                         <div class="radio-group">
@@ -950,8 +1058,8 @@
                         </div>
                     </div>
 
-                    <div v-if="sim.type === 'doubles'"
-                        style="background:var(--gray-50); padding:1rem; border-radius:0.75rem; border:1px solid var(--gray-200); margin-bottom:1rem;">
+                    <div v-if="sim.type === 'doubles'" class="input-section"
+                        style="background:var(--gray-50); padding:0.75rem; border-radius:0.75rem; border:1px solid var(--gray-200); margin-bottom:0.75rem;">
                         <p style="font-size:10px; font-weight:700; color:var(--gray-500); margin-bottom:0.5rem;">
                             <i class="fa-solid fa-user-group mr-1"></i> {{ t('partnerPoints') }}
                             <span style="color:var(--gray-400); font-weight:400;">({{ t('optional') }})</span>
@@ -970,7 +1078,7 @@
                         <div style="border-top:1px solid var(--gray-200); padding-top:0.75rem;">
                             <label class="label">{{ t('simCalcMethod') }}</label>
 
-                            <div @click="sim.calcMethod = 'normal'"
+                            <div @click="sim.calcMethod = 'normal'" class="calc-option"
                                 style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; margin-bottom:0.5rem; cursor:pointer;"
                                 :style="sim.calcMethod === 'normal' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
                                 <div class="flex-between mb-1"><span style="font-size:0.75rem; font-weight:700;">{{
@@ -982,7 +1090,7 @@
                                 <p style="font-size:0.65rem; color:var(--gray-400);">{{ t('normalDesc') }}</p>
                             </div>
 
-                            <div @click="sim.calcMethod = 'notional'"
+                            <div @click="sim.calcMethod = 'notional'" class="calc-option"
                                 style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; margin-bottom:0.5rem; cursor:pointer;"
                                 :style="sim.calcMethod === 'notional' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
                                 <div class="flex-between mb-1"><span style="font-size:0.75rem; font-weight:700;">{{
@@ -994,7 +1102,7 @@
                                 <p style="font-size:0.65rem; color:var(--gray-400);">{{ t('simNotionalDetail') }}</p>
                             </div>
 
-                            <div @click="sim.calcMethod = 'adjusted'"
+                            <div @click="sim.calcMethod = 'adjusted'" class="calc-option"
                                 style="background:white; border:1px solid; border-radius:0.5rem; padding:0.75rem; cursor:pointer;"
                                 :style="sim.calcMethod === 'adjusted' ? 'border-color:#3b82f6; box-shadow:0 0 0 1px #3b82f6;' : 'border-color:var(--gray-200);'">
                                 <div class="flex-between mb-1"><span style="font-size:0.75rem; font-weight:700;">{{
@@ -1015,7 +1123,7 @@
                     </div>
 
                     <!-- ✅ NEW: Tournament Filter Panel -->
-                    <div class="filter-panel" v-if="!sim.loading">
+                    <div class="filter-panel" v-if="!sim.loading" style="padding: 0.75rem; margin-bottom: 0.75rem;">
                         <div class="filter-section">
                             <span class="filter-label">{{ t('filterRegion') }}</span>
                             <div class="filter-chips">
@@ -1101,12 +1209,22 @@
                     </p>
 
                     <div v-if="sim.results"
-                        style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--gray-100);"
+                        style="margin-top:1rem; padding-top:0.75rem; border-top:1px solid var(--gray-100);"
                         class="animate-fade-in">
-                        <p class="flex-between mb-2"><span
-                                style="font-size:0.75rem; font-weight:700; color:var(--gray-500);">{{
-                                t('simResultTitle') }}</span><span
-                                style="font-size:0.65rem; font-weight:700; color:var(--primary);">Target</span></p>
+                        <div class="flex-between mb-2" style="align-items: center; position: relative;">
+                            <span style="font-size:0.75rem; font-weight:700; color:var(--gray-500);">{{
+                                t('simResultTitle') }}</span>
+
+                            <!-- ✅ NEW: Share Button (Absolute Center) -->
+                            <button @click="shareResults"
+                                style="background:none; border:none; cursor:pointer; color:var(--primary); font-size:0.9rem; padding:0.25rem; font-weight:700; position:absolute; left:50%; transform:translateX(-50%); white-space:nowrap;">
+                                <i class="fa-solid fa-share-nodes"></i> {{ t('share') }}
+                            </button>
+
+                            <span @click="showNoticeModal = true"
+                                style="font-size:0.65rem; font-weight:700; color:var(--gray-500); cursor:pointer; text-decoration:underline;">Notice
+                                <i class="fa-solid fa-circle-info"></i></span>
+                        </div>
 
                         <div v-if="filteredResults.length === 0"
                             style="text-align:center; padding:2rem; color:var(--gray-500); font-size: 0.875rem;">
@@ -1117,23 +1235,34 @@
 
                         <div v-for="(res, idx) in filteredResults" :key="res.id" class="tournament-card-wrapper">
                             <div class="res-card"
-                                :style="{'border-color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'qual' ? '#eab308' : '#9ca3af'))}">
+                                :style="{'border-left': '4px solid', 'border-left-color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'qual' || res.statusKey === 'promo' ? '#eab308' : '#ef4444'))}">
 
                                 <div class="flex-between mb-2">
                                     <div>
                                         <h4 style="font-size:0.875rem; font-weight:700;"><span class="res-grade">{{
-                                                res.shortGrade }}</span> {{ res.name }}</h4>
+                                                res.shortGrade }}</span>
+                                            <span v-if="res.qualCutoff"
+                                                style="font-size:0.5rem; background:#f59e0b; color:white; padding:1px 3px; border-radius:3px; margin-left:2px; vertical-align:middle;">Q-Draw</span>
+                                            {{ res.name }}
+                                        </h4>
                                         <span style="font-size:0.65rem; color:var(--gray-500);">{{ res.city }} | {{
                                             res.date
                                             }}</span>
                                     </div>
                                     <div style="text-align:right;">
                                         <span style="font-size:0.75rem; font-weight:700; display:block;"
-                                            :style="{'color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'promo' ? '#3b82f6' : '#6b7280'))}">{{
+                                            :style="{'color': res.statusKey === 'mandatory' ? '#7e22ce' : (res.statusKey === 'main' ? '#10b981' : (res.statusKey === 'qual' ? '#eab308' : (res.statusKey === 'promo' ? '#eab308' : '#ef4444')))}">{{
                                             res.prediction }}</span>
                                         <div style="font-size:0.5rem; color:var(--gray-400); margin-top:2px;">
                                             <span>Entry:
-                                                {{ res.entryDeadline }}</span><br><span>W/D: {{ res.wdDeadline }}</span>
+                                                {{ res.entryDeadline }} <span v-if="res.isEstimated"
+                                                    style="color:var(--gray-400); font-size:0.45rem;">(Est.)</span></span><br>
+                                            <span>W/D: {{ res.wdDeadline }} <span v-if="res.isEstimated"
+                                                    style="color:var(--gray-400); font-size:0.45rem;">(Est.)</span></span><br>
+                                            <span
+                                                :style="isUrgentMq(res.mqReportDate) ? 'color:#ef4444; font-weight:800; background:#fee2e2; padding:1px 4px; border-radius:4px;' : ''">
+                                                M&Q Report: {{ res.mqReportDate }} (Fri)
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -1153,6 +1282,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <p
                         style="font-size:0.55rem; color:var(--gray-400); margin-top:1rem; text-align:center; line-height:1.4;">
@@ -1188,34 +1318,57 @@
         <!-- ✅ NEW: Plan Circuit Button (shown when 2-3 tournaments selected) -->
         <!-- ✅ NEW: Plan Circuit Floating Bar -->
 
-
-        <button v-if="sim.results" @click="shareResults" class="share-sticky-btn" aria-label="Share results">
-            <i class="fa-solid fa-share-nodes"></i>
-        </button>
-
         <div v-if="showConsultModal" class="modal-overlay" @click.self="showConsultModal=false">
             <div class="card animate-fade-in" style="width:100%; max-width:320px; text-align:center; padding: 2rem;">
                 <h3 style="margin-bottom:1rem; font-weight:800; font-size: 1.25rem;">{{ t('consultTitle') }}</h3>
 
                 <p
                     style="font-size: 0.9rem; line-height: 1.6; color: var(--slate-700); margin-bottom: 1.5rem; word-break: keep-all;">
-                    If you have any inquiries regarding your badminton career, please contact me directly. I am a
-                    professional badminton agent.<br><br>
-                    <strong>I am a real person.</strong>
+                    {{ t('consultDesc') }}
                 </p>
 
                 <div @click="copyAgentEmail" class="email-box"
-                    style="background: var(--gray-50); border: 1px solid var(--gray-200); padding: 1rem; border-radius: 0.75rem; cursor: pointer; transition: all 0.2s;">
+                    style="background: var(--gray-50); border: 1px solid var(--gray-200); padding: 1rem; border-radius: 0.75rem; cursor: pointer; transition: all 0.2s; margin-bottom: 0.5rem;">
                     <i class="fa-regular fa-envelope"
                         style="color: var(--primary); font-size: 1.25rem; margin-bottom: 0.5rem; display: block;"></i>
                     <span style="font-weight: 700; color: var(--slate-800); font-size: 1rem;">withm2k@gmail.com</span>
                     <p style="font-size: 0.65rem; color: var(--gray-500); margin-top: 0.25rem;">(Click to copy)</p>
                 </div>
 
+                <div @click="togglePhone" class="phone-box"
+                    style="background: var(--gray-50); border: 1px solid var(--gray-200); padding: 1rem; border-radius: 0.75rem; cursor: pointer; transition: all 0.2s;">
+                    <i class="fa-solid fa-phone"
+                        style="color: var(--primary); font-size: 1.25rem; margin-bottom: 0.5rem; display: block;"></i>
+                    <span v-if="!showPhoneNumber" style="font-weight: 700; color: var(--slate-800); font-size: 1rem;">{{
+                        t('showNumber') }}</span>
+                    <span v-else
+                        style="font-weight: 700; color: var(--slate-800); font-size: 1rem;">+82-10-3483-5920</span>
+                </div>
+
                 <button class="btn btn-ghost mt-6" @click="showConsultModal=false">{{ t('close') }}</button>
             </div>
         </div>
 
+        <!-- ✅ NEW: Notice Modal -->
+        <div v-if="showNoticeModal" class="modal-overlay" @click.self="showNoticeModal=false">
+            <div class="card animate-fade-in" style="width:100%; max-width:320px; padding: 1.5rem;">
+                <h3 style="margin-bottom:1rem; font-weight:800; font-size: 1.1rem;">{{ t('noticeTitle') }}</h3>
+
+                <ul
+                    style="font-size: 0.8rem; line-height: 1.6; color: var(--slate-700); margin-bottom: 1.5rem; padding-left: 1.2rem; list-style-type: decimal;">
+                    <li style="margin-bottom: 0.5rem;">
+                        {{ t('notice1_1') }}
+                        <a href="https://bwfbadminton.com/calendar/" target="_blank"
+                            style="color:var(--primary); text-decoration:underline;">BWF Website</a>
+                        {{ t('notice1_2') }}
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">{{ t('notice2') }}</li>
+                    <li>{{ t('notice3') }}</li>
+                </ul>
+
+                <button class="btn btn-primary w-full" @click="showNoticeModal=false">{{ t('close') }}</button>
+            </div>
+        </div>
 
     </div>
 
@@ -1229,20 +1382,24 @@
                 noPlayersFound: 'No players found',
                 dataLoadError: 'Failed to load player data. Please check if rankings_data.js exists.',
                 simTitle: 'Entry Simulator', simSingles: 'Singles', simDoubles: 'Doubles',
-                playerInfo: 'Player Info', rankPoints: 'Rank Points (e.g. 25000)', currentRank: 'Current Rank (e.g. 8)',
-                partnerPoints: 'Partner Points',
-                partnerPointsPlaceholder: 'Partner Points (optional)',
+                playerInfo: 'Player Info', rankPoints: 'Rank Points', currentRank: 'Current Rank (e.g. 8)',
+                partnerPoints: 'Partner (Optional)',
+                partnerPointsPlaceholder: 'Partner (Optional)',
                 partnerPointsHint: 'If you select a doubles player, points will be auto-filled. You can also enter manually.',
-                optional: 'Optional',
+                optional: '',
                 simCalcMethod: 'Calculation Method',
                 normal: 'Normal', normalDesc: 'My Points + Partner Points',
-                notional: 'Notional Point', notionalDesc: '80% of Higher Points',
+                notional: 'Notional Point', notionalDesc: 'Higher 80% + Lower 20%',
                 adjusted: 'Adjusted Point',
                 simOpt5: '1~5 Tournaments (x 2.0)', simOpt6: '6 Tournaments (x 1.66)', simOpt7: '7 Tournaments (x 1.42)', simOpt8: '8 Tournaments (x 1.25)',
                 simBtnRun: 'Analyze Entry', simAnalyzing: 'Analyzing...', simResultTitle: 'Forecast List',
+                shareAnalysis: 'Share Analysis', share: 'Share',
                 flight: 'Flight', hotel: 'Hotel', disclaimer: '* Disclaimer: Simulation results are for reference only.',
                 footerCalendar: 'BWF Calendar', footerConsult: 'Consult',
-                consultTitle: 'Consultation Chat', close: 'Close',
+                consultTitle: 'Feel free to ask',
+                consultDesc: 'If you have any inquiries regarding your badminton career, please contact me directly. I am a professional badminton agent who is working with KO Sunghyun, SHIN Baekcheol, and other famous players.',
+                showNumber: 'Click to show number',
+                close: 'Close',
                 mandatory: 'Mandatory', mainSafe: 'Main Draw (Safe)', qualMain: 'Qualifying / Main Draw', promoProbable: 'Promotion Probable', reserve: 'Reserve',
                 alertEnterPoints: 'Please enter points.',
                 alertInvalidPoints: 'Please enter valid points (0-999,999).',
@@ -1252,7 +1409,7 @@
                 msgEnterPoints: 'Please enter ranking points',
                 msgEnterPartnerPoints: 'Please enter partner points for doubles',
                 simNotionalTitle: 'Notional Point',
-                simNotionalDetail: '80% of the higher player\'s points',
+                simNotionalDetail: '80% of Higher Points + 20% of Lower Points',
                 simAdjustedTitle: 'Adjusted Point',
                 filterRegion: 'Region', filterGrade: 'Tournament Grade', filterAll: 'All',
                 regionAsia: 'Asia', regionEurope: 'Europe', regionPanAm: 'Pan Am', regionAfrica: 'Africa', regionOceania: 'Oceania',
@@ -1261,27 +1418,37 @@
                 safetyWarning: '🚫 Say NO to illegal gambling & drugs. Report it!',
                 searchRememberMe: 'Remember Me',
                 noTournamentsFound: 'No tournaments found matching your criteria.',
-                flightHotel: 'Flight+Hotel', airportPickup: 'Airport Pickup'
+                flightHotel: 'Flight+Hotel', airportPickup: 'Airport Pickup',
+                searchHint: 'For players ranked 200+, please enter points manually below.',
+                noticeTitle: 'Notice',
+                notice1_1: 'Tournament cutoffs are estimated based on internal analysis. For exact past cutoff points, specially S100 or less, please check individually on the ',
+                notice1_2: '.',
+                notice2: 'Deadlines are estimated dates calculated based on regulations.',
+                notice3: 'For tournament inquiries, please check "Consult" below.'
             },
             ko: {
                 searchTitle: '선수 검색', searchPlaceholder: '이름 또는 BWF ID로 검색', searchClear: '지우기',
                 noPlayersFound: '선수를 찾을 수 없습니다',
                 dataLoadError: '선수 데이터를 불러오지 못했습니다. rankings_data.js 파일을 확인해주세요.',
                 simTitle: '대회 참가 시뮬레이터', simSingles: '단식 (Singles)', simDoubles: '복식 (Doubles)',
-                playerInfo: '선수 정보 (Player Info)', rankPoints: '랭킹 포인트 (예: 25000)', currentRank: '현재 랭킹 (예: 8)',
-                partnerPoints: '파트너 포인트',
-                partnerPointsPlaceholder: '파트너 포인트 (선택사항)',
+                playerInfo: '선수 정보 (Player Info)', rankPoints: '랭킹 포인트', currentRank: '현재 랭킹 (예: 8)',
+                partnerPoints: '파트너 포인트 (선택)',
+                partnerPointsPlaceholder: '파트너 포인트 (선택)',
                 partnerPointsHint: '복식 선수를 선택하면 자동으로 입력됩니다. 직접 입력도 가능합니다.',
-                optional: '선택사항',
+                optional: '',
                 simCalcMethod: '포인트 산정 방식 (GCR 11.7)',
                 normal: '일반 (Normal)', normalDesc: '내 포인트 + 파트너 포인트',
-                notional: '가상 포인트 (Notional Point)', notionalDesc: '높은 쪽 포인트의 80%',
+                notional: '가상 포인트 (Notional Point)', notionalDesc: '높은 점수 80% + 낮은 점수 20%',
                 adjusted: '보정 포인트 (Adjusted Point)',
                 simOpt5: '1~5개 대회 참가 (x 2.0)', simOpt6: '6개 대회 참가 (x 1.66)', simOpt7: '7개 대회 참가 (x 1.42)', simOpt8: '8개 대회 참가 (x 1.25)',
                 simBtnRun: '참가 가능 대회 분석 시작', simAnalyzing: '3년치 데이터 분석 중...', simResultTitle: '2026 참가 예상 리스트',
+                shareAnalysis: '분석 결과 공유', share: '공유',
                 flight: '항공권', hotel: '호텔', disclaimer: '* 면책 조항: 시뮬레이션 결과는 참고용입니다.',
                 footerCalendar: 'BWF 캘린더', footerConsult: '상담하기',
-                consultTitle: '상담 채널', close: '닫기',
+                consultTitle: '무엇이든 물어보세요',
+                consultDesc: '배드민턴 선수 경력에 관해 궁금한 점이 있으시면 언제든지 직접 연락주세요. 저는 고성현, 신백철 등 유명 선수들과 함께 일하고 있는 전문 배드민턴 에이전트입니다.',
+                showNumber: '전화번호 보기',
+                close: '닫기',
                 mandatory: '의무 참가 (Top 10)', mainSafe: '본선 안정권', qualMain: '예선 안정권 / 본선 가능', promoProbable: '프로모션 유력 (대기 1~5)', reserve: '대기',
                 alertEnterPoints: '포인트를 입력해주세요.',
                 alertInvalidPoints: '유효한 포인트를 입력해주세요 (0-999,999).',
@@ -1291,7 +1458,7 @@
                 msgEnterPoints: '랭킹 포인트를 입력해주세요',
                 msgEnterPartnerPoints: '복식의 경우 파트너 포인트를 입력해주세요',
                 simNotionalTitle: '가상 포인트 (Notional Point)',
-                simNotionalDetail: '두 선수 중 높은 포인트의 80% 적용',
+                simNotionalDetail: '높은 점수 80% + 낮은 점수 20% 합산',
                 simAdjustedTitle: '보정 포인트 (Adjusted Point)',
                 filterRegion: '지역', filterGrade: '대회 등급', filterAll: '전체',
                 regionAsia: '아시아', regionEurope: '유럽', regionPanAm: '팬암', regionAfrica: '아프리카', regionOceania: '오세아니아',
@@ -1300,27 +1467,37 @@
                 safetyWarning: '🚫 불법 도박·약물 제안 즉시 신고!',
                 searchRememberMe: '선수 기억하기',
                 noTournamentsFound: '조건에 맞는 대회가 없습니다.',
-                flightHotel: '항공+호텔', airportPickup: '공항픽업'
+                flightHotel: '항공+호텔', airportPickup: '공항픽업',
+                searchHint: '200위 밖의 선수는 아래 점수 칸에 직접 입력해주세요.',
+                noticeTitle: '유의 사항',
+                notice1_1: '대회 커트라인은 자체 분석한 자료의 평균치이므로 정확한 전년 커트라인 포인트는 개별적으로 ',
+                notice1_2: '에서 검색하세요.',
+                notice2: '대회의 마감일들은 규정을 참조해서 계산한 예상날짜 입니다.',
+                notice3: '대회 참가 관련 문의 사항은 아래 "상담하기"를 확인해 주세요.'
             },
             zh: {
                 searchTitle: '搜索球员', searchPlaceholder: '按姓名或 BWF ID 搜索', searchClear: '清除',
                 noPlayersFound: '未找到球员',
                 dataLoadError: '无法加载球员数据。请检查 rankings_data.js 文件。',
                 simTitle: '参赛模拟器', simSingles: '单打 (Singles)', simDoubles: '双打 (Doubles)',
-                playerInfo: '球员信息 (Player Info)', rankPoints: '排名积分 (例: 25000)', currentRank: '当前排名 (例: 8)',
-                partnerPoints: '搭档积分',
-                partnerPointsPlaceholder: '搭档积分 (可选)',
+                playerInfo: '球员信息 (Player Info)', rankPoints: '排名积分', currentRank: '当前排名 (例: 8)',
+                partnerPoints: '搭档 (可选)',
+                partnerPointsPlaceholder: '搭档 (可选)',
                 partnerPointsHint: '选择双打球员后会自动填充。也可以手动输入。',
-                optional: '可选',
+                optional: '',
                 simCalcMethod: '积分计算方式 (GCR 11.7)',
                 normal: '普通 (Normal)', normalDesc: '我的积分 + 搭档积分',
-                notional: '虚拟积分 (Notional Point)', notionalDesc: '较高积分的 80%',
+                notional: '虚拟积分 (Notional Point)', notionalDesc: '较高积分 80% + 较低积分 20%',
                 adjusted: '调整积分 (Adjusted Point)',
                 simOpt5: '参加 1~5 个比赛 (x 2.0)', simOpt6: '参加 6 个比赛 (x 1.66)', simOpt7: '参加 7 个比赛 (x 1.42)', simOpt8: '参加 8 个比赛 (x 1.25)',
                 simBtnRun: '开始分析参赛资格', simAnalyzing: '正在分析...', simResultTitle: '2026 参赛预测列表',
+                shareAnalysis: '分享分析结果', share: '分享',
                 flight: '机票', hotel: '酒店', disclaimer: '* 免责声明：模拟结果仅供参考。',
                 footerCalendar: 'BWF 日历', footerConsult: '咨询',
-                consultTitle: '咨询聊天', close: '关闭',
+                consultTitle: '随时咨询',
+                consultDesc: '如果您对羽毛球职业生涯有任何疑问，请直接联系我。我是与高成炫、申白喆等著名球员合作的专业羽毛球经纪人。',
+                showNumber: '点击显示号码',
+                close: '关闭',
                 mandatory: '强制参赛 (Top 10)', mainSafe: '正赛圈 (安全)', qualMain: '资格赛 / 正赛可能', promoProbable: '很有可能晋级 (候补 1~5)', reserve: '候补',
                 alertEnterPoints: '请输入积分。',
                 alertInvalidPoints: '请输入有效积分 (0-999,999)。',
@@ -1330,7 +1507,7 @@
                 msgEnterPoints: '请输入排名积分',
                 msgEnterPartnerPoints: '双打请输入搭档积分',
                 simNotionalTitle: '虚拟积分 (Notional Point)',
-                simNotionalDetail: '较高球员积分的 80%',
+                simNotionalDetail: '较高积分 80% + 较低积分 20%',
                 simAdjustedTitle: '调整积分 (Adjusted Point)',
                 filterRegion: '地区', filterGrade: '比赛等级', filterAll: '全部',
                 regionAsia: '亚洲', regionEurope: '欧洲', regionPanAm: '泛美', regionAfrica: '非洲', regionOceania: '大洋洲',
@@ -1339,935 +1516,1172 @@
                 safetyWarning: '🚫 拒绝赌博和毒品·立即举报！',
                 searchRememberMe: '记住我',
                 noTournamentsFound: '未找到符合条件的比赛。',
-                flightHotel: '机酒套餐', airportPickup: '接送机'
+                flightHotel: '机酒套餐', airportPickup: '接送机',
+                searchHint: '排名 200+ 的球员，请在下方手动输入积分。',
+                noticeTitle: '注意事项',
+                notice1_1: '比赛截止分数是基于内部分析的平均值。如需准确的过往截止分数，请自行在 ',
+                notice1_2: ' 查询。',
+                notice2: '比赛截止日期是根据规定计算的预计日期。',
+                notice3: '关于比赛参赛的咨询，请查阅下方的“咨询”。'
             },
             ja: {
                 searchTitle: '選手検索', searchPlaceholder: '名前またはBWF IDで検索', searchClear: 'クリア',
                 noPlayersFound: '選手が見つかりません',
                 dataLoadError: '選手データの読み込みに失敗しました。rankings_data.js ファイルを確認してください。',
                 simTitle: '大会参加シミュレーター', simSingles: 'シングルス (Singles)', simDoubles: 'ダブルス (Doubles)',
-                playerInfo: '選手情報 (Player Info)', rankPoints: 'ランキングポイント (例: 25000)', currentRank: '現在の順位 (例: 8)',
-                partnerPoints: 'パートナーポイント',
-                partnerPointsPlaceholder: 'パートナーポイント (オプション)',
+                playerInfo: '選手情報 (Player Info)', rankPoints: 'ランキングポイント', currentRank: '現在の順位 (例: 8)',
+                partnerPoints: 'パートナー (オプション)',
+                partnerPointsPlaceholder: 'パートナー (オプション)',
                 partnerPointsHint: 'ダブルス選手を選択すると自動入力されます。手動入力も可能です。',
-                optional: 'オプション',
+                optional: '',
                 simCalcMethod: 'ポイント計算方法 (GCR 11.7)',
                 normal: '通常 (Normal)', normalDesc: '自分のポイント + パートナーポイント',
-                notional: 'みなしポイント (Notional Point)', notionalDesc: '高い方のポイントの80%',
+                notional: 'みなしポイント (Notional Point)', notionalDesc: '高い方 80% + 低い方 20%',
                 adjusted: '調整ポイント (Adjusted Point)',
                 simOpt5: '1~5大会参加 (x 2.0)', simOpt6: '6大会参加 (x 1.66)', simOpt7: '7大会参加 (x 1.42)', simOpt8: '8大会参加 (x 1.25)',
                 simBtnRun: '参加可能性を分析', simAnalyzing: '分析中...', simResultTitle: '2026 参加予想リスト',
+                shareAnalysis: '分析結果を共有', share: '共有',
                 flight: '航空券', hotel: 'ホテル', disclaimer: '* 免責事項：シミュレーション結果は参考用です。',
                 footerCalendar: 'BWFカレンダー', footerConsult: '相談する',
-                consultTitle: '相談チャット', close: '閉じる',
-                mandatory: '義務参加 (Top 10)', mainSafe: '本戦圏内', qualMain: '予選圏内 / 本戦可能', promoProbable: '昇格有力 (補欠 1~5)', reserve: '補欠',
+                consultTitle: 'お気軽にお問い合わせください',
+                consultDesc: 'バドミントンのキャリアについてご質問があれば、直接ご連絡ください。私はコ・ソンヒョン選手やシン・ベクチョル選手など、有名な選手と仕事をしているプロのバドミントンエージェントです。',
+                showNumber: '番号を表示',
+                close: '閉じる',
+                mandatory: '義務参加 (Top 10)', mainSafe: '本戦圏内 (安全)', qualMain: '予選圏内 / 本戦可能性', promoProbable: '昇格有力 (補欠 1~5)', reserve: '補欠',
                 alertEnterPoints: 'ポイントを入力してください。',
                 alertInvalidPoints: '有効なポイントを入力してください (0-999,999)。',
                 alertInvalidRank: '有効な順位を入力してください (1-100,000)。',
                 alertPartnerPoints: 'ダブルスの場合はパートナーポイントを入力してください。',
-                fillRequiredFields: '必須項目をすべて入力してください',
+                fillRequiredFields: 'すべての必須項目を入力してください',
                 msgEnterPoints: 'ランキングポイントを入力してください',
                 msgEnterPartnerPoints: 'ダブルスの場合はパートナーポイントを入力してください',
                 simNotionalTitle: 'みなしポイント (Notional Point)',
-                simNotionalDetail: '高い方の選手のポイントの80%',
+                simNotionalDetail: '高い方の80% + 低い方の20%',
                 simAdjustedTitle: '調整ポイント (Adjusted Point)',
                 filterRegion: '地域', filterGrade: '大会グレード', filterAll: 'すべて',
                 regionAsia: 'アジア', regionEurope: 'ヨーロッパ', regionPanAm: 'パンアメリカ', regionAfrica: 'アフリカ', regionOceania: 'オセアニア',
                 timerEstimate: '予想時間', timerSeconds: '秒',
-                playerAdvice: '🚫 賭博・薬物は拒否！即通報！',
-                safetyWarning: '🚫 賭博・薬物は拒否！即通報！',
-                searchRememberMe: '検索した選手を記憶する',
+                playerAdvice: '🚫 違法賭博・薬物の誘いは即通報！',
+                safetyWarning: '🚫 違法賭博・薬物の誘いは即通報！',
+                searchRememberMe: '選手情報を記憶',
                 noTournamentsFound: '条件に一致する大会が見つかりません。',
-                flightHotel: '航空券+ホテル', airportPickup: '空港送迎'
+                flightHotel: '航空券+ホテル', airportPickup: '空港送迎',
+                searchHint: '200位以下の選手は、以下の点数欄に直接入力してください。',
+                noticeTitle: '注意事項',
+                notice1_1: '大会のカットラインは独自分析による平均値です。正確な過去のカットラインについては、個別に ',
+                notice1_2: ' で検索してください。',
+                notice2: '大会の締切日は規定に基づいて計算された予想日です。',
+                notice3: '大会参加に関するお問い合わせは、下の「相談する」をご確認ください。'
             }
         };
 
-        createApp({
-            setup() {
-                // Load saved language or default to 'en'
-                const savedLang = localStorage.getItem('courtmate_lang');
-                const currentLang = ref(savedLang || 'en');
-                const rememberPlayer = ref(false); // ✅ NEW: Remember Me State
+        // Initialize Vue App after DOM is loaded and deferred scripts are ready
+        window.addEventListener('DOMContentLoaded', () => {
+            createApp({
+                setup() {
+                    // Load saved language or default to 'en'
+                    const savedLang = localStorage.getItem('courtmate_lang');
+                    const currentLang = ref(savedLang || 'en');
+                    const rememberPlayer = ref(false); // ✅ NEW: Remember Me State
+                    const selectedPlayer = ref(null); // ✅ NEW: Track selected player object
+                    const showPhoneNumber = ref(false); // ✅ NEW: Phone number toggle
 
-                const showConsultModal = ref(false);
-                const searchQuery = ref('');
-                const showSearchResults = ref(false);
-                const dataLoadError = ref(false);
-                const darkMode = ref(false);
-                const validationErrors = reactive({
-                    points: '',
-                    rank: '',
-                    partnerPoints: ''
-                });
+                    const showConsultModal = ref(false);
+                    const showNoticeModal = ref(false); // ✅ NEW: Notice Modal State
+                    const searchQuery = ref('');
+                    const showSearchResults = ref(false);
+                    const dataLoadError = ref(false);
+                    const darkMode = ref(false);
 
-                // ✅ NEW: Tournament Filters
-                const filters = reactive({
-                    selectedRegions: [],
-                    selectedGrades: []
-                });
-
-                // ✅ NEW: Timer State
-                const timerState = reactive({
-                    countdown: 0,
-                    intervalId: null
-                });
-
-                // ✅ NEW: Loading Logs State
-                const loadingLogs = ref([
-                    { message: 'DB Searching...', done: false },
-                    { message: 'Parsing Week 7 Rankings...', done: false },
-                    { message: 'Loading 2026 Calendar...', done: false },
-                    { message: 'Analyzing Tournament Data...', done: false },
-                    { message: 'Preparing Smart Recommendations...', done: false }
-                ]);
-                const loadingProgress = ref(0);
-
-
-
-                // ✅ NEW: City to Airport Code Mapping (Expanded for BWF 2026)
-                const cityMap = {
-                    // Major Asian Hubs
-                    '서울': 'ICN', '인천': 'ICN', 'seoul': 'ICN', 'incheon': 'ICN', 'gimpo': 'GMP', 'kimpo': 'GMP',
-                    '부산': 'PUS', 'busan': 'PUS', 'gimhae': 'PUS',
-                    '대구': 'TAE', 'daegu': 'TAE', '청주': 'CJJ', 'cheongju': 'CJJ', '제주': 'CJU', 'jeju': 'CJU',
-                    '도쿄': 'NRT', 'tokyo': 'NRT', '나리타': 'NRT', 'narita': 'NRT', 'haneda': 'HND',
-                    '오사카': 'KIX', 'osaka': 'KIX', 'kansai': 'KIX',
-                    '후쿠오카': 'FUK', 'fukuoka': 'FUK',
-                    '나고야': 'NGO', 'nagoya': 'NGO', 'kumamoto': 'KMJ', 'aichi': 'NGO',
-                    '베이징': 'PEK', 'beijing': 'PEK', '상하이': 'PVG', 'shanghai': 'PVG',
-                    '항저우': 'HGH', 'hangzhou': 'HGH', 'shenzhen': 'SZX', 'lingshui': 'SYX', // Lingshui -> Sanya (closest)
-                    '청두': 'CTU', 'chengdu': 'CTU',
-                    '방콕': 'BKK', 'bangkok': 'BKK', 'chiang mai': 'CNX',
-                    '쿠알라룸푸르': 'KUL', 'kuala lumpur': 'KUL', 'kuching': 'KCH',
-                    '자카르타': 'CGK', 'jakarta': 'CGK', 'surabaya': 'SUB',
-                    '싱가포르': 'SIN', 'singapore': 'SIN',
-                    '타이베이': 'TPE', 'taipei': 'TPE', 'kaohsiung': 'KHH',
-                    '홍콩': 'HKG', 'hong kong': 'HKG',
-                    '하노이': 'HAN', 'hanoi': 'HAN', '호치민': 'SGN', 'ho chi minh': 'SGN',
-                    '마닐라': 'MNL', 'manila': 'MNL',
-                    '뉴델리': 'DEL', 'new delhi': 'DEL', 'hyderabad': 'HYD', 'guwahati': 'GAU',
-
-                    // Europe
-                    '파리': 'CDG', 'paris': 'CDG', 'lyon': 'LYS', 'orleans': 'ORY',
-                    '런던': 'LHR', 'london': 'LHR', 'birmingham': 'BHX',
-                    '프랑크푸르트': 'FRA', 'frankfurt': 'FRA', 'mulheim': 'DUS', 'saarbrucken': 'SCN',
-                    '코펜하겐': 'CPH', 'copenhagen': 'CPH', 'odense': 'BLL', // Odense -> Billund (closest major)
-                    '바젤': 'BSL', 'basel': 'BSL',
-                    '마드리드': 'MAD', 'madrid': 'MAD', 'barcelona': 'BCN',
-
-                    // Americas & Oceania
-                    '로스앤젤레스': 'LAX', 'los angeles': 'LAX', 'new orleans': 'MSY',
-                    '캘거리': 'YYC', 'calgary': 'YYC',
-                    '시드니': 'SYD', 'sydney': 'SYD', 'melbourne': 'MEL'
-                };
-
-                // ✅ NEW: Helper to get Airport Code
-                const getAirportCode = (input) => {
-                    if (!input) return 'ICN';
-
-                    // Handle "City, Country" format (e.g. "Kuala Lumpur, MAS")
-                    let key = input.split(',')[0].trim().toLowerCase();
-
-                    // Check direct map
-                    if (cityMap[key]) return cityMap[key];
-
-                    // Try removing spaces (e.g. "new delhi" -> "newdelhi") if needed, 
-                    // but our map currently has keys with spaces.
-
-                    // Fallback to strict input if not found? 
-                    // Trip.com might fail with "Kuala Lumpur, MAS". 
-                    // Better to return the city name part at least if no code found.
-                    return key.charAt(0).toUpperCase() + key.slice(1);
-                };
-
-
-
-
-
-
-                const playerNationality = ref('');  // Based on player country
-
-                // ✅ 수정: rankings_data.js 데이터 로드 확인
-                const rankingsDataRaw = window.RANKINGS_2026_RAW || {};
-
-                // ✅ 추가: 데이터 로드 확인
-                if (!window.RANKINGS_2026_RAW || Object.keys(window.RANKINGS_2026_RAW).length === 0) {
-                    dataLoadError.value = true;
-                    console.error('⚠️ RANKINGS_2026_RAW data not found. Please ensure rankings_data.js is loaded.');
-                }
-
-                // ✅ 수정: 선수 데이터 처리 개선
-                const allPlayers = computed(() => {
-                    let players = [];
-                    for (const [cat, list] of Object.entries(rankingsDataRaw)) {
-                        if (Array.isArray(list)) {
-                            list.forEach(p => {
-                                players.push({
-                                    ...p,
-                                    category: cat,
-                                    // player 필드를 name으로도 사용 가능하도록
-                                    name: p.name || p.player,
-                                    id: p.id || p.member_id,
-                                    // points를 숫자로 변환 (쉼표 제거)
-                                    numericPoints: typeof p.points === 'string' ?
-                                        (parseInt(p.points.replace(/,/g, '')) || 0) :
-                                        (p.points || 0)
-                                });
-                            });
-                        }
-                    }
-                    return players;
-                });
-
-                // ✅ 수정: 검색 알고리즘 개선
-                const searchResults = computed(() => {
-                    if (!searchQuery.value) return [];
-                    const q = searchQuery.value.toLowerCase().trim();
-
-                    return allPlayers.value.filter(p => {
-                        const nameMatch = p.name && p.name.toLowerCase().includes(q);
-                        const countryMatch = p.country && p.country.toLowerCase().includes(q);
-                        const categoryMatch = p.category && p.category.toLowerCase().includes(q);
-                        const idMatch = p.id && p.id.toString().includes(q);
-                        const rankMatch = p.rank && p.rank.toString() === q;
-
-                        return nameMatch || countryMatch || categoryMatch || idMatch || rankMatch;
-                    })
-                        .sort((a, b) => {
-                            // 랭킹 순으로 정렬
-                            return parseInt(a.rank) - parseInt(b.rank);
-                        })
-                        .slice(0, 20);
-                });
-
-                // ✅ 추가: 포인트 포맷팅 함수
-                const formatPoints = (points) => {
-                    if (typeof points === 'string') {
-                        points = parseInt(points.replace(/,/g, ''));
-                    }
-                    return points.toLocaleString();
-                };
-
-                // ✅ 수정: 선수 선택 함수 개선
-                const selectPlayer = (p) => {
-                    // points 값 정규화 (문자열 또는 숫자 모두 처리)
-                    const totalPoints = typeof p.points === 'string' ?
-                        parseInt(p.points.replace(/,/g, '')) :
-                        parseInt(p.points);
-
-                    sim.currentRank = parseInt(p.rank);
-                    sim.guestEvent = p.category;
-                    sim.type = (p.category === 'MD' || p.category === 'WD' || p.category === 'XD') ? 'doubles' : 'singles';
-
-                    // ✅ 추가: 복식일 경우 각 선수의 개별 포인트를 찾아서 설정
-                    if (sim.type === 'doubles') {
-                        // 복식 선수 이름과 ID에서 개별 선수 정보 추출
-                        const playerName = p.name || p.player;
-                        const playerId = p.id || p.member_id;
-                        const names = playerName.split(' / ');
-                        const ids = playerId.split(' / ');
-
-                        // 각 선수의 단식 포인트를 찾기
-                        let player1Points = 0;
-                        let player2Points = 0;
-
-                        // 선수1의 포인트 찾기 (MS 또는 WS에서)
-                        const singlesCat = p.category === 'XD' ? null : (p.category === 'MD' ? 'MS' : 'WS');
-
-                        if (singlesCat && rankingsDataRaw[singlesCat]) {
-                            const player1 = rankingsDataRaw[singlesCat].find(pl => {
-                                const plId = pl.id || pl.member_id;
-                                return plId && ids[0] && plId.trim() === ids[0].trim();
-                            });
-                            if (player1) {
-                                player1Points = typeof player1.points === 'string' ?
-                                    parseInt(player1.points.replace(/,/g, '')) :
-                                    parseInt(player1.points);
-                            }
-
-                            const player2 = rankingsDataRaw[singlesCat].find(pl => {
-                                const plId = pl.id || pl.member_id;
-                                return plId && ids[1] && plId.trim() === ids[1].trim();
-                            });
-                            if (player2) {
-                                player2Points = typeof player2.points === 'string' ?
-                                    parseInt(player2.points.replace(/,/g, '')) :
-                                    parseInt(player2.points);
-                            }
-                        }
-
-                        // XD의 경우 MS와 WS 모두 확인
-                        if (p.category === 'XD') {
-                            // 첫 번째 선수 (남자)
-                            if (rankingsDataRaw['MS']) {
-                                const player1 = rankingsDataRaw['MS'].find(pl => {
-                                    const plId = pl.id || pl.member_id;
-                                    return plId && ids[0] && plId.trim() === ids[0].trim();
-                                });
-                                if (player1) {
-                                    player1Points = typeof player1.points === 'string' ?
-                                        parseInt(player1.points.replace(/,/g, '')) :
-                                        parseInt(player1.points);
-                                }
-                            }
-                            // 두 번째 선수 (여자)
-                            if (rankingsDataRaw['WS']) {
-                                const player2 = rankingsDataRaw['WS'].find(pl => {
-                                    const plId = pl.id || pl.member_id;
-                                    return plId && ids[1] && plId.trim() === ids[1].trim();
-                                });
-                                if (player2) {
-                                    player2Points = typeof player2.points === 'string' ?
-                                        parseInt(player2.points.replace(/,/g, '')) :
-                                        parseInt(player2.points);
-                                }
-                            }
-                        }
-
-                        // 개별 포인트를 찾았으면 사용, 못 찾았으면 복식 포인트를 반으로 나눔
-                        if (player1Points > 0 || player2Points > 0) {
-                            sim.guestPoints = player1Points || Math.floor(totalPoints / 2);
-                            sim.partnerPoints = player2Points || Math.floor(totalPoints / 2);
-                        } else {
-                            // 개별 포인트를 찾지 못한 경우 복식 포인트를 반으로 나눔
-                            sim.guestPoints = Math.floor(totalPoints / 2);
-                            sim.partnerPoints = Math.floor(totalPoints / 2);
-                        }
-                    } else {
-                        sim.guestPoints = totalPoints;
-                        sim.partnerPoints = null;
-                    }
-
-                    if (rememberPlayer.value) {
-                        // Save player info to localStorage
-                        const playerToSave = {
-                            ...p,
-                            points: typeof p.points === 'string' ? p.points : p.points.toString()
-                        };
-                        localStorage.setItem('courtmate_saved_player', JSON.stringify(playerToSave));
-                        localStorage.setItem('courtmate_remember_me', 'true');
-                    } else {
-                        // If unchecked, we might want to clear it, but maybe user just wants to switch temporarily?
-                        // Let's clear it if they uncheck it explicitly to stop remembering.
-                        // However, current flow is: search -> select.
-                        // If they uncheck, they probably don't want to save *this* selection.
-                        // But if they had a previous one saved, should we clear it?
-                        // Let's go with: if rememberMe is false, we remove any saved player.
-                        localStorage.removeItem('courtmate_saved_player');
-                        localStorage.setItem('courtmate_remember_me', 'false');
-                    }
-
-                    clearSearch();
-                    validateInputs();
-                };
-
-                // ✅ 추가: 검색 초기화 함수
-                const clearSearch = () => {
-                    searchQuery.value = '';
-                    showSearchResults.value = false;
-                };
-
-                const sim = reactive({
-                    type: 'singles',
-                    calcMethod: 'normal',
-                    playedCount: '5',
-                    partnerPoints: null,
-                    guestEvent: 'MS',
-                    guestPoints: null,
-                    currentRank: null,
-                    finalPoints: 0,
-                    results: null,
-                    loading: false
-                });
-
-                // ✅ 추가: 입력 유효성 검증
-                const validateInputs = () => {
-                    validationErrors.points = '';
-                    validationErrors.rank = '';
-                    validationErrors.partnerPoints = '';
-
-                    if (sim.guestPoints !== null && (sim.guestPoints < 0 || sim.guestPoints > 999999)) {
-                        validationErrors.points = t('alertInvalidPoints');
-                    }
-
-                    if (sim.currentRank !== null && (sim.currentRank < 1 || sim.currentRank > 100000)) {
-                        validationErrors.rank = t('alertInvalidRank');
-                    }
-
-                    if (sim.type === 'doubles' && sim.partnerPoints !== null && (sim.partnerPoints < 0 || sim.partnerPoints > 999999)) {
-                        validationErrors.partnerPoints = t('alertInvalidPoints');
-                    }
-                };
-
-                // ✅ 추가: 폼 유효성 체크
-                const isFormValid = computed(() => {
-                    // 기본 포인트 체크
-                    if (!sim.guestPoints || sim.guestPoints < 0 || sim.guestPoints > 999999) {
-                        return false;
-                    }
-
-                    // 랭킹 체크 (선택사항이므로 입력했을 때만 검증)
-                    if (sim.currentRank && (sim.currentRank < 1 || sim.currentRank > 100000)) {
-                        return false;
-                    }
-
-                    // ✅ 수정: 복식일 때 파트너 포인트는 선택사항 (없으면 내 포인트만 사용)
-                    // 입력했을 경우에만 유효성 검사
-                    if (sim.type === 'doubles' && sim.partnerPoints) {
-                        if (sim.partnerPoints < 0 || sim.partnerPoints > 999999) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                });
-
-
-
-
-
-                // ✅ 추가: t 함수를 먼저 정의 (runSimulation에서 사용하기 때문)
-                const t = (key) => (i18nData[currentLang.value] || i18nData.en)[key] || key;
-
-                // ✅ 추가: 검증 메시지 함수
-                const getValidationMessage = () => {
-                    if (!sim.guestPoints) {
-                        return t('msgEnterPoints');
-                    }
-                    // ✅ 수정: 파트너 포인트는 선택사항으로 변경
-                    // if (sim.type === 'doubles' && !sim.partnerPoints) {
-                    //     return t('msgEnterPartnerPoints');
-                    // }
-                    return t('fillRequiredFields');
-                };
-
-                // ✅ 수정: 복식 포인트 계산 로직 개선 (BWF 규정에 맞게)
-                const runSimulation = () => {
-                    if (!sim.guestPoints) {
-                        alert(t('alertEnterPoints'));
-                        return;
-                    }
-
-                    if (!isFormValid.value) {
-                        alert(t('alertInvalidPoints'));
-                        return;
-                    }
-
-                    sim.loading = true;
-                    sim.results = null;
-
-
-                    // ✅ NEW: Reset and Start Log-Based Loading Animation
-                    loadingLogs.value.forEach(log => log.done = false);
-                    loadingProgress.value = 0;
-
-                    // Clear old timer if exists
-                    if (timerState.intervalId) clearInterval(timerState.intervalId);
-
-                    // Simulate progressive loading with logs
-                    const logTimings = [0, 150, 300, 450, 600]; // Milliseconds for each step
-                    logTimings.forEach((delay, index) => {
-                        setTimeout(() => {
-                            loadingLogs.value[index].done = true;
-                            loadingProgress.value = ((index + 1) / loadingLogs.value.length) * 100;
-                        }, delay);
+                    // ✅ NEW: Phone Toggle Function
+                    const togglePhone = () => {
+                        showPhoneNumber.value = !showPhoneNumber.value;
+                    };
+                    const validationErrors = reactive({
+                        points: '',
+                        rank: '',
+                        partnerPoints: ''
                     });
 
-                    let entryPoints = 0;
+                    // ✅ NEW: Tournament Filters
+                    const filters = reactive({
+                        selectedRegions: [],
+                        selectedGrades: []
+                    });
 
-                    entryPoints = sim.guestPoints;
-                    if (sim.type === 'doubles') {
-                        // ✅ 수정: 파트너 포인트가 없으면 내 포인트만 사용
-                        let pPoints = sim.partnerPoints || 0;
-                        let pairTotal = (entryPoints + pPoints);
+                    // ✅ NEW: Timer State
+                    const timerState = reactive({
+                        countdown: 0,
+                        intervalId: null
+                    });
 
-                        if (sim.calcMethod === 'normal') {
-                            entryPoints = pairTotal;
-                        }
-                        else if (sim.calcMethod === 'notional') {
-                            // ✅ 수정: BWF 규정에 맞게 수정 - 높은 쪽 포인트의 80%
-                            entryPoints = Math.max(sim.guestPoints, pPoints) * 0.8;
-                        }
-                        else {
-                            const factors = { '5': 2.0, '6': 1.66, '7': 1.42, '8': 1.25 };
-                            entryPoints = pairTotal * (factors[sim.playedCount] || 1);
-                        }
-                    }
+                    // ✅ NEW: Loading Logs State
+                    const loadingLogs = ref([
+                        { message: 'DB Searching...', done: false },
+                        { message: 'Parsing Week 7 Rankings...', done: false },
+                        { message: 'Loading 2026 Calendar...', done: false },
+                        { message: 'Analyzing Tournament Data...', done: false },
+                        { message: 'Preparing Smart Recommendations...', done: false }
+                    ]);
+                    const loadingProgress = ref(0);
 
-                    sim.finalPoints = Math.floor(entryPoints);
 
-                    setTimeout(() => {
-                        // Clear timer
-                        if (timerState.intervalId) {
-                            clearInterval(timerState.intervalId);
-                            timerState.intervalId = null;
-                        }
 
-                        // Validate data availability
-                        const real2026Tournaments = window.tournaments2026 || [];
+                    // ✅ NEW: City to Airport Code Mapping (Expanded for BWF 2026)
+                    const cityMap = {
+                        // Major Asian Hubs
+                        '서울': 'ICN', '인천': 'ICN', 'seoul': 'ICN', 'incheon': 'ICN', 'gimpo': 'GMP', 'kimpo': 'GMP',
+                        '부산': 'PUS', 'busan': 'PUS', 'gimhae': 'PUS',
+                        '대구': 'TAE', 'daegu': 'TAE', '청주': 'CJJ', 'cheongju': 'CJJ', '제주': 'CJU', 'jeju': 'CJU',
+                        '도쿄': 'NRT', 'tokyo': 'NRT', '나리타': 'NRT', 'narita': 'NRT', 'haneda': 'HND',
+                        '오사카': 'KIX', 'osaka': 'KIX', 'kansai': 'KIX',
+                        '후쿠오카': 'FUK', 'fukuoka': 'FUK',
+                        '나고야': 'NGO', 'nagoya': 'NGO', 'kumamoto': 'KMJ', 'aichi': 'NGO',
+                        '베이징': 'PEK', 'beijing': 'PEK', '상하이': 'PVG', 'shanghai': 'PVG',
+                        '항저우': 'HGH', 'hangzhou': 'HGH', 'shenzhen': 'SZX', 'lingshui': 'SYX', // Lingshui -> Sanya (closest)
+                        '청두': 'CTU', 'chengdu': 'CTU',
+                        '방콕': 'BKK', 'bangkok': 'BKK', 'chiang mai': 'CNX',
+                        '쿠알라룸푸르': 'KUL', 'kuala lumpur': 'KUL', 'kuching': 'KCH',
+                        '자카르타': 'CGK', 'jakarta': 'CGK', 'surabaya': 'SUB',
+                        '싱가포르': 'SIN', 'singapore': 'SIN',
+                        '타이베이': 'TPE', 'taipei': 'TPE', 'kaohsiung': 'KHH',
+                        '홍콩': 'HKG', 'hong kong': 'HKG',
+                        '하노이': 'HAN', 'hanoi': 'HAN', '호치민': 'SGN', 'ho chi minh': 'SGN',
+                        '마닐라': 'MNL', 'manila': 'MNL',
+                        '뉴델리': 'DEL', 'new delhi': 'DEL', 'hyderabad': 'HYD', 'guwahati': 'GAU',
 
-                        // Debug removed: if (real2026Tournaments.length === 0) { alert(...) }
+                        // Europe
+                        '파리': 'CDG', 'paris': 'CDG', 'lyon': 'LYS', 'orleans': 'ORY',
+                        '런던': 'LHR', 'london': 'LHR', 'birmingham': 'BHX',
+                        '프랑크푸르트': 'FRA', 'frankfurt': 'FRA', 'mulheim': 'DUS', 'saarbrucken': 'SCN',
+                        '코펜하겐': 'CPH', 'copenhagen': 'CPH', 'odense': 'BLL', // Odense -> Billund (closest major)
+                        '바젤': 'BSL', 'basel': 'BSL',
+                        '마드리드': 'MAD', 'madrid': 'MAD', 'barcelona': 'BCN',
 
-                        let tournamentsToUse = [];
-
-                        if (real2026Tournaments.length > 0) {
-                            console.log('✅ Loaded 2026 Tournaments:', real2026Tournaments.length);
-                            // Use real 2026 tournament data - format it for the app
-                            tournamentsToUse = real2026Tournaments.map(t => ({
-                                name: t.name,
-                                city: t.city,
-                                country: t.country,
-                                region: t.region,
-                                grade: t.grade,
-                                dates: `${t.startDate} ~ ${t.endDate}`,
-                                entryDeadline: t.startDate, // Use start date as deadline for now
-                                status: 'OPEN',
-                                cutoff: 0 // Will be predicted
-                            }));
-                        } else {
-                            console.warn('No 2026 tournament data found');
-                        }
-
-                        const today = new Date().toISOString().split('T')[0];
-                        // Debug removed: console.log('Filtering against today:', today);
-
-                        // Filter: Only OPEN tournaments with future entry deadlines
-                        const availableTournaments = tournamentsToUse.filter(t => {
-                            // Handle special deadlines (Selection, Qualification, etc.)
-                            if (typeof t.entryDeadline === 'string' &&
-                                (t.entryDeadline.includes('Selection') ||
-                                    t.entryDeadline.includes('Qualification') ||
-                                    t.entryDeadline.includes('Ranking'))) {
-                                return t.status === 'OPEN';
-                            }
-                            return t.entryDeadline >= today && t.status === 'OPEN';
-                        });
-
-                        // Debug removed: console.log(...) & alert(...)
-
-                        // Map to expected format
-                        const formattedTournaments = availableTournaments.map(t => {
-                            // Parse dates from "2026-01-06 ~ 2026-01-11" format
-                            const dateParts = t.dates.split('~');
-                            const startIso = dateParts[0].trim();
-                            const endIso = dateParts[1] ? dateParts[1].trim() : startIso;
-
-                            // Format date for display: "Jan 06-11"
-                            const startDate = new Date(startIso);
-                            const endDate = new Date(endIso);
-                            const monthStr = startDate.toLocaleString('en-US', { month: 'short' });
-                            const startDay = startDate.getDate();
-                            const endDay = endDate.getDate();
-                            const dateDisplay = `${monthStr} ${startDay < 10 ? '0' : ''}${startDay}-${endDay < 10 ? '0' : ''}${endDay}`;
-
-                            // Calculate WD deadline (7 days before tournament)
-                            const wdDate = new Date(startIso);
-                            wdDate.setDate(wdDate.getDate() - 7);
-                            const wdDeadline = wdDate.toISOString().split('T')[0];
-
-                            // Get cutoff points (handle both old and new formats)
-                            const cutOff = t.cutOffPoints?.main || t.cutoff || 0;
-
-                            // Short grade format (Abbreviated)
-                            let shortGrade = t.grade || '';
-
-                            // 1. Remove standard prefixes
-                            shortGrade = shortGrade
-                                .replace(/HSBC BWF World Tour Super/g, 'S')
-                                .replace(/BWF Tour Super/g, 'S')
-                                .replace(/Super/g, 'S')
-                                .replace(/Grade/g, 'G');
-
-                            // 2. Map Juniors specific titles (First pass)
-                            shortGrade = shortGrade
-                                .replace(/Junior International Challenge/g, 'JIC')
-                                .replace(/Junior International Series/g, 'JIS')
-                                .replace(/Junior Future Series/g, 'JFS')
-                                .replace(/Junior International Grand Prix/g, 'JIGP');
-
-                            // 3. Map Seniors specific titles
-                            shortGrade = shortGrade
-                                .replace(/International Challenge/g, 'IC')
-                                .replace(/International Series/g, 'IS')
-                                .replace(/Future Series/g, 'FS');
-
-                            // 4. Map Championships
-                            shortGrade = shortGrade
-                                .replace(/Continental Junior Individual Championships/g, 'CJIC')
-                                .replace(/Continental Individual Championships/g, 'CIC');
-
-                            // 5. Clean up leftovers
-                            shortGrade = shortGrade
-                                .replace(/Junior/g, 'Jnr')
-                                .replace(/Grand Prix/g, 'GP')
-                                .replace(/S\s+/g, 'S') // Remove space after S (S 1000 -> S1000)
-                                .trim();
-
-                            // 6. Handle empty grades with Name-based U-event detection
-                            if (!shortGrade && (t.name.includes('U19') || t.name.includes('U17') || t.name.includes('U15') || t.name.includes('U13'))) {
-                                const match = t.name.match(/U\d{2}/);
-                                if (match) shortGrade = match[0];
-                            }
-
-                            return {
-                                name: t.name,
-                                shortGrade: shortGrade.trim(),
-                                grade: t.grade, // ✅ Pass original grade for filtering
-                                city: t.city,
-                                country: t.country,
-                                date: dateDisplay,
-                                cutOff: typeof cutOff === 'number' ? cutOff : 0,
-                                entryDeadline: t.entryDeadline,
-                                wdDeadline: wdDeadline,
-                                startIso: startIso,
-                                endIso: endIso
-                            };
-                        });
-
-                        // Helper to get estimated points if cutoff is missing
-                        // Based on 2025 Season Average Entrants
-                        const getPointsByGrade = (grade) => {
-                            if (!grade) return 0;
-                            // Estimated cutoffs for Main Draw (approximate based on 2025 trends)
-                            if (grade.includes('S1000')) return 47000;  // High demand
-                            if (grade.includes('S750')) return 39000;   // Solid top 32
-                            if (grade.includes('S500')) return 29000;   // Competitive
-                            if (grade.includes('S300')) return 21000;   // Strong field
-                            if (grade.includes('S100')) return 9000;    // Emerging pros
-                            if (grade.includes('GP')) return 6000;
-                            if (grade.includes('IC')) return 6000;      // Int. Challenge (Raised)
-                            if (grade.includes('JIC')) return 2500;     // Jr. Int. Challenge
-                            if (grade.includes('IS')) return 3000;      // Int. Series (Raised)
-                            if (grade.includes('JIS')) return 1500;     // Jr. Int. Series
-                            if (grade.includes('FS')) return 1500;      // Future Series
-                            if (grade.includes('JFS')) return 800;      // Jr. Future Series
-                            if (grade.includes('U19') || grade.includes('Jnr')) return 800;
-                            return 1000; // Default fallback
-                        };
-
-                        sim.results = formattedTournaments.map(tournament => {
-                            // If data has no cutoff, use estimate based on grade
-                            let cutoffValue = tournament.cutOff;
-                            if (!cutoffValue || cutoffValue === 0) {
-                                cutoffValue = getPointsByGrade(tournament.shortGrade);
-                            }
-
-                            let prediction = '', diff = sim.finalPoints - cutoffValue, statusKey = '';
-
-                            if (sim.currentRank && sim.currentRank <= 10 && (tournament.shortGrade.includes('S1000') || tournament.shortGrade.includes('S750'))) {
-                                statusKey = 'mandatory';
-                                prediction = t('mandatory');
-                            }
-                            else if (diff >= 2000) {
-                                statusKey = 'main';
-                                prediction = t('mainSafe');
-                            }
-                            else if (diff >= 0) {
-                                statusKey = 'qual';
-                                prediction = t('qualMain');
-                            }
-                            else if (diff >= -3000) {
-                                statusKey = 'promo';
-                                prediction = t('promoProbable');
-                            }
-                            else {
-                                statusKey = 'reserve';
-                                prediction = `${t('reserve')} (-${Math.abs(diff).toLocaleString()})`;
-                            }
-
-                            // Append cutoff info to prediction for clarity
-                            const cutoffDisplay = cutoffValue > 0 ? ` (Cut: ${cutoffValue.toLocaleString()})` : '';
-                            prediction += cutoffDisplay;
-
-                            // ✅ NEW: Add unique ID for selection
-                            const id = `${tournament.name}-${tournament.startIso}`;
-                            return { ...tournament, id, prediction, diff, statusKey };
-                        }).sort((a, b) => a.startIso.localeCompare(b.startIso));
-
-                        sim.loading = false;
-                        console.log('✅ Simulation Complete. Results:', sim.results.length);
-                    }, 800);
-                };
-
-                // Toggle grade filter
-                const toggleGradeFilter = (grade) => {
-                    const index = filters.selectedGrades.indexOf(grade);
-                    if (index > -1) {
-                        filters.selectedGrades.splice(index, 1);
-                    } else {
-                        filters.selectedGrades.push(grade);
-                    }
-                };
-
-                // Toggle region filter
-                const toggleRegionFilter = (region) => {
-                    const index = filters.selectedRegions.indexOf(region);
-                    if (index > -1) {
-                        filters.selectedRegions.splice(index, 1);
-                    } else {
-                        filters.selectedRegions.push(region);
-                    }
-                };
-
-                // Map tournament region based on country
-                const getTournamentRegion = (country) => {
-                    if (!country) return 'Asia';
-
-                    const countryUpper = country.toUpperCase();
-
-                    const regionMap = {
-                        'Asia': ['CHINA', 'JAPAN', 'KOREA', 'INDONESIA', 'MALAYSIA', 'THAILAND', 'INDIA', 'SINGAPORE', 'CHINESE TAIPEI', 'HONG KONG', 'VIETNAM', 'PAKISTAN', 'BANGLADESH', 'SRI LANKA', 'PHILIPPINES', 'MALDIVES', 'NEPAL', 'MYANMAR', 'KAZAKHSTAN', 'UZBEKISTAN', 'IRAN', 'BAHRAIN', 'UAE', 'UNITED ARAB EMIRATES', 'SAUDI ARABIA', 'QATAR', 'JORDAN', 'LEBANON', 'SYRIA', 'IRAQ', 'KUWAIT', 'OMAN', 'YEMEN', 'CAMBODIA', 'LAOS', 'BRUNEI', 'TIMOR-LESTE', 'AFGHANISTAN', 'MONGOLIA', 'MACAU', 'TAJIKISTAN', 'KYRGYZSTAN', 'TURKMENISTAN'],
-
-                        'Europe': ['DENMARK', 'ENGLAND', 'Great Britain', 'FRANCE', 'GERMANY', 'SPAIN', 'SWITZERLAND', 'NETHERLANDS', 'SWEDEN', 'ITALY', 'RUSSIA', 'POLAND', 'CZECHIA', 'CZECH REPUBLIC', 'UKRAINE', 'BELGIUM', 'AUSTRIA', 'IRELAND', 'SCOTLAND', 'WALES', 'FINLAND', 'NORWAY', 'PORTUGAL', 'GREECE', 'BULGARIA', 'ESTONIA', 'LATVIA', 'LITHUANIA', 'HUNGARY', 'SLOVAKIA', 'SLOVENIA', 'CROATIA', 'SERBIA', 'BOSNIA', 'ROMANIA', 'MOLDOVA', 'TURKIYE', 'TURKEY', 'CYPRUS', 'MALTA', 'ICELAND', 'LUXEMBOURG', 'AZERBAIJAN', 'ARMENIA', 'GEORGIA', 'ISRAEL', 'BELARUS', 'FAROE ISLANDS'],
-
-                        'PanAm': ['USA', 'U.S.A.', 'CANADA', 'MEXICO', 'BRAZIL', 'ARGENTINA', 'CHILE', 'PERU', 'COLOMBIA', 'GUATEMALA', 'EL SALVADOR', 'CUBA', 'JAMAICA', 'DOMINICAN REPUBLIC', 'BARBADOS', 'TRINIDAD', 'TOBAGO', 'SURINAME', 'GUYANA', 'VENEZUELA', 'ECUADOR', 'BOLIVIA', 'PARAGUAY', 'URUGUAY', 'COSTA RICA', 'PANAMA', 'HONDURAS', 'NICARAGUA', 'BELIZE', 'HAITI', 'BAHAMAS', 'BERMUDA', 'CAYMAN ISLANDS', 'GREENLAND', 'FALKLAND ISLANDS', 'NORTHERN MARIANA ISLANDS'],
-
-                        'Africa': ['EGYPT', 'SOUTH AFRICA', 'ALGERIA', 'NIGERIA', 'MAURITIUS', 'ZIMBABWE', 'UGANDA', 'ZAMBIA', 'KENYA', 'GHANA', 'CAMEROON', 'MOROCCO', 'TUNISIA', 'BOTSWANA', 'NAMIBIA', 'MOZAMBIQUE', 'MADAGASCAR', 'SEYCHELLES', 'ETHIOPIA', 'TANZANIA', 'IVORY COAST', 'BENIN', 'TOGO', 'BURKINA FASO', 'SENEGAL', 'CONGO', 'MALI', 'GABON', 'REUNION'],
-
-                        'Oceania': ['AUSTRALIA', 'NEW ZEALAND', 'FIJI', 'NEW CALEDONIA', 'TAHITI', 'SAMOA', 'TUVALU', 'KIRIBATI', 'TONGA', 'GUAM', 'COOK ISLANDS', 'NORFOLK ISLAND', 'NORTHERN MARIANA ISLANDS', 'PAPUA NEW GUINEA']
+                        // Americas & Oceania
+                        '로스앤젤레스': 'LAX', 'los angeles': 'LAX', 'new orleans': 'MSY',
+                        '캘거리': 'YYC', 'calgary': 'YYC',
+                        '시드니': 'SYD', 'sydney': 'SYD', 'melbourne': 'MEL'
                     };
 
-                    for (const [region, countries] of Object.entries(regionMap)) {
-                        // Check for exact match or partial match (e.g. "Hong Kong China" matches "HONG KONG")
-                        if (countries.some(c => countryUpper.includes(c))) {
-                            return region;
-                        }
+                    // ✅ NEW: Helper to get Airport Code
+                    const getAirportCode = (input) => {
+                        if (!input) return 'ICN';
+
+                        // Handle "City, Country" format (e.g. "Kuala Lumpur, MAS")
+                        let key = input.split(',')[0].trim().toLowerCase();
+
+                        // Check direct map
+                        if (cityMap[key]) return cityMap[key];
+
+                        // Try removing spaces (e.g. "new delhi" -> "newdelhi") if needed, 
+                        // but our map currently has keys with spaces.
+
+                        // Fallback to strict input if not found? 
+                        // Trip.com might fail with "Kuala Lumpur, MAS". 
+                        // Better to return the city name part at least if no code found.
+                        return key.charAt(0).toUpperCase() + key.slice(1);
+                    };
+
+
+
+
+
+
+                    const playerNationality = ref('');  // Based on player country
+
+                    // ✅ 수정: rankings_data.js 데이터 로드 확인
+                    const rankingsDataRaw = window.RANKINGS_2026_RAW || {};
+
+                    // ✅ 추가: 데이터 로드 확인
+                    if (!window.RANKINGS_2026_RAW || Object.keys(window.RANKINGS_2026_RAW).length === 0) {
+                        dataLoadError.value = true;
+                        console.error('⚠️ RANKINGS_2026_RAW data not found. Please ensure rankings_data.js is loaded.');
                     }
-                    return 'Asia'; // Default
-                };
 
-                const filteredResults = computed(() => {
-                    if (!sim.results) return [];
+                    // ✅ 수정: 선수 데이터 처리 개선
+                    const allPlayers = computed(() => {
+                        let players = [];
+                        for (const [cat, list] of Object.entries(rankingsDataRaw)) {
+                            if (Array.isArray(list)) {
+                                list.forEach(p => {
+                                    players.push({
+                                        ...p,
+                                        category: cat,
+                                        // player 필드를 name으로도 사용 가능하도록
+                                        name: p.name || p.player,
+                                        id: p.id || p.member_id,
+                                        // points를 숫자로 변환 (쉼표 제거)
+                                        numericPoints: typeof p.points === 'string' ?
+                                            (parseInt(p.points.replace(/,/g, '')) || 0) :
+                                            (p.points || 0)
+                                    });
+                                });
+                            }
+                        }
+                        return players;
+                    });
 
-                    return sim.results.filter(tournament => {
-                        // Region filter
-                        if (filters.selectedRegions.length > 0) {
-                            const tournamentRegion = getTournamentRegion(tournament.country || '');
-                            if (!filters.selectedRegions.includes(tournamentRegion)) return false;
+                    // ✅ 수정: 검색 알고리즘 개선
+                    const searchResults = computed(() => {
+                        if (!searchQuery.value) return [];
+                        const q = searchQuery.value.toLowerCase().trim();
+
+                        return allPlayers.value.filter(p => {
+                            const nameMatch = p.name && p.name.toLowerCase().includes(q);
+                            const countryMatch = p.country && p.country.toLowerCase().includes(q);
+                            const categoryMatch = p.category && p.category.toLowerCase().includes(q);
+                            const idMatch = p.id && p.id.toString().includes(q);
+                            const rankMatch = p.rank && p.rank.toString() === q;
+
+                            return nameMatch || countryMatch || categoryMatch || idMatch || rankMatch;
+                        })
+                            .sort((a, b) => {
+                                // 랭킹 순으로 정렬
+                                return parseInt(a.rank) - parseInt(b.rank);
+                            })
+                            .slice(0, 20);
+                    });
+
+                    // ✅ 추가: 포인트 포맷팅 함수
+                    const formatPoints = (points) => {
+                        if (typeof points === 'string') {
+                            points = parseInt(points.replace(/,/g, ''));
+                        }
+                        return points.toLocaleString();
+                    };
+
+                    // ✅ 수정: 선수 선택 함수 개선
+                    const selectPlayer = (p) => {
+                        // points 값 정규화 (문자열 또는 숫자 모두 처리)
+                        const totalPoints = typeof p.points === 'string' ?
+                            parseInt(p.points.replace(/,/g, '')) :
+                            parseInt(p.points);
+
+                        sim.currentRank = parseInt(p.rank);
+                        sim.guestEvent = p.category;
+                        sim.type = (p.category === 'MD' || p.category === 'WD' || p.category === 'XD') ? 'doubles' : 'singles';
+
+                        // ✅ 추가: 복식일 경우 각 선수의 개별 포인트를 찾아서 설정
+                        if (sim.type === 'doubles') {
+                            // For existing pairs in the database, the points listed are already the pair's points (not individual).
+                            // New Logic: Use the pair's points as "Player 1 Points" and leave "Partner Points" empty.
+                            // This triggers "Case A" in the calculation logic (v2 = 0 -> return v1).
+
+                            sim.guestPoints = totalPoints;
+                            sim.partnerPoints = null;
+
+                            // (Legacy logic removed: trying to split points or find individual points)
+                        } else {
+                            sim.guestPoints = totalPoints;
+                            sim.partnerPoints = null;
                         }
 
-                        // Check if it is a Junior tournament
-                        const grade = (tournament.grade || '').toLowerCase();
-                        const name = (tournament.name || '').toLowerCase();
-                        const isJunior = grade.includes('junior') || name.includes('junior') ||
-                            grade.includes('u19') || name.includes('u19') ||
-                            grade.includes('u17') || name.includes('u17') ||
-                            grade.includes('u15') || name.includes('u15') ||
-                            grade.includes('u13') || name.includes('u13') ||
-                            grade.includes('youth');
+                        if (rememberPlayer.value) {
+                            // Save player info to localStorage
+                            const playerToSave = {
+                                ...p,
+                                points: typeof p.points === 'string' ? p.points : p.points.toString()
+                            };
+                            localStorage.setItem('courtmate_saved_player', JSON.stringify(playerToSave));
+                            localStorage.setItem('courtmate_remember_me', 'true');
+                        }
 
-                        // ✅ Junior Logic: 
-                        // If 'Junior' filter is NOT active, HIDE all Junior tournaments (default behavior)
-                        if (!filters.selectedGrades.includes('Junior') && isJunior) return false;
+                        selectedPlayer.value = p; // Keep track of selected player
 
-                        // Grade filter
-                        if (filters.selectedGrades.length > 0) {
-                            // If 'Junior' is active and this IS a Junior tournament, SHOW it.
-                            if (isJunior && filters.selectedGrades.includes('Junior')) return true;
+                        clearSearch();
+                        validateInputs();
+                    };
 
-                            // For non-Junior tournaments, check other grades
-                            // We filter out 'Junior' from the checking list so it doesn't match 'Junior' string in non-junior grades (if any)
-                            const otherGrades = filters.selectedGrades.filter(g => g !== 'Junior');
+                    // ✅ NEW: Watch rememberPlayer to save/clear current player
+                    watch(rememberPlayer, (newVal) => {
+                        localStorage.setItem('courtmate_remember_me', newVal ? 'true' : 'false');
 
-                            if (otherGrades.length > 0) {
-                                const hasMatchingGrade = otherGrades.some(grade =>
-                                    tournament.shortGrade.includes(grade)
-                                );
-                                if (!hasMatchingGrade) return false;
-                            } else {
-                                // If ONLY 'Junior' is selected, and this is NOT a Junior tournament -> Hide it
+                        if (newVal && selectedPlayer.value) {
+                            const playerToSave = {
+                                ...selectedPlayer.value,
+                                points: typeof selectedPlayer.value.points === 'string' ? selectedPlayer.value.points : selectedPlayer.value.points.toString()
+                            };
+                            localStorage.setItem('courtmate_saved_player', JSON.stringify(playerToSave));
+                        } else if (!newVal) {
+                            localStorage.removeItem('courtmate_saved_player');
+                        }
+                    });
+
+                    // ✅ 추가: 검색 초기화 함수
+                    const clearSearch = () => {
+                        searchQuery.value = '';
+                        showSearchResults.value = false;
+                    };
+
+                    const sim = reactive({
+                        type: 'singles',
+                        calcMethod: 'normal',
+                        playedCount: '5',
+                        partnerPoints: null,
+                        guestEvent: 'MS',
+                        guestPoints: null,
+                        currentRank: null,
+                        finalPoints: 0,
+                        results: null,
+                        loading: false
+                    });
+
+                    // ✅ 추가: 입력 유효성 검증
+                    const validateInputs = () => {
+                        validationErrors.points = '';
+                        validationErrors.rank = '';
+                        validationErrors.partnerPoints = '';
+
+                        if (sim.guestPoints !== null && (sim.guestPoints < 0 || sim.guestPoints > 999999)) {
+                            validationErrors.points = t('alertInvalidPoints');
+                        }
+
+                        if (sim.currentRank !== null && (sim.currentRank < 1 || sim.currentRank > 100000)) {
+                            validationErrors.rank = t('alertInvalidRank');
+                        }
+
+                        if (sim.type === 'doubles' && sim.partnerPoints !== null && (sim.partnerPoints < 0 || sim.partnerPoints > 999999)) {
+                            validationErrors.partnerPoints = t('alertInvalidPoints');
+                        }
+                    };
+
+                    // ✅ 추가: 폼 유효성 체크
+                    const isFormValid = computed(() => {
+                        // 기본 포인트 체크
+                        if (!sim.guestPoints || sim.guestPoints < 0 || sim.guestPoints > 999999) {
+                            return false;
+                        }
+
+                        // 랭킹 체크 (선택사항이므로 입력했을 때만 검증)
+                        if (sim.currentRank && (sim.currentRank < 1 || sim.currentRank > 100000)) {
+                            return false;
+                        }
+
+                        // ✅ 수정: 복식일 때 파트너 포인트는 선택사항 (없으면 내 포인트만 사용)
+                        // 입력했을 경우에만 유효성 검사
+                        if (sim.type === 'doubles' && sim.partnerPoints) {
+                            if (sim.partnerPoints < 0 || sim.partnerPoints > 999999) {
                                 return false;
                             }
                         }
 
                         return true;
                     });
-                });
 
-                const shareResults = () => {
-                    const params = new URLSearchParams();
-                    params.set('type', sim.type);
-                    params.set('event', sim.guestEvent);
-                    if (sim.guestPoints) params.set('pts', sim.guestPoints);
-                    if (sim.currentRank) params.set('rank', sim.currentRank);
-                    if (sim.type === 'doubles') {
-                        if (sim.partnerPoints) params.set('ppts', sim.partnerPoints);
-                        params.set('method', sim.calcMethod);
-                        if (sim.calcMethod === 'adjusted') params.set('cnt', sim.playedCount);
-                    }
-                    const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
 
-                    if (navigator.share) {
-                        navigator.share({
-                            title: 'Court Mate Prediction',
-                            text: 'Check out my tournament entry forecast!',
-                            url: url
-                        }).catch(console.error);
-                    }
-                    else {
-                        navigator.clipboard.writeText(url)
-                            .then(() => alert('Link copied to clipboard!'))
-                            .catch(() => prompt("Copy link:", url));
-                    }
-                };
 
-                const copyEmail = () => {
-                    const email = 'roumsne@gmail.com';
-                    navigator.clipboard.writeText(email)
-                        .then(() => {
-                            alert('Email copied to clipboard!\n' + email);
-                        })
-                        .catch((err) => {
-                            console.error('Failed to copy email:', err);
-                            alert('Failed to copy email. Please copy manually: ' + email);
-                        });
-                };
 
-                const copyAgentEmail = () => {
-                    const email = 'withm2k@gmail.com';
-                    navigator.clipboard.writeText(email)
-                        .then(() => {
-                            alert('Agent email copied to clipboard!\n' + email);
-                        })
-                        .catch((err) => {
-                            console.error('Failed to copy email:', err);
-                            alert('Failed to copy email. Please copy manually: ' + email);
-                        });
-                };
 
-                const checkUrlParams = () => {
-                    const params = new URLSearchParams(window.location.search);
-                    if (params.has('event')) {
-                        sim.type = params.get('type') || 'singles';
-                        sim.guestEvent = params.get('event');
-                        if (params.has('pts')) sim.guestPoints = Number(params.get('pts'));
-                        if (params.has('rank')) sim.currentRank = Number(params.get('rank'));
-                        if (sim.type === 'doubles') {
-                            if (params.has('ppts')) sim.partnerPoints = Number(params.get('ppts'));
-                            if (params.has('method')) sim.calcMethod = params.get('method');
-                            if (params.has('cnt')) sim.playedCount = params.get('cnt');
+                    // ✅ 추가: t 함수를 먼저 정의 (runSimulation에서 사용하기 때문)
+                    const t = (key) => (i18nData[currentLang.value] || i18nData.en)[key] || key;
+
+                    // ✅ 추가: 검증 메시지 함수
+                    const getValidationMessage = () => {
+                        if (!sim.guestPoints) {
+                            return t('msgEnterPoints');
                         }
-                        if (sim.guestPoints) runSimulation();
-                    }
-                };
-
-                // ✅ 추가: 소셜 미디어 열기 함수
-                const openSocial = (platform) => {
-                    // 실제 서비스에서는 여기에 딥링크나 URL을 추가하세요
-                    const links = {
-                        wechat: 'weixin://',
-                        kakao: 'kakaotalk://',
-                        line: 'line://'
+                        // ✅ 수정: 파트너 포인트는 선택사항으로 변경
+                        // if (sim.type === 'doubles' && !sim.partnerPoints) {
+                        //     return t('msgEnterPartnerPoints');
+                        // }
+                        return t('fillRequiredFields');
                     };
 
-                    if (links[platform]) {
-                        window.location.href = links[platform];
-                    } else {
-                        alert(`Open ${platform}`);
-                    }
-                };
+                    // ✅ 수정: 복식 포인트 계산 로직 개선 (BWF 규정에 맞게)
+                    const runSimulation = () => {
+                        if (!sim.guestPoints) {
+                            alert(t('alertEnterPoints'));
+                            return;
+                        }
 
-                // Toggle Dark Mode
-                const toggleDarkMode = () => {
-                    darkMode.value = !darkMode.value;
-                    if (darkMode.value) {
-                        document.body.classList.add('dark-mode');
-                        localStorage.setItem('darkMode', 'true');
-                    } else {
-                        document.body.classList.remove('dark-mode');
-                        localStorage.setItem('darkMode', 'false');
-                    }
-                };
+                        if (!isFormValid.value) {
+                            alert(t('alertInvalidPoints'));
+                            return;
+                        }
 
-                // ✅ 추가: 검색창 외부 클릭 처리
-                onMounted(() => {
-                    // Load dark mode preference
-                    const savedDarkMode = localStorage.getItem('darkMode');
-                    if (savedDarkMode === 'true') {
-                        darkMode.value = true;
-                        document.body.classList.add('dark-mode');
-                    }
+                        sim.loading = true;
+                        sim.results = null;
 
-                    document.documentElement.lang = currentLang.value;
 
-                    // ✅ NEW: Load Remembered Player
-                    const savedRememberMe = localStorage.getItem('courtmate_remember_me');
-                    if (savedRememberMe === 'true') {
-                        rememberPlayer.value = true;
-                        const savedPlayerData = localStorage.getItem('courtmate_saved_player');
-                        if (savedPlayerData) {
-                            try {
-                                const parsedPlayer = JSON.parse(savedPlayerData);
-                                // We need to re-select this player
-                                // But selectPlayer expects a player object from the list or similar structure
-                                // parsedPlayer should have everything we need
-                                selectPlayer(parsedPlayer);
-                            } catch (e) {
-                                console.error("Failed to parse saved player data", e);
+                        // ✅ NEW: Reset and Start Log-Based Loading Animation
+                        loadingLogs.value.forEach(log => log.done = false);
+                        loadingProgress.value = 0;
+
+                        // Clear old timer if exists
+                        if (timerState.intervalId) clearInterval(timerState.intervalId);
+
+                        // Simulate progressive loading with logs
+                        const logTimings = [0, 150, 300, 450, 600]; // Milliseconds for each step
+                        logTimings.forEach((delay, index) => {
+                            setTimeout(() => {
+                                loadingLogs.value[index].done = true;
+                                loadingProgress.value = ((index + 1) / loadingLogs.value.length) * 100;
+                            }, delay);
+                        });
+
+                        // ✅ NEW: BWF Standard Point Calculator
+                        const calculateTeamPoints = (p1, p2) => {
+                            // 1. Convert inputs to integers (remove commas)
+                            const v1 = parseInt(String(p1).replace(/,/g, '')) || 0;
+                            const v2 = parseInt(String(p2).replace(/,/g, '')) || 0;
+
+                            // 2. Singles Case (or only one input provided -> Existing Pair Total)
+                            if (v2 === 0) return v1;
+
+                            // 3. Doubles Logic Branch
+
+                            // Case A: Existing Partner (Points are similar within 1% margin)
+                            // Assume user entered individual points for an existing pair where A ≈ B
+                            if (Math.abs(v1 - v2) < (v1 * 0.01)) {
+                                return Math.max(v1, v2); // Return the max (do not add, do not divide)
+                            }
+
+                            // Case B: New Combination (Notional Ranking)
+                            // "Higher Rank x 80% + Lower Rank x 20%"
+                            const high = Math.max(v1, v2);
+                            const low = Math.min(v1, v2);
+
+                            const notionalPoint = (high * 0.8) + (low * 0.2);
+
+                            return Math.round(notionalPoint);
+                        };
+
+                        let entryPoints = 0;
+
+                        // Apply new logic
+                        let p1 = sim.guestPoints || 0;
+                        let p2 = sim.partnerPoints || 0;
+
+                        // Calculate Base Entry Points using BWF Rules
+                        let baseEntryPoints = calculateTeamPoints(p1, p2);
+
+                        if (sim.calcMethod === 'normal') {
+                            entryPoints = baseEntryPoints;
+                        }
+                        else if (sim.calcMethod === 'notional') {
+                            // Explicit Notional Option (Force Notional Formula if user selects this check)
+                            // Use logic from Case B regardless of similarity?
+                            // User said: "Case B: New/Notional Pair... Logic: Apply BWF Notional Ranking Formula."
+                            // Let's reuse the helper but force the v2!=0 path effectively?
+                            // Or just use the formula directly for clarity since user selected "Notional".
+                            const v1 = parseInt(String(p1).replace(/,/g, '')) || 0;
+                            const v2 = parseInt(String(p2).replace(/,/g, '')) || 0;
+                            const high = Math.max(v1, v2);
+                            const low = Math.min(v1, v2);
+                            // If v2 is 0 (one player), Notional doesn't make sense, just return v1.
+                            if (v2 === 0) entryPoints = v1;
+                            else entryPoints = Math.round((high * 0.8) + (low * 0.2));
+                        }
+                        else {
+                            // Adjusted Points (For limited tournament participation)
+                            // Factor * Base Entry Points
+                            const factors = { '5': 2.0, '6': 1.66, '7': 1.42, '8': 1.25 };
+                            entryPoints = baseEntryPoints * (factors[sim.playedCount] || 1);
+                        }
+
+                        sim.finalPoints = Math.floor(entryPoints);
+
+                        setTimeout(() => {
+                            // Clear timer
+                            if (timerState.intervalId) {
+                                clearInterval(timerState.intervalId);
+                                timerState.intervalId = null;
+                            }
+
+                            // Validate data availability
+                            const real2026Tournaments = window.tournaments2026 || [];
+
+                            // Debug removed: if (real2026Tournaments.length === 0) { alert(...) }
+
+                            let tournamentsToUse = [];
+
+                            if (real2026Tournaments.length > 0) {
+                                console.log('✅ Loaded 2026 Tournaments:', real2026Tournaments.length);
+                                // Use real 2026 tournament data - format it for the app
+                                tournamentsToUse = real2026Tournaments.map(t => ({
+                                    name: t.name,
+                                    city: t.city,
+                                    country: t.country,
+                                    region: t.region,
+                                    grade: t.grade,
+                                    dates: `${t.startDate} ~ ${t.endDate}`,
+                                    entryDeadline: t.startDate, // Use start date as deadline for now
+                                    status: 'OPEN',
+                                    cutoff: 0 // Will be predicted
+                                }));
+                            } else {
+                                console.warn('No 2026 tournament data found');
+                            }
+
+                            const today = new Date().toISOString().split('T')[0];
+                            // Debug removed: console.log('Filtering against today:', today);
+
+                            // Filter: Only OPEN tournaments with future entry deadlines
+                            const availableTournaments = tournamentsToUse.filter(t => {
+                                // Handle special deadlines (Selection, Qualification, etc.)
+                                if (typeof t.entryDeadline === 'string' &&
+                                    (t.entryDeadline.includes('Selection') ||
+                                        t.entryDeadline.includes('Qualification') ||
+                                        t.entryDeadline.includes('Ranking'))) {
+                                    return t.status === 'OPEN';
+                                }
+                                return t.entryDeadline >= today && t.status === 'OPEN';
+                            });
+
+                            // Debug removed: console.log(...) & alert(...)
+
+                            // Map to expected format
+                            const formattedTournaments = availableTournaments.map(t => {
+                                // Parse dates from "2026-01-06 ~ 2026-01-11" format
+                                const dateParts = t.dates.split('~');
+                                const startIso = dateParts[0].trim();
+                                const endIso = dateParts[1] ? dateParts[1].trim() : startIso;
+
+                                // Format date for display: "Jan 06-11"
+                                const startDate = new Date(startIso);
+                                const endDate = new Date(endIso);
+                                const monthStr = startDate.toLocaleString('en-US', { month: 'short' });
+                                const startDay = startDate.getDate();
+                                const endDay = endDate.getDate();
+                                const dateDisplay = `${monthStr} ${startDay < 10 ? '0' : ''}${startDay}-${endDay < 10 ? '0' : ''}${endDay}`;
+
+                                // ✅ BWF Deadline Calculation (GCR Rules)
+                                let entryDeadline = "TBA";
+                                let wdDeadline = "TBA";
+                                let mqReportDate = "TBA";
+                                let isEstimated = false;
+
+                                const gradeLower = (t.grade || '').toLowerCase();
+                                const isGrade1 = gradeLower.includes('grade 1') ||
+                                    gradeLower.includes('championship') ||
+                                    gradeLower.includes('games') ||
+                                    gradeLower.includes('thomas') ||
+                                    gradeLower.includes('uber') ||
+                                    gradeLower.includes('sudirman');
+
+                                // Skip calculation for Grade 1 events (Manual/TBA)
+                                if (!isGrade1) {
+                                    let offset = 35; // Default (S300, S100, IC, IS, FS, Junior)
+
+                                    // Higher grades have earlier deadline (42 days / 6 weeks)
+                                    if (gradeLower.includes('1000') || gradeLower.includes('750') || gradeLower.includes('500')) {
+                                        offset = 42;
+                                    }
+
+                                    // Calculate Entry Deadline
+                                    const entryDate = new Date(startIso);
+                                    entryDate.setDate(entryDate.getDate() - offset);
+
+                                    // Ensure Entry Deadline is a Tuesday? 
+                                    // User said: "Note: Ensure the calculated Entry Deadline falls on a Tuesday."
+                                    // Let's try to adjust to nearest Tuesday if needed, but for now simple offset from T0 (usually Tuesday) works.
+                                    // If T0 is Tuesday, T0-35 and T0-42 are also Tuesdays.
+
+                                    entryDeadline = entryDate.toISOString().split('T')[0];
+
+                                    // Calculate Withdrawal Deadline (Monday, T0 - 8 days??)
+                                    // User prompt: "T0 - 8 Days (Monday)"
+                                    // Standard BWF rule is usually M&Q + roughly 10-12 days?
+                                    // Let's follow USER instruction: T0 - 8 days.
+                                    const wdDate = new Date(startIso);
+                                    wdDate.setDate(wdDate.getDate() - 8); // Monday before tournament week? 
+                                    // Actually usually tournament starts Tuesday. Monday before is T-1. 
+                                    // T-8 is the Monday of the week PRIOR.
+                                    wdDeadline = wdDate.toISOString().split('T')[0];
+
+                                    // [NEW] Calculate M&Q Report Date (Entry Date + 3 Days => Friday)
+                                    const mqDate = new Date(entryDate);
+                                    mqDate.setDate(entryDate.getDate() + 3);
+                                    mqReportDate = mqDate.toISOString().split('T')[0];
+
+                                    isEstimated = true;
+                                } else {
+                                    // For Grade 1, keep as TBA
+                                }
+
+                                // Get cutoff points (handle both old and new formats)
+                                const cutOff = t.cutOffPoints?.main || t.cutoff || 0;
+
+                                // Short grade format (Abbreviated)
+                                let shortGrade = t.grade || '';
+
+                                // 1. Remove standard prefixes
+                                shortGrade = shortGrade
+                                    .replace(/HSBC BWF World Tour Super/g, 'S')
+                                    .replace(/BWF Tour Super/g, 'S')
+                                    .replace(/Super/g, 'S')
+                                    .replace(/Grade/g, 'G');
+
+                                // 2. Map Juniors specific titles (First pass)
+                                shortGrade = shortGrade
+                                    .replace(/Junior International Challenge/g, 'JIC')
+                                    .replace(/Junior International Series/g, 'JIS')
+                                    .replace(/Junior Future Series/g, 'JFS')
+                                    .replace(/Junior International Grand Prix/g, 'JIGP');
+
+                                // 3. Map Seniors specific titles
+                                shortGrade = shortGrade
+                                    .replace(/International Challenge/g, 'IC')
+                                    .replace(/International Series/g, 'IS')
+                                    .replace(/Future Series/g, 'FS');
+
+                                // 4. Map Championships
+                                shortGrade = shortGrade
+                                    .replace(/Continental Junior Individual Championships/g, 'CJIC')
+                                    .replace(/Continental Individual Championships/g, 'CIC');
+
+                                // 5. Clean up leftovers
+                                shortGrade = shortGrade
+                                    .replace(/Junior/g, 'Jnr')
+                                    .replace(/Grand Prix/g, 'GP')
+                                    .replace(/S\s+/g, 'S') // Remove space after S (S 1000 -> S1000)
+                                    .trim();
+
+                                // 6. Handle empty grades with Name-based U-event detection
+                                if (!shortGrade && (t.name.includes('U19') || t.name.includes('U17') || t.name.includes('U15') || t.name.includes('U13'))) {
+                                    const match = t.name.match(/U\d{2}/);
+                                    if (match) shortGrade = match[0];
+                                }
+
+                                return {
+                                    name: t.name,
+                                    shortGrade: shortGrade.trim(),
+                                    grade: t.grade, // ✅ Pass original grade for filtering
+                                    city: t.city,
+                                    country: t.country,
+                                    date: dateDisplay,
+                                    cutOff: typeof cutOff === 'number' ? cutOff : 0,
+                                    entryDeadline: entryDeadline,
+                                    wdDeadline: wdDeadline,
+                                    mqReportDate: mqReportDate,
+                                    isEstimated: isEstimated,
+                                    startIso: startIso,
+                                    endIso: endIso
+                                };
+                            });
+
+                            // Helper to get estimated points if cutoff is missing
+                            // Based on 2025 Season Average Entrants
+                            // Helper to get estimated points if cutoff is missing
+                            // Based on 2025 Season Average Entrants
+                            const getPointsByGrade = (grade, subRegion) => {
+                                if (!grade) return { main: 0, qual: null };
+
+                                // Base Points (Standard difficulty - primarily Asia-East/SE)
+                                let basePoints = 1000;
+                                // Qualifying Ratio (default null)
+                                let qualRatio = null;
+                                let qualBase = null;
+
+                                if (grade.includes('S1000')) { basePoints = 47000; qualRatio = null; }
+                                else if (grade.includes('S750')) { basePoints = 39000; qualRatio = null; }
+                                else if (grade.includes('S500')) { basePoints = 29000; qualRatio = 0.4; } // Qual ~11,600
+                                else if (grade.includes('S300')) { basePoints = 21000; qualRatio = 0.3; } // Qual ~6,300
+                                else if (grade.includes('S100')) { basePoints = 9000; qualBase = 2500; }  // Qual Fixed ~2,500
+                                else if (grade.includes('GP')) { basePoints = 6000; qualBase = 1500; }
+                                else if (grade.includes('IC')) { basePoints = 6000; qualBase = 1500; }
+                                else if (grade.includes('JIC')) { basePoints = 2500; qualBase = 1000; }
+                                else if (grade.includes('IS')) { basePoints = 3000; qualBase = 1000; }
+                                else if (grade.includes('JIS')) { basePoints = 1500; qualBase = 800; }
+                                else if (grade.includes('FS')) { basePoints = 1500; qualBase = 800; }
+                                else if (grade.includes('JFS')) { basePoints = 800; qualBase = 400; }
+                                else if (grade.includes('U19') || grade.includes('Jnr')) { basePoints = 800; qualBase = 400; }
+
+                                // ✅ Regional Multipliers (Difficulty Factor)
+                                const multipliers = {
+                                    'Asia-East': 1.2,   // very hard
+                                    'Asia-SE': 1.1,     // hard
+                                    'Asia-South': 1.0,  // standard
+                                    'Asia-West': 0.8,   // easier
+                                    'Asia-Central': 0.7,// easiest in Asia
+                                    'Europe': 1.0,      // standard
+                                    'PanAm-North': 0.75,// easier
+                                    'PanAm-South': 0.7, // easier
+                                    'Oceania': 0.7,     // easier
+                                    'Africa': 0.6       // easiest
+                                };
+
+                                const baseMultiplier = multipliers[subRegion] || 1.0;
+
+                                // ✅ Grade Sensitivity Factor: Apply regional weight based on tournament tier
+                                let gradeFactor = 1.0; // Default: Full regional impact (S300, S100, IC/IS/FS)
+
+                                if (grade.includes('S1000') || grade.includes('S750')) {
+                                    gradeFactor = 0.1; // 10% impact (Global field)
+                                } else if (grade.includes('S500')) {
+                                    gradeFactor = 0.5; // 50% impact
+                                }
+
+                                // Calculate Effective Modifier
+                                // Formula: 1.0 + (Base - 1.0) * Factor
+                                // Example: PanAm (0.75) for S1000 (0.1) -> 1.0 + (-0.25 * 0.1) = 0.975
+                                const effectiveModifier = 1.0 + ((baseMultiplier - 1.0) * gradeFactor);
+
+                                const mainCutoff = Math.floor(basePoints * effectiveModifier);
+                                let qualCutoff = null;
+
+                                if (qualBase !== null) {
+                                    qualCutoff = Math.floor(qualBase * effectiveModifier);
+                                } else if (qualRatio !== null) {
+                                    qualCutoff = Math.floor(mainCutoff * qualRatio);
+                                }
+
+                                return { main: mainCutoff, qual: qualCutoff };
+                            };
+
+                            sim.results = formattedTournaments.map(tournament => {
+                                // Determine Sub-Region
+                                const regionInfo = getTournamentRegion(tournament.country);
+                                const subRegion = regionInfo.subRegion;
+
+                                // If data has no cutoff, use estimate based on grade & region
+                                let cutoffData = { main: tournament.cutOff || 0, qual: tournament.qualCutoff || null };
+
+                                // If DB entry missing main cutoff, calculate it
+                                if (!cutoffData.main || cutoffData.main === 0) {
+                                    cutoffData = getPointsByGrade(tournament.shortGrade, subRegion);
+                                } else if (!cutoffData.qual) {
+                                    // If DB has main but not qual, try to estimate qual from main?
+                                    // Only for relevant grades
+                                    const estimated = getPointsByGrade(tournament.shortGrade, subRegion);
+                                    if (estimated.qual) {
+                                        // Recalculate qual based on ratio if applicable, or just use estimated qual
+                                        // Let's just use the logic from getPointsByGrade but applied to the DB main cutoff if reasonable?
+                                        // Or simply take the estimated qual.
+                                        cutoffData.qual = estimated.qual;
+                                    }
+                                }
+
+                                let prediction = '', diff = 0, statusKey = '';
+                                const userPts = sim.finalPoints;
+                                const mainCut = cutoffData.main;
+                                const qualCut = cutoffData.qual;
+
+                                // 1. Mandatory (Top 10 & Super 1000/750)
+                                if (sim.currentRank && sim.currentRank <= 10 && (tournament.shortGrade.includes('S1000') || tournament.shortGrade.includes('S750'))) {
+                                    statusKey = 'mandatory';
+                                    prediction = t('mandatory');
+                                    diff = userPts - mainCut;
+                                }
+                                // 2. Main Draw Safe (Green)
+                                else if (userPts >= mainCut) {
+                                    statusKey = 'main';
+                                    prediction = t('mainSafe');
+                                    diff = userPts - mainCut;
+                                }
+                                // 3. Qualifying / Reserve (Yellow) -> Check Qualifying Cutoff
+                                else if (qualCut !== null && userPts >= qualCut) {
+                                    statusKey = 'qual'; // Yellow
+                                    prediction = "Target: Qualifying Round"; // Explicit Text Request
+                                    diff = userPts - qualCut;
+                                    // Optional logic: "Reserve" if close to Qual cutoff?
+                                    // User logic: "User Points < t.cutoff AND User Points >= t.qualCutoff" -> Yellow
+                                }
+                                // 4. Rank too low (Red)
+                                else {
+                                    statusKey = 'reserve'; // Red
+                                    const target = qualCut !== null ? qualCut : mainCut;
+                                    diff = userPts - target;
+                                    prediction = `${t('reserve')} (${diff.toLocaleString()})`;
+                                }
+
+                                // Append cutoff info to prediction for clarity
+                                // Show Main Cutoff always, add Qual if relevant?
+                                let cutoffDisplay = ` (Main: ${mainCut.toLocaleString()}`;
+                                if (qualCut) cutoffDisplay += ` / Qual: ${qualCut.toLocaleString()}`;
+                                cutoffDisplay += `)`;
+
+                                prediction += cutoffDisplay;
+
+                                // Opportunity flag
+                                const isOpportunity = ['Asia-West', 'Asia-Central', 'PanAm-North', 'PanAm-South', 'Oceania', 'Africa'].includes(subRegion);
+                                if (isOpportunity) {
+                                    prediction += ' 📉'; // Opportunity icon
+                                }
+
+                                // ✅ NEW: Add unique ID for selection
+                                const id = `${tournament.name}-${tournament.startIso}`;
+                                return {
+                                    ...tournament,
+                                    id,
+                                    prediction,
+                                    diff,
+                                    statusKey,
+                                    subRegion,
+                                    region: regionInfo.region,
+                                    isOpportunity,
+                                    mainCutoff: mainCut,
+                                    qualCutoff: qualCut
+                                };
+                            }).sort((a, b) => a.startIso.localeCompare(b.startIso));
+
+                            sim.loading = false;
+                            console.log('✅ Simulation Complete. Results:', sim.results.length);
+                        }, 800);
+                    };
+
+                    // Toggle grade filter
+                    const toggleGradeFilter = (grade) => {
+                        const index = filters.selectedGrades.indexOf(grade);
+                        if (index > -1) {
+                            filters.selectedGrades.splice(index, 1);
+                        } else {
+                            filters.selectedGrades.push(grade);
+                        }
+                    };
+
+                    // Toggle region filter
+                    const toggleRegionFilter = (region) => {
+                        const index = filters.selectedRegions.indexOf(region);
+                        if (index > -1) {
+                            filters.selectedRegions.splice(index, 1);
+                        } else {
+                            filters.selectedRegions.push(region);
+                        }
+                    };
+
+                    // Map tournament region based on country
+                    const getTournamentRegion = (country) => {
+                        if (!country) return { region: 'Asia', subRegion: 'Asia-East' }; // Default
+
+                        const countryUpper = country.toUpperCase();
+
+                        // ✅ Sub-Region Map
+                        const subRegionMap = {
+                            // Asia
+                            'Asia-East': ['CHINA', 'JAPAN', 'KOREA', 'CHINESE TAIPEI', 'HONG KONG', 'MACAU', 'MONGOLIA'],
+                            'Asia-SE': ['INDONESIA', 'MALAYSIA', 'THAILAND', 'SINGAPORE', 'VIETNAM', 'PHILIPPINES', 'CAMBODIA', 'LAOS', 'BRUNEI', 'TIMOR-LESTE', 'MYANMAR'],
+                            'Asia-South': ['INDIA', 'SRI LANKA', 'MALDIVES', 'NEPAL', 'BANGLADESH', 'PAKISTAN', 'AFGHANISTAN', 'BHUTAN'],
+                            'Asia-West': ['BAHRAIN', 'UAE', 'UNITED ARAB EMIRATES', 'SAUDI ARABIA', 'QATAR', 'JORDAN', 'LEBANON', 'SYRIA', 'IRAQ', 'KUWAIT', 'OMAN', 'YEMEN', 'IRAN', 'PALESTINE', 'ISRAEL'],
+                            'Asia-Central': ['KAZAKHSTAN', 'UZBEKISTAN', 'TAJIKISTAN', 'KYRGYZSTAN', 'TURKMENISTAN'],
+
+                            // Europe (Split into West/South/North/East if needed, but keeping simple for now based on user request "Zone B")
+                            'Europe': ['DENMARK', 'ENGLAND', 'Great Britain', 'FRANCE', 'GERMANY', 'SPAIN', 'SWITZERLAND', 'NETHERLANDS', 'SWEDEN', 'ITALY', 'RUSSIA', 'POLAND', 'CZECHIA', 'CZECH REPUBLIC', 'UKRAINE', 'BELGIUM', 'AUSTRIA', 'IRELAND', 'SCOTLAND', 'WALES', 'FINLAND', 'NORWAY', 'PORTUGAL', 'GREECE', 'BULGARIA', 'ESTONIA', 'LATVIA', 'LITHUANIA', 'HUNGARY', 'SLOVAKIA', 'SLOVENIA', 'CROATIA', 'SERBIA', 'BOSNIA', 'ROMANIA', 'MOLDOVA', 'TURKIYE', 'TURKEY', 'CYPRUS', 'MALTA', 'ICELAND', 'LUXEMBOURG', 'AZERBAIJAN', 'ARMENIA', 'GEORGIA', 'BELARUS', 'FAROE ISLANDS'],
+
+                            // Americas
+                            'PanAm-North': ['USA', 'U.S.A.', 'CANADA', 'MEXICO'],
+                            'PanAm-South': ['BRAZIL', 'ARGENTINA', 'CHILE', 'PERU', 'COLOMBIA', 'GUATEMALA', 'EL SALVADOR', 'CUBA', 'JAMAICA', 'DOMINICAN REPUBLIC', 'BARBADOS', 'TRINIDAD', 'TOBAGO', 'SURINAME', 'GUYANA', 'VENEZUELA', 'ECUADOR', 'BOLIVIA', 'PARAGUAY', 'URUGUAY', 'COSTA RICA', 'PANAMA', 'HONDURAS', 'NICARAGUA', 'BELIZE', 'HAITI', 'BAHAMAS', 'BERMUDA', 'CAYMAN ISLANDS', 'GREENLAND', 'FALKLAND ISLANDS'],
+
+                            // Africa
+                            'Africa': ['EGYPT', 'SOUTH AFRICA', 'ALGERIA', 'NIGERIA', 'MAURITIUS', 'ZIMBABWE', 'UGANDA', 'ZAMBIA', 'KENYA', 'GHANA', 'CAMEROON', 'MOROCCO', 'TUNISIA', 'BOTSWANA', 'NAMIBIA', 'MOZAMBIQUE', 'MADAGASCAR', 'SEYCHELLES', 'ETHIOPIA', 'TANZANIA', 'IVORY COAST', 'BENIN', 'TOGO', 'BURKINA FASO', 'SENEGAL', 'CONGO', 'MALI', 'GABON', 'REUNION'],
+
+                            // Oceania
+                            'Oceania': ['AUSTRALIA', 'NEW ZEALAND', 'FIJI', 'NEW CALEDONIA', 'TAHITI', 'SAMOA', 'TUVALU', 'KIRIBATI', 'TONGA', 'GUAM', 'COOK ISLANDS', 'NORFOLK ISLAND', 'NORTHERN MARIANA ISLANDS', 'PAPUA NEW GUINEA']
+                        };
+
+                        for (const [subRegion, countries] of Object.entries(subRegionMap)) {
+                            if (countries.some(c => countryUpper.includes(c))) {
+                                let mainRegion = 'Asia';
+                                if (subRegion.includes('Europe')) mainRegion = 'Europe';
+                                if (subRegion.includes('PanAm')) mainRegion = 'PanAm';
+                                if (subRegion.includes('Africa')) mainRegion = 'Africa';
+                                if (subRegion.includes('Oceania')) mainRegion = 'Oceania';
+                                return { region: mainRegion, subRegion };
                             }
                         }
-                    } else {
-                        rememberPlayer.value = false;
-                    }
+                        return { region: 'Asia', subRegion: 'Asia-East' }; // Default
+                    };
 
-                    checkUrlParams();
+                    const filteredResults = computed(() => {
+                        if (!sim.results) return [];
 
-                    // 외부 클릭 시 검색 결과 닫기
-                    document.addEventListener('click', (e) => {
-                        const searchContainer = e.target.closest('.mb-4.relative');
-                        if (!searchContainer && showSearchResults.value) {
-                            showSearchResults.value = false;
+                        return sim.results.filter(tournament => {
+                            // Region filter (Main Region)
+                            if (filters.selectedRegions.length > 0) {
+                                if (!filters.selectedRegions.includes(tournament.region)) return false;
+                            }
+
+                            // Check if it is a Junior tournament
+                            const grade = (tournament.grade || '').toLowerCase();
+                            const name = (tournament.name || '').toLowerCase();
+                            const isJunior = grade.includes('junior') || name.includes('junior') ||
+                                grade.includes('u19') || name.includes('u19') ||
+                                grade.includes('u17') || name.includes('u17') ||
+                                grade.includes('u15') || name.includes('u15') ||
+                                grade.includes('u13') || name.includes('u13') ||
+                                grade.includes('youth');
+
+                            // ✅ Junior Logic: 
+                            // If 'Junior' filter is NOT active, HIDE all Junior tournaments (default behavior)
+                            if (!filters.selectedGrades.includes('Junior') && isJunior) return false;
+
+                            // Grade filter
+                            if (filters.selectedGrades.length > 0) {
+                                // If 'Junior' is active and this IS a Junior tournament, SHOW it.
+                                if (isJunior && filters.selectedGrades.includes('Junior')) return true;
+
+                                // For non-Junior tournaments, check other grades
+                                // We filter out 'Junior' from the checking list so it doesn't match 'Junior' string in non-junior grades (if any)
+                                const otherGrades = filters.selectedGrades.filter(g => g !== 'Junior');
+
+                                if (otherGrades.length > 0) {
+                                    const hasMatchingGrade = otherGrades.some(grade => {
+                                        // ✅ FIX: Stricter matching to prevent S100 from matching S1000
+                                        // Split shortGrade by space or analyze it
+                                        const tGrade = tournament.shortGrade;
+
+                                        if (grade === 'S100') {
+                                            // Ensure it ends with 100 and not followed by another digit (like 0 in 1000)
+                                            // or check equality if shortGrade is just "S100"
+                                            return tGrade === 'S100' || tGrade.includes('S100 ') || tGrade.endsWith('S100');
+                                        }
+                                        if (grade === 'S300') return tGrade.includes('S300'); // S300 doesn't have S3000
+                                        if (grade === 'S500') return tGrade.includes('S500');
+                                        if (grade === 'S750') return tGrade.includes('S750');
+                                        if (grade === 'S1000') return tGrade.includes('S1000');
+
+                                        return tGrade.includes(grade);
+                                    });
+                                    if (!hasMatchingGrade) return false;
+                                } else {
+                                    // If ONLY 'Junior' is selected, and this is NOT a Junior tournament -> Hide it
+                                    return false;
+                                }
+                            }
+
+                            return true;
+                        });
+                    });
+
+                    const shareResults = () => {
+                        const params = new URLSearchParams();
+                        params.set('type', sim.type);
+                        params.set('event', sim.guestEvent);
+                        if (sim.guestPoints) params.set('pts', sim.guestPoints);
+                        if (sim.currentRank) params.set('rank', sim.currentRank);
+                        if (sim.type === 'doubles') {
+                            if (sim.partnerPoints) params.set('ppts', sim.partnerPoints);
+                            params.set('method', sim.calcMethod);
+                            if (sim.calcMethod === 'adjusted') params.set('cnt', sim.playedCount);
+                        }
+                        const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+
+                        if (navigator.share) {
+                            navigator.share({
+                                title: 'Court Mate Prediction',
+                                text: 'Check out my tournament entry forecast!',
+                                url: url
+                            }).catch(console.error);
+                        }
+                        else {
+                            navigator.clipboard.writeText(url)
+                                .then(() => alert('Link copied to clipboard!'))
+                                .catch(() => prompt("Copy link:", url));
+                        }
+                    };
+
+                    const copyEmail = () => {
+                        const email = 'roumsne@gmail.com';
+                        navigator.clipboard.writeText(email)
+                            .then(() => {
+                                alert('Email copied to clipboard!\n' + email);
+                            })
+                            .catch((err) => {
+                                console.error('Failed to copy email:', err);
+                                alert('Failed to copy email. Please copy manually: ' + email);
+                            });
+                    };
+
+                    const copyAgentEmail = () => {
+                        const email = 'withm2k@gmail.com';
+                        navigator.clipboard.writeText(email)
+                            .then(() => {
+                                alert('Agent email copied to clipboard!\n' + email);
+                            })
+                            .catch((err) => {
+                                console.error('Failed to copy email:', err);
+                                alert('Failed to copy email. Please copy manually: ' + email);
+                            });
+                    };
+
+                    const checkUrlParams = () => {
+                        const params = new URLSearchParams(window.location.search);
+                        if (params.has('event')) {
+                            sim.type = params.get('type') || 'singles';
+                            sim.guestEvent = params.get('event');
+                            if (params.has('pts')) sim.guestPoints = Number(params.get('pts'));
+                            if (params.has('rank')) sim.currentRank = Number(params.get('rank'));
+                            if (sim.type === 'doubles') {
+                                if (params.has('ppts')) sim.partnerPoints = Number(params.get('ppts'));
+                                if (params.has('method')) sim.calcMethod = params.get('method');
+                                if (params.has('cnt')) sim.playedCount = params.get('cnt');
+                            }
+                            if (sim.guestPoints) runSimulation();
+                        }
+                    };
+
+                    // ✅ 추가: 소셜 미디어 열기 함수
+                    const openSocial = (platform) => {
+                        // 실제 서비스에서는 여기에 딥링크나 URL을 추가하세요
+                        const links = {
+                            wechat: 'weixin://',
+                            kakao: 'kakaotalk://',
+                            line: 'line://'
+                        };
+
+                        if (links[platform]) {
+                            window.location.href = links[platform];
+                        } else {
+                            alert(`Open ${platform}`);
+                        }
+                    };
+
+                    // Toggle Dark Mode
+                    const toggleDarkMode = () => {
+                        darkMode.value = !darkMode.value;
+                        if (darkMode.value) {
+                            document.body.classList.add('dark-mode');
+                            localStorage.setItem('darkMode', 'true');
+                        } else {
+                            document.body.classList.remove('dark-mode');
+                            localStorage.setItem('darkMode', 'false');
+                        }
+                    };
+
+                    // ✅ 추가: 검색창 외부 클릭 처리
+                    onMounted(() => {
+                        // Load dark mode preference
+                        const savedDarkMode = localStorage.getItem('darkMode');
+                        if (savedDarkMode === 'true') {
+                            darkMode.value = true;
+                            document.body.classList.add('dark-mode');
+                        }
+
+                        document.documentElement.lang = currentLang.value;
+
+                        // ✅ NEW: Load Remembered Player
+                        const savedRememberMe = localStorage.getItem('courtmate_remember_me');
+                        if (savedRememberMe === 'true') {
+                            rememberPlayer.value = true;
+                            const savedPlayerData = localStorage.getItem('courtmate_saved_player');
+                            if (savedPlayerData) {
+                                try {
+                                    const parsedPlayer = JSON.parse(savedPlayerData);
+                                    // We need to re-select this player
+                                    // But selectPlayer expects a player object from the list or similar structure
+                                    // parsedPlayer should have everything we need
+                                    selectPlayer(parsedPlayer);
+                                    selectedPlayer.value = parsedPlayer; // Ensure state is synced
+                                } catch (e) {
+                                    console.error("Failed to parse saved player data", e);
+                                }
+                            }
+                        } else {
+                            rememberPlayer.value = false;
+                        }
+
+                        // ✅ NEW: Load Saved Points (Overwrite player defaults if exists)
+                        if (rememberPlayer.value) {
+                            const savedPoints = localStorage.getItem('courtmate_saved_points');
+                            if (savedPoints) {
+                                sim.guestPoints = Number(savedPoints);
+                            }
+                        }
+
+                        checkUrlParams();
+
+                        // 외부 클릭 시 검색 결과 닫기
+                        document.addEventListener('click', (e) => {
+                            const searchContainer = e.target.closest('.mb-4.relative');
+                            if (!searchContainer && showSearchResults.value) {
+                                showSearchResults.value = false;
+                            }
+                        });
+                    });
+
+                    // ✅ NEW: Watch for Language Changes
+                    watch(currentLang, (newLang) => {
+                        localStorage.setItem('courtmate_lang', newLang);
+                        document.documentElement.lang = newLang;
+                    });
+
+                    // ✅ NEW: Watch for Points Changes to Save
+                    watch(() => sim.guestPoints, (newPoints) => {
+                        if (rememberPlayer.value) {
+                            localStorage.setItem('courtmate_saved_points', newPoints);
                         }
                     });
-                });
 
-                // ✅ NEW: Watch for Language Changes
-                watch(currentLang, (newLang) => {
-                    localStorage.setItem('courtmate_lang', newLang);
-                    document.documentElement.lang = newLang;
-                });
+                    // Update rememberPlayer watcher to also save points immediately
+                    watch(rememberPlayer, (newVal) => {
+                        localStorage.setItem('courtmate_remember_me', newVal ? 'true' : 'false');
+                        if (newVal) {
+                            if (selectedPlayer.value) {
+                                const playerToSave = { ...selectedPlayer.value, points: typeof selectedPlayer.value.points === 'string' ? selectedPlayer.value.points : selectedPlayer.value.points.toString() };
+                                localStorage.setItem('courtmate_saved_player', JSON.stringify(playerToSave));
+                            }
+                            // Also save current points
+                            if (sim.guestPoints) {
+                                localStorage.setItem('courtmate_saved_points', sim.guestPoints);
+                            }
+                        } else {
+                            localStorage.removeItem('courtmate_saved_player');
+                            localStorage.removeItem('courtmate_saved_points');
+                        }
+                    });
 
+                    // ✅ NEW: Helper for M&Q Date Urgent Check
+                    const isUrgentMq = (dateStr) => {
+                        if (!dateStr || dateStr === 'TBA') return false;
+                        const now = new Date();
+                        const target = new Date(dateStr);
+                        now.setHours(0, 0, 0, 0);
+                        target.setHours(0, 0, 0, 0);
 
+                        const diffTime = target - now;
+                        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-                return {
-                    currentLang,
-                    t,
-                    showConsultModal,
-                    sim,
-                    runSimulation,
-                    filteredResults,
-
-                    shareResults,
-                    copyEmail,
-                    copyAgentEmail,
-                    searchQuery,
-                    showSearchResults,
-                    searchResults,
-                    selectPlayer,
-                    clearSearch,
-                    formatPoints,
-                    dataLoadError,
-                    validationErrors,
-                    validateInputs,
-                    isFormValid,
-                    openSocial,
-                    getValidationMessage,
-                    // ✅ NEW: Export new state variables
-                    filters,
-                    timerState,
-
-                    playerNationality,
-                    loadingLogs,
-                    loadingProgress,
-                    darkMode,
-                    toggleDarkMode,
-                    toggleGradeFilter,
-                    toggleRegionFilter,
+                        // Today (0) or Tomorrow (1)
+                        return diffDays === 0 || diffDays === 1;
+                    };
 
 
-                };
-            }
-        }).mount('#app');
+
+                    return {
+                        currentLang,
+                        t,
+                        showConsultModal,
+                        showNoticeModal, // ✅ NEW: Export Notice Modal State
+                        sim,
+                        runSimulation,
+                        filteredResults,
+
+                        shareResults,
+                        copyEmail,
+                        copyAgentEmail,
+                        searchQuery,
+                        showSearchResults,
+                        searchResults,
+                        selectPlayer,
+                        clearSearch,
+                        formatPoints,
+                        dataLoadError,
+                        validationErrors,
+                        validateInputs,
+                        isFormValid,
+                        openSocial,
+                        getValidationMessage,
+                        // ✅ NEW: Export new state variables
+                        filters,
+                        timerState,
+
+                        playerNationality,
+                        loadingLogs,
+                        loadingProgress,
+                        darkMode,
+                        toggleDarkMode,
+                        toggleGradeFilter,
+                        toggleRegionFilter,
+                        showPhoneNumber, // ✅ NEW: Export Phone State
+                        togglePhone,     // ✅ NEW: Export Phone Toggle
+                        isUrgentMq,      // ✅ NEW: Export Helper
+
+
+                    };
+                }
+            }).mount('#app');
+        });
     </script>
 </body>
 
