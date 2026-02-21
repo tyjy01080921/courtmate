@@ -1408,7 +1408,7 @@
                             style="color:var(--primary); text-decoration:underline;">BWF Website</a>
                         {{ t('notice1_2') }}
                     </li>
-                    <li style="margin-bottom: 0.5rem;">{{ t('notice2') }}</li>
+                    <li style="margin-bottom: 0.5rem;" v-html="t('notice2')"></li>
                     <li>{{ t('notice3') }}</li>
                 </ul>
 
@@ -1518,7 +1518,7 @@
                 noticeTitle: '유의 사항',
                 notice1_1: '대회 커트라인은 자체 분석한 자료의 평균치이므로 정확한 전년 커트라인 포인트는 개별적으로 ',
                 notice1_2: '에서 검색하세요.',
-                notice2: '대회의 마감일들은 규정을 참조해서 계산한 예상날짜 입니다.',
+                notice2: '대회의 마감일들은 규정을 참조해서 자동 계산된 것입니다. <a href="https://corporate.bwfbadminton.com/events/calendar/" target="_blank" style="color:var(--primary); text-decoration:underline;">BWF Calendar</a>에서 정확한 날짜를 확인하세요. 추후 정확한 날짜가 반영될 예정입니다.',
                 notice3: '대회 참가 관련 문의 사항은 아래 "상담하기"를 확인해 주세요.'
             },
             zh: {
@@ -1567,7 +1567,7 @@
                 noticeTitle: '注意事项',
                 notice1_1: '比赛截止分数是基于内部分析的平均值。如需准确的过往截止分数，请自行在 ',
                 notice1_2: ' 查询。',
-                notice2: '比赛截止日期是根据规定计算的预计日期。',
+                notice2: '比赛截止日期是根据规定自动计算的。请在 <a href="https://corporate.bwfbadminton.com/events/calendar/" target="_blank" style="color:var(--primary); text-decoration:underline;">BWF日历</a> 上查明确切日期。准确的日期将在未来更新。',
                 notice3: '关于比赛参赛的咨询，请查阅下方的“咨询”。'
             },
             ja: {
@@ -1616,7 +1616,7 @@
                 noticeTitle: '注意事項',
                 notice1_1: '大会のカットラインは独自分析による平均値です。正確な過去のカットラインについては、個別に ',
                 notice1_2: ' で検索してください。',
-                notice2: '大会の締切日は規定に基づいて計算された予想日です。',
+                notice2: '大会の締切日は規定に基づいて自動計算された予想日です。正確な日程は <a href="https://corporate.bwfbadminton.com/events/calendar/" target="_blank" style="color:var(--primary); text-decoration:underline;">BWFカレンダー</a> で確認してください。正確な日程は後日更新されます。',
                 notice3: '大会参加に関するお問い合わせは、下の「相談する」をご確認ください。'
             }
         };
