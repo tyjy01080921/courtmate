@@ -13,6 +13,16 @@
 
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="icon_192.png">
+    <link rel="apple-touch-startup-image" href="courtmate_splash.png">
+    <link rel="apple-touch-startup-image" href="courtmate_splash.png">
+
+    <!-- Social Preview Control: No Image -->
+    <meta property="og:url" content="https://courtmate.netlify.app/">
+    <meta property="og:image" content="" />
+    <meta property="og:video" content="" />
+    <meta property="twitter:image" content="" />
+    <meta property="twitter:card" content="summary" />
+    <link rel="apple-touch-icon" href="icon_192.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +36,7 @@
     <!-- tournaments.js removed to prevent data conflict -->
 
     <!-- ✅ 수정: 에러 처리 추가 & Minified Version -->
-    <script defer src="rankings_data.js?v=20260213" onerror="console.error('Failed to load rankings_data.js')"></script>
+    <script defer src="rankings_data.js?v=20260221" onerror="console.error('Failed to load rankings_data.js')"></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -925,6 +935,13 @@
 </head>
 
 <body>
+    <div id="splash-screen"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background-color: var(--gray-100); transition: opacity 0.5s ease-out; display: flex; justify-content: center;">
+        <div
+            style="width: 100%; max-width: 480px; height: 100%; background: url('courtmate_splash.png') no-repeat center center; background-size: cover; box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);">
+        </div>
+    </div>
+
     <div id="app" class="app-container" v-cloak>
         <!--  NEW: Circuit Planner Modal -->
 
@@ -2075,41 +2092,41 @@
                                     gradeLower.includes('games') ||
                                     gradeLower.includes('thomas') ||
                                     gradeLower.includes('uber') ||
-                                    gradeLower.includes('sudirman');
+                                    gradeLower.includes('sudirman') ||
+                                    gradeLower.includes('final'); // BWF Finals also TBA
 
                                 // Skip calculation for Grade 1 events (Manual/TBA)
                                 if (!isGrade1) {
-                                    let offset = 35; // Default (S300, S100, IC, IS, FS, Junior)
+                                    // Calculate Tournament Week Monday
+                                    const tStart = new Date(startIso);
+                                    const day = tStart.getDay();
+                                    const diffToMonday = day === 0 ? 6 : day - 1; // 0=Sunday
+                                    const mondayOfWeek0 = new Date(tStart);
+                                    mondayOfWeek0.setDate(tStart.getDate() - diffToMonday);
 
-                                    // Higher grades have earlier deadline (42 days / 6 weeks)
+                                    let entryOffset = 34; // Week -5 Tuesday = Monday - 34 days
+                                    let mqOffset = 31;    // Week -5 Friday = Monday - 31 days
+                                    let wdOffset = 21;    // Week -3 Monday = Monday - 21 days
+
+                                    // Higher grades (S1000, S750, S500) have earlier deadlines (Week -6)
                                     if (gradeLower.includes('1000') || gradeLower.includes('750') || gradeLower.includes('500')) {
-                                        offset = 42;
+                                        entryOffset = 41; // Week -6 Tuesday
+                                        mqOffset = 38;    // Week -6 Friday
                                     }
 
                                     // Calculate Entry Deadline
-                                    const entryDate = new Date(startIso);
-                                    entryDate.setDate(entryDate.getDate() - offset);
-
-                                    // Ensure Entry Deadline is a Tuesday? 
-                                    // User said: "Note: Ensure the calculated Entry Deadline falls on a Tuesday."
-                                    // Let's try to adjust to nearest Tuesday if needed, but for now simple offset from T0 (usually Tuesday) works.
-                                    // If T0 is Tuesday, T0-35 and T0-42 are also Tuesdays.
-
+                                    const entryDate = new Date(mondayOfWeek0);
+                                    entryDate.setDate(mondayOfWeek0.getDate() - entryOffset);
                                     entryDeadline = entryDate.toISOString().split('T')[0];
 
-                                    // Calculate Withdrawal Deadline (Monday, T0 - 8 days??)
-                                    // User prompt: "T0 - 8 Days (Monday)"
-                                    // Standard BWF rule is usually M&Q + roughly 10-12 days?
-                                    // Let's follow USER instruction: T0 - 8 days.
-                                    const wdDate = new Date(startIso);
-                                    wdDate.setDate(wdDate.getDate() - 8); // Monday before tournament week? 
-                                    // Actually usually tournament starts Tuesday. Monday before is T-1. 
-                                    // T-8 is the Monday of the week PRIOR.
+                                    // Calculate Withdrawal Deadline
+                                    const wdDate = new Date(mondayOfWeek0);
+                                    wdDate.setDate(mondayOfWeek0.getDate() - wdOffset);
                                     wdDeadline = wdDate.toISOString().split('T')[0];
 
-                                    // [NEW] Calculate M&Q Report Date (Entry Date + 3 Days => Friday)
-                                    const mqDate = new Date(entryDate);
-                                    mqDate.setDate(entryDate.getDate() + 3);
+                                    // Calculate M&Q Report Date
+                                    const mqDate = new Date(mondayOfWeek0);
+                                    mqDate.setDate(mondayOfWeek0.getDate() - mqOffset);
                                     mqReportDate = mqDate.toISOString().split('T')[0];
 
                                     isEstimated = true;
@@ -2669,36 +2686,48 @@
                         const arrivalStr = formatDate(arrivalDate);
                         const departureStr = formatDate(departureDate);
 
-                        // Base URLs (Updated by User Request)
-                        // Hotel uses 'hotels/list' to support keyword search with params
-                        const links = {
-                            flight: 'https://kr.trip.com/flights/welcome/?to=home&Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12123036',
-                            hotel: 'https://kr.trip.com/hotels/list?Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12126340',
-                            package: 'https://kr.trip.com/packages/?Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12163867',
-                            pickup: 'https://kr.trip.com/airport-transfers/?Allianceid=7822879&SID=295070959&trip_sub1=&trip_sub3=D12166198'
-                        };
+                        // Get airport/city codes
+                        const airportCode = getAirportCode(tournament.city);
+                        const cityName = encodeURIComponent(tournament.city || tournament.country);
 
-                        let url = links[type] || links.flight;
+                        let url = '';
 
-                        // Append parameters based on type
+                        // Shared Affiliate Parameters
+                        const affParams = '&Allianceid=7822879&SID=295070959&trip_sub1=';
+
                         if (type === 'hotel') {
-                            // Keyword search for hotel
-                            url += `&checkIn=${arrivalStr}&checkOut=${departureStr}&adult=1&keyword=${encodeURIComponent(tournament.city)}`;
+                            // ✅ Hotel: City name and Dates (checkIn/checkOut)
+                            url = `https://kr.trip.com/hotels/list?searchWord=${cityName}&checkIn=${arrivalStr}&checkOut=${departureStr}&adult=1${affParams}&trip_sub3=D12126340`;
+
                         } else if (type === 'flight') {
-                            // Try to pre-fill destination using Airport Code if available, otherwise City Name
-                            // Trip.com flight params: dDate, rDate, aCity (destination), quantity, class, search=true
-                            // Force Round Trip: flighttype=1, tripType=RT
-                            const airportCode = getAirportCode(tournament.city);
-                            url += `&dDate=${arrivalStr}&rDate=${departureStr}&class=Y&quantity=1&search=true&flighttype=1&tripType=RT`;
+                            // ✅ Flight: Round Trip explicitly (flighttype=RT), Dates, Departure
+                            url = `https://kr.trip.com/flights/?dcity=sel&ddate=${arrivalStr}&rdate=${departureStr}&class=Y&quantity=1&search=true&flighttype=RT&tripType=RT${affParams}&trip_sub3=D12123036`;
+
+                            if (airportCode && airportCode.length === 3) {
+                                url += `&acity=${airportCode.toLowerCase()}`;
+                            } else {
+                                url += `&acity=${cityName.toLowerCase()}`;
+                            }
+                            url += `&embedded=0`;
+
+                        } else if (type === 'package') {
+                            // ✅ Package: Dates, Departure City, and Destination
+                            url = `https://kr.trip.com/packages/?dCity=sel&dDate=${arrivalStr}&rDate=${departureStr}&pkgType=4${affParams}&trip_sub3=D12163867`;
+
                             if (airportCode && airportCode.length === 3) {
                                 url += `&aCity=${airportCode}`;
+                            } else {
+                                url += `&aCityName=${cityName}`;
                             }
-                        } else if (type === 'package') {
-                            // Flight + Hotel
-                            url += `&dDate=${arrivalStr}&rDate=${departureStr}&pkgType=4`;
+
                         } else if (type === 'pickup') {
-                            // Airport Transfer - Use clean base URL params
-                            url += `&date=${arrivalStr}`;
+                            // ✅ Pickup: Needs date, airport/keyword
+                            url = `https://kr.trip.com/airport-transfers?date=${arrivalStr}&time=12:00${affParams}&trip_sub3=D12166198`;
+
+                            if (airportCode && airportCode.length === 3) {
+                                url += `&airportCode=${airportCode}`;
+                            }
+                            url += `&keyword=${cityName}`;
                         }
 
                         return url;
@@ -2750,6 +2779,18 @@
                     };
                 }
             }).mount('#app');
+        });
+    </script>
+    <script>
+        // Splash Screen Fade Out Logic
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var splash = document.getElementById('splash-screen');
+                if (splash) {
+                    splash.style.opacity = '0';
+                    setTimeout(function () { splash.remove(); }, 500);
+                }
+            }, 1200); // 1.2 seconds display time before fade begins
         });
     </script>
 </body>
