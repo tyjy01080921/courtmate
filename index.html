@@ -2705,37 +2705,41 @@
 
                         if (type === 'hotel') {
                             // ✅ Hotel: City name and Dates (checkIn/checkOut)
-                            url = `https://kr.trip.com/hotels/list?searchWord=${cityName}&checkIn=${arrivalStr}&checkOut=${departureStr}&adult=1${affParams}&trip_sub3=D12126340`;
+                            // Added cityName and city to support mobile web pre-filling
+                            url = `https://kr.trip.com/hotels/list?city=${cityName}&cityName=${cityName}&searchWord=${cityName}&checkIn=${arrivalStr}&checkOut=${departureStr}&adult=1${affParams}&trip_sub3=D12126340`;
 
                         } else if (type === 'flight') {
                             // ✅ Flight: Round Trip explicitly (flighttype=RT), Dates, Departure
-                            url = `https://kr.trip.com/flights/?dcity=sel&ddate=${arrivalStr}&rdate=${departureStr}&class=Y&quantity=1&search=true&flighttype=RT&tripType=RT${affParams}&trip_sub3=D12123036`;
+                            // Added departDate and returnDate for mobile fallback
+                            url = `https://kr.trip.com/flights/?dcity=sel&ddate=${arrivalStr}&rdate=${departureStr}&departDate=${arrivalStr}&returnDate=${departureStr}&class=Y&quantity=1&search=true&flighttype=RT&tripType=RT${affParams}&trip_sub3=D12123036`;
 
                             if (airportCode && airportCode.length === 3) {
-                                url += `&acity=${airportCode.toLowerCase()}`;
+                                url += `&acity=${airportCode.toLowerCase()}&arriveCity=${airportCode.toLowerCase()}`;
                             } else {
-                                url += `&acity=${cityName.toLowerCase()}`;
+                                url += `&acity=${cityName.toLowerCase()}&arriveCity=${cityName.toLowerCase()}`;
                             }
                             url += `&embedded=0`;
 
                         } else if (type === 'package') {
                             // ✅ Package: Dates, Departure City, and Destination
-                            url = `https://kr.trip.com/packages/?dCity=sel&dDate=${arrivalStr}&rDate=${departureStr}&pkgType=4${affParams}&trip_sub3=D12163867`;
+                            url = `https://kr.trip.com/packages/?dCity=sel&dDate=${arrivalStr}&rDate=${departureStr}&departDate=${arrivalStr}&returnDate=${departureStr}&pkgType=4${affParams}&trip_sub3=D12163867`;
 
                             if (airportCode && airportCode.length === 3) {
-                                url += `&aCity=${airportCode}`;
+                                url += `&aCity=${airportCode}&arriveCity=${airportCode}`;
                             } else {
-                                url += `&aCityName=${cityName}`;
+                                url += `&aCityName=${cityName}&aCity=${cityName}&arriveCity=${cityName}`;
                             }
 
                         } else if (type === 'pickup') {
                             // ✅ Pickup: Needs date, airport/keyword
-                            url = `https://kr.trip.com/airport-transfers?date=${arrivalStr}&time=12:00${affParams}&trip_sub3=D12166198`;
+                            // Added pickupDate, poiName, cityName for mobile fallback
+                            url = `https://kr.trip.com/airport-transfers?date=${arrivalStr}&pickupDate=${arrivalStr}${affParams}&trip_sub3=D12166198`;
 
                             if (airportCode && airportCode.length === 3) {
-                                url += `&airportCode=${airportCode}`;
+                                url += `&airportCode=${airportCode}&keyword=${cityName}&poiName=${cityName}`;
+                            } else {
+                                url += `&keyword=${cityName}&cityName=${cityName}&poiName=${cityName}`;
                             }
-                            url += `&keyword=${cityName}`;
                         }
 
                         return url;
