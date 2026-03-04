@@ -37,7 +37,7 @@ window.RANKINGS_2026_RAW = {
       "name": "Christo POPOV",
       "id": "72885",
       "country": "FRA",
-      "points": "80795",
+      "points": "81745",
       "tournaments": "20"
     },
     {
@@ -46,7 +46,7 @@ window.RANKINGS_2026_RAW = {
       "id": "95476",
       "country": "CHN",
       "points": "79278",
-      "tournaments": "15"
+      "tournaments": "16"
     },
     {
       "rank": "7",
@@ -54,7 +54,7 @@ window.RANKINGS_2026_RAW = {
       "id": "34810",
       "country": "TPE",
       "points": "79239",
-      "tournaments": "27"
+      "tournaments": "28"
     },
     {
       "rank": "8",
@@ -66,14 +66,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "9",
-      "name": "LOH Kean Yew",
-      "id": "76115",
-      "country": "SGP",
-      "points": "70250",
-      "tournaments": "20"
-    },
-    {
-      "rank": "10",
       "name": "Kodai NARAOKA",
       "id": "62063",
       "country": "JPN",
@@ -81,12 +73,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "22"
     },
     {
+      "rank": "10",
+      "name": "LOH Kean Yew",
+      "id": "76115",
+      "country": "SGP",
+      "points": "69340",
+      "tournaments": "19"
+    },
+    {
       "rank": "11",
       "name": "LIN Chun-Yi",
       "id": "86114",
       "country": "TPE",
-      "points": "67268",
-      "tournaments": "21"
+      "points": "67368",
+      "tournaments": "22"
     },
     {
       "rank": "12",
@@ -110,10 +110,18 @@ window.RANKINGS_2026_RAW = {
       "id": "58089",
       "country": "INA",
       "points": "59330",
-      "tournaments": "21"
+      "tournaments": "20"
     },
     {
       "rank": "15",
+      "name": "WENG Hong Yang",
+      "id": "77042",
+      "country": "CHN",
+      "points": "58420",
+      "tournaments": "18"
+    },
+    {
+      "rank": "16",
       "name": "Victor LAI",
       "id": "94151",
       "country": "CAN",
@@ -121,19 +129,11 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "19"
     },
     {
-      "rank": "16",
-      "name": "WENG Hong Yang",
-      "id": "77042",
-      "country": "CHN",
-      "points": "58170",
-      "tournaments": "17"
-    },
-    {
       "rank": "17",
       "name": "Toma Junior POPOV",
       "id": "61628",
       "country": "FRA",
-      "points": "54605",
+      "points": "55655",
       "tournaments": "19"
     },
     {
@@ -142,10 +142,18 @@ window.RANKINGS_2026_RAW = {
       "id": "77427",
       "country": "CHN",
       "points": "54450",
-      "tournaments": "18"
+      "tournaments": "19"
     },
     {
       "rank": "19",
+      "name": "CHI Yu Jen",
+      "id": "77848",
+      "country": "TPE",
+      "points": "52497",
+      "tournaments": "25"
+    },
+    {
+      "rank": "20",
       "name": "Yushi TANAKA",
       "id": "86672",
       "country": "JPN",
@@ -153,20 +161,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "23"
     },
     {
-      "rank": "20",
-      "name": "CHI Yu Jen",
-      "id": "77848",
-      "country": "TPE",
-      "points": "50897",
-      "tournaments": "24"
-    },
-    {
       "rank": "21",
       "name": "LEE Chia Hao",
       "id": "59322",
       "country": "TPE",
       "points": "49992",
-      "tournaments": "24"
+      "tournaments": "25"
     },
     {
       "rank": "22",
@@ -174,7 +174,7 @@ window.RANKINGS_2026_RAW = {
       "id": "68322",
       "country": "IND",
       "points": "48256",
-      "tournaments": "22"
+      "tournaments": "21"
     },
     {
       "rank": "23",
@@ -182,7 +182,7 @@ window.RANKINGS_2026_RAW = {
       "id": "62855",
       "country": "DEN",
       "points": "47424",
-      "tournaments": "23"
+      "tournaments": "22"
     },
     {
       "rank": "24",
@@ -198,22 +198,22 @@ window.RANKINGS_2026_RAW = {
       "id": "94780",
       "country": "HKG",
       "points": "46233",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "26",
-      "name": "WANG Zheng Xing",
-      "id": "89163",
-      "country": "CHN",
-      "points": "46201",
-      "tournaments": "17"
-    },
-    {
-      "rank": "27",
       "name": "LEONG Jun Hao",
       "id": "84838",
       "country": "MAS",
       "points": "45691",
+      "tournaments": "20"
+    },
+    {
+      "rank": "27",
+      "name": "Nhat NGUYEN",
+      "id": "85095",
+      "country": "IRL",
+      "points": "45121",
       "tournaments": "19"
     },
     {
@@ -222,31 +222,31 @@ window.RANKINGS_2026_RAW = {
       "id": "87375",
       "country": "TPE",
       "points": "45049",
-      "tournaments": "23"
+      "tournaments": "24"
     },
     {
       "rank": "29",
-      "name": "Nhat NGUYEN",
-      "id": "85095",
-      "country": "IRL",
-      "points": "44871",
-      "tournaments": "19"
+      "name": "NG Ka Long Angus",
+      "id": "45171",
+      "country": "HKG",
+      "points": "45039",
+      "tournaments": "21"
     },
     {
       "rank": "30",
+      "name": "WANG Zheng Xing",
+      "id": "89163",
+      "country": "CHN",
+      "points": "45011",
+      "tournaments": "16"
+    },
+    {
+      "rank": "31",
       "name": "Panitchaphon TEERARATSAKUL",
       "id": "85845",
       "country": "THA",
       "points": "44686",
       "tournaments": "14"
-    },
-    {
-      "rank": "31",
-      "name": "NG Ka Long Angus",
-      "id": "45171",
-      "country": "HKG",
-      "points": "44189",
-      "tournaments": "20"
     },
     {
       "rank": "32",
@@ -262,15 +262,15 @@ window.RANKINGS_2026_RAW = {
       "id": "63122",
       "country": "CAN",
       "points": "43485",
-      "tournaments": "26"
+      "tournaments": "25"
     },
     {
       "rank": "34",
       "name": "Jia Heng Jason TEH",
       "id": "82606",
       "country": "SGP",
-      "points": "43008",
-      "tournaments": "26"
+      "points": "42158",
+      "tournaments": "25"
     },
     {
       "rank": "35",
@@ -278,7 +278,7 @@ window.RANKINGS_2026_RAW = {
       "id": "59543",
       "country": "FRA",
       "points": "40604",
-      "tournaments": "17"
+      "tournaments": "16"
     },
     {
       "rank": "36",
@@ -294,34 +294,18 @@ window.RANKINGS_2026_RAW = {
       "id": "65580",
       "country": "KOR",
       "points": "38269",
-      "tournaments": "15"
+      "tournaments": "14"
     },
     {
       "rank": "38",
       "name": "Justin HOH",
       "id": "68392",
       "country": "MAS",
-      "points": "37052",
+      "points": "36962",
       "tournaments": "21"
     },
     {
       "rank": "39",
-      "name": "Moh. Zaki UBAIDILLAH",
-      "id": "60321",
-      "country": "INA",
-      "points": "37041",
-      "tournaments": "13"
-    },
-    {
-      "rank": "40",
-      "name": "Jason GUNAWAN",
-      "id": "65634",
-      "country": "HKG",
-      "points": "35810",
-      "tournaments": "18"
-    },
-    {
-      "rank": "41",
       "name": "Yudai OKIMOTO",
       "id": "90735",
       "country": "JPN",
@@ -329,36 +313,52 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "42",
-      "name": "Tharun MANNEPALLI",
-      "id": "92160",
-      "country": "IND",
-      "points": "35596",
-      "tournaments": "20"
+      "rank": "40",
+      "name": "Moh. Zaki UBAIDILLAH",
+      "id": "60321",
+      "country": "INA",
+      "points": "35721",
+      "tournaments": "12"
     },
     {
-      "rank": "43",
+      "rank": "41",
       "name": "Magnus JOHANNESEN",
       "id": "97030",
       "country": "DEN",
       "points": "35392",
-      "tournaments": "23"
+      "tournaments": "22"
     },
     {
-      "rank": "44",
+      "rank": "42",
+      "name": "Jason GUNAWAN",
+      "id": "65634",
+      "country": "HKG",
+      "points": "34710",
+      "tournaments": "18"
+    },
+    {
+      "rank": "43",
       "name": "Kiran GEORGE",
       "id": "68317",
       "country": "IND",
-      "points": "35070",
+      "points": "34540",
       "tournaments": "18"
+    },
+    {
+      "rank": "44",
+      "name": "Tharun MANNEPALLI",
+      "id": "92160",
+      "country": "IND",
+      "points": "34496",
+      "tournaments": "20"
     },
     {
       "rank": "45",
       "name": "Prahdiska Bagas SHUJIWO",
       "id": "59614",
       "country": "INA",
-      "points": "33903",
-      "tournaments": "15"
+      "points": "32853",
+      "tournaments": "14"
     },
     {
       "rank": "46",
@@ -370,14 +370,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "47",
-      "name": "Sholeh AIDIL",
-      "id": "79110",
-      "country": "MAS",
-      "points": "32690",
-      "tournaments": "16"
-    },
-    {
-      "rank": "48",
       "name": "Joakim OLDORFF",
       "id": "85563",
       "country": "FIN",
@@ -385,7 +377,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "18"
     },
     {
-      "rank": "49",
+      "rank": "48",
       "name": "SU Li Yang",
       "id": "94397",
       "country": "TPE",
@@ -393,15 +385,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "22"
     },
     {
-      "rank": "50",
-      "name": "Viktor AXELSEN",
-      "id": "25831",
-      "country": "DEN",
-      "points": "30290",
-      "tournaments": "6"
+      "rank": "49",
+      "name": "Sholeh AIDIL",
+      "id": "79110",
+      "country": "MAS",
+      "points": "30360",
+      "tournaments": "16"
     },
     {
-      "rank": "51",
+      "rank": "50",
       "name": "Muhamad YUSUF",
       "id": "90218",
       "country": "INA",
@@ -409,7 +401,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "52",
+      "rank": "51",
       "name": "Anthony Sinisuka GINTING",
       "id": "95661",
       "country": "INA",
@@ -417,7 +409,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "53",
+      "rank": "52",
       "name": "Kalle KOLJONEN",
       "id": "92655",
       "country": "FIN",
@@ -425,7 +417,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "18"
     },
     {
+      "rank": "53",
+      "name": "Kantaphon WANGCHAROEN",
+      "id": "92508",
+      "country": "THA",
+      "points": "28890",
+      "tournaments": "19"
+    },
+    {
       "rank": "54",
+      "name": "Minoru KOGA",
+      "id": "80062",
+      "country": "JPN",
+      "points": "28770",
+      "tournaments": "14"
+    },
+    {
+      "rank": "55",
       "name": "Chico Aura DWI WARDOYO",
       "id": "71408",
       "country": "INA",
@@ -433,7 +441,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "55",
+      "rank": "56",
+      "name": "Aria DINATA",
+      "id": "91894",
+      "country": "CRO",
+      "points": "28709",
+      "tournaments": "13"
+    },
+    {
+      "rank": "57",
       "name": "Julien CARRAGGI",
       "id": "70399",
       "country": "BEL",
@@ -441,28 +457,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "20"
     },
     {
-      "rank": "56",
-      "name": "Kantaphon WANGCHAROEN",
-      "id": "92508",
-      "country": "THA",
-      "points": "28340",
-      "tournaments": "19"
-    },
-    {
-      "rank": "57",
-      "name": "Aria DINATA",
-      "id": "91894",
-      "country": "CRO",
-      "points": "27959",
-      "tournaments": "12"
-    },
-    {
       "rank": "58",
       "name": "Mithun MANJUNATH",
       "id": "62720",
       "country": "IND",
       "points": "27770",
-      "tournaments": "14"
+      "tournaments": "13"
     },
     {
       "rank": "59",
@@ -474,35 +474,35 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "60",
-      "name": "Priyanshu RAJAWAT",
-      "id": "69093",
-      "country": "IND",
-      "points": "27230",
-      "tournaments": "13"
-    },
-    {
-      "rank": "61",
       "name": "Harry HUANG",
       "id": "63170",
       "country": "ENG",
-      "points": "26566",
-      "tournaments": "19"
+      "points": "26716",
+      "tournaments": "20"
+    },
+    {
+      "rank": "61",
+      "name": "Priyanshu RAJAWAT",
+      "id": "69093",
+      "country": "IND",
+      "points": "26680",
+      "tournaments": "13"
     },
     {
       "rank": "62",
+      "name": "Ditlev Jaeger HOLM",
+      "id": "90130",
+      "country": "DEN",
+      "points": "26677",
+      "tournaments": "19"
+    },
+    {
+      "rank": "63",
       "name": "HU Zhe An",
       "id": "73591",
       "country": "CHN",
       "points": "26496",
       "tournaments": "12"
-    },
-    {
-      "rank": "63",
-      "name": "Minoru KOGA",
-      "id": "80062",
-      "country": "JPN",
-      "points": "26440",
-      "tournaments": "13"
     },
     {
       "rank": "64",
@@ -522,11 +522,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "66",
-      "name": "Ditlev Jaeger HOLM",
-      "id": "90130",
-      "country": "DEN",
-      "points": "25447",
-      "tournaments": "18"
+      "name": "NGUYEN Hai Dang",
+      "id": "64648",
+      "country": "VIE",
+      "points": "25840",
+      "tournaments": "13"
     },
     {
       "rank": "67",
@@ -538,22 +538,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "68",
-      "name": "NGUYEN Hai Dang",
-      "id": "64648",
-      "country": "VIE",
-      "points": "25240",
-      "tournaments": "12"
-    },
-    {
-      "rank": "69",
       "name": "YOO Tae Bin",
       "id": "97115",
       "country": "KOR",
       "points": "25129",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
-      "rank": "70",
+      "rank": "69",
       "name": "S.Sankar Muthusamy SUBRAMANIAN",
       "id": "91814",
       "country": "IND",
@@ -561,7 +553,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "19"
     },
     {
-      "rank": "71",
+      "rank": "70",
       "name": "Riki TAKEI",
       "id": "99466",
       "country": "JPN",
@@ -569,7 +561,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "72",
+      "rank": "71",
       "name": "ZHU Xuan Chen",
       "id": "97345",
       "country": "CHN",
@@ -577,7 +569,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "73",
+      "rank": "72",
       "name": "TING Yen-Chen",
       "id": "86521",
       "country": "TPE",
@@ -585,39 +577,63 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "17"
     },
     {
-      "rank": "74",
-      "name": "Shogo OGAWA",
-      "id": "62395",
-      "country": "JPN",
-      "points": "24480",
-      "tournaments": "14"
-    },
-    {
-      "rank": "75",
+      "rank": "73",
       "name": "HUANG Ping-Hsien",
       "id": "55920",
       "country": "TPE",
       "points": "24370",
-      "tournaments": "15"
+      "tournaments": "14"
     },
     {
-      "rank": "76",
+      "rank": "74",
+      "name": "Shogo OGAWA",
+      "id": "62395",
+      "country": "JPN",
+      "points": "24330",
+      "tournaments": "13"
+    },
+    {
+      "rank": "75",
       "name": "KOK Jing Hong",
       "id": "82372",
       "country": "MAS",
-      "points": "23357",
+      "points": "23587",
       "tournaments": "16"
     },
     {
+      "rank": "76",
+      "name": "Matthias KICKLITZ",
+      "id": "51998",
+      "country": "GER",
+      "points": "23528",
+      "tournaments": "23"
+    },
+    {
       "rank": "77",
+      "name": "Viktor AXELSEN",
+      "id": "25831",
+      "country": "DEN",
+      "points": "23290",
+      "tournaments": "5"
+    },
+    {
+      "rank": "78",
       "name": "Joshua NGUYEN",
       "id": "71843",
       "country": "CAN",
       "points": "23164",
+      "tournaments": "14"
+    },
+    {
+      "rank": "79",
+      "name": "Bismo Raya OKTORA",
+      "id": "88276",
+      "country": "INA",
+      "points": "23000",
       "tournaments": "13"
     },
     {
-      "rank": "78",
+      "rank": "80",
       "name": "Saneeth DAYANAND",
       "id": "82483",
       "country": "IND",
@@ -625,15 +641,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "17"
     },
     {
-      "rank": "79",
-      "name": "Viren NETTASINGHE",
-      "id": "64666",
-      "country": "SRI",
-      "points": "22560",
-      "tournaments": "13"
+      "rank": "81",
+      "name": "Eogene EWE",
+      "id": "75014",
+      "country": "MAS",
+      "points": "22515",
+      "tournaments": "19"
     },
     {
-      "rank": "80",
+      "rank": "82",
       "name": "Kevin CORDON",
       "id": "54897",
       "country": "GUA",
@@ -641,15 +657,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "81",
+      "rank": "83",
       "name": "Misha ZILBERMAN",
       "id": "52953",
       "country": "ISR",
       "points": "22287",
-      "tournaments": "18"
+      "tournaments": "17"
     },
     {
-      "rank": "82",
+      "rank": "84",
       "name": "WANG Yu-Kai",
       "id": "98279",
       "country": "TPE",
@@ -657,15 +673,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "83",
-      "name": "Matthias KICKLITZ",
-      "id": "51998",
-      "country": "GER",
-      "points": "22228",
-      "tournaments": "23"
-    },
-    {
-      "rank": "84",
+      "rank": "85",
       "name": "Mark Shelley ALCALA",
       "id": "87610",
       "country": "USA",
@@ -673,39 +681,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "85",
+      "rank": "86",
       "name": "Enogat ROY",
       "id": "85118",
       "country": "FRA",
       "points": "21568",
-      "tournaments": "15"
-    },
-    {
-      "rank": "86",
-      "name": "Eogene EWE",
-      "id": "75014",
-      "country": "MAS",
-      "points": "21235",
-      "tournaments": "19"
+      "tournaments": "16"
     },
     {
       "rank": "87",
-      "name": "Bismo Raya OKTORA",
-      "id": "88276",
-      "country": "INA",
-      "points": "21120",
-      "tournaments": "13"
-    },
-    {
-      "rank": "88",
       "name": "Dmitriy PANARIN",
       "id": "82989",
       "country": "KAZ",
       "points": "21094",
-      "tournaments": "16"
+      "tournaments": "15"
     },
     {
-      "rank": "89",
+      "rank": "88",
       "name": "CHO Geon Yeop",
       "id": "89595",
       "country": "KOR",
@@ -713,36 +705,44 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
+      "rank": "89",
+      "name": "Richie Duta RICHARDO",
+      "id": "89808",
+      "country": "INA",
+      "points": "20601",
+      "tournaments": "10"
+    },
+    {
       "rank": "90",
-      "name": "CHEAM June Wei",
-      "id": "92796",
-      "country": "MAS",
-      "points": "20780",
-      "tournaments": "13"
-    },
-    {
-      "rank": "91",
-      "name": "Koo TAKAHASHI",
-      "id": "86230",
-      "country": "JPN",
-      "points": "20570",
-      "tournaments": "13"
-    },
-    {
-      "rank": "92",
       "name": "Manraj SINGH",
       "id": "69967",
       "country": "IND",
       "points": "20380",
-      "tournaments": "17"
+      "tournaments": "16"
     },
     {
-      "rank": "93",
+      "rank": "91",
+      "name": "Viren NETTASINGHE",
+      "id": "64666",
+      "country": "SRI",
+      "points": "20270",
+      "tournaments": "13"
+    },
+    {
+      "rank": "92",
       "name": "Rithvik Sanjeevi SATISH KUMAR",
       "id": "86975",
       "country": "IND",
       "points": "20080",
-      "tournaments": "16"
+      "tournaments": "15"
+    },
+    {
+      "rank": "93",
+      "name": "Christian ADINATA",
+      "id": "69006",
+      "country": "INA",
+      "points": "19860",
+      "tournaments": "11"
     },
     {
       "rank": "94",
@@ -762,22 +762,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "96",
-      "name": "KUO Kuan Lin",
-      "id": "59077",
-      "country": "TPE",
-      "points": "19740",
-      "tournaments": "16"
+      "name": "CHEAM June Wei",
+      "id": "92796",
+      "country": "MAS",
+      "points": "19550",
+      "tournaments": "13"
     },
     {
       "rank": "97",
-      "name": "Christian ADINATA",
-      "id": "69006",
-      "country": "INA",
-      "points": "19600",
-      "tournaments": "10"
-    },
-    {
-      "rank": "98",
       "name": "KIM Byung Jae",
       "id": "98979",
       "country": "KOR",
@@ -785,15 +777,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "99",
+      "rank": "98",
       "name": "Jonathan MATIAS",
       "id": "86470",
       "country": "BRA",
       "points": "18967",
-      "tournaments": "12"
+      "tournaments": "11"
     },
     {
-      "rank": "100",
+      "rank": "99",
       "name": "Dumindu ABEYWICKRAMA",
       "id": "87857",
       "country": "SRI",
@@ -801,23 +793,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "17"
     },
     {
-      "rank": "101",
-      "name": "Takuma OBAYASHI",
-      "id": "74076",
-      "country": "JPN",
-      "points": "18930",
-      "tournaments": "11"
+      "rank": "100",
+      "name": "Dendi TRIANSYAH",
+      "id": "83096",
+      "country": "INA",
+      "points": "18760",
+      "tournaments": "9"
     },
     {
-      "rank": "102",
+      "rank": "101",
       "name": "CHOI Ji Hoon",
       "id": "86607",
       "country": "KOR",
-      "points": "18643",
-      "tournaments": "13"
+      "points": "18683",
+      "tournaments": "14"
     },
     {
-      "rank": "103",
+      "rank": "102",
       "name": "ZHOU Xin Yu",
       "id": "32654",
       "country": "CHN",
@@ -825,23 +817,39 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "104",
-      "name": "Tushar SUVEER",
-      "id": "67900",
-      "country": "IND",
-      "points": "18280",
+      "rank": "103",
+      "name": "KUO Kuan Lin",
+      "id": "59077",
+      "country": "TPE",
+      "points": "18200",
       "tournaments": "15"
     },
     {
+      "rank": "104",
+      "name": "Ming Hong LIM",
+      "id": "86723",
+      "country": "MAS",
+      "points": "17880",
+      "tournaments": "16"
+    },
+    {
       "rank": "105",
-      "name": "Richie Duta RICHARDO",
-      "id": "89808",
-      "country": "INA",
-      "points": "17801",
-      "tournaments": "9"
+      "name": "Jakob HOUE",
+      "id": "74452",
+      "country": "DEN",
+      "points": "17880",
+      "tournaments": "14"
     },
     {
       "rank": "106",
+      "name": "Takuma OBAYASHI",
+      "id": "74076",
+      "country": "JPN",
+      "points": "17770",
+      "tournaments": "10"
+    },
+    {
+      "rank": "107",
       "name": "Lakshay SHARMA",
       "id": "61880",
       "country": "IND",
@@ -849,15 +857,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "107",
+      "rank": "108",
       "name": "LE Duc Phat",
       "id": "69345",
       "country": "VIE",
       "points": "17700",
+      "tournaments": "16"
+    },
+    {
+      "rank": "109",
+      "name": "Tushar SUVEER",
+      "id": "67900",
+      "country": "IND",
+      "points": "17680",
       "tournaments": "15"
     },
     {
-      "rank": "108",
+      "rank": "110",
       "name": "Gustav BJORKLER",
       "id": "79517",
       "country": "SWE",
@@ -865,7 +881,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "109",
+      "rank": "111",
       "name": "Adriano VIALE",
       "id": "55942",
       "country": "PER",
@@ -873,7 +889,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "110",
+      "rank": "112",
       "name": "Ethan ROSE",
       "id": "99908",
       "country": "ENG",
@@ -881,7 +897,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "111",
+      "rank": "113",
       "name": "Garret TAN",
       "id": "60145",
       "country": "USA",
@@ -889,28 +905,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "112",
+      "rank": "114",
       "name": "Ade Resky DWICAHYO",
       "id": "78890",
       "country": "AZE",
       "points": "17467",
-      "tournaments": "10"
-    },
-    {
-      "rank": "113",
-      "name": "Jakob HOUE",
-      "id": "74452",
-      "country": "DEN",
-      "points": "17130",
-      "tournaments": "13"
-    },
-    {
-      "rank": "114",
-      "name": "Mads CHRISTOPHERSEN",
-      "id": "83938",
-      "country": "DEN",
-      "points": "17020",
-      "tournaments": "12"
+      "tournaments": "11"
     },
     {
       "rank": "115",
@@ -922,11 +922,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "116",
-      "name": "Ming Hong LIM",
-      "id": "86723",
-      "country": "MAS",
-      "points": "16970",
-      "tournaments": "15"
+      "name": "Edward LAU",
+      "id": "99895",
+      "country": "NZL",
+      "points": "17011",
+      "tournaments": "11"
     },
     {
       "rank": "117",
@@ -934,7 +934,7 @@ window.RANKINGS_2026_RAW = {
       "id": "58521",
       "country": "POL",
       "points": "16866",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "118",
@@ -954,35 +954,35 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "120",
-      "name": "Edward LAU",
-      "id": "99895",
-      "country": "NZL",
-      "points": "16451",
-      "tournaments": "10"
+      "name": "Koo TAKAHASHI",
+      "id": "86230",
+      "country": "JPN",
+      "points": "16550",
+      "tournaments": "12"
     },
     {
       "rank": "121",
-      "name": "Riku HATANO",
-      "id": "62018",
-      "country": "JPN",
-      "points": "16310",
-      "tournaments": "10"
-    },
-    {
-      "rank": "122",
       "name": "PARK Sang Yong",
       "id": "99172",
       "country": "KOR",
-      "points": "16126",
-      "tournaments": "8"
+      "points": "16486",
+      "tournaments": "9"
     },
     {
-      "rank": "123",
+      "rank": "122",
       "name": "Xiaodong SHENG",
       "id": "77143",
       "country": "CAN",
       "points": "16120",
       "tournaments": "19"
+    },
+    {
+      "rank": "123",
+      "name": "Sathish Kumar KARUNAKARAN",
+      "id": "79164",
+      "country": "IND",
+      "points": "16052",
+      "tournaments": "11"
     },
     {
       "rank": "124",
@@ -998,39 +998,39 @@ window.RANKINGS_2026_RAW = {
       "id": "69253",
       "country": "ITA",
       "points": "15966",
-      "tournaments": "11"
-    },
-    {
-      "rank": "126",
-      "name": "Dendi TRIANSYAH",
-      "id": "83096",
-      "country": "INA",
-      "points": "15960",
-      "tournaments": "8"
-    },
-    {
-      "rank": "127",
-      "name": "Sathish Kumar KARUNAKARAN",
-      "id": "79164",
-      "country": "IND",
-      "points": "15692",
-      "tournaments": "10"
-    },
-    {
-      "rank": "128",
-      "name": "Pranay KATTA",
-      "id": "71954",
-      "country": "IND",
-      "points": "15170",
       "tournaments": "12"
     },
     {
-      "rank": "129",
+      "rank": "126",
+      "name": "Mads CHRISTOPHERSEN",
+      "id": "83938",
+      "country": "DEN",
+      "points": "15860",
+      "tournaments": "12"
+    },
+    {
+      "rank": "127",
+      "name": "Mikolaj SZYMANOWSKI",
+      "id": "65546",
+      "country": "POL",
+      "points": "15041",
+      "tournaments": "23"
+    },
+    {
+      "rank": "128",
       "name": "HUANG Yu Kai",
       "id": "98595",
       "country": "TPE",
       "points": "14940",
-      "tournaments": "12"
+      "tournaments": "11"
+    },
+    {
+      "rank": "129",
+      "name": "Riku HATANO",
+      "id": "62018",
+      "country": "JPN",
+      "points": "14640",
+      "tournaments": "9"
     },
     {
       "rank": "130",
@@ -1038,18 +1038,10 @@ window.RANKINGS_2026_RAW = {
       "id": "90360",
       "country": "DEN",
       "points": "14540",
-      "tournaments": "14"
+      "tournaments": "15"
     },
     {
       "rank": "131",
-      "name": "ONG Zhen Yi",
-      "id": "75283",
-      "country": "MAS",
-      "points": "14490",
-      "tournaments": "12"
-    },
-    {
-      "rank": "132",
       "name": "TAN Jia Jie",
       "id": "68316",
       "country": "MAS",
@@ -1057,12 +1049,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "18"
     },
     {
+      "rank": "132",
+      "name": "HUAN Kai Hern",
+      "id": "93882",
+      "country": "MAS",
+      "points": "14290",
+      "tournaments": "13"
+    },
+    {
       "rank": "133",
-      "name": "Mikolaj SZYMANOWSKI",
-      "id": "65546",
-      "country": "POL",
-      "points": "14291",
-      "tournaments": "22"
+      "name": "Hein HTUT",
+      "id": "70870",
+      "country": "MYA",
+      "points": "14266",
+      "tournaments": "12"
     },
     {
       "rank": "134",
@@ -1074,14 +1074,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "135",
-      "name": "Puritat ARREE",
-      "id": "63171",
-      "country": "THA",
-      "points": "14050",
-      "tournaments": "11"
-    },
-    {
-      "rank": "136",
       "name": "Fabian ROTH",
       "id": "57297",
       "country": "GER",
@@ -1089,47 +1081,63 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "137",
-      "name": "Hein HTUT",
-      "id": "70870",
-      "country": "MYA",
-      "points": "13896",
-      "tournaments": "11"
-    },
-    {
-      "rank": "138",
-      "name": "HUAN Kai Hern",
-      "id": "93882",
-      "country": "MAS",
+      "rank": "136",
+      "name": "Ginpaul SONNA",
+      "id": "79065",
+      "country": "IND",
       "points": "13880",
       "tournaments": "12"
     },
     {
+      "rank": "137",
+      "name": "Rounak CHOUHAN",
+      "id": "81208",
+      "country": "IND",
+      "points": "13650",
+      "tournaments": "7"
+    },
+    {
+      "rank": "138",
+      "name": "Puritat ARREE",
+      "id": "63171",
+      "country": "THA",
+      "points": "13490",
+      "tournaments": "11"
+    },
+    {
       "rank": "139",
+      "name": "ONG Zhen Yi",
+      "id": "75283",
+      "country": "MAS",
+      "points": "13480",
+      "tournaments": "12"
+    },
+    {
+      "rank": "140",
       "name": "Julien SCHEIWILLER",
       "id": "74008",
       "country": "SUI",
       "points": "13478",
-      "tournaments": "13"
+      "tournaments": "14"
     },
     {
-      "rank": "140",
+      "rank": "141",
       "name": "Siddhanth GUPTA",
       "id": "89814",
       "country": "IND",
       "points": "13460",
-      "tournaments": "17"
-    },
-    {
-      "rank": "141",
-      "name": "Ginpaul SONNA",
-      "id": "79065",
-      "country": "IND",
-      "points": "13280",
-      "tournaments": "11"
+      "tournaments": "16"
     },
     {
       "rank": "142",
+      "name": "Pranay KATTA",
+      "id": "71954",
+      "country": "IND",
+      "points": "13290",
+      "tournaments": "12"
+    },
+    {
+      "rank": "143",
       "name": "Donnians OLIVEIRA",
       "id": "59695",
       "country": "BRA",
@@ -1137,7 +1145,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "143",
+      "rank": "144",
       "name": "Toma NODA",
       "id": "70845",
       "country": "JPN",
@@ -1145,15 +1153,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "144",
+      "rank": "145",
       "name": "Fabio CAPONIO",
       "id": "87691",
       "country": "ITA",
       "points": "13122",
-      "tournaments": "14"
+      "tournaments": "15"
     },
     {
-      "rank": "145",
+      "rank": "146",
       "name": "Bharat RAGHAV",
       "id": "96974",
       "country": "IND",
@@ -1161,7 +1169,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "146",
+      "rank": "147",
       "name": "Jelang FAJAR",
       "id": "66225",
       "country": "INA",
@@ -1169,7 +1177,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "147",
+      "rank": "148",
       "name": "Tobias KUENZI",
       "id": "60427",
       "country": "SUI",
@@ -1177,20 +1185,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "148",
+      "rank": "149",
       "name": "Cholan KAYAN",
       "id": "77846",
       "country": "ENG",
       "points": "12880",
-      "tournaments": "17"
-    },
-    {
-      "rank": "149",
-      "name": "Rounak CHOUHAN",
-      "id": "81208",
-      "country": "IND",
-      "points": "12730",
-      "tournaments": "6"
+      "tournaments": "18"
     },
     {
       "rank": "150",
@@ -1198,7 +1198,7 @@ window.RANKINGS_2026_RAW = {
       "id": "75575",
       "country": "SGP",
       "points": "12654",
-      "tournaments": "14"
+      "tournaments": "15"
     },
     {
       "rank": "151",
@@ -1206,15 +1206,15 @@ window.RANKINGS_2026_RAW = {
       "id": "95468",
       "country": "CAN",
       "points": "12500",
-      "tournaments": "16"
+      "tournaments": "17"
     },
     {
       "rank": "152",
       "name": "Timothy LOCK",
       "id": "77842",
       "country": "CAN",
-      "points": "12427",
-      "tournaments": "13"
+      "points": "12467",
+      "tournaments": "14"
     },
     {
       "rank": "153",
@@ -1222,7 +1222,7 @@ window.RANKINGS_2026_RAW = {
       "id": "75537",
       "country": "IND",
       "points": "12350",
-      "tournaments": "15"
+      "tournaments": "14"
     },
     {
       "rank": "154",
@@ -1290,22 +1290,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "162",
-      "name": "Bharath LATHEESH",
-      "id": "86445",
-      "country": "UAE",
-      "points": "11740",
-      "tournaments": "15"
-    },
-    {
-      "rank": "163",
       "name": "Karan Rajan RAJARAJAN",
       "id": "72555",
       "country": "DEN",
       "points": "11680",
-      "tournaments": "13"
+      "tournaments": "14"
     },
     {
-      "rank": "164",
+      "rank": "163",
       "name": "Noah HAASE",
       "id": "95766",
       "country": "NED",
@@ -1313,7 +1305,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "165",
+      "rank": "164",
       "name": "Arthur WAKHEVITSCH",
       "id": "66224",
       "country": "FRA",
@@ -1321,7 +1313,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "166",
+      "rank": "165",
       "name": "PUI Pang Fong",
       "id": "98860",
       "country": "MAC",
@@ -1329,7 +1321,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "167",
+      "rank": "166",
       "name": "Sacha LEVEQUE",
       "id": "86866",
       "country": "FRA",
@@ -1337,7 +1329,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "168",
+      "rank": "167",
       "name": "Pranay SHETTIGAR",
       "id": "82572",
       "country": "IND",
@@ -1345,7 +1337,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "169",
+      "rank": "168",
       "name": "Ephraim STEPHEN SAM",
       "id": "60582",
       "country": "AUS",
@@ -1353,7 +1345,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
+      "rank": "169",
+      "name": "Bharath LATHEESH",
+      "id": "86445",
+      "country": "UAE",
+      "points": "11330",
+      "tournaments": "14"
+    },
+    {
       "rank": "170",
+      "name": "Jan Jireh LEE",
+      "id": "64119",
+      "country": "MAS",
+      "points": "11330",
+      "tournaments": "13"
+    },
+    {
+      "rank": "171",
       "name": "Milan DRATVA",
       "id": "68819",
       "country": "SVK",
@@ -1361,19 +1369,11 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "18"
     },
     {
-      "rank": "171",
+      "rank": "172",
       "name": "Adham Hatem ELGAMAL",
       "id": "72466",
       "country": "EGY",
       "points": "11140",
-      "tournaments": "12"
-    },
-    {
-      "rank": "172",
-      "name": "Jan Jireh LEE",
-      "id": "64119",
-      "country": "MAS",
-      "points": "11100",
       "tournaments": "12"
     },
     {
@@ -1402,6 +1402,22 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "176",
+      "name": "Zhe Ying WU",
+      "id": "87450",
+      "country": "TPE",
+      "points": "10790",
+      "tournaments": "12"
+    },
+    {
+      "rank": "177",
+      "name": "Dhruv NEGI",
+      "id": "77753",
+      "country": "IND",
+      "points": "10710",
+      "tournaments": "12"
+    },
+    {
+      "rank": "178",
       "name": "Dimitar YANAKIEV",
       "id": "71797",
       "country": "BUL",
@@ -1409,7 +1425,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "177",
+      "rank": "179",
       "name": "LU Chia Hung",
       "id": "91254",
       "country": "TPE",
@@ -1417,7 +1433,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "178",
+      "rank": "180",
       "name": "Jerome PAUQUET",
       "id": "97290",
       "country": "LUX",
@@ -1425,7 +1441,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "17"
     },
     {
-      "rank": "179",
+      "rank": "181",
       "name": "Christopher VITTORIANI",
       "id": "94104",
       "country": "DEN",
@@ -1433,7 +1449,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "180",
+      "rank": "182",
+      "name": "Clarence VILLAFLOR",
+      "id": "49932",
+      "country": "PHI",
+      "points": "10410",
+      "tournaments": "8"
+    },
+    {
+      "rank": "183",
       "name": "Pablo ABIAN",
       "id": "14251",
       "country": "ESP",
@@ -1441,23 +1465,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "181",
-      "name": "Muhammad Reza AL FAJRI",
-      "id": "97243",
-      "country": "INA",
-      "points": "10290",
-      "tournaments": "9"
-    },
-    {
-      "rank": "182",
+      "rank": "184",
       "name": "CHO Hyeon Woo",
       "id": "86283",
       "country": "KOR",
-      "points": "10248",
-      "tournaments": "6"
+      "points": "10278",
+      "tournaments": "7"
     },
     {
-      "rank": "183",
+      "rank": "185",
+      "name": "Numair SHAIK",
+      "id": "86755",
+      "country": "IND",
+      "points": "10250",
+      "tournaments": "8"
+    },
+    {
+      "rank": "186",
       "name": "CHUA Kim Sheng",
       "id": "78590",
       "country": "MAS",
@@ -1465,23 +1489,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "184",
+      "rank": "187",
       "name": "Raghu MARISWAMY",
       "id": "62932",
       "country": "IND",
       "points": "10110",
-      "tournaments": "15"
+      "tournaments": "16"
     },
     {
-      "rank": "185",
+      "rank": "188",
       "name": "Sanskar SARASWAT",
       "id": "94326",
       "country": "IND",
       "points": "10100",
-      "tournaments": "13"
+      "tournaments": "12"
     },
     {
-      "rank": "186",
+      "rank": "189",
       "name": "Yeison DEL CID",
       "id": "73177",
       "country": "GUA",
@@ -1489,7 +1513,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "187",
+      "rank": "190",
       "name": "Markus BARTH",
       "id": "67447",
       "country": "NOR",
@@ -1497,7 +1521,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "20"
     },
     {
-      "rank": "188",
+      "rank": "191",
+      "name": "Muhammad Reza AL FAJRI",
+      "id": "97243",
+      "country": "INA",
+      "points": "9930",
+      "tournaments": "8"
+    },
+    {
+      "rank": "192",
       "name": "Anirv Reddy CHAMAKURA",
       "id": "73455",
       "country": "USA",
@@ -1505,23 +1537,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "16"
     },
     {
-      "rank": "189",
-      "name": "Numair SHAIK",
-      "id": "86755",
-      "country": "IND",
-      "points": "9890",
-      "tournaments": "7"
-    },
-    {
-      "rank": "190",
-      "name": "Ygor COELHO",
-      "id": "96429",
-      "country": "BRA",
-      "points": "9880",
-      "tournaments": "6"
-    },
-    {
-      "rank": "191",
+      "rank": "193",
       "name": "Lucas DOUCE",
       "id": "56114",
       "country": "MRI",
@@ -1529,7 +1545,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "192",
+      "rank": "194",
       "name": "Sam YUAN",
       "id": "70693",
       "country": "CAN",
@@ -1537,7 +1553,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "193",
+      "rank": "195",
       "name": "Valentin SINGER",
       "id": "96339",
       "country": "FRA",
@@ -1545,15 +1561,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "194",
+      "rank": "196",
       "name": "Nicolas A. MUELLER",
       "id": "78891",
       "country": "SUI",
       "points": "9671",
-      "tournaments": "18"
+      "tournaments": "19"
     },
     {
-      "rank": "195",
+      "rank": "197",
       "name": "Arya BHIVPATHAKI",
       "id": "71877",
       "country": "IND",
@@ -1561,7 +1577,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "196",
+      "rank": "198",
       "name": "Wolfgang GNEDT",
       "id": "61916",
       "country": "AUT",
@@ -1569,7 +1585,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "197",
+      "rank": "199",
       "name": "KIM Hae Deun",
       "id": "63097",
       "country": "KOR",
@@ -1577,28 +1593,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "198",
-      "name": "Darrell, Sen Xian CHEW",
-      "id": "56882",
-      "country": "MAS",
-      "points": "9550",
-      "tournaments": "12"
-    },
-    {
-      "rank": "199",
-      "name": "Dhruv NEGI",
-      "id": "77753",
-      "country": "IND",
-      "points": "9550",
-      "tournaments": "11"
-    },
-    {
       "rank": "200",
-      "name": "Clarence VILLAFLOR",
-      "id": "49932",
-      "country": "PHI",
-      "points": "9490",
-      "tournaments": "7"
+      "name": "Ygor COELHO",
+      "id": "96429",
+      "country": "BRA",
+      "points": "9560",
+      "tournaments": "5"
     }
   ],
   "WS": [
@@ -1616,7 +1616,7 @@ window.RANKINGS_2026_RAW = {
       "id": "61854",
       "country": "CHN",
       "points": "103362",
-      "tournaments": "17"
+      "tournaments": "18"
     },
     {
       "rank": "3",
@@ -1640,7 +1640,7 @@ window.RANKINGS_2026_RAW = {
       "id": "92967",
       "country": "CHN",
       "points": "88250",
-      "tournaments": "16"
+      "tournaments": "17"
     },
     {
       "rank": "6",
@@ -1664,7 +1664,7 @@ window.RANKINGS_2026_RAW = {
       "id": "84062",
       "country": "THA",
       "points": "67221",
-      "tournaments": "14"
+      "tournaments": "15"
     },
     {
       "rank": "9",
@@ -1672,7 +1672,7 @@ window.RANKINGS_2026_RAW = {
       "id": "82070",
       "country": "JPN",
       "points": "63164",
-      "tournaments": "21"
+      "tournaments": "22"
     },
     {
       "rank": "10",
@@ -1703,8 +1703,8 @@ window.RANKINGS_2026_RAW = {
       "name": "CHIU Pin-Chian",
       "id": "80862",
       "country": "TPE",
-      "points": "53634",
-      "tournaments": "26"
+      "points": "53884",
+      "tournaments": "27"
     },
     {
       "rank": "14",
@@ -1736,31 +1736,31 @@ window.RANKINGS_2026_RAW = {
       "id": "58271",
       "country": "THA",
       "points": "51847",
-      "tournaments": "20"
+      "tournaments": "21"
     },
     {
       "rank": "18",
-      "name": "Mia BLICHFELDT",
-      "id": "91224",
-      "country": "DEN",
-      "points": "51806",
-      "tournaments": "14"
-    },
-    {
-      "rank": "19",
       "name": "Line Højmark KJAERSFELDT",
       "id": "63437",
       "country": "DEN",
       "points": "51584",
-      "tournaments": "22"
+      "tournaments": "21"
     },
     {
-      "rank": "20",
+      "rank": "19",
       "name": "LIN Hsiang Ti",
       "id": "96725",
       "country": "TPE",
       "points": "51134",
-      "tournaments": "23"
+      "tournaments": "24"
+    },
+    {
+      "rank": "20",
+      "name": "Mia BLICHFELDT",
+      "id": "91224",
+      "country": "DEN",
+      "points": "50206",
+      "tournaments": "13"
     },
     {
       "rank": "21",
@@ -1768,18 +1768,10 @@ window.RANKINGS_2026_RAW = {
       "id": "53806",
       "country": "USA",
       "points": "49046",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "22",
-      "name": "NGUYEN Thuy Linh",
-      "id": "75678",
-      "country": "VIE",
-      "points": "48930",
-      "tournaments": "15"
-    },
-    {
-      "rank": "23",
       "name": "Nozomi OKUHARA",
       "id": "96713",
       "country": "JPN",
@@ -1787,23 +1779,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "18"
     },
     {
-      "rank": "24",
+      "rank": "23",
       "name": "Line CHRISTOPHERSEN",
       "id": "85302",
       "country": "DEN",
-      "points": "47248",
+      "points": "47498",
       "tournaments": "19"
     },
     {
-      "rank": "25",
-      "name": "Riko GUNJI",
-      "id": "76079",
-      "country": "JPN",
-      "points": "47219",
-      "tournaments": "16"
-    },
-    {
-      "rank": "26",
+      "rank": "24",
       "name": "Natsuki NIDAIRA",
       "id": "91896",
       "country": "JPN",
@@ -1811,12 +1795,28 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "19"
     },
     {
+      "rank": "25",
+      "name": "NGUYEN Thuy Linh",
+      "id": "75678",
+      "country": "VIE",
+      "points": "45980",
+      "tournaments": "14"
+    },
+    {
+      "rank": "26",
+      "name": "Riko GUNJI",
+      "id": "76079",
+      "country": "JPN",
+      "points": "45919",
+      "tournaments": "15"
+    },
+    {
       "rank": "27",
       "name": "Unnati HOODA",
       "id": "59687",
       "country": "IND",
-      "points": "46210",
-      "tournaments": "14"
+      "points": "44580",
+      "tournaments": "13"
     },
     {
       "rank": "28",
@@ -1839,16 +1839,16 @@ window.RANKINGS_2026_RAW = {
       "name": "Hina AKECHI",
       "id": "68479",
       "country": "JPN",
-      "points": "43804",
-      "tournaments": "17"
+      "points": "42984",
+      "tournaments": "16"
     },
     {
       "rank": "31",
-      "name": "YEO Jia Min",
-      "id": "83822",
-      "country": "SGP",
-      "points": "42523",
-      "tournaments": "11"
+      "name": "HAN Qian Xi",
+      "id": "92928",
+      "country": "CHN",
+      "points": "42881",
+      "tournaments": "16"
     },
     {
       "rank": "32",
@@ -1872,7 +1872,7 @@ window.RANKINGS_2026_RAW = {
       "id": "87885",
       "country": "TUR",
       "points": "39872",
-      "tournaments": "13"
+      "tournaments": "12"
     },
     {
       "rank": "35",
@@ -1884,22 +1884,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "36",
-      "name": "Manami SUIZU",
-      "id": "67828",
-      "country": "JPN",
-      "points": "38750",
-      "tournaments": "17"
-    },
-    {
-      "rank": "37",
-      "name": "HAN Qian Xi",
-      "id": "92928",
-      "country": "CHN",
-      "points": "38631",
-      "tournaments": "15"
-    },
-    {
-      "rank": "38",
       "name": "Karupathevan LETSHANAA",
       "id": "59367",
       "country": "MAS",
@@ -1907,12 +1891,28 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "21"
     },
     {
+      "rank": "37",
+      "name": "WONG Ling Ching",
+      "id": "77296",
+      "country": "MAS",
+      "points": "38381",
+      "tournaments": "21"
+    },
+    {
+      "rank": "38",
+      "name": "YEO Jia Min",
+      "id": "83822",
+      "country": "SGP",
+      "points": "38273",
+      "tournaments": "11"
+    },
+    {
       "rank": "39",
       "name": "Julie Dawall JAKOBSEN",
       "id": "77002",
       "country": "DEN",
       "points": "37499",
-      "tournaments": "15"
+      "tournaments": "16"
     },
     {
       "rank": "40",
@@ -1920,15 +1920,15 @@ window.RANKINGS_2026_RAW = {
       "id": "99042",
       "country": "IND",
       "points": "37343",
-      "tournaments": "14"
+      "tournaments": "15"
     },
     {
       "rank": "41",
-      "name": "WONG Ling Ching",
-      "id": "77296",
-      "country": "MAS",
-      "points": "37281",
-      "tournaments": "21"
+      "name": "Manami SUIZU",
+      "id": "67828",
+      "country": "JPN",
+      "points": "36970",
+      "tournaments": "16"
     },
     {
       "rank": "42",
@@ -1936,7 +1936,7 @@ window.RANKINGS_2026_RAW = {
       "id": "89583",
       "country": "TPE",
       "points": "36455",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "43",
@@ -1944,7 +1944,7 @@ window.RANKINGS_2026_RAW = {
       "id": "61614",
       "country": "TPE",
       "points": "35180",
-      "tournaments": "21"
+      "tournaments": "20"
     },
     {
       "rank": "44",
@@ -1952,7 +1952,7 @@ window.RANKINGS_2026_RAW = {
       "id": "90287",
       "country": "IND",
       "points": "34680",
-      "tournaments": "16"
+      "tournaments": "15"
     },
     {
       "rank": "45",
@@ -1968,23 +1968,23 @@ window.RANKINGS_2026_RAW = {
       "id": "91560",
       "country": "CAN",
       "points": "33979",
-      "tournaments": "20"
+      "tournaments": "19"
     },
     {
       "rank": "47",
+      "name": "GOH Jin Wei",
+      "id": "69012",
+      "country": "MAS",
+      "points": "33505",
+      "tournaments": "13"
+    },
+    {
+      "rank": "48",
       "name": "Polina BUHROVA",
       "id": "96877",
       "country": "UKR",
       "points": "33499",
       "tournaments": "23"
-    },
-    {
-      "rank": "48",
-      "name": "Rakshitha Sree SANTHOSH RAMRAJ",
-      "id": "91807",
-      "country": "IND",
-      "points": "32777",
-      "tournaments": "15"
     },
     {
       "rank": "49",
@@ -2016,7 +2016,7 @@ window.RANKINGS_2026_RAW = {
       "id": "88471",
       "country": "IND",
       "points": "32145",
-      "tournaments": "13"
+      "tournaments": "14"
     },
     {
       "rank": "53",
@@ -2028,19 +2028,19 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "54",
-      "name": "Tasnim MIR",
-      "id": "86604",
+      "name": "Rakshitha Sree SANTHOSH RAMRAJ",
+      "id": "91807",
       "country": "IND",
-      "points": "31790",
-      "tournaments": "16"
+      "points": "31147",
+      "tournaments": "15"
     },
     {
       "rank": "55",
-      "name": "GOH Jin Wei",
-      "id": "69012",
-      "country": "MAS",
-      "points": "31175",
-      "tournaments": "12"
+      "name": "Kaloyana NALBANTOVA",
+      "id": "87112",
+      "country": "BUL",
+      "points": "30727",
+      "tournaments": "18"
     },
     {
       "rank": "56",
@@ -2052,30 +2052,22 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "57",
-      "name": "Asuka TAKAHASHI",
-      "id": "94712",
-      "country": "JPN",
-      "points": "30290",
-      "tournaments": "11"
+      "name": "Tasnim MIR",
+      "id": "86604",
+      "country": "IND",
+      "points": "30140",
+      "tournaments": "16"
     },
     {
       "rank": "58",
-      "name": "Kaloyana NALBANTOVA",
-      "id": "87112",
-      "country": "BUL",
-      "points": "29627",
-      "tournaments": "18"
-    },
-    {
-      "rank": "59",
       "name": "Shriyanshi VALISHETTY",
       "id": "70595",
       "country": "IND",
       "points": "29390",
-      "tournaments": "14"
+      "tournaments": "15"
     },
     {
-      "rank": "60",
+      "rank": "59",
       "name": "HUANG Ching Ping",
       "id": "94348",
       "country": "TPE",
@@ -2083,23 +2075,39 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "21"
     },
     {
-      "rank": "61",
+      "rank": "60",
       "name": "PAI Yu Po",
       "id": "99925",
       "country": "TPE",
-      "points": "28280",
-      "tournaments": "14"
+      "points": "28810",
+      "tournaments": "15"
+    },
+    {
+      "rank": "61",
+      "name": "Asuka TAKAHASHI",
+      "id": "94712",
+      "country": "JPN",
+      "points": "28420",
+      "tournaments": "10"
     },
     {
       "rank": "62",
-      "name": "AAKARSHI KASHYAP",
-      "id": "80402",
-      "country": "IND",
-      "points": "28200",
-      "tournaments": "23"
+      "name": "Pornpicha CHOEIKEEWONG",
+      "id": "72280",
+      "country": "THA",
+      "points": "28011",
+      "tournaments": "16"
     },
     {
       "rank": "63",
+      "name": "AAKARSHI KASHYAP",
+      "id": "80402",
+      "country": "IND",
+      "points": "27670",
+      "tournaments": "23"
+    },
+    {
+      "rank": "64",
       "name": "Thalita Ramadhani WIRYAWAN",
       "id": "64600",
       "country": "INA",
@@ -2107,20 +2115,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "64",
-      "name": "Pornpicha CHOEIKEEWONG",
-      "id": "72280",
-      "country": "THA",
-      "points": "27481",
-      "tournaments": "15"
-    },
-    {
       "rank": "65",
       "name": "CHEN Su Yu",
       "id": "71673",
       "country": "TPE",
       "points": "27480",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "66",
@@ -2136,26 +2136,10 @@ window.RANKINGS_2026_RAW = {
       "id": "80795",
       "country": "TPE",
       "points": "27070",
-      "tournaments": "14"
+      "tournaments": "13"
     },
     {
       "rank": "68",
-      "name": "LO Sin Yan Happy",
-      "id": "86261",
-      "country": "HKG",
-      "points": "26903",
-      "tournaments": "14"
-    },
-    {
-      "rank": "69",
-      "name": "Ishika JAISWAL",
-      "id": "88399",
-      "country": "USA",
-      "points": "26620",
-      "tournaments": "17"
-    },
-    {
-      "rank": "70",
       "name": "Juliana Viana VIEIRA",
       "id": "84897",
       "country": "BRA",
@@ -2163,7 +2147,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "71",
+      "rank": "69",
+      "name": "Ishika JAISWAL",
+      "id": "88399",
+      "country": "USA",
+      "points": "26090",
+      "tournaments": "16"
+    },
+    {
+      "rank": "70",
       "name": "Mutiara Ayu PUSPITASARI",
       "id": "64956",
       "country": "INA",
@@ -2171,7 +2163,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
+      "rank": "71",
+      "name": "LO Sin Yan Happy",
+      "id": "86261",
+      "country": "HKG",
+      "points": "25823",
+      "tournaments": "14"
+    },
+    {
       "rank": "72",
+      "name": "Tidapron KLEEBYEESUN",
+      "id": "66362",
+      "country": "THA",
+      "points": "25096",
+      "tournaments": "16"
+    },
+    {
+      "rank": "73",
       "name": "Ozge BAYRAK",
       "id": "94762",
       "country": "TUR",
@@ -2179,39 +2187,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "73",
+      "rank": "74",
       "name": "Ni Kadek Dhinda Amartya PRATIWI",
       "id": "92444",
       "country": "INA",
       "points": "24680",
-      "tournaments": "12"
-    },
-    {
-      "rank": "74",
-      "name": "Rachel CHAN",
-      "id": "78208",
-      "country": "CAN",
-      "points": "24671",
-      "tournaments": "12"
+      "tournaments": "11"
     },
     {
       "rank": "75",
-      "name": "Ashmita CHALIHA",
-      "id": "75628",
-      "country": "IND",
-      "points": "24600",
-      "tournaments": "16"
-    },
-    {
-      "rank": "76",
-      "name": "Tidapron KLEEBYEESUN",
-      "id": "66362",
-      "country": "THA",
-      "points": "24406",
-      "tournaments": "16"
-    },
-    {
-      "rank": "77",
       "name": "KIM Min Ji",
       "id": "75513",
       "country": "KOR",
@@ -2219,7 +2203,31 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
+      "rank": "76",
+      "name": "Ashmita CHALIHA",
+      "id": "75628",
+      "country": "IND",
+      "points": "24370",
+      "tournaments": "15"
+    },
+    {
+      "rank": "77",
+      "name": "Rachel CHAN",
+      "id": "78208",
+      "country": "CAN",
+      "points": "23431",
+      "tournaments": "11"
+    },
+    {
       "rank": "78",
+      "name": "Clara AZURMENDI",
+      "id": "74218",
+      "country": "ESP",
+      "points": "23274",
+      "tournaments": "18"
+    },
+    {
+      "rank": "79",
       "name": "Stefani STOEVA",
       "id": "46169",
       "country": "BUL",
@@ -2227,7 +2235,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "79",
+      "rank": "80",
       "name": "Tereza ŠVÁBÍKOVÁ",
       "id": "60397",
       "country": "CZE",
@@ -2235,20 +2243,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "20"
     },
     {
-      "rank": "80",
-      "name": "Clara AZURMENDI",
-      "id": "74218",
-      "country": "ESP",
-      "points": "22894",
-      "tournaments": "18"
-    },
-    {
       "rank": "81",
       "name": "LIANG Ting Yu",
       "id": "93852",
       "country": "TPE",
       "points": "22740",
-      "tournaments": "17"
+      "tournaments": "16"
     },
     {
       "rank": "82",
@@ -2256,34 +2256,10 @@ window.RANKINGS_2026_RAW = {
       "id": "79258",
       "country": "PER",
       "points": "22590",
-      "tournaments": "14"
+      "tournaments": "13"
     },
     {
       "rank": "83",
-      "name": "Shreya LELE",
-      "id": "59500",
-      "country": "IND",
-      "points": "22110",
-      "tournaments": "14"
-    },
-    {
-      "rank": "84",
-      "name": "Sakura MASUKI",
-      "id": "95172",
-      "country": "JPN",
-      "points": "21810",
-      "tournaments": "8"
-    },
-    {
-      "rank": "85",
-      "name": "MANSI SINGH",
-      "id": "73387",
-      "country": "IND",
-      "points": "21600",
-      "tournaments": "10"
-    },
-    {
-      "rank": "86",
       "name": "Vivien SANDORHAZI",
       "id": "61949",
       "country": "HUN",
@@ -2291,7 +2267,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "19"
     },
     {
-      "rank": "87",
+      "rank": "84",
       "name": "Kaoru SUGIYAMA",
       "id": "80532",
       "country": "JPN",
@@ -2299,15 +2275,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "88",
+      "rank": "85",
       "name": "Siti ZULAIKHA",
       "id": "73060",
       "country": "MAS",
-      "points": "21490",
+      "points": "21282",
       "tournaments": "18"
     },
     {
-      "rank": "89",
+      "rank": "86",
       "name": "PENG Yu Wei",
       "id": "60634",
       "country": "TPE",
@@ -2315,23 +2291,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "90",
-      "name": "KISONA Selvaduray",
-      "id": "92014",
-      "country": "MAS",
-      "points": "20420",
-      "tournaments": "15"
+      "rank": "87",
+      "name": "Sakura MASUKI",
+      "id": "95172",
+      "country": "JPN",
+      "points": "20290",
+      "tournaments": "7"
     },
     {
-      "rank": "91",
-      "name": "LALINRAT CHAIWAN",
-      "id": "62301",
-      "country": "THA",
-      "points": "20417",
-      "tournaments": "9"
-    },
-    {
-      "rank": "92",
+      "rank": "88",
       "name": "Keisha Fatimah AZZAHRA",
       "id": "79078",
       "country": "AZE",
@@ -2339,12 +2307,44 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "93",
+      "rank": "89",
+      "name": "Shreya LELE",
+      "id": "59500",
+      "country": "IND",
+      "points": "20230",
+      "tournaments": "13"
+    },
+    {
+      "rank": "90",
+      "name": "Komang Ayu Cahya DEWI",
+      "id": "64349",
+      "country": "INA",
+      "points": "20100",
+      "tournaments": "8"
+    },
+    {
+      "rank": "91",
+      "name": "KISONA Selvaduray",
+      "id": "92014",
+      "country": "MAS",
+      "points": "19670",
+      "tournaments": "14"
+    },
+    {
+      "rank": "92",
       "name": "LEE So Yul",
       "id": "58001",
       "country": "KOR",
-      "points": "19351",
+      "points": "19581",
       "tournaments": "15"
+    },
+    {
+      "rank": "93",
+      "name": "MANSI SINGH",
+      "id": "73387",
+      "country": "IND",
+      "points": "19400",
+      "tournaments": "9"
     },
     {
       "rank": "94",
@@ -2392,26 +2392,10 @@ window.RANKINGS_2026_RAW = {
       "id": "74051",
       "country": "HUN",
       "points": "18505",
-      "tournaments": "17"
+      "tournaments": "18"
     },
     {
       "rank": "100",
-      "name": "Komang Ayu Cahya DEWI",
-      "id": "64349",
-      "country": "INA",
-      "points": "18370",
-      "tournaments": "8"
-    },
-    {
-      "rank": "101",
-      "name": "Ranithma LIYANAGE",
-      "id": "86700",
-      "country": "SRI",
-      "points": "18350",
-      "tournaments": "13"
-    },
-    {
-      "rank": "102",
       "name": "Anna TATRANOVA",
       "id": "71285",
       "country": "FRA",
@@ -2419,15 +2403,47 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
+      "rank": "101",
+      "name": "KIM Joo Eun",
+      "id": "96038",
+      "country": "KOR",
+      "points": "18090",
+      "tournaments": "9"
+    },
+    {
+      "rank": "102",
+      "name": "Ranithma LIYANAGE",
+      "id": "86700",
+      "country": "SRI",
+      "points": "17980",
+      "tournaments": "12"
+    },
+    {
       "rank": "103",
+      "name": "LALINRAT CHAIWAN",
+      "id": "62301",
+      "country": "THA",
+      "points": "17617",
+      "tournaments": "8"
+    },
+    {
+      "rank": "104",
       "name": "Disha GUPTA",
       "id": "59692",
       "country": "USA",
       "points": "17550",
-      "tournaments": "17"
+      "tournaments": "16"
     },
     {
-      "rank": "104",
+      "rank": "105",
+      "name": "Miranda WILSON",
+      "id": "92606",
+      "country": "GER",
+      "points": "17273",
+      "tournaments": "21"
+    },
+    {
+      "rank": "106",
       "name": "Fadilah Shamika MOHAMED RAFI",
       "id": "93199",
       "country": "UGA",
@@ -2435,15 +2451,39 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "105",
+      "rank": "107",
+      "name": "KIM Min Sun",
+      "id": "66368",
+      "country": "KOR",
+      "points": "17200",
+      "tournaments": "10"
+    },
+    {
+      "rank": "108",
+      "name": "Tonrug SAEHENG",
+      "id": "50959",
+      "country": "THA",
+      "points": "17190",
+      "tournaments": "12"
+    },
+    {
+      "rank": "109",
       "name": "Yasmine HAMZA",
       "id": "90854",
       "country": "ITA",
       "points": "17071",
-      "tournaments": "12"
+      "tournaments": "13"
     },
     {
-      "rank": "106",
+      "rank": "110",
+      "name": "Shaunna LI",
+      "id": "62883",
+      "country": "NZL",
+      "points": "16773",
+      "tournaments": "10"
+    },
+    {
+      "rank": "111",
       "name": "Yuan Chi LIAO",
       "id": "71280",
       "country": "TPE",
@@ -2451,7 +2491,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "107",
+      "rank": "112",
       "name": "WANG Yu Si",
       "id": "61317",
       "country": "TPE",
@@ -2459,95 +2499,39 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "108",
-      "name": "KIM Joo Eun",
-      "id": "96038",
-      "country": "KOR",
-      "points": "16570",
-      "tournaments": "8"
-    },
-    {
-      "rank": "109",
-      "name": "Miranda WILSON",
-      "id": "92606",
-      "country": "GER",
-      "points": "16523",
-      "tournaments": "20"
-    },
-    {
-      "rank": "110",
-      "name": "Tonrug SAEHENG",
-      "id": "50959",
-      "country": "THA",
-      "points": "16510",
-      "tournaments": "11"
-    },
-    {
-      "rank": "111",
-      "name": "Aditi BHATT",
-      "id": "83984",
-      "country": "IND",
-      "points": "16485",
-      "tournaments": "14"
-    },
-    {
-      "rank": "112",
+      "rank": "113",
       "name": "Saloni Samirbhai MEHTA",
       "id": "73746",
       "country": "HKG",
-      "points": "16310",
-      "tournaments": "16"
-    },
-    {
-      "rank": "113",
-      "name": "Adita RAO",
-      "id": "74880",
-      "country": "IND",
-      "points": "16220",
-      "tournaments": "11"
+      "points": "16570",
+      "tournaments": "17"
     },
     {
       "rank": "114",
+      "name": "Dalila Aghnia PUTERI",
+      "id": "56824",
+      "country": "INA",
+      "points": "16330",
+      "tournaments": "12"
+    },
+    {
+      "rank": "115",
       "name": "LIANG Ka Wing",
       "id": "91021",
       "country": "HKG",
       "points": "16133",
-      "tournaments": "13"
-    },
-    {
-      "rank": "115",
-      "name": "TSAI Hsin-Pei",
-      "id": "89473",
-      "country": "TPE",
-      "points": "16120",
-      "tournaments": "10"
+      "tournaments": "14"
     },
     {
       "rank": "116",
-      "name": "Shaunna LI",
-      "id": "62883",
-      "country": "NZL",
-      "points": "15853",
-      "tournaments": "9"
-    },
-    {
-      "rank": "117",
-      "name": "KIM Min Sun",
-      "id": "66368",
-      "country": "KOR",
-      "points": "15850",
-      "tournaments": "10"
-    },
-    {
-      "rank": "118",
       "name": "THET HTAR THUZAR",
       "id": "62385",
       "country": "MYA",
-      "points": "15787",
-      "tournaments": "12"
+      "points": "16107",
+      "tournaments": "13"
     },
     {
-      "rank": "119",
+      "rank": "117",
       "name": "Anna Siess RYBERG",
       "id": "98126",
       "country": "DEN",
@@ -2555,15 +2539,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "120",
-      "name": "Dalila Aghnia PUTERI",
-      "id": "56824",
-      "country": "INA",
-      "points": "15730",
-      "tournaments": "11"
-    },
-    {
-      "rank": "121",
+      "rank": "118",
       "name": "Romane CLOTEAUX-FOUCAULT",
       "id": "78135",
       "country": "FRA",
@@ -2571,7 +2547,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "18"
     },
     {
-      "rank": "122",
+      "rank": "119",
       "name": "XU Wen Jing",
       "id": "60915",
       "country": "CHN",
@@ -2579,7 +2555,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "123",
+      "rank": "120",
       "name": "CAI Yan Yan",
       "id": "89700",
       "country": "CHN",
@@ -2587,7 +2563,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "124",
+      "rank": "121",
       "name": "Yevheniia KANTEMYR",
       "id": "94032",
       "country": "UKR",
@@ -2595,7 +2571,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "125",
+      "rank": "122",
+      "name": "Aditi BHATT",
+      "id": "83984",
+      "country": "IND",
+      "points": "15205",
+      "tournaments": "13"
+    },
+    {
+      "rank": "123",
+      "name": "LEE Yu-Hsuan",
+      "id": "75174",
+      "country": "TPE",
+      "points": "15170",
+      "tournaments": "11"
+    },
+    {
+      "rank": "124",
       "name": "Petra MAIXNEROVÁ",
       "id": "79188",
       "country": "CZE",
@@ -2603,7 +2595,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "19"
     },
     {
-      "rank": "126",
+      "rank": "125",
       "name": "Nour AHMED YOUSSRI",
       "id": "88020",
       "country": "EGY",
@@ -2611,7 +2603,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "127",
+      "rank": "126",
       "name": "Saena KAWAKAMI",
       "id": "61568",
       "country": "AUS",
@@ -2619,7 +2611,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "128",
+      "rank": "127",
       "name": "Kristin KUUBA",
       "id": "73015",
       "country": "EST",
@@ -2627,15 +2619,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "129",
-      "name": "LEE Yu-Hsuan",
-      "id": "75174",
-      "country": "TPE",
-      "points": "14750",
-      "tournaments": "10"
-    },
-    {
-      "rank": "130",
+      "rank": "128",
       "name": "Tiffany HO",
       "id": "64389",
       "country": "AUS",
@@ -2643,15 +2627,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "131",
+      "rank": "129",
       "name": "Passa-Orn PHANNACHET",
       "id": "68853",
       "country": "THA",
       "points": "14600",
-      "tournaments": "13"
+      "tournaments": "14"
     },
     {
-      "rank": "132",
+      "rank": "130",
       "name": "Sophia NOBLE",
       "id": "98258",
       "country": "IRL",
@@ -2659,7 +2643,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "21"
     },
     {
-      "rank": "133",
+      "rank": "131",
       "name": "Frederikke ØSTERGAARD",
       "id": "56943",
       "country": "DEN",
@@ -2667,15 +2651,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "134",
-      "name": "WANG Pei Yu",
-      "id": "85668",
-      "country": "TPE",
-      "points": "14366",
-      "tournaments": "14"
-    },
-    {
-      "rank": "135",
+      "rank": "132",
       "name": "Meghana Reddy MAREDDY",
       "id": "75837",
       "country": "IND",
@@ -2683,7 +2659,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "136",
+      "rank": "133",
       "name": "WU Luo Yu",
       "id": "79082",
       "country": "CHN",
@@ -2691,7 +2667,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "137",
+      "rank": "134",
       "name": "Dounia PELUPESSY",
       "id": "58469",
       "country": "SUI",
@@ -2699,7 +2675,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "18"
     },
     {
-      "rank": "138",
+      "rank": "135",
       "name": "XU Wei",
       "id": "62186",
       "country": "AUT",
@@ -2707,15 +2683,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "139",
+      "rank": "136",
       "name": "LIM Zhi Shin",
       "id": "50001",
       "country": "MAS",
       "points": "14170",
-      "tournaments": "16"
+      "tournaments": "17"
     },
     {
-      "rank": "140",
+      "rank": "137",
+      "name": "TSAI Hsin-Pei",
+      "id": "89473",
+      "country": "TPE",
+      "points": "13920",
+      "tournaments": "9"
+    },
+    {
+      "rank": "138",
       "name": "Anna IWAKI",
       "id": "12078",
       "country": "JPN",
@@ -2723,12 +2707,28 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "141",
+      "rank": "139",
       "name": "Isabelle RUSLI",
       "id": "89998",
       "country": "USA",
       "points": "13710",
-      "tournaments": "18"
+      "tournaments": "17"
+    },
+    {
+      "rank": "140",
+      "name": "WANG Pei Yu",
+      "id": "85668",
+      "country": "TPE",
+      "points": "13686",
+      "tournaments": "13"
+    },
+    {
+      "rank": "141",
+      "name": "OO Shan Zi",
+      "id": "80440",
+      "country": "MAS",
+      "points": "13685",
+      "tournaments": "14"
     },
     {
       "rank": "142",
@@ -2740,14 +2740,22 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "143",
+      "name": "LEE Xin Yi Megan",
+      "id": "65556",
+      "country": "SGP",
+      "points": "13460",
+      "tournaments": "14"
+    },
+    {
+      "rank": "144",
       "name": "Medhavi NAGAR",
       "id": "23639",
       "country": "IND",
       "points": "13450",
-      "tournaments": "11"
+      "tournaments": "12"
     },
     {
-      "rank": "144",
+      "rank": "145",
       "name": "Tallulah Sharleen VAN COPPENOLLE",
       "id": "54173",
       "country": "CZE",
@@ -2755,7 +2763,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "17"
     },
     {
-      "rank": "145",
+      "rank": "146",
       "name": "Imad Farooqui SAMIYA",
       "id": "99714",
       "country": "IND",
@@ -2763,7 +2771,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "146",
+      "rank": "147",
+      "name": "Prakriti BHARATH",
+      "id": "98011",
+      "country": "UAE",
+      "points": "13310",
+      "tournaments": "14"
+    },
+    {
+      "rank": "148",
       "name": "LIN Sih Yun",
       "id": "88079",
       "country": "TPE",
@@ -2771,31 +2787,39 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "147",
-      "name": "Bilqis PRASISTA",
-      "id": "99713",
-      "country": "INA",
-      "points": "13160",
+      "rank": "149",
+      "name": "Yataweemin KETKLIENG",
+      "id": "97446",
+      "country": "THA",
+      "points": "13140",
       "tournaments": "9"
     },
     {
-      "rank": "148",
-      "name": "LEE Xin Yi Megan",
-      "id": "65556",
-      "country": "SGP",
-      "points": "13050",
-      "tournaments": "13"
+      "rank": "150",
+      "name": "Adita RAO",
+      "id": "74880",
+      "country": "IND",
+      "points": "13030",
+      "tournaments": "10"
     },
     {
-      "rank": "149",
+      "rank": "151",
+      "name": "Ester Nurumi Tri WARDOYO",
+      "id": "85048",
+      "country": "INA",
+      "points": "12918",
+      "tournaments": "6"
+    },
+    {
+      "rank": "152",
       "name": "ENG Ler Qi",
       "id": "73321",
       "country": "MAS",
       "points": "12910",
-      "tournaments": "15"
+      "tournaments": "16"
     },
     {
-      "rank": "150",
+      "rank": "153",
       "name": "Milena SCHNIDER",
       "id": "97529",
       "country": "SUI",
@@ -2803,47 +2827,31 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "151",
-      "name": "OO Shan Zi",
-      "id": "80440",
-      "country": "MAS",
-      "points": "12715",
-      "tournaments": "13"
-    },
-    {
-      "rank": "152",
-      "name": "Prakriti BHARATH",
-      "id": "98011",
-      "country": "UAE",
-      "points": "12710",
-      "tournaments": "13"
-    },
-    {
-      "rank": "153",
-      "name": "Ester Nurumi Tri WARDOYO",
-      "id": "85048",
-      "country": "INA",
-      "points": "12558",
-      "tournaments": "5"
-    },
-    {
       "rank": "154",
-      "name": "Shiori EBIHARA",
-      "id": "57727",
-      "country": "JPN",
-      "points": "12440",
-      "tournaments": "7"
+      "name": "VU Thi Trang (B)",
+      "id": "71455",
+      "country": "VIE",
+      "points": "12430",
+      "tournaments": "6"
     },
     {
       "rank": "155",
+      "name": "Bilqis PRASISTA",
+      "id": "99713",
+      "country": "INA",
+      "points": "12410",
+      "tournaments": "9"
+    },
+    {
+      "rank": "156",
       "name": "Kai Qi (Bernice) TEOH",
       "id": "83422",
       "country": "AUS",
       "points": "12337",
-      "tournaments": "14"
+      "tournaments": "13"
     },
     {
-      "rank": "156",
+      "rank": "157",
       "name": "Rosy Oktavia PANCASARI",
       "id": "65540",
       "country": "FRA",
@@ -2851,31 +2859,31 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "157",
-      "name": "IRA SHARMA",
-      "id": "83856",
-      "country": "IND",
-      "points": "12160",
-      "tournaments": "9"
-    },
-    {
       "rank": "158",
-      "name": "INSYIRAH Khan",
-      "id": "57465",
-      "country": "SGP",
-      "points": "12068",
-      "tournaments": "10"
+      "name": "Shiori EBIHARA",
+      "id": "57727",
+      "country": "JPN",
+      "points": "12270",
+      "tournaments": "6"
     },
     {
       "rank": "159",
-      "name": "Deswanti Hujansih NURTERTIATI",
-      "id": "75598",
-      "country": "INA",
-      "points": "11880",
-      "tournaments": "10"
+      "name": "INSYIRAH Khan",
+      "id": "57465",
+      "country": "SGP",
+      "points": "12188",
+      "tournaments": "11"
     },
     {
       "rank": "160",
+      "name": "Thamonwan NITHIITTIKRAI",
+      "id": "53807",
+      "country": "THA",
+      "points": "11800",
+      "tournaments": "7"
+    },
+    {
+      "rank": "161",
       "name": "Rujula RAMU",
       "id": "76273",
       "country": "IND",
@@ -2883,7 +2891,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "161",
+      "rank": "162",
       "name": "Johanita SCHOLTZ",
       "id": "75193",
       "country": "RSA",
@@ -2891,7 +2899,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "162",
+      "rank": "163",
       "name": "Lucie AMIGUET",
       "id": "55905",
       "country": "SUI",
@@ -2899,20 +2907,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "163",
+      "rank": "164",
       "name": "Lucie KRULOVÁ",
       "id": "97251",
       "country": "CZE",
       "points": "11617",
       "tournaments": "19"
-    },
-    {
-      "rank": "164",
-      "name": "VU Thi Trang (B)",
-      "id": "71455",
-      "country": "VIE",
-      "points": "11510",
-      "tournaments": "5"
     },
     {
       "rank": "165",
@@ -2932,11 +2932,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "167",
-      "name": "Joanne NG",
-      "id": "57833",
-      "country": "MAS",
-      "points": "11370",
-      "tournaments": "11"
+      "name": "Yue Yann Jaslyn HOOI",
+      "id": "94594",
+      "country": "SGP",
+      "points": "11389",
+      "tournaments": "9"
     },
     {
       "rank": "168",
@@ -2956,14 +2956,22 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "170",
-      "name": "Yataweemin KETKLIENG",
-      "id": "97446",
-      "country": "THA",
-      "points": "11260",
-      "tournaments": "9"
+      "name": "IRA SHARMA",
+      "id": "83856",
+      "country": "IND",
+      "points": "11240",
+      "tournaments": "8"
     },
     {
       "rank": "171",
+      "name": "Joanne NG",
+      "id": "57833",
+      "country": "MAS",
+      "points": "11180",
+      "tournaments": "11"
+    },
+    {
+      "rank": "172",
       "name": "Niina MATSUTA",
       "id": "95615",
       "country": "JPN",
@@ -2971,20 +2979,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "172",
-      "name": "Yue Yann Jaslyn HOOI",
-      "id": "94594",
-      "country": "SGP",
-      "points": "11029",
-      "tournaments": "8"
-    },
-    {
       "rank": "173",
-      "name": "HAN Yu Chen",
-      "id": "35949",
-      "country": "TPE",
-      "points": "10950",
-      "tournaments": "11"
+      "name": "Deswanti Hujansih NURTERTIATI",
+      "id": "75598",
+      "country": "INA",
+      "points": "10960",
+      "tournaments": "9"
     },
     {
       "rank": "174",
@@ -2996,14 +2996,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "175",
-      "name": "Thamonwan NITHIITTIKRAI",
-      "id": "53807",
-      "country": "THA",
-      "points": "10880",
-      "tournaments": "6"
-    },
-    {
-      "rank": "176",
       "name": "Rachel SUGDEN",
       "id": "65401",
       "country": "SCO",
@@ -3011,28 +3003,36 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
+      "rank": "176",
+      "name": "HUANG Yu Wei",
+      "id": "84311",
+      "country": "TPE",
+      "points": "10770",
+      "tournaments": "10"
+    },
+    {
       "rank": "177",
       "name": "Sorano YOSHIKAWA",
       "id": "95593",
       "country": "JPN",
-      "points": "10710",
-      "tournaments": "7"
+      "points": "10540",
+      "tournaments": "6"
     },
     {
       "rank": "178",
-      "name": "HUANG Yu Wei",
-      "id": "84311",
-      "country": "TPE",
-      "points": "10600",
-      "tournaments": "9"
-    },
-    {
-      "rank": "179",
       "name": "Heli NEIMAN",
       "id": "90471",
       "country": "ISR",
       "points": "10477",
       "tournaments": "15"
+    },
+    {
+      "rank": "179",
+      "name": "HAN Yu Chen",
+      "id": "35949",
+      "country": "TPE",
+      "points": "10270",
+      "tournaments": "10"
     },
     {
       "rank": "180",
@@ -3047,8 +3047,8 @@ window.RANKINGS_2026_RAW = {
       "name": "Nutnalin RATTANAPANUWONG",
       "id": "69394",
       "country": "THA",
-      "points": "10050",
-      "tournaments": "10"
+      "points": "10200",
+      "tournaments": "11"
     },
     {
       "rank": "182",
@@ -3092,6 +3092,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "187",
+      "name": "Surya Charisma TAMIRI",
+      "id": "88718",
+      "country": "IND",
+      "points": "9850",
+      "tournaments": "8"
+    },
+    {
+      "rank": "188",
       "name": "Jenjira STADELMANN",
       "id": "59566",
       "country": "SUI",
@@ -3099,7 +3107,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "188",
+      "rank": "189",
       "name": "Vanessa Maricela GARCIA CONTRERAS",
       "id": "96612",
       "country": "MEX",
@@ -3107,7 +3115,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "189",
+      "rank": "190",
       "name": "Laura FløJ THOMSEN",
       "id": "61446",
       "country": "DEN",
@@ -3115,7 +3123,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "190",
+      "rank": "191",
+      "name": "LIAO Jui-Chi",
+      "id": "92553",
+      "country": "TPE",
+      "points": "9480",
+      "tournaments": "6"
+    },
+    {
+      "rank": "192",
       "name": "Faye HUO",
       "id": "89154",
       "country": "AUS",
@@ -3123,7 +3139,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "191",
+      "rank": "193",
       "name": "Juliana GIRALDO",
       "id": "81006",
       "country": "COL",
@@ -3131,7 +3147,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "192",
+      "rank": "194",
       "name": "Kanae SAKAI",
       "id": "30160",
       "country": "JPN",
@@ -3139,7 +3155,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "193",
+      "rank": "195",
       "name": "Doha HANY",
       "id": "61746",
       "country": "EGY",
@@ -3147,15 +3163,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "194",
-      "name": "Surya Charisma TAMIRI",
-      "id": "88718",
-      "country": "IND",
-      "points": "9290",
-      "tournaments": "8"
-    },
-    {
-      "rank": "195",
+      "rank": "196",
       "name": "Freya REDFEARN",
       "id": "90839",
       "country": "ENG",
@@ -3163,7 +3171,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "196",
+      "rank": "197",
+      "name": "HUANG SHENG-CHUN",
+      "id": "86296",
+      "country": "TPE",
+      "points": "9240",
+      "tournaments": "10"
+    },
+    {
+      "rank": "198",
       "name": "Nodoka SUNAKAWA",
       "id": "89783",
       "country": "JPN",
@@ -3171,7 +3187,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "197",
+      "rank": "199",
       "name": "Sofiia LAVROVA",
       "id": "79287",
       "country": "UKR",
@@ -3179,28 +3195,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "198",
-      "name": "Nanami SOMEYA",
-      "id": "65337",
-      "country": "JPN",
-      "points": "8990",
-      "tournaments": "7"
-    },
-    {
-      "rank": "199",
+      "rank": "200",
       "name": "Azkya Aliefa RUHANDA",
       "id": "65573",
       "country": "SUI",
       "points": "8981",
       "tournaments": "13"
-    },
-    {
-      "rank": "200",
-      "name": "Léonice HUET",
-      "id": "88582",
-      "country": "FRA",
-      "points": "8814",
-      "tournaments": "5"
     }
   ],
   "MD": [
@@ -3210,7 +3210,7 @@ window.RANKINGS_2026_RAW = {
       "id": "61444 / 66513",
       "country": "KOR",
       "points": "121255",
-      "tournaments": "17"
+      "tournaments": "16"
     },
     {
       "rank": "2",
@@ -3218,7 +3218,7 @@ window.RANKINGS_2026_RAW = {
       "id": "56203 / 99389",
       "country": "MAS",
       "points": "94950",
-      "tournaments": "21"
+      "tournaments": "22"
     },
     {
       "rank": "3",
@@ -3226,7 +3226,7 @@ window.RANKINGS_2026_RAW = {
       "id": "90531 / 55414",
       "country": "CHN",
       "points": "84776",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "4",
@@ -3266,7 +3266,7 @@ window.RANKINGS_2026_RAW = {
       "id": "90768 / 94814",
       "country": "MAS",
       "points": "71830",
-      "tournaments": "20"
+      "tournaments": "21"
     },
     {
       "rank": "9",
@@ -3282,34 +3282,26 @@ window.RANKINGS_2026_RAW = {
       "id": "92980 / 44414",
       "country": "DEN",
       "points": "66201",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "11",
-      "name": "CHIU Hsiang Chieh / WANG Chi-Lin",
-      "id": "92913 / 96514",
-      "country": "TPE",
-      "points": "60363",
-      "tournaments": "23"
-    },
-    {
-      "rank": "12",
       "name": "CHEN Bo Yang / LIU Yi",
       "id": "93130 / 71223",
       "country": "CHN",
-      "points": "60042",
-      "tournaments": "18"
+      "points": "63742",
+      "tournaments": "19"
+    },
+    {
+      "rank": "12",
+      "name": "CHIU Hsiang Chieh / WANG Chi-Lin",
+      "id": "92913 / 96514",
+      "country": "TPE",
+      "points": "60943",
+      "tournaments": "24"
     },
     {
       "rank": "13",
-      "name": "Ben LANE / Sean VENDY",
-      "id": "76278 / 72478",
-      "country": "ENG",
-      "points": "59581",
-      "tournaments": "17"
-    },
-    {
-      "rank": "14",
       "name": "Leo Rolly CARNANDO / Bagas MAULANA",
       "id": "68633 / 79658",
       "country": "INA",
@@ -3317,12 +3309,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "17"
     },
     {
-      "rank": "15",
+      "rank": "14",
       "name": "LEE Jhe-Huei / YANG Po-Hsuan",
       "id": "99102 / 76275",
       "country": "TPE",
       "points": "58916",
-      "tournaments": "22"
+      "tournaments": "23"
+    },
+    {
+      "rank": "15",
+      "name": "Ben LANE / Sean VENDY",
+      "id": "76278 / 72478",
+      "country": "ENG",
+      "points": "58531",
+      "tournaments": "16"
     },
     {
       "rank": "16",
@@ -3337,8 +3337,8 @@ window.RANKINGS_2026_RAW = {
       "name": "Raymond INDRA / Nikolaus JOAQUIN",
       "id": "99781 / 55669",
       "country": "INA",
-      "points": "56614",
-      "tournaments": "15"
+      "points": "56464",
+      "tournaments": "14"
     },
     {
       "rank": "18",
@@ -3374,14 +3374,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "22",
-      "name": "Christo POPOV / Toma Junior POPOV",
-      "id": "72885 / 61628",
-      "country": "FRA",
-      "points": "49551",
-      "tournaments": "19"
-    },
-    {
-      "rank": "23",
       "name": "Fang-Chih LEE / Fang-Jen LEE",
       "id": "57424 / 70231",
       "country": "TPE",
@@ -3389,7 +3381,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "25"
     },
     {
-      "rank": "24",
+      "rank": "23",
       "name": "Daniel LUNDGAARD / Mads VESTERGAARD",
       "id": "68134 / 60507",
       "country": "DEN",
@@ -3397,7 +3389,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "20"
     },
     {
-      "rank": "25",
+      "rank": "24",
       "name": "Fajar ALFIAN / Muhammad Rian ARDIANTO",
       "id": "88876 / 91130",
       "country": "INA",
@@ -3405,12 +3397,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
+      "rank": "25",
+      "name": "Christo POPOV / Toma Junior POPOV",
+      "id": "72885 / 61628",
+      "country": "FRA",
+      "points": "46601",
+      "tournaments": "19"
+    },
+    {
       "rank": "26",
       "name": "Nur Mohd Azriyn Ayub AZRIYN / TAN Wee Kiong",
       "id": "70443 / 52071",
       "country": "MAS",
       "points": "45000",
-      "tournaments": "23"
+      "tournaments": "22"
     },
     {
       "rank": "27",
@@ -3430,30 +3430,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "29",
-      "name": "Takumi NOMURA / Yuichi SHIMOGAMI",
-      "id": "78839 / 79501",
-      "country": "JPN",
-      "points": "42034",
-      "tournaments": "17"
-    },
-    {
-      "rank": "30",
-      "name": "Rasmus KJÆR / Frederik SØGAARD",
-      "id": "64729 / 57731",
-      "country": "DEN",
-      "points": "41190",
-      "tournaments": "9"
-    },
-    {
-      "rank": "31",
       "name": "CHOONG Hon Jian / Muhammad HAIKAL",
       "id": "56350 / 88642",
       "country": "MAS",
       "points": "41092",
-      "tournaments": "17"
+      "tournaments": "18"
     },
     {
-      "rank": "32",
+      "rank": "30",
       "name": "HUANG Di / LIU Yang",
       "id": "65491 / 89714",
       "country": "CHN",
@@ -3461,20 +3445,36 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "33",
+      "rank": "31",
+      "name": "Takumi NOMURA / Yuichi SHIMOGAMI",
+      "id": "78839 / 79501",
+      "country": "JPN",
+      "points": "40134",
+      "tournaments": "16"
+    },
+    {
+      "rank": "32",
       "name": "ONG Yew Sin / TEO Ee Yi",
       "id": "84064 / 99066",
       "country": "MAS",
-      "points": "40000",
-      "tournaments": "17"
+      "points": "40090",
+      "tournaments": "18"
     },
     {
-      "rank": "34",
+      "rank": "33",
       "name": "KANG Khai Xing / Aaron TAI",
       "id": "74331 / 57397",
       "country": "MAS",
       "points": "39070",
-      "tournaments": "16"
+      "tournaments": "15"
+    },
+    {
+      "rank": "34",
+      "name": "Rasmus KJÆR / Frederik SØGAARD",
+      "id": "64729 / 57731",
+      "country": "DEN",
+      "points": "37340",
+      "tournaments": "8"
     },
     {
       "rank": "35",
@@ -3526,38 +3526,30 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "41",
-      "name": "Eloi ADAM / Leo ROSSI",
-      "id": "87403 / 96690",
-      "country": "FRA",
-      "points": "34534",
-      "tournaments": "16"
-    },
-    {
-      "rank": "42",
       "name": "CHIA Weijie / LWI Sheng Hao",
       "id": "79732 / 93217",
       "country": "MAS",
       "points": "34240",
-      "tournaments": "20"
+      "tournaments": "19"
+    },
+    {
+      "rank": "42",
+      "name": "Eloi ADAM / Leo ROSSI",
+      "id": "87403 / 96690",
+      "country": "FRA",
+      "points": "34004",
+      "tournaments": "16"
     },
     {
       "rank": "43",
       "name": "SU Ching Heng / WU Guan Xun",
       "id": "88829 / 99841",
       "country": "TPE",
-      "points": "33790",
-      "tournaments": "17"
+      "points": "32710",
+      "tournaments": "16"
     },
     {
       "rank": "44",
-      "name": "CHEN Cheng Kuan / LIN Bing-Wei",
-      "id": "64394 / 73474",
-      "country": "TPE",
-      "points": "32620",
-      "tournaments": "11"
-    },
-    {
-      "rank": "45",
       "name": "HU Ke Yuan / LIN Xiang Yi",
       "id": "97601 / 62220",
       "country": "CHN",
@@ -3565,31 +3557,31 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
+      "rank": "45",
+      "name": "Eng Keat Wesley KOH / Junsuke KUBO",
+      "id": "70185 / 67533",
+      "country": "SGP",
+      "points": "31412",
+      "tournaments": "22"
+    },
+    {
       "rank": "46",
       "name": "CHANG Ko-Chi / PO Li-Wei",
       "id": "68681 / 79052",
       "country": "TPE",
-      "points": "31870",
-      "tournaments": "18"
+      "points": "31340",
+      "tournaments": "17"
     },
     {
       "rank": "47",
       "name": "Pruthvi KRISHNAMURTHY ROY / Sai PRATHEEK.K",
       "id": "77156 / 77389",
       "country": "IND",
-      "points": "31265",
-      "tournaments": "18"
+      "points": "31175",
+      "tournaments": "17"
     },
     {
       "rank": "48",
-      "name": "Eng Keat Wesley KOH / Junsuke KUBO",
-      "id": "70185 / 67533",
-      "country": "SGP",
-      "points": "30882",
-      "tournaments": "21"
-    },
-    {
-      "rank": "49",
       "name": "Mael CATTOEN / Lucas RENOIR",
       "id": "91112 / 78192",
       "country": "FRA",
@@ -3597,15 +3589,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "16"
     },
     {
-      "rank": "50",
-      "name": "Christopher GRIMLEY / Matthew GRIMLEY",
-      "id": "70028 / 92470",
-      "country": "SCO",
-      "points": "30340",
-      "tournaments": "14"
+      "rank": "49",
+      "name": "CHEN Cheng Kuan / LIN Bing-Wei",
+      "id": "64394 / 73474",
+      "country": "TPE",
+      "points": "30440",
+      "tournaments": "11"
     },
     {
-      "rank": "51",
+      "rank": "50",
       "name": "Muhammad Rian ARDIANTO / Rahmat HIDAYAT",
       "id": "91130 / 63520",
       "country": "INA",
@@ -3613,20 +3605,28 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "52",
+      "rank": "51",
       "name": "William Kryger BOE / Christian Faust KJÆR",
       "id": "56450 / 75049",
       "country": "DEN",
       "points": "30020",
-      "tournaments": "11"
+      "tournaments": "10"
+    },
+    {
+      "rank": "52",
+      "name": "Christopher GRIMLEY / Matthew GRIMLEY",
+      "id": "70028 / 92470",
+      "country": "SCO",
+      "points": "29790",
+      "tournaments": "14"
     },
     {
       "rank": "53",
-      "name": "Pharanyu KAOSAMAANG / Tanadon PUNPANICH",
-      "id": "50937 / 64682",
-      "country": "THA",
-      "points": "29646",
-      "tournaments": "16"
+      "name": "Jiří KRÁL / Ondřej KRÁL",
+      "id": "91710 / 82378",
+      "country": "CZE",
+      "points": "29703",
+      "tournaments": "17"
     },
     {
       "rank": "54",
@@ -3634,7 +3634,7 @@ window.RANKINGS_2026_RAW = {
       "id": "84196 / 93572",
       "country": "TPE",
       "points": "29530",
-      "tournaments": "14"
+      "tournaments": "13"
     },
     {
       "rank": "55",
@@ -3650,7 +3650,7 @@ window.RANKINGS_2026_RAW = {
       "id": "88024 / 60060",
       "country": "THA",
       "points": "28807",
-      "tournaments": "11"
+      "tournaments": "12"
     },
     {
       "rank": "57",
@@ -3662,14 +3662,22 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "58",
-      "name": "Muh Putra ERWIANSYAH / Daniel Edgar MARVINO",
-      "id": "81812 / 91483",
-      "country": "INA",
-      "points": "28510",
-      "tournaments": "13"
+      "name": "Pharanyu KAOSAMAANG / Tanadon PUNPANICH",
+      "id": "50937 / 64682",
+      "country": "THA",
+      "points": "28516",
+      "tournaments": "15"
     },
     {
       "rank": "59",
+      "name": "Muh Putra ERWIANSYAH / Daniel Edgar MARVINO",
+      "id": "81812 / 91483",
+      "country": "INA",
+      "points": "28420",
+      "tournaments": "12"
+    },
+    {
+      "rank": "60",
       "name": "Ali Faathir RAYHAN / Devin Artha WAHYUDI",
       "id": "72973 / 76388",
       "country": "INA",
@@ -3677,20 +3685,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "60",
-      "name": "Jiří KRÁL / Ondřej KRÁL",
-      "id": "91710 / 82378",
-      "country": "CZE",
-      "points": "28053",
-      "tournaments": "16"
-    },
-    {
       "rank": "61",
-      "name": "Hariharan AMSAKARUNAN / Ruban Kumar RETHINASABAPATHI",
-      "id": "69560 / 98187",
-      "country": "IND",
-      "points": "27293",
-      "tournaments": "10"
+      "name": "[RUS]Rodion ALIMOV / [RUS]Maksim OGLOBLIN",
+      "id": "99484 / 86904",
+      "country": "RUS",
+      "points": "27380",
+      "tournaments": "12"
     },
     {
       "rank": "62",
@@ -3702,11 +3702,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "63",
-      "name": "[RUS]Rodion ALIMOV / [RUS]Maksim OGLOBLIN",
-      "id": "99484 / 86904",
-      "country": "RUS",
-      "points": "27000",
-      "tournaments": "11"
+      "name": "Muhammad FAIQ / LOK Hong Quan",
+      "id": "92846 / 55750",
+      "country": "MAS",
+      "points": "26150",
+      "tournaments": "18"
     },
     {
       "rank": "64",
@@ -3714,26 +3714,34 @@ window.RANKINGS_2026_RAW = {
       "id": "95341 / 97737",
       "country": "TPE",
       "points": "26040",
-      "tournaments": "15"
+      "tournaments": "14"
     },
     {
       "rank": "65",
-      "name": "HUNG Kuei Chun / LUI Chun Wai",
-      "id": "88832 / 63670",
-      "country": "HKG",
-      "points": "24885",
-      "tournaments": "11"
+      "name": "Hariharan AMSAKARUNAN / Ruban Kumar RETHINASABAPATHI",
+      "id": "69560 / 98187",
+      "country": "IND",
+      "points": "25623",
+      "tournaments": "9"
     },
     {
       "rank": "66",
-      "name": "Muhammad FAIQ / LOK Hong Quan",
-      "id": "92846 / 55750",
-      "country": "MAS",
-      "points": "24870",
-      "tournaments": "18"
+      "name": "HUNG Kuei Chun / LUI Chun Wai",
+      "id": "88832 / 63670",
+      "country": "HKG",
+      "points": "25525",
+      "tournaments": "12"
     },
     {
       "rank": "67",
+      "name": "Dev AYYAPPAN / Dhiren AYYAPPAN",
+      "id": "77168 / 79739",
+      "country": "UAE",
+      "points": "24970",
+      "tournaments": "15"
+    },
+    {
+      "rank": "68",
       "name": "LOW Hang Yee / NG Eng Cheong",
       "id": "61834 / 87270",
       "country": "MAS",
@@ -3741,23 +3749,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "68",
-      "name": "Dev AYYAPPAN / Dhiren AYYAPPAN",
-      "id": "77168 / 79739",
-      "country": "UAE",
-      "points": "24820",
-      "tournaments": "15"
-    },
-    {
       "rank": "69",
-      "name": "Fabricio FARIAS / Davi SILVA",
-      "id": "69649 / 78948",
-      "country": "BRA",
-      "points": "24671",
-      "tournaments": "10"
-    },
-    {
-      "rank": "70",
       "name": "Muhammad Shohibul FIKRI / Daniel MARTHIN",
       "id": "91440 / 84786",
       "country": "INA",
@@ -3765,20 +3757,28 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "71",
+      "rank": "70",
       "name": "LAU Yi Sheng / LIM Tze Jian",
       "id": "98815 / 77752",
       "country": "MAS",
       "points": "24310",
-      "tournaments": "19"
+      "tournaments": "20"
+    },
+    {
+      "rank": "71",
+      "name": "Fabricio FARIAS / Davi SILVA",
+      "id": "69649 / 78948",
+      "country": "BRA",
+      "points": "24011",
+      "tournaments": "9"
     },
     {
       "rank": "72",
-      "name": "Chia Yen LIN / LIN Yong Sheng",
-      "id": "43526 / 64441",
-      "country": "TPE",
-      "points": "24300",
-      "tournaments": "12"
+      "name": "Donovan Willard WEE / Jia Hao Howin WONG",
+      "id": "98502 / 97717",
+      "country": "SGP",
+      "points": "23850",
+      "tournaments": "15"
     },
     {
       "rank": "73",
@@ -3790,11 +3790,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "74",
-      "name": "Donovan Willard WEE / Jia Hao Howin WONG",
-      "id": "98502 / 97717",
-      "country": "SGP",
-      "points": "23470",
-      "tournaments": "14"
+      "name": "Julien MAIO / William VILLEGER",
+      "id": "73323 / 88264",
+      "country": "FRA",
+      "points": "23720",
+      "tournaments": "9"
     },
     {
       "rank": "75",
@@ -3806,30 +3806,38 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "76",
-      "name": "Malik BOURAKKADI / Kenneth NEUMANN",
-      "id": "74871 / 65253",
-      "country": "GER",
-      "points": "22440",
-      "tournaments": "14"
+      "name": "Anselmus Breagit Fredy PRASETYA / Pulung RAMADHAN",
+      "id": "73721 / 90524",
+      "country": "INA",
+      "points": "22960",
+      "tournaments": "13"
     },
     {
       "rank": "77",
-      "name": "Oliver BUTLER / Samuel JONES",
-      "id": "69810 / 63421",
-      "country": "ENG",
-      "points": "22233",
+      "name": "Malik BOURAKKADI / Kenneth NEUMANN",
+      "id": "74871 / 65253",
+      "country": "GER",
+      "points": "22590",
       "tournaments": "14"
     },
     {
       "rank": "78",
-      "name": "Anselmus Breagit Fredy PRASETYA / Pulung RAMADHAN",
-      "id": "73721 / 90524",
-      "country": "INA",
-      "points": "22050",
-      "tournaments": "12"
+      "name": "Oliver BUTLER / Samuel JONES",
+      "id": "69810 / 63421",
+      "country": "ENG",
+      "points": "22533",
+      "tournaments": "15"
     },
     {
       "rank": "79",
+      "name": "Bjarne GEISS / Jones Ralfy JANSEN",
+      "id": "59472 / 88726",
+      "country": "GER",
+      "points": "22308",
+      "tournaments": "10"
+    },
+    {
+      "rank": "80",
       "name": "Tori AIZAWA / Daisuke SANO",
       "id": "58487 / 87236",
       "country": "JPN",
@@ -3837,7 +3845,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "80",
+      "rank": "81",
+      "name": "Chia Yen LIN / LIN Yong Sheng",
+      "id": "43526 / 64441",
+      "country": "TPE",
+      "points": "21560",
+      "tournaments": "11"
+    },
+    {
+      "rank": "82",
       "name": "Kazuki SHIBATA / Naoki YAMADA",
       "id": "82463 / 96843",
       "country": "JPN",
@@ -3845,7 +3861,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "81",
+      "rank": "83",
       "name": "Haruki KAWABE / Kenta MATSUKAWA",
       "id": "76165 / 94252",
       "country": "JPN",
@@ -3853,7 +3869,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "82",
+      "rank": "84",
+      "name": "Alex GREEN / Zach RUSS",
+      "id": "69360 / 69685",
+      "country": "ENG",
+      "points": "20851",
+      "tournaments": "10"
+    },
+    {
+      "rank": "85",
       "name": "WEI Chun Wei / Po Chih YANG",
       "id": "74574 / 73750",
       "country": "TPE",
@@ -3861,15 +3885,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "83",
-      "name": "Bjarne GEISS / Jones Ralfy JANSEN",
-      "id": "59472 / 88726",
-      "country": "GER",
-      "points": "20638",
-      "tournaments": "9"
-    },
-    {
-      "rank": "84",
+      "rank": "86",
       "name": "Masayuki ONODERA / Daigo TANIOKA",
       "id": "91060 / 83883",
       "country": "JPN",
@@ -3877,52 +3893,36 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "85",
+      "rank": "87",
+      "name": "NGUYEN Dinh Hoang / TRAN Dinh Manh",
+      "id": "59241 / 66798",
+      "country": "VIE",
+      "points": "20450",
+      "tournaments": "9"
+    },
+    {
+      "rank": "88",
       "name": "Bhargav Ram ARIGELA / Viswa Tej GOBBURU",
       "id": "90307 / 99941",
       "country": "IND",
       "points": "20090",
-      "tournaments": "12"
+      "tournaments": "11"
     },
     {
-      "rank": "86",
+      "rank": "89",
       "name": "Ruben GARCIA / Carlos PIRIS",
       "id": "94156 / 93670",
       "country": "ESP",
       "points": "19953",
-      "tournaments": "16"
+      "tournaments": "17"
     },
     {
-      "rank": "87",
+      "rank": "90",
       "name": "Bryan Jeremy GOONTING / M FAZRIQ Mohamad Razif",
       "id": "61222 / 63966",
       "country": "MAS",
       "points": "19666",
-      "tournaments": "16"
-    },
-    {
-      "rank": "88",
-      "name": "NGUYEN Dinh Hoang / TRAN Dinh Manh",
-      "id": "59241 / 66798",
-      "country": "VIE",
-      "points": "19530",
-      "tournaments": "8"
-    },
-    {
-      "rank": "89",
-      "name": "Julien MAIO / William VILLEGER",
-      "id": "73323 / 88264",
-      "country": "FRA",
-      "points": "19440",
-      "tournaments": "9"
-    },
-    {
-      "rank": "90",
-      "name": "Alex GREEN / Zach RUSS",
-      "id": "69360 / 69685",
-      "country": "ENG",
-      "points": "19181",
-      "tournaments": "9"
+      "tournaments": "15"
     },
     {
       "rank": "91",
@@ -3938,23 +3938,23 @@ window.RANKINGS_2026_RAW = {
       "id": "79195 / 91174",
       "country": "GER",
       "points": "18956",
-      "tournaments": "20"
+      "tournaments": "21"
     },
     {
       "rank": "93",
-      "name": "GOH Boon Zhe / WONG Vin Sean",
-      "id": "68284 / 98812",
-      "country": "MAS",
-      "points": "17960",
-      "tournaments": "12"
+      "name": "HUANG Tsung-I / LIN Ting-Yu",
+      "id": "78126 / 65791",
+      "country": "TPE",
+      "points": "18780",
+      "tournaments": "9"
     },
     {
       "rank": "94",
       "name": "Scott GUILDEA / Paul REYNOLDS",
       "id": "63756 / 92985",
       "country": "IRL",
-      "points": "17860",
-      "tournaments": "17"
+      "points": "18210",
+      "tournaments": "18"
     },
     {
       "rank": "95",
@@ -3962,7 +3962,7 @@ window.RANKINGS_2026_RAW = {
       "id": "87743 / 84666",
       "country": "IND",
       "points": "17750",
-      "tournaments": "13"
+      "tournaments": "12"
     },
     {
       "rank": "96",
@@ -3974,11 +3974,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "97",
-      "name": "HUANG Tsung-I / LIN Ting-Yu",
-      "id": "78126 / 65791",
-      "country": "TPE",
-      "points": "17500",
-      "tournaments": "9"
+      "name": "GOH Boon Zhe / WONG Vin Sean",
+      "id": "68284 / 98812",
+      "country": "MAS",
+      "points": "17360",
+      "tournaments": "11"
     },
     {
       "rank": "98",
@@ -3998,22 +3998,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "100",
-      "name": "Dingku Singh KONTHOUJAM / Amaan MOHAMMAD",
-      "id": "73913 / 73760",
-      "country": "IND",
-      "points": "16940",
-      "tournaments": "11"
-    },
-    {
-      "rank": "101",
-      "name": "BOON Xin Yuan / LEE Yi Bo",
-      "id": "78425 / 73460",
-      "country": "MAS",
-      "points": "16880",
-      "tournaments": "13"
-    },
-    {
-      "rank": "102",
       "name": "Daniel FRANCO / Rodrigo SANJURJO",
       "id": "67800 / 72549",
       "country": "ESP",
@@ -4021,7 +4005,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "103",
+      "rank": "101",
+      "name": "Dingku Singh KONTHOUJAM / Amaan MOHAMMAD",
+      "id": "73913 / 73760",
+      "country": "IND",
+      "points": "16260",
+      "tournaments": "11"
+    },
+    {
+      "rank": "102",
       "name": "KIM Gi Jung / KIM Sa Rang",
       "id": "39276 / 84007",
       "country": "KOR",
@@ -4029,7 +4021,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "104",
+      "rank": "103",
       "name": "Abinash MOHANTY / Ayush PATTANAYAK",
       "id": "67367 / 74637",
       "country": "IND",
@@ -4037,15 +4029,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "105",
-      "name": "Solomon Jr. PADIZ / Julius VILLABRILLE",
-      "id": "63053 / 58220",
-      "country": "PHI",
-      "points": "16000",
-      "tournaments": "8"
-    },
-    {
-      "rank": "106",
+      "rank": "104",
       "name": "CUI He Chen / PENG Jian Qin",
       "id": "83132 / 76569",
       "country": "CHN",
@@ -4053,15 +4037,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "107",
+      "rank": "105",
       "name": "Viplav KUVALE / Viraj KUVALE",
       "id": "75034 / 74230",
       "country": "IND",
       "points": "15730",
-      "tournaments": "11"
+      "tournaments": "10"
     },
     {
-      "rank": "108",
+      "rank": "106",
       "name": "CHO Song Hyun / JIN Sung Ik",
       "id": "90792 / 59338",
       "country": "KOR",
@@ -4069,7 +4053,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "109",
+      "rank": "107",
       "name": "LEE Jong Min / WANG Chan",
       "id": "62804 / 72646",
       "country": "KOR",
@@ -4077,7 +4061,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "110",
+      "rank": "108",
       "name": "Yuto NODA / Shunya OTA",
       "id": "87231 / 91546",
       "country": "JPN",
@@ -4085,7 +4069,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "111",
+      "rank": "109",
       "name": "Jacobo FERNANDEZ / Alberto PERALS",
       "id": "64646 / 61331",
       "country": "ESP",
@@ -4093,15 +4077,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "112",
+      "rank": "110",
       "name": "Robin HARPER / Harry WAKEFIELD",
       "id": "78079 / 84505",
       "country": "ENG",
       "points": "15268",
-      "tournaments": "15"
+      "tournaments": "16"
     },
     {
-      "rank": "113",
+      "rank": "111",
       "name": "P.S RAVIKRISHNA / Somi ROMDHANI",
       "id": "89174 / 87484",
       "country": "UAE",
@@ -4109,15 +4093,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "114",
-      "name": "BEH Chun Meng / CHOI Jian Sheng",
-      "id": "69597 / 96663",
-      "country": "MAS",
-      "points": "15170",
-      "tournaments": "11"
+      "rank": "112",
+      "name": "Christian Faust KJÆR / Rasmus KJÆR",
+      "id": "75049 / 64729",
+      "country": "DEN",
+      "points": "15094",
+      "tournaments": "6"
     },
     {
-      "rank": "115",
+      "rank": "113",
       "name": "Yann ORTEU / Minh Quang PHAM",
       "id": "97214 / 91987",
       "country": "SUI",
@@ -4125,20 +4109,36 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "116",
-      "name": "Koceila MAMMERI / Youcef Sabri MEDEL",
-      "id": "72986 / 63846",
-      "country": "ALG",
-      "points": "14729",
-      "tournaments": "6"
+      "rank": "114",
+      "name": "BOON Xin Yuan / LEE Yi Bo",
+      "id": "78425 / 73460",
+      "country": "MAS",
+      "points": "15000",
+      "tournaments": "12"
     },
     {
-      "rank": "117",
+      "rank": "115",
+      "name": "Solomon Jr. PADIZ / Julius VILLABRILLE",
+      "id": "63053 / 58220",
+      "country": "PHI",
+      "points": "14720",
+      "tournaments": "8"
+    },
+    {
+      "rank": "116",
       "name": "CHENG Kai Wen / LIAO Chao Pang",
       "id": "97376 / 79915",
       "country": "TPE",
       "points": "14600",
       "tournaments": "9"
+    },
+    {
+      "rank": "117",
+      "name": "BEH Chun Meng / CHOI Jian Sheng",
+      "id": "69597 / 96663",
+      "country": "MAS",
+      "points": "14570",
+      "tournaments": "10"
     },
     {
       "rank": "118",
@@ -4150,14 +4150,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "119",
-      "name": "JUMAR Al-Amin / Moajjam Hossain OHIDUL",
-      "id": "71920 / 68377",
-      "country": "BAN",
-      "points": "14530",
-      "tournaments": "10"
-    },
-    {
-      "rank": "120",
       "name": "Keiichiro MATSUI / Katsuki TAMATE",
       "id": "74324 / 94925",
       "country": "JPN",
@@ -4165,7 +4157,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "121",
+      "rank": "120",
       "name": "Izak BATALHA / Matheus VOIGT",
       "id": "77228 / 85056",
       "country": "BRA",
@@ -4173,7 +4165,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "122",
+      "rank": "121",
       "name": "Marvin DATKO / Aaron SONNENSCHEIN",
       "id": "73340 / 65622",
       "country": "GER",
@@ -4181,31 +4173,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
+      "rank": "122",
+      "name": "Raphael Chris DELOY / Adam JEFFREY",
+      "id": "75066 / 60131",
+      "country": "NZL",
+      "points": "13720",
+      "tournaments": "9"
+    },
+    {
       "rank": "123",
-      "name": "Akshan SHETTY / Sankar Prasad UDAYAKUMAR",
-      "id": "56434 / 60705",
-      "country": "IND",
-      "points": "13570",
-      "tournaments": "6"
+      "name": "JUMAR Al-Amin / Moajjam Hossain OHIDUL",
+      "id": "71920 / 68377",
+      "country": "BAN",
+      "points": "13610",
+      "tournaments": "9"
     },
     {
       "rank": "124",
-      "name": "Christian Faust KJÆR / Rasmus KJÆR",
-      "id": "75049 / 64729",
-      "country": "DEN",
-      "points": "13424",
-      "tournaments": "5"
-    },
-    {
-      "rank": "125",
-      "name": "Pongsakorn THONGKHAM / Wongsathorn THONGKHAM",
-      "id": "81327 / 84421",
-      "country": "THA",
-      "points": "13330",
-      "tournaments": "12"
-    },
-    {
-      "rank": "126",
       "name": "Kristoffer KOLDING / Calvin LUNDSGAARD",
       "id": "68337 / 96071",
       "country": "DEN",
@@ -4213,7 +4197,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "127",
+      "rank": "125",
       "name": "Adrian KRAWCZYK / Szymon SLEPECKI",
       "id": "56393 / 59857",
       "country": "POL",
@@ -4221,7 +4205,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "128",
+      "rank": "126",
       "name": "Dexter FARRELL / Wahyu Agung PRASETYO",
       "id": "88585 / 71308",
       "country": "INA",
@@ -4229,15 +4213,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "129",
-      "name": "Raphael Chris DELOY / Adam JEFFREY",
-      "id": "75066 / 60131",
-      "country": "NZL",
-      "points": "12800",
-      "tournaments": "8"
+      "rank": "127",
+      "name": "Koceila MAMMERI / Youcef Sabri MEDEL",
+      "id": "72986 / 63846",
+      "country": "ALG",
+      "points": "13059",
+      "tournaments": "5"
     },
     {
-      "rank": "130",
+      "rank": "128",
+      "name": "Pongsakorn THONGKHAM / Wongsathorn THONGKHAM",
+      "id": "81327 / 84421",
+      "country": "THA",
+      "points": "12730",
+      "tournaments": "12"
+    },
+    {
+      "rank": "129",
       "name": "HE Ji Ting / REN Xiang Yu",
       "id": "59673 / 84812",
       "country": "CHN",
@@ -4245,7 +4237,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "131",
+      "rank": "130",
       "name": "CHEN Yong Rui / CHEN Zhe Han",
       "id": "67877 / 95163",
       "country": "CHN",
@@ -4253,7 +4245,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "132",
+      "rank": "131",
       "name": "Mio MOLIN / Max SVENSSON",
       "id": "89504 / 75417",
       "country": "SWE",
@@ -4261,15 +4253,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "133",
-      "name": "Andreas SØNDERGAARD / Jesper TOFT",
-      "id": "73857 / 81705",
-      "country": "DEN",
-      "points": "12390",
-      "tournaments": "5"
-    },
-    {
-      "rank": "134",
+      "rank": "132",
       "name": "Iljo VAN DELSEN / Yaro VAN DELSEN",
       "id": "84412 / 98443",
       "country": "BEL",
@@ -4277,7 +4261,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "135",
+      "rank": "133",
       "name": "Yudai NAGAFUCHI / Kota OGAWA",
       "id": "57989 / 70747",
       "country": "JPN",
@@ -4285,7 +4269,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "136",
+      "rank": "134",
       "name": "Hari Bharathi BASKARAN.P / Bharathsanjai S",
       "id": "81394 / 99486",
       "country": "IND",
@@ -4293,7 +4277,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "137",
+      "rank": "135",
       "name": "LU Ching Yao / WEI Chun Wei",
       "id": "56746 / 74574",
       "country": "TPE",
@@ -4301,15 +4285,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "138",
-      "name": "Thanawin MADEE / Wachirawit SOTHON",
-      "id": "62516 / 71432",
-      "country": "THA",
-      "points": "11960",
-      "tournaments": "8"
-    },
-    {
-      "rank": "139",
+      "rank": "136",
       "name": "VojtěCh HAVLÍČEK / Tomáš ŠVEJDA",
       "id": "63359 / 57288",
       "country": "CZE",
@@ -4317,7 +4293,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "140",
+      "rank": "137",
       "name": "Naoya KAWASHIMA / Akira KOGA",
       "id": "80228 / 88405",
       "country": "JPN",
@@ -4325,15 +4301,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "141",
-      "name": "Ming Che LU / TANG Kai Wei",
-      "id": "58986 / 72372",
-      "country": "TPE",
-      "points": "11610",
+      "rank": "138",
+      "name": "Akshan SHETTY / Sankar Prasad UDAYAKUMAR",
+      "id": "56434 / 60705",
+      "country": "IND",
+      "points": "11370",
       "tournaments": "5"
     },
     {
-      "rank": "142",
+      "rank": "139",
       "name": "Daichi MIURA / Yuto NAKASHIZU",
       "id": "98247 / 75798",
       "country": "JPN",
@@ -4341,7 +4317,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "143",
+      "rank": "140",
       "name": "NOH Jin Seong / PARK Seung Min",
       "id": "77422 / 69741",
       "country": "KOR",
@@ -4349,15 +4325,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "144",
-      "name": "Arya THAKORE / Dhruv THAKORE",
-      "id": "80975 / 89162",
-      "country": "IND",
-      "points": "11090",
-      "tournaments": "8"
-    },
-    {
-      "rank": "145",
+      "rank": "141",
       "name": "REN Xiang Yu / XIE Hao Nan",
       "id": "84812 / 89909",
       "country": "CHN",
@@ -4365,7 +4333,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "146",
+      "rank": "142",
       "name": "David ECKERLIN / Danial Iman MARZUAN",
       "id": "85597 / 73078",
       "country": "GER",
@@ -4373,7 +4341,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "147",
+      "rank": "143",
       "name": "Kiren Milan DERAJ / Victor HO",
       "id": "57182 / 93544",
       "country": "CAN",
@@ -4381,7 +4349,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "148",
+      "rank": "144",
       "name": "Karthick Raja BALAMURUGAN / P. Parth VAID",
       "id": "60690 / 96543",
       "country": "IND",
@@ -4389,7 +4357,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "149",
+      "rank": "145",
       "name": "Bo-Yuan CHEN / TANG Kai Wei",
       "id": "67785 / 72372",
       "country": "TPE",
@@ -4397,15 +4365,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "150",
-      "name": "Aditya DIWAKAR / Kavin Thangam KAVIN",
-      "id": "95523 / 75537",
-      "country": "IND",
-      "points": "10630",
-      "tournaments": "9"
+      "rank": "146",
+      "name": "Andreas SØNDERGAARD / Jesper TOFT",
+      "id": "73857 / 81705",
+      "country": "DEN",
+      "points": "10720",
+      "tournaments": "4"
     },
     {
-      "rank": "151",
+      "rank": "147",
       "name": "LAW Cheuk Him / YEUNG Shing Choi",
       "id": "62282 / 68061",
       "country": "HKG",
@@ -4413,7 +4381,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "152",
+      "rank": "148",
+      "name": "Thanawin MADEE / Wachirawit SOTHON",
+      "id": "62516 / 71432",
+      "country": "THA",
+      "points": "10440",
+      "tournaments": "7"
+    },
+    {
+      "rank": "149",
       "name": "BAO XIN Da Gu La Wai / Yu Hsiang CHOU",
       "id": "76272 / 67502",
       "country": "TPE",
@@ -4421,7 +4397,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "153",
+      "rank": "150",
       "name": "jonathan SOLIS / Christopher MARTINEZ",
       "id": "25684 / 93205",
       "country": "GUA",
@@ -4429,7 +4405,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "154",
+      "rank": "151",
+      "name": "Baptiste LABARTHE / Quentin RONGET",
+      "id": "98466 / 96472",
+      "country": "FRA",
+      "points": "10340",
+      "tournaments": "6"
+    },
+    {
+      "rank": "152",
+      "name": "Aditya DIWAKAR / Kavin Thangam KAVIN",
+      "id": "95523 / 75537",
+      "country": "IND",
+      "points": "10270",
+      "tournaments": "8"
+    },
+    {
+      "rank": "153",
       "name": "Torjus FLAATTEN / Jonas ØSTHASSEL",
       "id": "57694 / 67405",
       "country": "NOR",
@@ -4437,7 +4429,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "155",
+      "rank": "154",
       "name": "Muhammad Shohibul FIKRI / Bagas MAULANA",
       "id": "91440 / 79658",
       "country": "INA",
@@ -4445,23 +4437,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "1"
     },
     {
+      "rank": "155",
+      "name": "Arya THAKORE / Dhruv THAKORE",
+      "id": "80975 / 89162",
+      "country": "IND",
+      "points": "9570",
+      "tournaments": "7"
+    },
+    {
       "rank": "156",
-      "name": "Narut SAENGKHAM / Apichasit TEERAWIWAT",
-      "id": "61679 / 64184",
-      "country": "THA",
-      "points": "9864",
-      "tournaments": "9"
-    },
-    {
-      "rank": "157",
-      "name": "Baptiste LABARTHE / Quentin RONGET",
-      "id": "98466 / 96472",
-      "country": "FRA",
-      "points": "9680",
-      "tournaments": "5"
-    },
-    {
-      "rank": "158",
       "name": "Tzu Hung CHIU / LU Ching Yao",
       "id": "86429 / 56746",
       "country": "TPE",
@@ -4469,23 +4453,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "159",
-      "name": "Callum HEMMING / Ethan VAN LEEUWEN",
-      "id": "86756 / 90556",
-      "country": "ENG",
-      "points": "9460",
-      "tournaments": "3"
-    },
-    {
-      "rank": "160",
-      "name": "Bjarne GEISS / Jan Colin VOELKER",
-      "id": "59472 / 78935",
-      "country": "GER",
-      "points": "9440",
-      "tournaments": "4"
-    },
-    {
-      "rank": "161",
+      "rank": "157",
       "name": "Tobias RØNBØG / Mike VESTERGAARD",
       "id": "59923 / 52826",
       "country": "DEN",
@@ -4493,7 +4461,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "162",
+      "rank": "158",
       "name": "Anuj KALE / Ian LOPES",
       "id": "78330 / 92326",
       "country": "IND",
@@ -4501,7 +4469,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "163",
+      "rank": "159",
       "name": "Csanad HORVATH / Miklos KIS-KASZA",
       "id": "92143 / 79515",
       "country": "HUN",
@@ -4509,7 +4477,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "164",
+      "rank": "160",
       "name": "Seiya INOUE / Yuto KIDA",
       "id": "90738 / 96081",
       "country": "JPN",
@@ -4517,7 +4485,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "165",
+      "rank": "161",
+      "name": "Ming Che LU / TANG Kai Wei",
+      "id": "58986 / 72372",
+      "country": "TPE",
+      "points": "8860",
+      "tournaments": "4"
+    },
+    {
+      "rank": "162",
       "name": "KIM Jae Hyeon / LEE Sang Won",
       "id": "80293 / 84672",
       "country": "KOR",
@@ -4525,7 +4501,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "166",
+      "rank": "163",
       "name": "M.R. ARJUN / Vishnuvardhan Goud PANJALA",
       "id": "98935 / 66528",
       "country": "IND",
@@ -4533,7 +4509,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "167",
+      "rank": "164",
       "name": "Rahmat HIDAYAT / Yeremia Erich Yoche Yacob RAMBITAN",
       "id": "63520 / 94430",
       "country": "INA",
@@ -4541,15 +4517,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "168",
-      "name": "SUN Wen Jun / ZHU Yi Jun",
-      "id": "93247 / 82167",
-      "country": "CHN",
-      "points": "8620",
-      "tournaments": "4"
-    },
-    {
-      "rank": "169",
+      "rank": "165",
       "name": "Vishnuvardhan Goud PANJALA / Ruban Kumar RETHINASABAPATHI",
       "id": "66528 / 98187",
       "country": "IND",
@@ -4557,7 +4525,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "170",
+      "rank": "166",
       "name": "Arthur LEE / Samuel Wales LI",
       "id": "83461 / 97925",
       "country": "USA",
@@ -4565,7 +4533,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "171",
+      "rank": "167",
       "name": "Bugra AKTAS / Emre SONMEZ",
       "id": "67730 / 87483",
       "country": "TUR",
@@ -4573,7 +4541,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "172",
+      "rank": "168",
       "name": "Robert NEBEL / Otto REILER",
       "id": "77197 / 79430",
       "country": "DEN",
@@ -4581,7 +4549,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "173",
+      "rank": "169",
       "name": "Ashith SURYA / Ganesh VITTALJI",
       "id": "69313 / 83483",
       "country": "IND",
@@ -4589,7 +4557,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "174",
+      "rank": "170",
       "name": "Natan BEGGA / Grégoire DESCHAMP",
       "id": "59578 / 75657",
       "country": "FRA",
@@ -4597,7 +4565,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "175",
+      "rank": "171",
       "name": "David Bjarni BJORNSSON / Kristofer Darri FINNSSON",
       "id": "85707 / 82333",
       "country": "ISL",
@@ -4605,7 +4573,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "176",
+      "rank": "172",
+      "name": "Narut SAENGKHAM / Apichasit TEERAWIWAT",
+      "id": "61679 / 64184",
+      "country": "THA",
+      "points": "8344",
+      "tournaments": "8"
+    },
+    {
+      "rank": "173",
       "name": "Hung Ming CHEN / Cheng Han TSAI",
       "id": "62242 / 68787",
       "country": "TPE",
@@ -4613,7 +4589,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "177",
+      "rank": "174",
       "name": "PUI Chi Chon / PUI Pang Fong",
       "id": "61780 / 98860",
       "country": "MAC",
@@ -4621,7 +4597,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "178",
+      "rank": "175",
       "name": "Ivan RUSEV / Iliyan STOYNOV",
       "id": "98589 / 63140",
       "country": "BUL",
@@ -4629,7 +4605,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "179",
+      "rank": "176",
       "name": "Andrej SUCHY / Simeon SUCHY",
       "id": "75359 / 90151",
       "country": "SVK",
@@ -4637,7 +4613,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "180",
+      "rank": "177",
       "name": "Declan BENNETT / Richard KONG",
       "id": "96987 / 98274",
       "country": "IRL",
@@ -4645,7 +4621,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "181",
+      "rank": "178",
       "name": "Jonathan Farrell GOSAL / Adrian PRATAMA",
       "id": "82549 / 99362",
       "country": "INA",
@@ -4653,7 +4629,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "182",
+      "rank": "179",
       "name": "Divyam ARORA / Arsh MOHAMMAD",
       "id": "75152 / 85198",
       "country": "IND",
@@ -4661,7 +4637,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "183",
+      "rank": "180",
+      "name": "Callum HEMMING / Ethan VAN LEEUWEN",
+      "id": "86756 / 90556",
+      "country": "ENG",
+      "points": "7790",
+      "tournaments": "2"
+    },
+    {
+      "rank": "181",
+      "name": "Bjarne GEISS / Jan Colin VOELKER",
+      "id": "59472 / 78935",
+      "country": "GER",
+      "points": "7770",
+      "tournaments": "3"
+    },
+    {
+      "rank": "182",
       "name": "Kittinupong KEDREN / Lucas Ekarat WEDLER",
       "id": "73633 / 57811",
       "country": "THA",
@@ -4669,7 +4661,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "184",
+      "rank": "183",
       "name": "Pramudya KUSUMAWARDANA / Jack YU",
       "id": "74732 / 94332",
       "country": "AUS",
@@ -4677,12 +4669,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "185",
+      "rank": "184",
       "name": "Nitin KUMAR / Harsh RANA",
       "id": "87422 / 68217",
       "country": "IND",
       "points": "7540",
       "tournaments": "7"
+    },
+    {
+      "rank": "185",
+      "name": "CHAN Yueh Lin / CHU Bo Rong",
+      "id": "83077 / 95303",
+      "country": "TPE",
+      "points": "7510",
+      "tournaments": "5"
     },
     {
       "rank": "186",
@@ -4750,6 +4750,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "194",
+      "name": "Weeraphat PHAKJARUNG / Tanupat VIRIYANGKURA",
+      "id": "82770 / 74233",
+      "country": "THA",
+      "points": "7300",
+      "tournaments": "6"
+    },
+    {
+      "rank": "195",
       "name": "CHEN Yu-Che / CHEN Ze Ru",
       "id": "82368 / 78767",
       "country": "TPE",
@@ -4757,7 +4765,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "195",
+      "rank": "196",
       "name": "Alexius Ongkytama SUBAGIO / Aquino Evano Keneddy TANGKA",
       "id": "62430 / 79091",
       "country": "INA",
@@ -4765,20 +4773,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "196",
+      "rank": "197",
       "name": "Natan BEGGA / Baptiste LABARTHE",
       "id": "59578 / 98466",
       "country": "FRA",
       "points": "7011",
       "tournaments": "6"
-    },
-    {
-      "rank": "197",
-      "name": "Daniel HESS / Marvin SEIDEL",
-      "id": "63389 / 64909",
-      "country": "GER",
-      "points": "7010",
-      "tournaments": "3"
     },
     {
       "rank": "198",
@@ -4798,11 +4798,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "200",
-      "name": "Zach RUSS / Jeppe SØBY",
-      "id": "69685 / 77803",
-      "country": "ENG / DEN",
-      "points": "6920",
-      "tournaments": "4"
+      "name": "SUN Wen Jun / ZHU Yi Jun",
+      "id": "93247 / 82167",
+      "country": "CHN",
+      "points": "6950",
+      "tournaments": "3"
     }
   ],
   "WD": [
@@ -4880,14 +4880,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "10",
-      "name": "Gabriela STOEVA / Stefani STOEVA",
-      "id": "43840 / 46169",
-      "country": "BUL",
-      "points": "58706",
-      "tournaments": "16"
-    },
-    {
-      "rank": "11",
       "name": "Febriana Dwipuji KUSUMA / Amallia Cahaya PRATIWI",
       "id": "79664 / 67761",
       "country": "INA",
@@ -4895,12 +4887,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "12",
+      "rank": "11",
       "name": "Nami MATSUYAMA / Chiharu SHIDA",
       "id": "65212 / 68282",
       "country": "JPN",
       "points": "57312",
       "tournaments": "7"
+    },
+    {
+      "rank": "12",
+      "name": "Gabriela STOEVA / Stefani STOEVA",
+      "id": "43840 / 46169",
+      "country": "BUL",
+      "points": "56756",
+      "tournaments": "16"
     },
     {
       "rank": "13",
@@ -4916,14 +4916,14 @@ window.RANKINGS_2026_RAW = {
       "id": "96973 / 69009",
       "country": "TPE",
       "points": "55206",
-      "tournaments": "26"
+      "tournaments": "27"
     },
     {
       "rank": "15",
       "name": "HSU Ya Ching / SUNG Yu-Hsuan",
       "id": "74561 / 65349",
       "country": "TPE",
-      "points": "53319",
+      "points": "53899",
       "tournaments": "23"
     },
     {
@@ -4948,23 +4948,23 @@ window.RANKINGS_2026_RAW = {
       "id": "68015 / 75864",
       "country": "HKG",
       "points": "49854",
-      "tournaments": "17"
+      "tournaments": "18"
     },
     {
       "rank": "19",
       "name": "Kaho OSAWA / Mai TANABE",
       "id": "67816 / 92279",
       "country": "JPN",
-      "points": "47670",
-      "tournaments": "15"
+      "points": "48720",
+      "tournaments": "16"
     },
     {
       "rank": "20",
       "name": "CHANG Ching Hui / YANG Ching Tun",
       "id": "75270 / 78687",
       "country": "TPE",
-      "points": "47625",
-      "tournaments": "25"
+      "points": "47875",
+      "tournaments": "26"
     },
     {
       "rank": "21",
@@ -4996,7 +4996,7 @@ window.RANKINGS_2026_RAW = {
       "id": "69091 / 65708",
       "country": "USA",
       "points": "44529",
-      "tournaments": "13"
+      "tournaments": "12"
     },
     {
       "rank": "25",
@@ -5004,18 +5004,10 @@ window.RANKINGS_2026_RAW = {
       "id": "80386 / 60219",
       "country": "MAS",
       "points": "43907",
-      "tournaments": "25"
+      "tournaments": "24"
     },
     {
       "rank": "26",
-      "name": "GO Pei Kee / TEOH Mei Xing",
-      "id": "94530 / 63539",
-      "country": "MAS",
-      "points": "42930",
-      "tournaments": "15"
-    },
-    {
-      "rank": "27",
       "name": "Ririna HIRAMOTO / Kokona ISHIKAWA",
       "id": "86778 / 85452",
       "country": "JPN",
@@ -5023,7 +5015,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "15"
     },
     {
-      "rank": "28",
+      "rank": "27",
       "name": "Rachel Allessya ROSE / Febi SETIANINGRUM",
       "id": "94567 / 55481",
       "country": "INA",
@@ -5031,12 +5023,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
+      "rank": "28",
+      "name": "GO Pei Kee / TEOH Mei Xing",
+      "id": "94530 / 63539",
+      "country": "MAS",
+      "points": "41740",
+      "tournaments": "14"
+    },
+    {
       "rank": "29",
       "name": "LUI Lok Lok / TSANG Hiu Yan",
       "id": "87893 / 95205",
       "country": "HKG",
-      "points": "39494",
-      "tournaments": "17"
+      "points": "40344",
+      "tournaments": "18"
     },
     {
       "rank": "30",
@@ -5052,7 +5052,7 @@ window.RANKINGS_2026_RAW = {
       "id": "87176 / 82732",
       "country": "TPE",
       "points": "38780",
-      "tournaments": "18"
+      "tournaments": "19"
     },
     {
       "rank": "32",
@@ -5060,34 +5060,26 @@ window.RANKINGS_2026_RAW = {
       "id": "61882 / 83074",
       "country": "USA",
       "points": "38576",
-      "tournaments": "18"
+      "tournaments": "19"
     },
     {
       "rank": "33",
-      "name": "LIN Xiao Min / WANG Yu Qiao",
-      "id": "65203 / 82408",
-      "country": "TPE",
-      "points": "38180",
-      "tournaments": "14"
+      "name": "Bengisu ERCETIN / Nazlıcan INCI",
+      "id": "62426 / 73023",
+      "country": "TUR",
+      "points": "37984",
+      "tournaments": "13"
     },
     {
       "rank": "34",
       "name": "Isyana Syahira MEIDA / Rinjani Kwinnara NASTINE",
       "id": "80653 / 87259",
       "country": "INA",
-      "points": "38110",
-      "tournaments": "17"
+      "points": "37810",
+      "tournaments": "16"
     },
     {
       "rank": "35",
-      "name": "Bengisu ERCETIN / Nazlıcan INCI",
-      "id": "62426 / 73023",
-      "country": "TUR",
-      "points": "37984",
-      "tournaments": "14"
-    },
-    {
-      "rank": "36",
       "name": "Hinata SUZUKI / Nao YAMAKITA",
       "id": "76295 / 66794",
       "country": "JPN",
@@ -5095,23 +5087,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "37",
+      "rank": "36",
       "name": "Gronya SOMERVILLE / Angela YU",
       "id": "58488 / 71065",
       "country": "AUS",
       "points": "37169",
-      "tournaments": "16"
+      "tournaments": "15"
     },
     {
-      "rank": "38",
-      "name": "Julie MACPHERSON / Ciara TORRANCE",
-      "id": "91715 / 92277",
-      "country": "SCO",
-      "points": "35590",
+      "rank": "37",
+      "name": "LIN Xiao Min / WANG Yu Qiao",
+      "id": "65203 / 82408",
+      "country": "TPE",
+      "points": "35940",
       "tournaments": "13"
     },
     {
-      "rank": "39",
+      "rank": "38",
       "name": "Jackie DENT / Crystal LAI",
       "id": "56934 / 64767",
       "country": "CAN",
@@ -5119,12 +5111,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "17"
     },
     {
-      "rank": "40",
+      "rank": "39",
       "name": "SUNG Shuo Yun / YU Chien Hui",
       "id": "88807 / 75154",
       "country": "TPE",
       "points": "35200",
-      "tournaments": "18"
+      "tournaments": "17"
+    },
+    {
+      "rank": "40",
+      "name": "Julie MACPHERSON / Ciara TORRANCE",
+      "id": "91715 / 92277",
+      "country": "SCO",
+      "points": "34400",
+      "tournaments": "13"
     },
     {
       "rank": "41",
@@ -5156,7 +5156,7 @@ window.RANKINGS_2026_RAW = {
       "id": "71848 / 85508",
       "country": "TPE",
       "points": "31910",
-      "tournaments": "15"
+      "tournaments": "16"
     },
     {
       "rank": "45",
@@ -5164,7 +5164,7 @@ window.RANKINGS_2026_RAW = {
       "id": "92989 / 68304",
       "country": "JPN",
       "points": "31860",
-      "tournaments": "16"
+      "tournaments": "15"
     },
     {
       "rank": "46",
@@ -5172,7 +5172,7 @@ window.RANKINGS_2026_RAW = {
       "id": "81727 / 75190",
       "country": "IND",
       "points": "31090",
-      "tournaments": "17"
+      "tournaments": "16"
     },
     {
       "rank": "47",
@@ -5187,7 +5187,7 @@ window.RANKINGS_2026_RAW = {
       "name": "Priya KONJENGBAM / Shruti MISHRA",
       "id": "50322 / 57265",
       "country": "IND",
-      "points": "30616",
+      "points": "30526",
       "tournaments": "18"
     },
     {
@@ -5211,35 +5211,19 @@ window.RANKINGS_2026_RAW = {
       "name": "Hathaithip MIJAD / Napapakorn TUNGKASATAN",
       "id": "76091 / 84839",
       "country": "THA",
-      "points": "28934",
-      "tournaments": "12"
+      "points": "28254",
+      "tournaments": "11"
     },
     {
       "rank": "52",
       "name": "Ashwini BHAT K. / Shikha GAUTAM",
       "id": "97171 / 77808",
       "country": "IND",
-      "points": "28710",
+      "points": "28180",
       "tournaments": "12"
     },
     {
       "rank": "53",
-      "name": "Meilysa Trias PUSPITASARI / Rachel Allessya ROSE",
-      "id": "82364 / 94567",
-      "country": "INA",
-      "points": "28560",
-      "tournaments": "8"
-    },
-    {
-      "rank": "54",
-      "name": "Mizuki OTAKE / Miyu TAKAHASHI",
-      "id": "84746 / 70692",
-      "country": "JPN",
-      "points": "28550",
-      "tournaments": "7"
-    },
-    {
-      "rank": "55",
       "name": "Lanny Tria MAYASARI / Amallia Cahaya PRATIWI",
       "id": "57560 / 67761",
       "country": "INA",
@@ -5247,7 +5231,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "56",
+      "rank": "54",
       "name": "Laksika KANLAHA / Phataimas MUENWONG",
       "id": "74803 / 56460",
       "country": "THA",
@@ -5255,7 +5239,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "57",
+      "rank": "55",
       "name": "LIN Chih-Chun / LIN Wan Ching",
       "id": "85808 / 74686",
       "country": "TPE",
@@ -5263,7 +5247,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "58",
+      "rank": "56",
       "name": "Benyapa AIMSAARD / Nuntakarn AIMSAARD",
       "id": "80871 / 79198",
       "country": "THA",
@@ -5271,7 +5255,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "59",
+      "rank": "57",
       "name": "Rutaparna PANDA / Swetaparna PANDA",
       "id": "80547 / 67676",
       "country": "IND",
@@ -5279,7 +5263,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "13"
     },
     {
-      "rank": "60",
+      "rank": "58",
       "name": "Natasja P. ANTHONISEN / Amalie Cecilie KUDSK",
       "id": "95814 / 68532",
       "country": "DEN",
@@ -5287,23 +5271,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "61",
+      "rank": "59",
       "name": "CHEN Su Yu / Yi En HSIEH",
       "id": "71673 / 95958",
       "country": "TPE",
       "points": "26550",
-      "tournaments": "20"
+      "tournaments": "19"
     },
     {
-      "rank": "62",
-      "name": "Tidapron KLEEBYEESUN / Nattamon LAISUAN",
-      "id": "66362 / 96990",
-      "country": "THA",
-      "points": "26510",
-      "tournaments": "14"
-    },
-    {
-      "rank": "63",
+      "rank": "60",
       "name": "Abbygael HARRIS / Lizzie TOLMAN",
       "id": "61095 / 68221",
       "country": "ENG",
@@ -5311,15 +5287,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "16"
     },
     {
-      "rank": "64",
-      "name": "Jaqueline LIMA / Samia LIMA",
-      "id": "57457 / 76507",
-      "country": "BRA",
-      "points": "26470",
-      "tournaments": "11"
-    },
-    {
-      "rank": "65",
+      "rank": "61",
       "name": "LUO Yi / WANG Ting Ge",
       "id": "97313 / 62035",
       "country": "CHN",
@@ -5327,15 +5295,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "66",
-      "name": "KENG Shu Liang / LI Hua Zhou",
-      "id": "63493 / 70109",
-      "country": "CHN",
-      "points": "25320",
+      "rank": "62",
+      "name": "Jaqueline LIMA / Samia LIMA",
+      "id": "57457 / 76507",
+      "country": "BRA",
+      "points": "26250",
       "tournaments": "10"
     },
     {
-      "rank": "67",
+      "rank": "63",
+      "name": "Meilysa Trias PUSPITASARI / Rachel Allessya ROSE",
+      "id": "82364 / 94567",
+      "country": "INA",
+      "points": "25810",
+      "tournaments": "7"
+    },
+    {
+      "rank": "64",
       "name": "Siti Sarah AZZAHRA / Az Zahra Ditya RAMADHANI",
       "id": "99911 / 56042",
       "country": "INA",
@@ -5343,15 +5319,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "68",
+      "rank": "65",
       "name": "Yu Hsuan CHEN / LIU Chiao-Yun",
       "id": "96026 / 77949",
       "country": "TPE",
-      "points": "24950",
-      "tournaments": "13"
+      "points": "24720",
+      "tournaments": "12"
     },
     {
-      "rank": "69",
+      "rank": "66",
       "name": "Lucie AMIGUET / Caroline RACLOZ",
       "id": "55905 / 84323",
       "country": "SUI",
@@ -5359,19 +5335,43 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "16"
     },
     {
-      "rank": "70",
+      "rank": "67",
+      "name": "Tidapron KLEEBYEESUN / Nattamon LAISUAN",
+      "id": "66362 / 96990",
+      "country": "THA",
+      "points": "24480",
+      "tournaments": "13"
+    },
+    {
+      "rank": "68",
       "name": "Kathrine VANG / Mette WERGE",
       "id": "61633 / 67290",
       "country": "DEN",
       "points": "24323",
-      "tournaments": "12"
+      "tournaments": "13"
     },
     {
-      "rank": "71",
+      "rank": "69",
+      "name": "CHONG Jie Yu / Vanessa NG",
+      "id": "60752 / 98309",
+      "country": "MAS",
+      "points": "23370",
+      "tournaments": "18"
+    },
+    {
+      "rank": "70",
       "name": "Malena NORRMAN / Tilda SJOO",
       "id": "78641 / 60603",
       "country": "SWE",
       "points": "23037",
+      "tournaments": "10"
+    },
+    {
+      "rank": "71",
+      "name": "Simona PILGAARD / Signe SCHULZ",
+      "id": "79832 / 89885",
+      "country": "DEN",
+      "points": "22810",
       "tournaments": "10"
     },
     {
@@ -5392,14 +5392,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "74",
-      "name": "CHONG Jie Yu / Vanessa NG",
-      "id": "60752 / 98309",
-      "country": "MAS",
-      "points": "22460",
-      "tournaments": "18"
-    },
-    {
-      "rank": "75",
       "name": "Nikol CARULLA / Carmen Maria JIMENEZ",
       "id": "62858 / 73941",
       "country": "ESP",
@@ -5407,7 +5399,39 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "21"
     },
     {
+      "rank": "75",
+      "name": "Mizuki OTAKE / Miyu TAKAHASHI",
+      "id": "84746 / 70692",
+      "country": "JPN",
+      "points": "21550",
+      "tournaments": "6"
+    },
+    {
       "rank": "76",
+      "name": "KENG Shu Liang / LI Hua Zhou",
+      "id": "63493 / 70109",
+      "country": "CHN",
+      "points": "21470",
+      "tournaments": "9"
+    },
+    {
+      "rank": "77",
+      "name": "Lisa CURTIN / Sian KELLY",
+      "id": "75744 / 81761",
+      "country": "ENG",
+      "points": "21365",
+      "tournaments": "11"
+    },
+    {
+      "rank": "78",
+      "name": "Amallia Cahaya PRATIWI / Siti Fadia Silva RAMADHANTI",
+      "id": "67761 / 88097",
+      "country": "INA",
+      "points": "21207",
+      "tournaments": "5"
+    },
+    {
+      "rank": "79",
       "name": "Vaishnavi KHADKEKAR / Alisha KHAN",
       "id": "81043 / 75345",
       "country": "IND",
@@ -5415,15 +5439,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "77",
-      "name": "Simona PILGAARD / Signe SCHULZ",
-      "id": "79832 / 89885",
-      "country": "DEN",
-      "points": "20060",
-      "tournaments": "9"
-    },
-    {
-      "rank": "78",
+      "rank": "80",
       "name": "Apriyani RAHAYU / Febi SETIANINGRUM",
       "id": "81462 / 55481",
       "country": "INA",
@@ -5431,15 +5447,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "79",
-      "name": "Lisa CURTIN / Sian KELLY",
-      "id": "75744 / 81761",
-      "country": "ENG",
-      "points": "19985",
-      "tournaments": "10"
-    },
-    {
-      "rank": "80",
+      "rank": "81",
       "name": "Paula LOPEZ / Lucia RODRIGUEZ",
       "id": "55668 / 92404",
       "country": "ESP",
@@ -5447,7 +5455,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "81",
+      "rank": "82",
       "name": "KIM Min Ji / LEE Ye Na",
       "id": "57992 / 80534",
       "country": "KOR",
@@ -5455,7 +5463,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "82",
+      "rank": "83",
       "name": "Phattharin AIAMVAREESRISAKUL / Sarisa JANPENG",
       "id": "99375 / 88785",
       "country": "THA",
@@ -5463,7 +5471,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "83",
+      "rank": "84",
       "name": "Martina CORSINI / Emma PICCININ",
       "id": "95423 / 61917",
       "country": "ITA",
@@ -5471,7 +5479,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "84",
+      "rank": "85",
+      "name": "Kirsten DE WIT / Meerte LOOS",
+      "id": "88278 / 68201",
+      "country": "NED",
+      "points": "19167",
+      "tournaments": "16"
+    },
+    {
+      "rank": "86",
       "name": "LEE Chih Chen / LIN YEN YU",
       "id": "77386 / 64300",
       "country": "TPE",
@@ -5479,7 +5495,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "85",
+      "rank": "87",
       "name": "HO Lo Ee / Amanda YAP",
       "id": "91246 / 76514",
       "country": "MAS",
@@ -5487,23 +5503,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "86",
-      "name": "Kirsten DE WIT / Meerte LOOS",
-      "id": "88278 / 68201",
-      "country": "NED",
-      "points": "17787",
-      "tournaments": "16"
-    },
-    {
-      "rank": "87",
+      "rank": "88",
       "name": "Rashmi GANESH / Sania SIKKANDAR",
       "id": "99611 / 87929",
       "country": "IND",
-      "points": "17200",
-      "tournaments": "12"
+      "points": "17160",
+      "tournaments": "11"
     },
     {
-      "rank": "88",
+      "rank": "89",
       "name": "Jacqueline CHEUNG / Catherine CHOI",
       "id": "64635 / 57791",
       "country": "CAN",
@@ -5511,7 +5519,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "89",
+      "rank": "90",
       "name": "Benyapa AIMSAARD / Sabrina Sophita WEDLER",
       "id": "80871 / 76513",
       "country": "THA",
@@ -5519,28 +5527,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "90",
-      "name": "Amallia Cahaya PRATIWI / Siti Fadia Silva RAMADHANTI",
-      "id": "67761 / 88097",
-      "country": "INA",
-      "points": "16307",
-      "tournaments": "4"
-    },
-    {
       "rank": "91",
-      "name": "Tea MARGUERITTE / Flavie VALLET",
-      "id": "73899 / 63229",
-      "country": "FRA",
-      "points": "15520",
-      "tournaments": "6"
-    },
-    {
-      "rank": "92",
       "name": "Nabila Cahya Permata AYU / Nahya MUHYIFA",
       "id": "66735 / 78947",
       "country": "INA",
       "points": "15350",
       "tournaments": "12"
+    },
+    {
+      "rank": "92",
+      "name": "Aline MUELLER / Kelly VAN BUITEN",
+      "id": "65121 / 96301",
+      "country": "SUI / NED",
+      "points": "15260",
+      "tournaments": "10"
     },
     {
       "rank": "93",
@@ -5560,22 +5560,30 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "95",
-      "name": "Moa SJOO / Tilda SJOO",
-      "id": "86455 / 60603",
-      "country": "SWE",
-      "points": "15180",
-      "tournaments": "5"
+      "name": "Serena AU YEONG / Anna HAGSPIEL",
+      "id": "75414 / 95073",
+      "country": "AUT",
+      "points": "15010",
+      "tournaments": "10"
     },
     {
       "rank": "96",
-      "name": "GAN Min Yee / TAN Zhing Hui",
-      "id": "79371 / 71666",
-      "country": "MAS",
-      "points": "15020",
+      "name": "Taabia KHAN / Mysha Omer KHAN",
+      "id": "72013 / 81703",
+      "country": "UAE",
+      "points": "15010",
       "tournaments": "9"
     },
     {
       "rank": "97",
+      "name": "Nishu MALIK / Muskan SANGWAN",
+      "id": "38298 / 68673",
+      "country": "IND",
+      "points": "14600",
+      "tournaments": "12"
+    },
+    {
+      "rank": "98",
       "name": "Elsa JACOB / Flavie VALLET",
       "id": "77589 / 63229",
       "country": "FRA",
@@ -5583,7 +5591,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "98",
+      "rank": "99",
       "name": "Lærke HVID / Anna KLAUSHOLM",
       "id": "57423 / 76163",
       "country": "DEN",
@@ -5591,47 +5599,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "99",
-      "name": "Serena AU YEONG / Anna HAGSPIEL",
-      "id": "75414 / 95073",
-      "country": "AUT",
-      "points": "14350",
-      "tournaments": "9"
-    },
-    {
       "rank": "100",
-      "name": "Nishu MALIK / Muskan SANGWAN",
-      "id": "38298 / 68673",
-      "country": "IND",
-      "points": "14300",
-      "tournaments": "11"
+      "name": "Moa SJOO / Tilda SJOO",
+      "id": "86455 / 60603",
+      "country": "SWE",
+      "points": "13510",
+      "tournaments": "4"
     },
     {
       "rank": "101",
-      "name": "Taabia KHAN / Mysha Omer KHAN",
-      "id": "72013 / 81703",
-      "country": "UAE",
-      "points": "14260",
-      "tournaments": "9"
+      "name": "GAN Min Yee / TAN Zhing Hui",
+      "id": "79371 / 71666",
+      "country": "MAS",
+      "points": "13500",
+      "tournaments": "8"
     },
     {
       "rank": "102",
-      "name": "Aline MUELLER / Kelly VAN BUITEN",
-      "id": "65121 / 96301",
-      "country": "SUI / NED",
-      "points": "13590",
-      "tournaments": "9"
-    },
-    {
-      "rank": "103",
-      "name": "Siti Sarah AZZAHRA / Agnia Sri RAHAYU",
-      "id": "99911 / 99153",
-      "country": "INA",
-      "points": "13510",
-      "tournaments": "6"
-    },
-    {
-      "rank": "104",
       "name": "Laudya Chelsea GRISELDA / Nozomi SHIMIZU",
       "id": "97046 / 90442",
       "country": "AUS",
@@ -5639,23 +5623,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
+      "rank": "103",
+      "name": "PHAM Thi Dieu Ly / PHAM Thi Khanh",
+      "id": "98557 / 97908",
+      "country": "VIE",
+      "points": "12830",
+      "tournaments": "8"
+    },
+    {
+      "rank": "104",
+      "name": "Tea MARGUERITTE / Flavie VALLET",
+      "id": "73899 / 63229",
+      "country": "FRA",
+      "points": "12770",
+      "tournaments": "5"
+    },
+    {
       "rank": "105",
-      "name": "Amalie Cecilie KUDSK / Signe SCHULZ",
-      "id": "68532 / 89885",
-      "country": "DEN",
-      "points": "13200",
-      "tournaments": "4"
-    },
-    {
-      "rank": "106",
-      "name": "Mihaela CHEPISHEVA / Tsvetina POPIVANOVA",
-      "id": "86929 / 79130",
-      "country": "BUL",
-      "points": "13190",
-      "tournaments": "10"
-    },
-    {
-      "rank": "107",
       "name": "Pichamon PHATCHARAPHISUTSIN / Nannapas SUKKLAD",
       "id": "72989 / 56237",
       "country": "THA",
@@ -5663,7 +5647,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "108",
+      "rank": "106",
       "name": "Eyota KWAN / Johnna RYMES",
       "id": "71414 / 63536",
       "country": "CAN",
@@ -5671,7 +5655,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "109",
+      "rank": "107",
       "name": "Nour AHMED YOUSSRI / Doha HANY",
       "id": "88020 / 61746",
       "country": "EGY",
@@ -5679,7 +5663,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "110",
+      "rank": "108",
       "name": "Diana CORLETO / Nikte SOTOMAYOR",
       "id": "56401 / 17774",
       "country": "GUA",
@@ -5687,7 +5671,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "111",
+      "rank": "109",
       "name": "CHOU Yun An / SUNG Yi-Hsuan",
       "id": "47296 / 80667",
       "country": "TPE",
@@ -5695,7 +5679,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "112",
+      "rank": "110",
       "name": "BAO Li Jing / ZHANG Shu Xian",
       "id": "62277 / 85914",
       "country": "CHN",
@@ -5703,7 +5687,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "113",
+      "rank": "111",
       "name": "Fiona HALLBERG / Elin ÖHLING",
       "id": "92982 / 72070",
       "country": "SWE",
@@ -5711,7 +5695,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "114",
+      "rank": "112",
+      "name": "Siti Sarah AZZAHRA / Agnia Sri RAHAYU",
+      "id": "99911 / 99153",
+      "country": "INA",
+      "points": "11990",
+      "tournaments": "5"
+    },
+    {
+      "rank": "112",
       "name": "Mikoto AISO / Momoha NIIMI",
       "id": "33185 / 39782",
       "country": "JPN",
@@ -5719,7 +5711,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "115",
+      "rank": "114",
       "name": "Yasemen BEKTAS / Sinem YILDIZ",
       "id": "86621 / 91978",
       "country": "TUR",
@@ -5727,7 +5719,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "116",
+      "rank": "115",
       "name": "LIU Jia Yue / WANG Yi Duo",
       "id": "94631 / 92945",
       "country": "CHN",
@@ -5735,31 +5727,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "117",
-      "name": "Debora JILLE / Sara THYGESEN",
-      "id": "67373 / 68189",
-      "country": "NED / DEN",
+      "rank": "116",
+      "name": "Lanny Tria MAYASARI / Apriyani RAHAYU",
+      "id": "57560 / 81462",
+      "country": "INA",
       "points": "11920",
       "tournaments": "3"
     },
     {
+      "rank": "117",
+      "name": "Mihaela CHEPISHEVA / Tsvetina POPIVANOVA",
+      "id": "86929 / 79130",
+      "country": "BUL",
+      "points": "11520",
+      "tournaments": "9"
+    },
+    {
       "rank": "118",
-      "name": "Hina OSAWA / Akari SATO",
-      "id": "76234 / 91600",
-      "country": "JPN",
-      "points": "11790",
-      "tournaments": "4"
-    },
-    {
-      "rank": "119",
-      "name": "HUNG Hsin En / LEE Chih Chen",
-      "id": "65057 / 77386",
-      "country": "TPE",
-      "points": "11560",
-      "tournaments": "8"
-    },
-    {
-      "rank": "120",
       "name": "Fernanda MUNAR / Rafaela MUNAR",
       "id": "77280 / 69671",
       "country": "PER",
@@ -5767,7 +5751,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "121",
+      "rank": "119",
+      "name": "KIM Yu Jung / LEE Yu Lim",
+      "id": "73838 / 66115",
+      "country": "KOR",
+      "points": "11190",
+      "tournaments": "3"
+    },
+    {
+      "rank": "120",
       "name": "Chih-Yun CHENG / Yi Tsen HSIEH",
       "id": "95555 / 77522",
       "country": "TPE",
@@ -5775,15 +5767,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "122",
-      "name": "Arathi Sara SUNIL / Varshini VISWANATH SRI",
-      "id": "97262 / 97060",
-      "country": "IND",
-      "points": "11120",
-      "tournaments": "7"
-    },
-    {
-      "rank": "123",
+      "rank": "121",
       "name": "Atitaya POVANON / Patida SRISAWAT",
       "id": "59892 / 90506",
       "country": "THA",
@@ -5791,7 +5775,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "124",
+      "rank": "122",
       "name": "GAYATRI RAWAT / Mansa RAWAT",
       "id": "78620 / 67479",
       "country": "IND",
@@ -5799,7 +5783,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "125",
+      "rank": "123",
       "name": "Julie FINNE-IPSEN / Mai SURROW",
       "id": "70371 / 64816",
       "country": "DEN",
@@ -5807,7 +5791,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "126",
+      "rank": "124",
       "name": "Yasmina CHIBAH / Linda MAZRI",
       "id": "75658 / 59922",
       "country": "ALG",
@@ -5815,15 +5799,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "127",
-      "name": "PHAM Thi Dieu Ly / PHAM Thi Khanh",
-      "id": "98557 / 97908",
-      "country": "VIE",
-      "points": "10630",
-      "tournaments": "7"
-    },
-    {
-      "rank": "128",
+      "rank": "125",
       "name": "Jazmine LAM / Yee-Yuan LIM",
       "id": "98556 / 80519",
       "country": "AUS",
@@ -5831,7 +5807,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "129",
+      "rank": "126",
+      "name": "Arathi Sara SUNIL / Varshini VISWANATH SRI",
+      "id": "97262 / 97060",
+      "country": "IND",
+      "points": "10460",
+      "tournaments": "6"
+    },
+    {
+      "rank": "127",
       "name": "Anja JORDAN / Kim MATOVIČ",
       "id": "98880 / 99820",
       "country": "SLO",
@@ -5839,7 +5823,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "130",
+      "rank": "128",
       "name": "Raiia ALMALALHA / Sofiia LAVROVA",
       "id": "99057 / 79287",
       "country": "UKR",
@@ -5847,12 +5831,28 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "131",
+      "rank": "129",
+      "name": "Kodchaporn CHAICHANA / Pannawee POLYIAM",
+      "id": "62520 / 89290",
+      "country": "THA",
+      "points": "10180",
+      "tournaments": "7"
+    },
+    {
+      "rank": "130",
       "name": "Xiao En HENG / JIN Yu Jia",
       "id": "97698 / 73013",
       "country": "SGP",
       "points": "10176",
       "tournaments": "6"
+    },
+    {
+      "rank": "131",
+      "name": "Aditi BHATT / Shravani WALEKAR",
+      "id": "83984 / 87612",
+      "country": "IND",
+      "points": "10140",
+      "tournaments": "5"
     },
     {
       "rank": "132",
@@ -5864,27 +5864,27 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "133",
+      "name": "HUNG Hsin En / LEE Chih Chen",
+      "id": "65057 / 77386",
+      "country": "TPE",
+      "points": "9890",
+      "tournaments": "7"
+    },
+    {
+      "rank": "134",
+      "name": "Sarah DLAPKA / Lena RUMPOLD",
+      "id": "99590 / 76140",
+      "country": "AUT",
+      "points": "9790",
+      "tournaments": "11"
+    },
+    {
+      "rank": "135",
       "name": "Audrey CHANG / Jasmine YEUNG",
       "id": "79681 / 92061",
       "country": "USA",
       "points": "9780",
       "tournaments": "4"
-    },
-    {
-      "rank": "134",
-      "name": "LI Wen Mei / WANG Yi Duo",
-      "id": "78837 / 92945",
-      "country": "CHN",
-      "points": "9660",
-      "tournaments": "4"
-    },
-    {
-      "rank": "135",
-      "name": "Sarah DLAPKA / Lena RUMPOLD",
-      "id": "99590 / 76140",
-      "country": "AUT",
-      "points": "9480",
-      "tournaments": "10"
     },
     {
       "rank": "136",
@@ -5896,27 +5896,27 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "137",
-      "name": "Kodchaporn CHAICHANA / Pannawee POLYIAM",
-      "id": "62520 / 89290",
-      "country": "THA",
-      "points": "9260",
-      "tournaments": "6"
+      "name": "Amalie Cecilie KUDSK / Signe SCHULZ",
+      "id": "68532 / 89885",
+      "country": "DEN",
+      "points": "9350",
+      "tournaments": "3"
     },
     {
       "rank": "138",
+      "name": "SRINIDHI NARAYANAN / Reshika UTHAYASOORIYAN",
+      "id": "93513 / 56147",
+      "country": "IND",
+      "points": "9320",
+      "tournaments": "7"
+    },
+    {
+      "rank": "139",
       "name": "Riduvarshini RAMASAMY / V R NARDHANA",
       "id": "56548 / 67261",
       "country": "IND",
       "points": "9250",
       "tournaments": "5"
-    },
-    {
-      "rank": "139",
-      "name": "Aditi BHATT / Shravani WALEKAR",
-      "id": "83984 / 87612",
-      "country": "IND",
-      "points": "9220",
-      "tournaments": "4"
     },
     {
       "rank": "140",
@@ -5928,9 +5928,9 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "141",
-      "name": "Lanny Tria MAYASARI / Apriyani RAHAYU",
-      "id": "57560 / 81462",
-      "country": "INA",
+      "name": "Debora JILLE / Sara THYGESEN",
+      "id": "67373 / 68189",
+      "country": "NED / DEN",
       "points": "9170",
       "tournaments": "2"
     },
@@ -5952,6 +5952,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "144",
+      "name": "HSIEH Chih Ying / HUANG Tzu-Ling",
+      "id": "68582 / 58983",
+      "country": "TPE",
+      "points": "9100",
+      "tournaments": "5"
+    },
+    {
+      "rank": "145",
       "name": "Miku SUGIYAMA / Natsumi TAKASAKI",
       "id": "83370 / 59615",
       "country": "JPN",
@@ -5959,7 +5967,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "145",
+      "rank": "146",
       "name": "BAO Li Jing / LI Hua Zhou",
       "id": "62277 / 70109",
       "country": "CHN",
@@ -5967,7 +5975,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "146",
+      "rank": "147",
       "name": "KateřIna OSLADILOVÁ / Tallulah Sharleen VAN COPPENOLLE",
       "id": "69708 / 54173",
       "country": "CZE",
@@ -5975,28 +5983,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "147",
-      "name": "Ishu MALIK / Tanu MALIK",
-      "id": "72031 / 72711",
-      "country": "IND",
-      "points": "8880",
-      "tournaments": "11"
-    },
-    {
       "rank": "148",
-      "name": "SUNG Yi-Hsuan / YANG Yi Hsun",
-      "id": "80667 / 60981",
-      "country": "TPE",
-      "points": "8870",
-      "tournaments": "6"
-    },
-    {
-      "rank": "149",
       "name": "Romina FREGOSO / Miriam Jacqueline RODRIGUEZ PEREZ",
       "id": "99678 / 95072",
       "country": "MEX",
       "points": "8825",
       "tournaments": "3"
+    },
+    {
+      "rank": "149",
+      "name": "Ishu MALIK / Tanu MALIK",
+      "id": "72031 / 72711",
+      "country": "IND",
+      "points": "8810",
+      "tournaments": "10"
     },
     {
       "rank": "150",
@@ -6024,30 +6024,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "153",
-      "name": "Sian KELLY / Annie LADO",
-      "id": "81761 / 79159",
-      "country": "ENG",
-      "points": "8690",
+      "name": "Shreya BALAJI / Deepta SATHISH",
+      "id": "77196 / 83535",
+      "country": "IND",
+      "points": "8720",
       "tournaments": "5"
     },
     {
       "rank": "154",
-      "name": "Isuri ATTANAYAKE / Sithumi DE SILVA",
-      "id": "92364 / 94078",
-      "country": "SRI",
-      "points": "8680",
-      "tournaments": "7"
-    },
-    {
-      "rank": "155",
-      "name": "HUNG Yu- En / LIN YEN YU",
-      "id": "89214 / 64300",
-      "country": "TPE",
-      "points": "8650",
-      "tournaments": "7"
-    },
-    {
-      "rank": "156",
       "name": "Nicole CHAU / Nicole TAN",
       "id": "98631 / 62162",
       "country": "MAS",
@@ -6055,7 +6039,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "157",
+      "rank": "155",
+      "name": "CHUNG Chia En / You Zhu WANG",
+      "id": "90339 / 45908",
+      "country": "TPE",
+      "points": "8590",
+      "tournaments": "6"
+    },
+    {
+      "rank": "156",
       "name": "Zenith ABBIGAIL / Likhita SRIVASTAVA",
       "id": "72271 / 76070",
       "country": "IND",
@@ -6063,7 +6055,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "158",
+      "rank": "157",
       "name": "Iona GUALDI / Ailen OLIVA",
       "id": "79132 / 71396",
       "country": "ARG",
@@ -6071,7 +6063,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "159",
+      "rank": "158",
       "name": "CHEN Xiao Fei / FENG Xue Ying",
       "id": "72157 / 59576",
       "country": "CHN",
@@ -6079,15 +6071,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "160",
-      "name": "Sharone BAUER / Emilie VERCELOT",
-      "id": "98332 / 72254",
-      "country": "FRA",
-      "points": "8510",
-      "tournaments": "5"
-    },
-    {
-      "rank": "161",
+      "rank": "159",
       "name": "Yuna KATO / Hina OSAWA",
       "id": "90323 / 76234",
       "country": "JPN",
@@ -6095,15 +6079,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "162",
-      "name": "SRINIDHI NARAYANAN / Reshika UTHAYASOORIYAN",
-      "id": "93513 / 56147",
-      "country": "IND",
-      "points": "8400",
-      "tournaments": "6"
-    },
-    {
-      "rank": "163",
+      "rank": "160",
       "name": "ZHANG Shu Xian / ZHENG Yu",
       "id": "85914 / 85331",
       "country": "CHN",
@@ -6111,7 +6087,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "1"
     },
     {
-      "rank": "164",
+      "rank": "161",
       "name": "Annie LADO / Estelle VAN LEEUWEN",
       "id": "79159 / 59331",
       "country": "ENG",
@@ -6119,7 +6095,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "165",
+      "rank": "162",
       "name": "Ruo Hsuan KO / LEE Yu-Hsuan",
       "id": "59770 / 75174",
       "country": "TPE",
@@ -6127,7 +6103,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "166",
+      "rank": "163",
       "name": "BAO Li Jing / LI Yi Jing",
       "id": "62277 / 85540",
       "country": "CHN",
@@ -6135,7 +6111,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "167",
+      "rank": "164",
       "name": "Velisha CHRISTINA / Agnia Sri RAHAYU",
       "id": "66698 / 99153",
       "country": "INA",
@@ -6143,15 +6119,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "168",
-      "name": "Shreya BALAJI / Deepta SATHISH",
-      "id": "77196 / 83535",
-      "country": "IND",
-      "points": "8160",
-      "tournaments": "5"
-    },
-    {
-      "rank": "169",
+      "rank": "165",
       "name": "Aleena QATHUN / Sreeyuktha SREEJITH PAROL",
       "id": "91912 / 89360",
       "country": "UAE",
@@ -6159,15 +6127,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "170",
-      "name": "Jia Yin LIN / LIN Yu-Pei",
-      "id": "77237 / 84202",
-      "country": "TPE",
-      "points": "7990",
-      "tournaments": "6"
-    },
-    {
-      "rank": "171",
+      "rank": "166",
       "name": "BAEK Ha Na / KIM Hye Jeong",
       "id": "56706 / 83419",
       "country": "KOR",
@@ -6175,7 +6135,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "1"
     },
     {
-      "rank": "172",
+      "rank": "167",
       "name": "Arisa IGARASHI / Miyu TAKAHASHI",
       "id": "79558 / 70692",
       "country": "JPN",
@@ -6183,7 +6143,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "1"
     },
     {
-      "rank": "173",
+      "rank": "168",
       "name": "Zi Yu LOW / Dania SOFEA",
       "id": "23008 / 98414",
       "country": "MAS",
@@ -6191,23 +6151,31 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "174",
-      "name": "KIM Yu Jung / LEE Yu Lim",
-      "id": "73838 / 66115",
-      "country": "KOR",
+      "rank": "169",
+      "name": "Hina OSAWA / Akari SATO",
+      "id": "76234 / 91600",
+      "country": "JPN",
       "points": "7790",
-      "tournaments": "2"
+      "tournaments": "3"
     },
     {
-      "rank": "175",
-      "name": "CHUNG Chia En / You Zhu WANG",
-      "id": "90339 / 45908",
+      "rank": "170",
+      "name": "Isuri ATTANAYAKE / Sithumi DE SILVA",
+      "id": "92364 / 94078",
+      "country": "SRI",
+      "points": "7760",
+      "tournaments": "6"
+    },
+    {
+      "rank": "171",
+      "name": "HUNG Yu- En / LIN YEN YU",
+      "id": "89214 / 64300",
       "country": "TPE",
-      "points": "7670",
-      "tournaments": "5"
+      "points": "7730",
+      "tournaments": "6"
     },
     {
-      "rank": "176",
+      "rank": "172",
       "name": "DING Ke Yun / SHEN Shi Yao",
       "id": "57845 / 61782",
       "country": "CHN",
@@ -6215,7 +6183,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "177",
+      "rank": "173",
       "name": "Amrutha PRAMUTHESH / Nayana S OASIS",
       "id": "87492 / 90372",
       "country": "IND",
@@ -6223,7 +6191,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "178",
+      "rank": "174",
       "name": "Amrutha PRAMUTHESH / Sonali SINGH",
       "id": "87492 / 83537",
       "country": "IND",
@@ -6231,15 +6199,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "179",
-      "name": "HSIEH Chih Ying / HUANG Tzu-Ling",
-      "id": "68582 / 58983",
-      "country": "TPE",
-      "points": "7580",
-      "tournaments": "4"
-    },
-    {
-      "rank": "180",
+      "rank": "175",
       "name": "CHEUNG Yan Yu / LEUNG Sze Lok",
       "id": "87391 / 71360",
       "country": "HKG",
@@ -6247,7 +6207,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "181",
+      "rank": "176",
       "name": "Cecilia MADERA / Isabella PUENTE",
       "id": "96511 / 30959",
       "country": "MEX",
@@ -6255,7 +6215,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "182",
+      "rank": "177",
       "name": "Fadilah Shamika MOHAMED RAFI / Tracy NALUWOOZA",
       "id": "93199 / 74714",
       "country": "UGA",
@@ -6263,7 +6223,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "183",
+      "rank": "178",
       "name": "Elsa JACOB / Anne TRAN",
       "id": "77589 / 98854",
       "country": "FRA",
@@ -6271,7 +6231,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "184",
+      "rank": "179",
       "name": "Leona MICHALSKI / Thuc Phuong NGUYEN",
       "id": "99025 / 97648",
       "country": "GER",
@@ -6279,7 +6239,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "185",
+      "rank": "180",
+      "name": "SUNG Yi-Hsuan / YANG Yi Hsun",
+      "id": "80667 / 60981",
+      "country": "TPE",
+      "points": "7350",
+      "tournaments": "5"
+    },
+    {
+      "rank": "181",
       "name": "FU Chi Yan / LEUNG Sze Lok",
       "id": "99397 / 71360",
       "country": "HKG",
@@ -6287,7 +6255,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "186",
+      "rank": "182",
       "name": "Noraqilah MAISARAH / Nur Aina MAISARAH",
       "id": "71883 / 24566",
       "country": "MAS",
@@ -6295,7 +6263,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "187",
+      "rank": "183",
       "name": "Emmy GUILBARD / Anouk NAMBOT",
       "id": "87921 / 89788",
       "country": "FRA",
@@ -6303,7 +6271,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "188",
+      "rank": "184",
       "name": "Yun Jung CHANG / TSAI Ruo Lin",
       "id": "93541 / 87487",
       "country": "TPE",
@@ -6311,7 +6279,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "189",
+      "rank": "185",
       "name": "Mao HATASUE / Kanano MUROYA",
       "id": "43035 / 60670",
       "country": "JPN",
@@ -6319,7 +6287,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "190",
+      "rank": "186",
       "name": "JANG Ha Jeong / KIM Yu Jung",
       "id": "64819 / 73838",
       "country": "KOR",
@@ -6327,7 +6295,31 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "191",
+      "rank": "187",
+      "name": "Jia Yin LIN / LIN Yu-Pei",
+      "id": "77237 / 84202",
+      "country": "TPE",
+      "points": "7070",
+      "tournaments": "5"
+    },
+    {
+      "rank": "188",
+      "name": "Sian KELLY / Annie LADO",
+      "id": "81761 / 79159",
+      "country": "ENG",
+      "points": "7020",
+      "tournaments": "4"
+    },
+    {
+      "rank": "189",
+      "name": "BAO Li Jing / LUO Xu Min",
+      "id": "62277 / 65300",
+      "country": "CHN",
+      "points": "7000",
+      "tournaments": "1"
+    },
+    {
+      "rank": "190",
       "name": "Janani ANANTHAKUMAR / Taabia KHAN",
       "id": "95747 / 72013",
       "country": "UAE",
@@ -6335,12 +6327,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "192",
+      "rank": "191",
       "name": "Kie NAKANISHI / Chiharu SHIDA",
       "id": "87428 / 68282",
       "country": "JPN",
       "points": "6981",
       "tournaments": "1"
+    },
+    {
+      "rank": "192",
+      "name": "Sharone BAUER / Emilie VERCELOT",
+      "id": "98332 / 72254",
+      "country": "FRA",
+      "points": "6840",
+      "tournaments": "4"
     },
     {
       "rank": "193",
@@ -6384,6 +6384,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "198",
+      "name": "Camellia ZHOU / Jenny ZHU",
+      "id": "97675 / 63380",
+      "country": "NZL",
+      "points": "6592",
+      "tournaments": "6"
+    },
+    {
+      "rank": "199",
       "name": "NGUYEN Thi Ngoc Lan / THAN Van Anh",
       "id": "82783 / 68320",
       "country": "VIE",
@@ -6391,20 +6399,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "199",
+      "rank": "200",
       "name": "Catlyn KRUUS / Ramona ÜPRUS",
       "id": "80922 / 64926",
       "country": "EST",
       "points": "6524",
       "tournaments": "7"
-    },
-    {
-      "rank": "200",
-      "name": "Jenjira STADELMANN / Leila ZARROUK",
-      "id": "59566 / 71116",
-      "country": "SUI",
-      "points": "6520",
-      "tournaments": "3"
     }
   ],
   "XD": [
@@ -6454,7 +6454,7 @@ window.RANKINGS_2026_RAW = {
       "id": "81844 / 50469",
       "country": "CHN",
       "points": "77290",
-      "tournaments": "18"
+      "tournaments": "19"
     },
     {
       "rank": "7",
@@ -6462,7 +6462,7 @@ window.RANKINGS_2026_RAW = {
       "id": "77689 / 61435",
       "country": "HKG",
       "points": "77084",
-      "tournaments": "14"
+      "tournaments": "15"
     },
     {
       "rank": "8",
@@ -6478,7 +6478,7 @@ window.RANKINGS_2026_RAW = {
       "id": "99521 / 88779",
       "country": "DEN",
       "points": "70060",
-      "tournaments": "13"
+      "tournaments": "14"
     },
     {
       "rank": "10",
@@ -6486,7 +6486,7 @@ window.RANKINGS_2026_RAW = {
       "id": "65854 / 69193",
       "country": "INA",
       "points": "69910",
-      "tournaments": "20"
+      "tournaments": "19"
     },
     {
       "rank": "11",
@@ -6494,7 +6494,7 @@ window.RANKINGS_2026_RAW = {
       "id": "92593 / 56352",
       "country": "MAS",
       "points": "66058",
-      "tournaments": "21"
+      "tournaments": "22"
     },
     {
       "rank": "12",
@@ -6502,7 +6502,7 @@ window.RANKINGS_2026_RAW = {
       "id": "81705 / 95643",
       "country": "DEN",
       "points": "65376",
-      "tournaments": "21"
+      "tournaments": "20"
     },
     {
       "rank": "13",
@@ -6514,11 +6514,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "14",
-      "name": "Rehan Naufal KUSHARJANTO / Gloria Emanuelle WIDJAJA",
-      "id": "87045 / 81702",
-      "country": "INA",
-      "points": "55490",
-      "tournaments": "11"
+      "name": "CHENG Xing / ZHANG Chi",
+      "id": "58931 / 88450",
+      "country": "CHN",
+      "points": "56200",
+      "tournaments": "16"
     },
     {
       "rank": "15",
@@ -6530,11 +6530,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "16",
-      "name": "CHENG Xing / ZHANG Chi",
-      "id": "58931 / 88450",
-      "country": "CHN",
-      "points": "52500",
-      "tournaments": "15"
+      "name": "Rehan Naufal KUSHARJANTO / Gloria Emanuelle WIDJAJA",
+      "id": "87045 / 81702",
+      "country": "INA",
+      "points": "52290",
+      "tournaments": "10"
     },
     {
       "rank": "17",
@@ -6542,7 +6542,7 @@ window.RANKINGS_2026_RAW = {
       "id": "76281 / 60838",
       "country": "INA",
       "points": "49880",
-      "tournaments": "18"
+      "tournaments": "17"
     },
     {
       "rank": "18",
@@ -6550,7 +6550,7 @@ window.RANKINGS_2026_RAW = {
       "id": "63571 / 83699",
       "country": "INA",
       "points": "49320",
-      "tournaments": "16"
+      "tournaments": "15"
     },
     {
       "rank": "19",
@@ -6558,31 +6558,31 @@ window.RANKINGS_2026_RAW = {
       "id": "79501 / 59014",
       "country": "JPN",
       "points": "49310",
-      "tournaments": "18"
+      "tournaments": "17"
     },
     {
       "rank": "20",
-      "name": "DHRUV KAPILA / Tanisha CRASTO",
-      "id": "57372 / 94165",
-      "country": "IND",
-      "points": "48228",
+      "name": "Mads VESTERGAARD / Christine BUSCH",
+      "id": "60507 / 58324",
+      "country": "DEN",
+      "points": "46580",
       "tournaments": "19"
     },
     {
       "rank": "21",
+      "name": "DHRUV KAPILA / Tanisha CRASTO",
+      "id": "57372 / 94165",
+      "country": "IND",
+      "points": "46078",
+      "tournaments": "18"
+    },
+    {
+      "rank": "22",
       "name": "Marwan FAZA / Aisyah Salsabila Putri PRANATA",
       "id": "72782 / 79077",
       "country": "INA",
       "points": "45060",
-      "tournaments": "14"
-    },
-    {
-      "rank": "22",
-      "name": "Mads VESTERGAARD / Christine BUSCH",
-      "id": "60507 / 58324",
-      "country": "DEN",
-      "points": "44030",
-      "tournaments": "19"
+      "tournaments": "13"
     },
     {
       "rank": "23",
@@ -6590,7 +6590,7 @@ window.RANKINGS_2026_RAW = {
       "id": "72675 / 80605",
       "country": "MAS",
       "points": "44030",
-      "tournaments": "17"
+      "tournaments": "16"
     },
     {
       "rank": "24",
@@ -6598,18 +6598,10 @@ window.RANKINGS_2026_RAW = {
       "id": "84340 / 47007",
       "country": "MAS",
       "points": "43680",
-      "tournaments": "19"
+      "tournaments": "20"
     },
     {
       "rank": "25",
-      "name": "Presley SMITH / Jennie GAI",
-      "id": "63739 / 83074",
-      "country": "USA",
-      "points": "42860",
-      "tournaments": "17"
-    },
-    {
-      "rank": "26",
       "name": "CHEN Cheng Kuan / HSU Yin-Hui",
       "id": "64394 / 96973",
       "country": "TPE",
@@ -6617,12 +6609,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "28"
     },
     {
+      "rank": "26",
+      "name": "Presley SMITH / Jennie GAI",
+      "id": "63739 / 83074",
+      "country": "USA",
+      "points": "41670",
+      "tournaments": "17"
+    },
+    {
       "rank": "27",
-      "name": "GAO Jia Xuan / WU Meng Ying",
-      "id": "57943 / 91533",
-      "country": "CHN",
-      "points": "41770",
-      "tournaments": "15"
+      "name": "YANG Po-Hsuan / HU Ling Fang",
+      "id": "76275 / 87176",
+      "country": "TPE",
+      "points": "41090",
+      "tournaments": "20"
     },
     {
       "rank": "28",
@@ -6634,11 +6634,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "29",
-      "name": "Rasmus ESPERSEN / Amalie Cecilie KUDSK",
-      "id": "91167 / 68532",
-      "country": "DEN",
-      "points": "40370",
-      "tournaments": "13"
+      "name": "GAO Jia Xuan / WU Meng Ying",
+      "id": "57943 / 91533",
+      "country": "CHN",
+      "points": "40580",
+      "tournaments": "14"
     },
     {
       "rank": "30",
@@ -6650,19 +6650,19 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "31",
-      "name": "YANG Po-Hsuan / HU Ling Fang",
-      "id": "76275 / 87176",
-      "country": "TPE",
-      "points": "39190",
-      "tournaments": "19"
-    },
-    {
-      "rank": "32",
       "name": "LEE Jong Min / CHAE Yu Jung",
       "id": "62804 / 93074",
       "country": "KOR",
       "points": "39184",
       "tournaments": "9"
+    },
+    {
+      "rank": "32",
+      "name": "Alexander DUNN / Julie MACPHERSON",
+      "id": "67922 / 91715",
+      "country": "SCO",
+      "points": "39150",
+      "tournaments": "12"
     },
     {
       "rank": "33",
@@ -6674,59 +6674,59 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "34",
-      "name": "Alexander DUNN / Julie MACPHERSON",
-      "id": "67922 / 91715",
-      "country": "SCO",
-      "points": "37960",
-      "tournaments": "12"
-    },
-    {
-      "rank": "35",
-      "name": "Bobby SETIABUDI / Melati Daeva OKTAVIANTI",
-      "id": "80886 / 82061",
-      "country": "INA",
-      "points": "36970",
+      "name": "Rasmus ESPERSEN / Amalie Cecilie KUDSK",
+      "id": "91167 / 68532",
+      "country": "DEN",
+      "points": "37690",
       "tournaments": "13"
     },
     {
-      "rank": "36",
+      "rank": "35",
       "name": "Julien MAIO / Lea PALERMO",
       "id": "73323 / 98329",
       "country": "FRA",
       "points": "36960",
-      "tournaments": "15"
+      "tournaments": "14"
     },
     {
-      "rank": "37",
+      "rank": "36",
       "name": "Rohan KAPOOR / GADDE Ruthvika Shivani",
       "id": "60980 / 69619",
       "country": "IND",
       "points": "36890",
-      "tournaments": "22"
+      "tournaments": "21"
     },
     {
-      "rank": "38",
+      "rank": "37",
       "name": "WONG Tien Ci / LIM Chiew Sien",
       "id": "71294 / 70093",
       "country": "MAS",
       "points": "36240",
-      "tournaments": "22"
+      "tournaments": "21"
     },
     {
-      "rank": "39",
+      "rank": "38",
       "name": "WU Guan Xun / LEE Chia Hsin",
       "id": "99841 / 76717",
       "country": "TPE",
       "points": "36060",
-      "tournaments": "23"
+      "tournaments": "24"
     },
     {
-      "rank": "40",
+      "rank": "39",
       "name": "Callum HEMMING / Estelle VAN LEEUWEN",
       "id": "86756 / 59331",
       "country": "ENG",
-      "points": "35855",
+      "points": "35945",
       "tournaments": "16"
+    },
+    {
+      "rank": "40",
+      "name": "Bobby SETIABUDI / Melati Daeva OKTAVIANTI",
+      "id": "80886 / 82061",
+      "country": "INA",
+      "points": "35080",
+      "tournaments": "12"
     },
     {
       "rank": "41",
@@ -6766,7 +6766,7 @@ window.RANKINGS_2026_RAW = {
       "id": "99181 / 73013",
       "country": "SGP",
       "points": "31420",
-      "tournaments": "13"
+      "tournaments": "12"
     },
     {
       "rank": "46",
@@ -6778,22 +6778,30 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "47",
-      "name": "Ashith SURYA / Amrutha PRAMUTHESH",
-      "id": "69313 / 87492",
-      "country": "IND",
-      "points": "30170",
-      "tournaments": "18"
-    },
-    {
-      "rank": "48",
       "name": "Bimo PRASETYO / Arlya Nabila Thesya MUNGGARAN",
       "id": "73223 / 62542",
       "country": "INA",
       "points": "29680",
-      "tournaments": "14"
+      "tournaments": "15"
+    },
+    {
+      "rank": "48",
+      "name": "Ashith SURYA / Amrutha PRAMUTHESH",
+      "id": "69313 / 87492",
+      "country": "IND",
+      "points": "29620",
+      "tournaments": "17"
     },
     {
       "rank": "49",
+      "name": "CHEN ZHI YI / Francesca CORBETT",
+      "id": "62618 / 61882",
+      "country": "USA",
+      "points": "27290",
+      "tournaments": "13"
+    },
+    {
+      "rank": "50",
       "name": "Dejan FERDINANSYAH / Siti Fadia Silva RAMADHANTI",
       "id": "81458 / 88097",
       "country": "INA",
@@ -6801,7 +6809,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "50",
+      "rank": "51",
+      "name": "Yuta WATANABE / Maya TAGUCHI",
+      "id": "58240 / 60335",
+      "country": "JPN",
+      "points": "27000",
+      "tournaments": "8"
+    },
+    {
+      "rank": "52",
       "name": "Kristoffer KOLDING / Mette WERGE",
       "id": "68337 / 67290",
       "country": "DEN",
@@ -6809,7 +6825,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "51",
+      "rank": "53",
       "name": "Mihajlo TOMIC / Andjela VITMAN",
       "id": "63161 / 90612",
       "country": "SRB",
@@ -6817,36 +6833,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "52",
+      "rank": "54",
       "name": "Ratchapol MAKKASASITHORN / Nattamon LAISUAN",
       "id": "92576 / 96990",
       "country": "THA",
       "points": "26520",
-      "tournaments": "15"
+      "tournaments": "14"
     },
     {
-      "rank": "53",
+      "rank": "55",
       "name": "Jonathan Bing Tsan LAI / Crystal LAI",
       "id": "96537 / 64767",
       "country": "CAN",
       "points": "26509",
       "tournaments": "13"
-    },
-    {
-      "rank": "54",
-      "name": "Yuta WATANABE / Maya TAGUCHI",
-      "id": "58240 / 60335",
-      "country": "JPN",
-      "points": "26400",
-      "tournaments": "8"
-    },
-    {
-      "rank": "55",
-      "name": "CHEN ZHI YI / Francesca CORBETT",
-      "id": "62618 / 61882",
-      "country": "USA",
-      "points": "26210",
-      "tournaments": "12"
     },
     {
       "rank": "56",
@@ -6869,8 +6869,8 @@ window.RANKINGS_2026_RAW = {
       "name": "M. Nawaf KHOIRIYANSYAH / Nahya MUHYIFA",
       "id": "93668 / 78947",
       "country": "INA",
-      "points": "25230",
-      "tournaments": "11"
+      "points": "25910",
+      "tournaments": "12"
     },
     {
       "rank": "59",
@@ -6878,14 +6878,14 @@ window.RANKINGS_2026_RAW = {
       "id": "82378 / 60397",
       "country": "CZE",
       "points": "24871",
-      "tournaments": "12"
+      "tournaments": "13"
     },
     {
       "rank": "60",
       "name": "Malik BOURAKKADI / Leona MICHALSKI",
       "id": "74871 / 99025",
       "country": "GER",
-      "points": "24578",
+      "points": "24728",
       "tournaments": "16"
     },
     {
@@ -6894,26 +6894,18 @@ window.RANKINGS_2026_RAW = {
       "id": "84666 / 56836",
       "country": "IND",
       "points": "24410",
-      "tournaments": "15"
+      "tournaments": "14"
     },
     {
       "rank": "62",
-      "name": "Fabricio FARIAS / Jaqueline LIMA",
-      "id": "69649 / 57457",
-      "country": "BRA",
-      "points": "23740",
-      "tournaments": "10"
-    },
-    {
-      "rank": "63",
       "name": "Oleksii TITOV / Yevheniia KANTEMYR",
       "id": "75729 / 94032",
       "country": "UKR",
-      "points": "23560",
+      "points": "23780",
       "tournaments": "13"
     },
     {
-      "rank": "64",
+      "rank": "63",
       "name": "Rinov RIVALDY / Pitha Haningtyas MENTARI",
       "id": "88451 / 59465",
       "country": "INA",
@@ -6921,7 +6913,31 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
+      "rank": "64",
+      "name": "Supak JOMKOH / Ornnicha JONGSATHAPORNPARN",
+      "id": "73936 / 99988",
+      "country": "THA",
+      "points": "22750",
+      "tournaments": "9"
+    },
+    {
       "rank": "65",
+      "name": "Filip KARLBORG / Tilda SJOO",
+      "id": "67848 / 60603",
+      "country": "SWE",
+      "points": "22090",
+      "tournaments": "12"
+    },
+    {
+      "rank": "66",
+      "name": "Fabricio FARIAS / Jaqueline LIMA",
+      "id": "69649 / 57457",
+      "country": "BRA",
+      "points": "22070",
+      "tournaments": "9"
+    },
+    {
+      "rank": "67",
       "name": "Andika RAMADIANSYAH / Nozomi SHIMIZU",
       "id": "76674 / 90442",
       "country": "AUS",
@@ -6929,36 +6945,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "66",
-      "name": "WEE Yee Hern / CHAN Wen Tse",
-      "id": "99413 / 79015",
-      "country": "MAS",
-      "points": "21660",
-      "tournaments": "12"
-    },
-    {
-      "rank": "67",
+      "rank": "68",
       "name": "Simon KRAX / Amelie LEHMANN",
       "id": "91174 / 93784",
       "country": "GER",
-      "points": "21510",
-      "tournaments": "16"
+      "points": "21810",
+      "tournaments": "17"
     },
     {
-      "rank": "68",
+      "rank": "69",
       "name": "LIEW Xun / HO Lo Ee",
       "id": "99220 / 91246",
       "country": "MAS",
       "points": "21050",
       "tournaments": "13"
-    },
-    {
-      "rank": "69",
-      "name": "Koceila MAMMERI / Tanina Violette MAMMERI",
-      "id": "72986 / 78133",
-      "country": "ALG",
-      "points": "20930",
-      "tournaments": "9"
     },
     {
       "rank": "70",
@@ -6970,6 +6970,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "71",
+      "name": "WEE Yee Hern / CHAN Wen Tse",
+      "id": "99413 / 79015",
+      "country": "MAS",
+      "points": "20750",
+      "tournaments": "11"
+    },
+    {
+      "rank": "72",
       "name": "Timothy LOCK / Chloe HOANG",
       "id": "77842 / 99271",
       "country": "CAN",
@@ -6977,20 +6985,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "72",
+      "rank": "73",
       "name": "Akira KOGA / Yuho IMAI",
       "id": "88405 / 93516",
       "country": "JPN",
       "points": "20540",
       "tournaments": "6"
-    },
-    {
-      "rank": "73",
-      "name": "Filip KARLBORG / Tilda SJOO",
-      "id": "67848 / 60603",
-      "country": "SWE",
-      "points": "19890",
-      "tournaments": "11"
     },
     {
       "rank": "74",
@@ -7002,11 +7002,11 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "75",
-      "name": "ZHU Yi Jun / ZHANG Chi",
-      "id": "82167 / 88450",
-      "country": "CHN",
-      "points": "19150",
-      "tournaments": "5"
+      "name": "Koceila MAMMERI / Tanina Violette MAMMERI",
+      "id": "72986 / 78133",
+      "country": "ALG",
+      "points": "19260",
+      "tournaments": "8"
     },
     {
       "rank": "76",
@@ -7018,14 +7018,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "77",
-      "name": "Supak JOMKOH / Ornnicha JONGSATHAPORNPARN",
-      "id": "73936 / 99988",
-      "country": "THA",
-      "points": "18900",
-      "tournaments": "8"
-    },
-    {
-      "rank": "78",
       "name": "Rory EASTON / Lizzie TOLMAN",
       "id": "85805 / 68221",
       "country": "ENG",
@@ -7033,7 +7025,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "79",
+      "rank": "78",
       "name": "LEONG Iok Chong / NG Weng Chi",
       "id": "86167 / 95068",
       "country": "MAC",
@@ -7041,7 +7033,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "80",
+      "rank": "79",
       "name": "PO Li-Wei / CHANG Ching Hui",
       "id": "79052 / 75270",
       "country": "TPE",
@@ -7049,15 +7041,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "81",
-      "name": "Zaidan Arrafi Awal NABAWI / Jessica Maya RISMAWARDANI",
-      "id": "55939 / 56711",
-      "country": "INA",
-      "points": "17960",
-      "tournaments": "8"
+      "rank": "80",
+      "name": "Brian WASSINK / Debora JILLE",
+      "id": "65470 / 67373",
+      "country": "NED",
+      "points": "18010",
+      "tournaments": "12"
     },
     {
-      "rank": "82",
+      "rank": "81",
       "name": "WU Hsuan-Yi / YANG Chu Yun",
       "id": "97737 / 70860",
       "country": "TPE",
@@ -7065,15 +7057,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "83",
-      "name": "Brian WASSINK / Debora JILLE",
-      "id": "65470 / 67373",
-      "country": "NED",
-      "points": "16890",
-      "tournaments": "11"
+      "rank": "82",
+      "name": "Edward LAU / Shaunna LI",
+      "id": "99895 / 62883",
+      "country": "NZL",
+      "points": "17660",
+      "tournaments": "10"
     },
     {
-      "rank": "84",
+      "rank": "83",
       "name": "Zhi-Wei HE / Liang Ching SUN",
       "id": "87535 / 85508",
       "country": "TPE",
@@ -7081,7 +7073,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "85",
+      "rank": "84",
       "name": "Phuwanat HORBANLUEKIT / Sapsiree TAERATTANACHAI",
       "id": "86368 / 67158",
       "country": "THA",
@@ -7089,7 +7081,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "86",
+      "rank": "85",
       "name": "LIAO Pin Yi / TANG Rui Zhi",
       "id": "65110 / 71105",
       "country": "CHN",
@@ -7097,7 +7089,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "87",
+      "rank": "86",
       "name": "Mohit JAGLAN / Lakshita JAGLAN",
       "id": "96108 / 88377",
       "country": "IND",
@@ -7105,28 +7097,36 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
+      "rank": "87",
+      "name": "Zaidan Arrafi Awal NABAWI / Jessica Maya RISMAWARDANI",
+      "id": "55939 / 56711",
+      "country": "INA",
+      "points": "16440",
+      "tournaments": "7"
+    },
+    {
       "rank": "88",
+      "name": "Patrick VOLKMANN / Franziska VOLKMANN",
+      "id": "72084 / 61615",
+      "country": "GER",
+      "points": "16360",
+      "tournaments": "12"
+    },
+    {
+      "rank": "89",
       "name": "P.S RAVIKRISHNA / Janani ANANTHAKUMAR",
       "id": "89174 / 95747",
       "country": "UAE",
       "points": "16310",
-      "tournaments": "14"
-    },
-    {
-      "rank": "89",
-      "name": "Patrick VOLKMANN / Franziska VOLKMANN",
-      "id": "72084 / 61615",
-      "country": "GER",
-      "points": "16250",
-      "tournaments": "11"
+      "tournaments": "15"
     },
     {
       "rank": "90",
-      "name": "Edward LAU / Shaunna LI",
-      "id": "99895 / 62883",
-      "country": "NZL",
-      "points": "16140",
-      "tournaments": "9"
+      "name": "Ming Yap TOO / LEE Yu Shan",
+      "id": "88013 / 68876",
+      "country": "MAS",
+      "points": "16230",
+      "tournaments": "13"
     },
     {
       "rank": "91",
@@ -7138,14 +7138,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "92",
-      "name": "Ming Yap TOO / LEE Yu Shan",
-      "id": "88013 / 68876",
-      "country": "MAS",
-      "points": "15860",
-      "tournaments": "12"
-    },
-    {
-      "rank": "93",
       "name": "Kevin LEE / Eliana ZHANG",
       "id": "58493 / 70079",
       "country": "CAN",
@@ -7153,7 +7145,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "94",
+      "rank": "93",
       "name": "Kevin LEE / Josephine WU",
       "id": "58493 / 86226",
       "country": "CAN",
@@ -7161,7 +7153,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "95",
+      "rank": "94",
       "name": "Christopher MARTINEZ / Diana CORLETO",
       "id": "93205 / 56401",
       "country": "GUA",
@@ -7169,7 +7161,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
+      "rank": "95",
+      "name": "ZHU Yi Jun / ZHANG Chi",
+      "id": "82167 / 88450",
+      "country": "CHN",
+      "points": "15300",
+      "tournaments": "4"
+    },
+    {
       "rank": "96",
+      "name": "Evgeni PANEV / Gabriela STOEVA",
+      "id": "78842 / 43840",
+      "country": "BUL",
+      "points": "15170",
+      "tournaments": "11"
+    },
+    {
+      "rank": "97",
       "name": "LIN Yu Chieh / LEE Chih Chen",
       "id": "92504 / 77386",
       "country": "TPE",
@@ -7177,15 +7185,39 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "97",
-      "name": "Robin TABELING / Alexandra BØJE",
-      "id": "66357 / 88779",
-      "country": "NED / DEN",
-      "points": "14790",
-      "tournaments": "3"
+      "rank": "98",
+      "name": "Yann ORTEU / Caroline RACLOZ",
+      "id": "97214 / 84323",
+      "country": "SUI",
+      "points": "14710",
+      "tournaments": "12"
     },
     {
-      "rank": "98",
+      "rank": "99",
+      "name": "Samuel JONES / Lizzie TOLMAN",
+      "id": "63421 / 68221",
+      "country": "ENG",
+      "points": "14670",
+      "tournaments": "8"
+    },
+    {
+      "rank": "100",
+      "name": "CHAN Yin Chak / NG Tsz Yau",
+      "id": "57924 / 61986",
+      "country": "HKG",
+      "points": "14620",
+      "tournaments": "7"
+    },
+    {
+      "rank": "101",
+      "name": "Natan BEGGA / Elsa JACOB",
+      "id": "59578 / 77589",
+      "country": "FRA",
+      "points": "14510",
+      "tournaments": "8"
+    },
+    {
+      "rank": "102",
       "name": "LUI Chun Wai / FU Chi Yan",
       "id": "63670 / 99397",
       "country": "HKG",
@@ -7193,7 +7225,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "99",
+      "rank": "103",
       "name": "Nitin KUMAR / Ritika THAKER",
       "id": "87422 / 88389",
       "country": "IND",
@@ -7201,7 +7233,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "100",
+      "rank": "104",
       "name": "TANG Chun Man / NG Tsz Yau",
       "id": "77689 / 61986",
       "country": "HKG",
@@ -7209,7 +7241,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "101",
+      "rank": "105",
       "name": "KI Dong Ju / JEONG Na Eun",
       "id": "82494 / 99778",
       "country": "KOR",
@@ -7217,15 +7249,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "102",
+      "rank": "106",
       "name": "WEE Yee Tern / Clarissa SAN",
       "id": "69922 / 95214",
       "country": "MAS",
       "points": "14190",
-      "tournaments": "11"
+      "tournaments": "10"
     },
     {
-      "rank": "103",
+      "rank": "107",
       "name": "Mikk ÕUNMAA / Ramona ÜPRUS",
       "id": "97423 / 64926",
       "country": "EST",
@@ -7233,23 +7265,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "104",
-      "name": "Evgeni PANEV / Gabriela STOEVA",
-      "id": "78842 / 43840",
-      "country": "BUL",
-      "points": "14050",
-      "tournaments": "10"
-    },
-    {
-      "rank": "105",
+      "rank": "108",
       "name": "Calvin DEVEREUX / Desiree TOEPFFER",
       "id": "45571 / 20537",
       "country": "GER",
-      "points": "14040",
-      "tournaments": "16"
+      "points": "14080",
+      "tournaments": "17"
     },
     {
-      "rank": "106",
+      "rank": "109",
+      "name": "Andy BUIJK / Meerte LOOS",
+      "id": "55908 / 68201",
+      "country": "NED",
+      "points": "14060",
+      "tournaments": "15"
+    },
+    {
+      "rank": "110",
       "name": "Adham Hatem ELGAMAL / Doha HANY",
       "id": "72466 / 61746",
       "country": "EGY",
@@ -7257,15 +7289,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "107",
-      "name": "HO Wen-Hsun / Yu Hsuan CHEN",
-      "id": "98102 / 96026",
-      "country": "TPE",
-      "points": "13960",
-      "tournaments": "9"
-    },
-    {
-      "rank": "108",
+      "rank": "111",
       "name": "Dhiren AYYAPPAN / Taabia KHAN",
       "id": "79739 / 72013",
       "country": "UAE",
@@ -7273,15 +7297,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "109",
-      "name": "LIN Bing-Wei / LEE Chih Chen",
-      "id": "73474 / 77386",
-      "country": "TPE",
-      "points": "13740",
-      "tournaments": "8"
+      "rank": "112",
+      "name": "Kenzie YOE / Luna Rianty SAFFANA",
+      "id": "72638 / 55608",
+      "country": "INA",
+      "points": "13420",
+      "tournaments": "7"
     },
     {
-      "rank": "110",
+      "rank": "113",
       "name": "Rohith MOHANKUMAR / Riduvarshini RAMASAMY",
       "id": "59311 / 56548",
       "country": "IND",
@@ -7289,23 +7313,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "111",
-      "name": "Andy BUIJK / Meerte LOOS",
-      "id": "55908 / 68201",
-      "country": "NED",
-      "points": "13310",
-      "tournaments": "14"
+      "rank": "114",
+      "name": "Bhavya CHHABRA / Vishakha TOPPO",
+      "id": "91333 / 88222",
+      "country": "IND",
+      "points": "13330",
+      "tournaments": "7"
     },
     {
-      "rank": "112",
-      "name": "Yann ORTEU / Caroline RACLOZ",
-      "id": "97214 / 84323",
-      "country": "SUI",
-      "points": "13210",
-      "tournaments": "11"
-    },
-    {
-      "rank": "113",
+      "rank": "115",
       "name": "Ty Alexander LINDEMAN / Josephine WU",
       "id": "63683 / 86226",
       "country": "CAN",
@@ -7313,7 +7329,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "114",
+      "rank": "116",
       "name": "KIM Jae Hyeon / JEONG Na Eun",
       "id": "80293 / 99778",
       "country": "KOR",
@@ -7321,7 +7337,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "115",
+      "rank": "117",
       "name": "Joshua MAGEE / Moya RYAN",
       "id": "59068 / 58337",
       "country": "IRL",
@@ -7329,15 +7345,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "116",
-      "name": "Samuel JONES / Lizzie TOLMAN",
-      "id": "63421 / 68221",
-      "country": "ENG",
-      "points": "13000",
-      "tournaments": "7"
+      "rank": "118",
+      "name": "HO Wen-Hsun / Yu Hsuan CHEN",
+      "id": "98102 / 96026",
+      "country": "TPE",
+      "points": "13040",
+      "tournaments": "8"
     },
     {
-      "rank": "117",
+      "rank": "119",
       "name": "LOH Ziheng / Noraqilah MAISARAH",
       "id": "98972 / 71883",
       "country": "MAS",
@@ -7345,15 +7361,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "118",
-      "name": "Natan BEGGA / Elsa JACOB",
-      "id": "59578 / 77589",
-      "country": "FRA",
-      "points": "12840",
-      "tournaments": "7"
+      "rank": "120",
+      "name": "PAR Tien Ann / Juliana Zefanya GABRIELA",
+      "id": "96016 / 43626",
+      "country": "MAS / VEN",
+      "points": "12830",
+      "tournaments": "8"
     },
     {
-      "rank": "119",
+      "rank": "121",
       "name": "WANG Chan / KIM Yu Jung",
       "id": "72646 / 73838",
       "country": "KOR",
@@ -7361,7 +7377,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "120",
+      "rank": "122",
       "name": "Nicolas OLIVA / Ailen OLIVA",
       "id": "82239 / 71396",
       "country": "ARG",
@@ -7369,7 +7385,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "121",
+      "rank": "123",
+      "name": "HEE Yong Kai Terry / Gloria Emanuelle WIDJAJA",
+      "id": "99181 / 81702",
+      "country": "SGP / INA",
+      "points": "12690",
+      "tournaments": "3"
+    },
+    {
+      "rank": "124",
       "name": "Phuwanat HORBANLUEKIT / Fungfa KORPTHAMMAKIT",
       "id": "86368 / 57430",
       "country": "THA",
@@ -7377,15 +7401,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "122",
-      "name": "Bhavya CHHABRA / Vishakha TOPPO",
-      "id": "91333 / 88222",
-      "country": "IND",
-      "points": "12410",
-      "tournaments": "6"
-    },
-    {
-      "rank": "123",
+      "rank": "125",
       "name": "Akira KOGA / Natsu SAITO",
       "id": "88405 / 55417",
       "country": "JPN",
@@ -7393,15 +7409,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "124",
-      "name": "Jones Ralfy JANSEN / Thuc Phuong NGUYEN",
-      "id": "88726 / 97648",
-      "country": "GER",
-      "points": "12260",
-      "tournaments": "4"
-    },
-    {
-      "rank": "125",
+      "rank": "126",
       "name": "Hiroki NISHI / Akari SATO",
       "id": "63530 / 91600",
       "country": "JPN",
@@ -7409,28 +7417,20 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "126",
-      "name": "ASHRAF Daniel Md Zakaria / LIM Xuan",
-      "id": "82404 / 58958",
-      "country": "MAS",
-      "points": "12030",
-      "tournaments": "10"
-    },
-    {
       "rank": "127",
-      "name": "Kenzie YOE / Luna Rianty SAFFANA",
-      "id": "72638 / 55608",
-      "country": "INA",
-      "points": "11900",
-      "tournaments": "6"
+      "name": "LIN Bing-Wei / LEE Chih Chen",
+      "id": "73474 / 77386",
+      "country": "TPE",
+      "points": "12070",
+      "tournaments": "7"
     },
     {
       "rank": "128",
       "name": "Nicolas FRANCONVILLE / Julie FRANCONVILLE",
       "id": "59717 / 76311",
       "country": "SUI",
-      "points": "11870",
-      "tournaments": "11"
+      "points": "11980",
+      "tournaments": "12"
     },
     {
       "rank": "129",
@@ -7442,6 +7442,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "130",
+      "name": "Sathwik Reddy KANAPURAM / Radhika SHARMA",
+      "id": "54998 / 61380",
+      "country": "IND",
+      "points": "11810",
+      "tournaments": "5"
+    },
+    {
+      "rank": "131",
       "name": "WANG Chan / JEONG Na Eun",
       "id": "72646 / 99778",
       "country": "KOR",
@@ -7449,7 +7457,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "131",
+      "rank": "132",
       "name": "Jonas ØSTHASSEL / Julie ABUSDAL",
       "id": "67405 / 57168",
       "country": "NOR",
@@ -7457,7 +7465,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "14"
     },
     {
-      "rank": "132",
+      "rank": "133",
       "name": "Dev AYYAPPAN / Nurani Ratu AZZAHRA",
       "id": "77168 / 70234",
       "country": "UAE",
@@ -7465,7 +7473,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "133",
+      "rank": "134",
+      "name": "Renaldi SAMOSIR / Masita MAHMUDIN",
+      "id": "83933 / 73134",
+      "country": "INA",
+      "points": "11350",
+      "tournaments": "4"
+    },
+    {
+      "rank": "135",
       "name": "Hung Ming CHEN / Yun Jung CHANG",
       "id": "62242 / 93541",
       "country": "TPE",
@@ -7473,28 +7489,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "134",
-      "name": "PAR Tien Ann / Juliana Zefanya GABRIELA",
-      "id": "96016 / 43626",
-      "country": "MAS / VEN",
-      "points": "11310",
-      "tournaments": "7"
-    },
-    {
-      "rank": "135",
+      "rank": "136",
       "name": "Max SVENSSON / Sofia STRÖMVALL",
       "id": "75417 / 87769",
       "country": "SWE",
       "points": "11240",
       "tournaments": "8"
-    },
-    {
-      "rank": "136",
-      "name": "CHAN Yin Chak / NG Tsz Yau",
-      "id": "57924 / 61986",
-      "country": "HKG",
-      "points": "11220",
-      "tournaments": "6"
     },
     {
       "rank": "137",
@@ -7514,6 +7514,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "139",
+      "name": "ASHRAF Daniel Md Zakaria / LIM Xuan",
+      "id": "82404 / 58958",
+      "country": "MAS",
+      "points": "11110",
+      "tournaments": "9"
+    },
+    {
+      "rank": "140",
       "name": "Jonathan DRESP / Selin HÜBSCH",
       "id": "79195 / 73268",
       "country": "GER",
@@ -7521,7 +7529,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "11"
     },
     {
-      "rank": "140",
+      "rank": "141",
       "name": "AN Yun Seong / LEE Yu Lim",
       "id": "67274 / 66115",
       "country": "KOR",
@@ -7529,7 +7537,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "141",
+      "rank": "142",
       "name": "Yu Hsiang CHOU / Yuan Chi LIAO",
       "id": "67502 / 71280",
       "country": "TPE",
@@ -7537,7 +7545,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "142",
+      "rank": "143",
       "name": "Luis Armando MONTOYA NAVARRO / Miriam Jacqueline RODRIGUEZ PEREZ",
       "id": "74987 / 95072",
       "country": "MEX",
@@ -7545,7 +7553,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "143",
+      "rank": "144",
       "name": "Yuta WATANABE / Misaki MATSUTOMO",
       "id": "58240 / 43851",
       "country": "JPN",
@@ -7553,7 +7561,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "144",
+      "rank": "145",
+      "name": "LU Chen / LIN YEN YU",
+      "id": "60896 / 64300",
+      "country": "TPE",
+      "points": "10720",
+      "tournaments": "8"
+    },
+    {
+      "rank": "146",
       "name": "CHENG Kai Wen / LIU Chiao-Yun",
       "id": "97376 / 77949",
       "country": "TPE",
@@ -7561,7 +7577,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "145",
+      "rank": "147",
       "name": "Grégoire DESCHAMP / Margot LAMBERT",
       "id": "75657 / 99891",
       "country": "FRA",
@@ -7569,7 +7585,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "146",
+      "rank": "148",
       "name": "SHEN Xuan Yao / YANG Jia Yi",
       "id": "78905 / 68595",
       "country": "CHN",
@@ -7577,15 +7593,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "147",
-      "name": "Sathwik Reddy KANAPURAM / Radhika SHARMA",
-      "id": "54998 / 61380",
-      "country": "IND",
-      "points": "10290",
-      "tournaments": "4"
-    },
-    {
-      "rank": "148",
+      "rank": "149",
       "name": "CHANG Ko-Chi / LIN Jhih Yun",
       "id": "68681 / 69009",
       "country": "TPE",
@@ -7593,7 +7601,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "149",
+      "rank": "150",
       "name": "Datu Anif Isaac DATU ASRAH / Clarissa SAN",
       "id": "69750 / 95214",
       "country": "MAS",
@@ -7601,7 +7609,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "150",
+      "rank": "151",
       "name": "Hariharan AMSAKARUNAN / Treesa JOLLY",
       "id": "69560 / 71612",
       "country": "IND",
@@ -7609,7 +7617,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "151",
+      "rank": "152",
       "name": "Verrell Yustin MULIA / Lisa Ayu KUSUMAWATI",
       "id": "84631 / 82610",
       "country": "INA",
@@ -7617,7 +7625,23 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "152",
+      "rank": "153",
+      "name": "Oliver BUTLER / Abbygael HARRIS",
+      "id": "69810 / 61095",
+      "country": "ENG",
+      "points": "9990",
+      "tournaments": "8"
+    },
+    {
+      "rank": "154",
+      "name": "Kriston Jun Hao CHOO / Xiao En HENG",
+      "id": "98928 / 97698",
+      "country": "SGP",
+      "points": "9920",
+      "tournaments": "8"
+    },
+    {
+      "rank": "155",
       "name": "Tonkid SAEHENG / Tonrug SAEHENG",
       "id": "84591 / 50959",
       "country": "THA",
@@ -7625,7 +7649,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "153",
+      "rank": "156",
       "name": "SEO Seung Jae / CHAE Yu Jung",
       "id": "66513 / 93074",
       "country": "KOR",
@@ -7633,15 +7657,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "1"
     },
     {
-      "rank": "154",
-      "name": "Renaldi SAMOSIR / Masita MAHMUDIN",
-      "id": "83933 / 73134",
-      "country": "INA",
-      "points": "9830",
-      "tournaments": "3"
-    },
-    {
-      "rank": "155",
+      "rank": "157",
       "name": "Miha IVANČIČ / Petra POLANC",
       "id": "86567 / 61268",
       "country": "SLO",
@@ -7649,7 +7665,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "156",
+      "rank": "158",
+      "name": "Jones Ralfy JANSEN / Thuc Phuong NGUYEN",
+      "id": "88726 / 97648",
+      "country": "GER",
+      "points": "9510",
+      "tournaments": "3"
+    },
+    {
+      "rank": "159",
       "name": "HUANG Jui-Hsuan / Yan Fei CHEN",
       "id": "64023 / 71848",
       "country": "TPE",
@@ -7657,15 +7681,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "157",
-      "name": "LOW Han Chen / Vannee GOBI",
-      "id": "96553 / 50985",
+      "rank": "160",
+      "name": "WEE Yee Tern / TAN Zhing Hui",
+      "id": "69922 / 71666",
       "country": "MAS",
-      "points": "9420",
-      "tournaments": "6"
+      "points": "9490",
+      "tournaments": "5"
     },
     {
-      "rank": "158",
+      "rank": "161",
       "name": "Ayush AGARWAL / Shruti MISHRA",
       "id": "68809 / 57265",
       "country": "IND",
@@ -7673,7 +7697,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "159",
+      "rank": "162",
       "name": "LAI Po Yu / LIN Xiao Min",
       "id": "84196 / 65203",
       "country": "TPE",
@@ -7681,23 +7705,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "160",
-      "name": "LU Chen / LIN YEN YU",
-      "id": "60896 / 64300",
-      "country": "TPE",
-      "points": "9200",
-      "tournaments": "7"
-    },
-    {
-      "rank": "161",
-      "name": "PHAM Van Truong / BUI Bich Phuong",
-      "id": "64173 / 77937",
-      "country": "VIE",
-      "points": "9200",
-      "tournaments": "6"
-    },
-    {
-      "rank": "162",
+      "rank": "163",
       "name": "Jakob EKMAN / Fiona HALLBERG",
       "id": "90837 / 92982",
       "country": "SWE",
@@ -7705,20 +7713,12 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "163",
+      "rank": "164",
       "name": "Grégoire DESCHAMP / Flavie VALLET",
       "id": "75657 / 63229",
       "country": "FRA",
       "points": "9140",
       "tournaments": "6"
-    },
-    {
-      "rank": "164",
-      "name": "Kriston Jun Hao CHOO / Xiao En HENG",
-      "id": "98928 / 97698",
-      "country": "SGP",
-      "points": "9000",
-      "tournaments": "7"
     },
     {
       "rank": "165",
@@ -7730,6 +7730,14 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "166",
+      "name": "Vichayapong KANJANAKEEREEWONG / Pattaraporn RUNGRUENGPRAMONG",
+      "id": "83771 / 74181",
+      "country": "THA",
+      "points": "8740",
+      "tournaments": "7"
+    },
+    {
+      "rank": "167",
       "name": "Akira KOGA / Misaki MATSUTOMO",
       "id": "88405 / 43851",
       "country": "JPN",
@@ -7737,7 +7745,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "167",
+      "rank": "168",
       "name": "Tanadon PUNPANICH / Fungfa KORPTHAMMAKIT",
       "id": "64682 / 57430",
       "country": "THA",
@@ -7745,7 +7753,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "168",
+      "rank": "169",
       "name": "Surasit ARIYABARANEEKUL / Atitaya POVANON",
       "id": "82936 / 59892",
       "country": "THA",
@@ -7753,7 +7761,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "169",
+      "rank": "170",
+      "name": "LOW Han Chen / CHAN Wen Tse",
+      "id": "96553 / 79015",
+      "country": "MAS",
+      "points": "8480",
+      "tournaments": "5"
+    },
+    {
+      "rank": "171",
       "name": "Jeppe SØBY / Kathrine VANG",
       "id": "77803 / 61633",
       "country": "DEN",
@@ -7761,7 +7777,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "170",
+      "rank": "172",
       "name": "Zhi-Wei HE / Yan Fei CHEN",
       "id": "87535 / 71848",
       "country": "TPE",
@@ -7769,7 +7785,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "7"
     },
     {
-      "rank": "171",
+      "rank": "173",
       "name": "Rodrigo SANJURJO / Nikol CARULLA",
       "id": "72549 / 62858",
       "country": "ESP",
@@ -7777,7 +7793,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "172",
+      "rank": "174",
       "name": "TAN Zhi Yang / Nicole TAN",
       "id": "77309 / 62162",
       "country": "MAS",
@@ -7785,7 +7801,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "173",
+      "rank": "175",
       "name": "Sathwik Reddy KANAPURAM / Reshika UTHAYASOORIYAN",
       "id": "54998 / 56147",
       "country": "IND",
@@ -7793,35 +7809,19 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "174",
-      "name": "Oliver BUTLER / Abbygael HARRIS",
-      "id": "69810 / 61095",
-      "country": "ENG",
-      "points": "8320",
-      "tournaments": "7"
-    },
-    {
-      "rank": "175",
-      "name": "Gregory MAIRS / Jenny MAIRS",
-      "id": "58180 / 89068",
-      "country": "ENG",
-      "points": "8270",
-      "tournaments": "2"
-    },
-    {
       "rank": "176",
-      "name": "LI Hong Yi / HUANG Ke Xin",
-      "id": "23006 / 69931",
-      "country": "CHN",
-      "points": "8130",
+      "name": "KIM Jae Hyeon / JANG Ha Jeong",
+      "id": "80293 / 64819",
+      "country": "KOR",
+      "points": "8290",
       "tournaments": "4"
     },
     {
       "rank": "177",
-      "name": "Bo-Yuan CHEN / SUNG Yi-Hsuan",
-      "id": "67785 / 80667",
-      "country": "TPE",
-      "points": "8100",
+      "name": "LI Hong Yi / HUANG Ke Xin",
+      "id": "23006 / 69931",
+      "country": "CHN",
+      "points": "8130",
       "tournaments": "4"
     },
     {
@@ -7858,14 +7858,6 @@ window.RANKINGS_2026_RAW = {
     },
     {
       "rank": "182",
-      "name": "WEE Yee Tern / TAN Zhing Hui",
-      "id": "69922 / 71666",
-      "country": "MAS",
-      "points": "7970",
-      "tournaments": "4"
-    },
-    {
-      "rank": "183",
       "name": "Frederick ZHAO / Jazmine LAM",
       "id": "76357 / 98556",
       "country": "AUS",
@@ -7873,15 +7865,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "184",
-      "name": "Raymond INDRA / Rinjani Kwinnara NASTINE",
-      "id": "99781 / 87259",
-      "country": "INA",
-      "points": "7900",
-      "tournaments": "4"
+      "rank": "183",
+      "name": "PHAM Van Truong / BUI Bich Phuong",
+      "id": "64173 / 77937",
+      "country": "VIE",
+      "points": "7920",
+      "tournaments": "6"
     },
     {
-      "rank": "185",
+      "rank": "184",
       "name": "Ming Hong LIM / Stella PAN",
       "id": "86723 / 64614",
       "country": "MAS / USA",
@@ -7889,7 +7881,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "8"
     },
     {
-      "rank": "186",
+      "rank": "185",
       "name": "Miklos KIS-KASZA / Vivien SANDORHAZI",
       "id": "79515 / 61949",
       "country": "HUN",
@@ -7897,15 +7889,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "10"
     },
     {
-      "rank": "187",
-      "name": "Vichayapong KANJANAKEEREEWONG / Pattaraporn RUNGRUENGPRAMONG",
-      "id": "83771 / 74181",
-      "country": "THA",
-      "points": "7820",
-      "tournaments": "6"
-    },
-    {
-      "rank": "187",
+      "rank": "186",
       "name": "Bokka NAVANEETH / Maheshwari Devi KSHETRIMAYUM",
       "id": "80447 / 83194",
       "country": "IND",
@@ -7913,7 +7897,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "189",
+      "rank": "187",
       "name": "Kenta MATSUKAWA / Riko KIYOSE",
       "id": "94252 / 68304",
       "country": "JPN",
@@ -7921,15 +7905,15 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "190",
-      "name": "HEE Yong Kai Terry / Gloria Emanuelle WIDJAJA",
-      "id": "99181 / 81702",
-      "country": "SGP / INA",
+      "rank": "188",
+      "name": "Robin TABELING / Alexandra BØJE",
+      "id": "66357 / 88779",
+      "country": "NED / DEN",
       "points": "7790",
       "tournaments": "2"
     },
     {
-      "rank": "191",
+      "rank": "189",
       "name": "Thibault GARDON / Kathell DESMOTS-CHACUN",
       "id": "76450 / 94687",
       "country": "FRA",
@@ -7937,7 +7921,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "5"
     },
     {
-      "rank": "192",
+      "rank": "190",
       "name": "HUNG Kuei Chun / TSANG Hiu Yan",
       "id": "88832 / 95205",
       "country": "HKG",
@@ -7945,7 +7929,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "193",
+      "rank": "191",
       "name": "PHAM Van Hai / THAN Van Anh",
       "id": "65663 / 68320",
       "country": "VIE",
@@ -7953,7 +7937,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "6"
     },
     {
-      "rank": "194",
+      "rank": "192",
       "name": "Tori AIZAWA / Hina OSAWA",
       "id": "58487 / 76234",
       "country": "JPN",
@@ -7961,15 +7945,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "3"
     },
     {
-      "rank": "195",
-      "name": "LOW Han Chen / CHAN Wen Tse",
-      "id": "96553 / 79015",
-      "country": "MAS",
-      "points": "7560",
-      "tournaments": "4"
-    },
-    {
-      "rank": "196",
+      "rank": "193",
       "name": "Linden WANG / Eva WANG",
       "id": "61970 / 80392",
       "country": "USA",
@@ -7977,7 +7953,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "4"
     },
     {
-      "rank": "197",
+      "rank": "194",
       "name": "Michal SOBOLEWSKI / Joanna PODEDWORNY",
       "id": "56647 / 66899",
       "country": "POL",
@@ -7985,7 +7961,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "9"
     },
     {
-      "rank": "198",
+      "rank": "195",
       "name": "Jesus DE BURGOS / Rocio MARTIN",
       "id": "64255 / 88361",
       "country": "ESP",
@@ -7993,7 +7969,7 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "12"
     },
     {
-      "rank": "199",
+      "rank": "196",
       "name": "LOO Bing Kun / TOH Ee Wei",
       "id": "80711 / 59621",
       "country": "MAS",
@@ -8001,325 +7977,36 @@ window.RANKINGS_2026_RAW = {
       "tournaments": "2"
     },
     {
-      "rank": "200",
+      "rank": "197",
       "name": "Ganesh VITTALJI / Shivani Santosh SINGH",
       "id": "83483 / 57604",
       "country": "IND",
       "points": "7380",
       "tournaments": "6"
+    },
+    {
+      "rank": "198",
+      "name": "LOO Bing Kun / Noraqilah MAISARAH",
+      "id": "80711 / 71883",
+      "country": "MAS",
+      "points": "7320",
+      "tournaments": "4"
+    },
+    {
+      "rank": "199",
+      "name": "Hiroki MIDORIKAWA / Nami MATSUYAMA",
+      "id": "64944 / 65212",
+      "country": "JPN",
+      "points": "7320",
+      "tournaments": "2"
+    },
+    {
+      "rank": "200",
+      "name": "Arthur LEE / Katelin NGO",
+      "id": "83461 / 57795",
+      "country": "USA",
+      "points": "7279",
+      "tournaments": "4"
     }
   ]
-};
-
-window.rankingsData_meta = {
-  lastUpdated: "2026-03-01",
-  cutoffs: {
-    MS: {
-      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
-      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
-      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
-      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
-      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
-      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
-      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
-      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
-    },
-    WS: {
-      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
-      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
-      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
-      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
-      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
-      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
-      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
-      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
-    },
-    MD: {
-      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
-      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
-      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
-      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
-      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
-      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
-      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
-      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
-    },
-    WD: {
-      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
-      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
-      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
-      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
-      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
-      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
-      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
-      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
-    },
-    XD: {
-      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
-      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
-      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
-      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
-      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
-      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
-      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
-      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
-    }
-  }
-};
-
-
-window.rankingsData_meta = {
-  "lastUpdated": "2026-03-01",
-  "cutoffs": {
-    "MS": {
-      "S1000": {
-        "mandatory": 65000,
-        "main_safe": 45000,
-        "qual_or_main": 35000,
-        "promo_probable": 30000
-      },
-      "S750": {
-        "mandatory": 55000,
-        "main_safe": 38000,
-        "qual_or_main": 28000,
-        "promo_probable": 25000
-      },
-      "S500": {
-        "mandatory": 45000,
-        "main_safe": 32000,
-        "qual_or_main": 22000,
-        "promo_probable": 18000
-      },
-      "S300": {
-        "mandatory": 30000,
-        "main_safe": 22000,
-        "qual_or_main": 15000,
-        "promo_probable": 12000
-      },
-      "S100": {
-        "mandatory": 20000,
-        "main_safe": 15000,
-        "qual_or_main": 10000,
-        "promo_probable": 8000
-      },
-      "IC": {
-        "mandatory": 10000,
-        "main_safe": 8000,
-        "qual_or_main": 5000,
-        "promo_probable": 3000
-      },
-      "IS": {
-        "mandatory": 5000,
-        "main_safe": 3000,
-        "qual_or_main": 1500,
-        "promo_probable": 1000
-      },
-      "FS": {
-        "mandatory": 2000,
-        "main_safe": 1000,
-        "qual_or_main": 500,
-        "promo_probable": 200
-      }
-    },
-    "WS": {
-      "S1000": {
-        "mandatory": 65000,
-        "main_safe": 45000,
-        "qual_or_main": 35000,
-        "promo_probable": 30000
-      },
-      "S750": {
-        "mandatory": 55000,
-        "main_safe": 38000,
-        "qual_or_main": 28000,
-        "promo_probable": 25000
-      },
-      "S500": {
-        "mandatory": 45000,
-        "main_safe": 32000,
-        "qual_or_main": 22000,
-        "promo_probable": 18000
-      },
-      "S300": {
-        "mandatory": 30000,
-        "main_safe": 22000,
-        "qual_or_main": 15000,
-        "promo_probable": 12000
-      },
-      "S100": {
-        "mandatory": 20000,
-        "main_safe": 15000,
-        "qual_or_main": 10000,
-        "promo_probable": 8000
-      },
-      "IC": {
-        "mandatory": 10000,
-        "main_safe": 8000,
-        "qual_or_main": 5000,
-        "promo_probable": 3000
-      },
-      "IS": {
-        "mandatory": 5000,
-        "main_safe": 3000,
-        "qual_or_main": 1500,
-        "promo_probable": 1000
-      },
-      "FS": {
-        "mandatory": 2000,
-        "main_safe": 1000,
-        "qual_or_main": 500,
-        "promo_probable": 200
-      }
-    },
-    "MD": {
-      "S1000": {
-        "mandatory": 65000,
-        "main_safe": 45000,
-        "qual_or_main": 35000,
-        "promo_probable": 30000
-      },
-      "S750": {
-        "mandatory": 55000,
-        "main_safe": 38000,
-        "qual_or_main": 28000,
-        "promo_probable": 25000
-      },
-      "S500": {
-        "mandatory": 45000,
-        "main_safe": 32000,
-        "qual_or_main": 22000,
-        "promo_probable": 18000
-      },
-      "S300": {
-        "mandatory": 30000,
-        "main_safe": 22000,
-        "qual_or_main": 15000,
-        "promo_probable": 12000
-      },
-      "S100": {
-        "mandatory": 20000,
-        "main_safe": 15000,
-        "qual_or_main": 10000,
-        "promo_probable": 8000
-      },
-      "IC": {
-        "mandatory": 10000,
-        "main_safe": 8000,
-        "qual_or_main": 5000,
-        "promo_probable": 3000
-      },
-      "IS": {
-        "mandatory": 5000,
-        "main_safe": 3000,
-        "qual_or_main": 1500,
-        "promo_probable": 1000
-      },
-      "FS": {
-        "mandatory": 2000,
-        "main_safe": 1000,
-        "qual_or_main": 500,
-        "promo_probable": 200
-      }
-    },
-    "WD": {
-      "S1000": {
-        "mandatory": 65000,
-        "main_safe": 45000,
-        "qual_or_main": 35000,
-        "promo_probable": 30000
-      },
-      "S750": {
-        "mandatory": 55000,
-        "main_safe": 38000,
-        "qual_or_main": 28000,
-        "promo_probable": 25000
-      },
-      "S500": {
-        "mandatory": 45000,
-        "main_safe": 32000,
-        "qual_or_main": 22000,
-        "promo_probable": 18000
-      },
-      "S300": {
-        "mandatory": 30000,
-        "main_safe": 22000,
-        "qual_or_main": 15000,
-        "promo_probable": 12000
-      },
-      "S100": {
-        "mandatory": 20000,
-        "main_safe": 15000,
-        "qual_or_main": 10000,
-        "promo_probable": 8000
-      },
-      "IC": {
-        "mandatory": 10000,
-        "main_safe": 8000,
-        "qual_or_main": 5000,
-        "promo_probable": 3000
-      },
-      "IS": {
-        "mandatory": 5000,
-        "main_safe": 3000,
-        "qual_or_main": 1500,
-        "promo_probable": 1000
-      },
-      "FS": {
-        "mandatory": 2000,
-        "main_safe": 1000,
-        "qual_or_main": 500,
-        "promo_probable": 200
-      }
-    },
-    "XD": {
-      "S1000": {
-        "mandatory": 65000,
-        "main_safe": 45000,
-        "qual_or_main": 35000,
-        "promo_probable": 30000
-      },
-      "S750": {
-        "mandatory": 55000,
-        "main_safe": 38000,
-        "qual_or_main": 28000,
-        "promo_probable": 25000
-      },
-      "S500": {
-        "mandatory": 45000,
-        "main_safe": 32000,
-        "qual_or_main": 22000,
-        "promo_probable": 18000
-      },
-      "S300": {
-        "mandatory": 30000,
-        "main_safe": 22000,
-        "qual_or_main": 15000,
-        "promo_probable": 12000
-      },
-      "S100": {
-        "mandatory": 20000,
-        "main_safe": 15000,
-        "qual_or_main": 10000,
-        "promo_probable": 8000
-      },
-      "IC": {
-        "mandatory": 10000,
-        "main_safe": 8000,
-        "qual_or_main": 5000,
-        "promo_probable": 3000
-      },
-      "IS": {
-        "mandatory": 5000,
-        "main_safe": 3000,
-        "qual_or_main": 1500,
-        "promo_probable": 1000
-      },
-      "FS": {
-        "mandatory": 2000,
-        "main_safe": 1000,
-        "qual_or_main": 500,
-        "promo_probable": 200
-      }
-    }
-  }
 };
