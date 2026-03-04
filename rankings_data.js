@@ -8010,3 +8010,316 @@ window.RANKINGS_2026_RAW = {
     }
   ]
 };
+
+window.rankingsData_meta = {
+  lastUpdated: "2026-03-01",
+  cutoffs: {
+    MS: {
+      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
+      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
+      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
+      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
+      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
+      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
+      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
+      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
+    },
+    WS: {
+      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
+      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
+      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
+      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
+      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
+      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
+      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
+      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
+    },
+    MD: {
+      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
+      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
+      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
+      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
+      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
+      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
+      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
+      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
+    },
+    WD: {
+      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
+      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
+      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
+      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
+      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
+      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
+      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
+      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
+    },
+    XD: {
+      "S1000": { mandatory: 65000, main_safe: 45000, qual_or_main: 35000, promo_probable: 30000 },
+      "S750": { mandatory: 55000, main_safe: 38000, qual_or_main: 28000, promo_probable: 25000 },
+      "S500": { mandatory: 45000, main_safe: 32000, qual_or_main: 22000, promo_probable: 18000 },
+      "S300": { mandatory: 30000, main_safe: 22000, qual_or_main: 15000, promo_probable: 12000 },
+      "S100": { mandatory: 20000, main_safe: 15000, qual_or_main: 10000, promo_probable: 8000 },
+      "IC": { mandatory: 10000, main_safe: 8000, qual_or_main: 5000, promo_probable: 3000 },
+      "IS": { mandatory: 5000, main_safe: 3000, qual_or_main: 1500, promo_probable: 1000 },
+      "FS": { mandatory: 2000, main_safe: 1000, qual_or_main: 500, promo_probable: 200 }
+    }
+  }
+};
+
+
+window.rankingsData_meta = {
+  "lastUpdated": "2026-03-01",
+  "cutoffs": {
+    "MS": {
+      "S1000": {
+        "mandatory": 65000,
+        "main_safe": 45000,
+        "qual_or_main": 35000,
+        "promo_probable": 30000
+      },
+      "S750": {
+        "mandatory": 55000,
+        "main_safe": 38000,
+        "qual_or_main": 28000,
+        "promo_probable": 25000
+      },
+      "S500": {
+        "mandatory": 45000,
+        "main_safe": 32000,
+        "qual_or_main": 22000,
+        "promo_probable": 18000
+      },
+      "S300": {
+        "mandatory": 30000,
+        "main_safe": 22000,
+        "qual_or_main": 15000,
+        "promo_probable": 12000
+      },
+      "S100": {
+        "mandatory": 20000,
+        "main_safe": 15000,
+        "qual_or_main": 10000,
+        "promo_probable": 8000
+      },
+      "IC": {
+        "mandatory": 10000,
+        "main_safe": 8000,
+        "qual_or_main": 5000,
+        "promo_probable": 3000
+      },
+      "IS": {
+        "mandatory": 5000,
+        "main_safe": 3000,
+        "qual_or_main": 1500,
+        "promo_probable": 1000
+      },
+      "FS": {
+        "mandatory": 2000,
+        "main_safe": 1000,
+        "qual_or_main": 500,
+        "promo_probable": 200
+      }
+    },
+    "WS": {
+      "S1000": {
+        "mandatory": 65000,
+        "main_safe": 45000,
+        "qual_or_main": 35000,
+        "promo_probable": 30000
+      },
+      "S750": {
+        "mandatory": 55000,
+        "main_safe": 38000,
+        "qual_or_main": 28000,
+        "promo_probable": 25000
+      },
+      "S500": {
+        "mandatory": 45000,
+        "main_safe": 32000,
+        "qual_or_main": 22000,
+        "promo_probable": 18000
+      },
+      "S300": {
+        "mandatory": 30000,
+        "main_safe": 22000,
+        "qual_or_main": 15000,
+        "promo_probable": 12000
+      },
+      "S100": {
+        "mandatory": 20000,
+        "main_safe": 15000,
+        "qual_or_main": 10000,
+        "promo_probable": 8000
+      },
+      "IC": {
+        "mandatory": 10000,
+        "main_safe": 8000,
+        "qual_or_main": 5000,
+        "promo_probable": 3000
+      },
+      "IS": {
+        "mandatory": 5000,
+        "main_safe": 3000,
+        "qual_or_main": 1500,
+        "promo_probable": 1000
+      },
+      "FS": {
+        "mandatory": 2000,
+        "main_safe": 1000,
+        "qual_or_main": 500,
+        "promo_probable": 200
+      }
+    },
+    "MD": {
+      "S1000": {
+        "mandatory": 65000,
+        "main_safe": 45000,
+        "qual_or_main": 35000,
+        "promo_probable": 30000
+      },
+      "S750": {
+        "mandatory": 55000,
+        "main_safe": 38000,
+        "qual_or_main": 28000,
+        "promo_probable": 25000
+      },
+      "S500": {
+        "mandatory": 45000,
+        "main_safe": 32000,
+        "qual_or_main": 22000,
+        "promo_probable": 18000
+      },
+      "S300": {
+        "mandatory": 30000,
+        "main_safe": 22000,
+        "qual_or_main": 15000,
+        "promo_probable": 12000
+      },
+      "S100": {
+        "mandatory": 20000,
+        "main_safe": 15000,
+        "qual_or_main": 10000,
+        "promo_probable": 8000
+      },
+      "IC": {
+        "mandatory": 10000,
+        "main_safe": 8000,
+        "qual_or_main": 5000,
+        "promo_probable": 3000
+      },
+      "IS": {
+        "mandatory": 5000,
+        "main_safe": 3000,
+        "qual_or_main": 1500,
+        "promo_probable": 1000
+      },
+      "FS": {
+        "mandatory": 2000,
+        "main_safe": 1000,
+        "qual_or_main": 500,
+        "promo_probable": 200
+      }
+    },
+    "WD": {
+      "S1000": {
+        "mandatory": 65000,
+        "main_safe": 45000,
+        "qual_or_main": 35000,
+        "promo_probable": 30000
+      },
+      "S750": {
+        "mandatory": 55000,
+        "main_safe": 38000,
+        "qual_or_main": 28000,
+        "promo_probable": 25000
+      },
+      "S500": {
+        "mandatory": 45000,
+        "main_safe": 32000,
+        "qual_or_main": 22000,
+        "promo_probable": 18000
+      },
+      "S300": {
+        "mandatory": 30000,
+        "main_safe": 22000,
+        "qual_or_main": 15000,
+        "promo_probable": 12000
+      },
+      "S100": {
+        "mandatory": 20000,
+        "main_safe": 15000,
+        "qual_or_main": 10000,
+        "promo_probable": 8000
+      },
+      "IC": {
+        "mandatory": 10000,
+        "main_safe": 8000,
+        "qual_or_main": 5000,
+        "promo_probable": 3000
+      },
+      "IS": {
+        "mandatory": 5000,
+        "main_safe": 3000,
+        "qual_or_main": 1500,
+        "promo_probable": 1000
+      },
+      "FS": {
+        "mandatory": 2000,
+        "main_safe": 1000,
+        "qual_or_main": 500,
+        "promo_probable": 200
+      }
+    },
+    "XD": {
+      "S1000": {
+        "mandatory": 65000,
+        "main_safe": 45000,
+        "qual_or_main": 35000,
+        "promo_probable": 30000
+      },
+      "S750": {
+        "mandatory": 55000,
+        "main_safe": 38000,
+        "qual_or_main": 28000,
+        "promo_probable": 25000
+      },
+      "S500": {
+        "mandatory": 45000,
+        "main_safe": 32000,
+        "qual_or_main": 22000,
+        "promo_probable": 18000
+      },
+      "S300": {
+        "mandatory": 30000,
+        "main_safe": 22000,
+        "qual_or_main": 15000,
+        "promo_probable": 12000
+      },
+      "S100": {
+        "mandatory": 20000,
+        "main_safe": 15000,
+        "qual_or_main": 10000,
+        "promo_probable": 8000
+      },
+      "IC": {
+        "mandatory": 10000,
+        "main_safe": 8000,
+        "qual_or_main": 5000,
+        "promo_probable": 3000
+      },
+      "IS": {
+        "mandatory": 5000,
+        "main_safe": 3000,
+        "qual_or_main": 1500,
+        "promo_probable": 1000
+      },
+      "FS": {
+        "mandatory": 2000,
+        "main_safe": 1000,
+        "qual_or_main": 500,
+        "promo_probable": 200
+      }
+    }
+  }
+};
